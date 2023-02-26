@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Plantilla html con comentarios.
+	Uso:			Didáctico.
+-->
+
+<!-- Documento en español. -->
+
+<html lang="es">
+
+<!-- Cabecera del documento. Esta parte del documento no es visible. -->
+
+<head>
+	<!-- Codificación del documento. -->
+	<meta charset="UTF-8" />
+	<!-- SVG es escalable y no hacen falta distitos tamaños para cada navegador. -->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<!-- Se puede incorporar la imagen del favicon en base64, así no necesita cargar un archivo externo.
+		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAwIiB3aWR0aD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHRleHQgeD0iNTAlIiB5ID0iMTEwcHgiIHN0eWxlPSJmaWxsOmdyZWVuO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWw7Zm9udC1zaXplOjMzM3B4O2ZvbnQtZmFtaWx5OkNvdXJpZXI7Zm9udC13ZWlnaHQ6Ym9sZDt0ZXh0LWFuY2hvcjptaWRkbGUiPk08L3RleHQ+PC9zdmc+"> -->
+	<!-- Título del documento. Es el nombre que aparece en la pestaña. -->
+	<title>Mi primera página Web 😆</title>
+	<!-- Los metadatos incluyen información del documento.
+		Es util para buscadores, navegadores y RRSS. -->
+	<meta name="author" content="Marco Antonio Arias Antolín" />
+	<meta name="description" content="Descripción del documento." />
+	<meta name="keywords" content="Palabras clave" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index,follow" />
+	<meta property="og:image" content="img/favicon.svg" />
+	<meta property="og:title" content="Título del documento para FaceBook" />
+	<meta property="og:description" content="Descripción del documento para FaceBook." />
+	<meta name="twitter:title" content="Título del documento para Twitter" />
+	<!-- Estilo CSS en un archivo aparte. No se recomienda poner type="text/css". -->
+	<link rel="stylesheet" href="css/style.css" />
+	<!-- Estilo CSS en el mismo archivo. Sobreescribe el estilo anterior. -->
+	<style>
+		/* body	{ background:  lightgrey; } */
+
+	</style>
+	<!-- Javascript en un archivo aparte. No se recomienda poner type="text/javascript".
+		Al poner defer se carga cuando termine de cargar el documento,
+		por lo que sobreescribe los scripts de la página. -->
+	<script src="js/script.js" defer></script>
+	<!-- Javascript en el mismo archivo. Se ejecuta según se lee el documento. -->
+	<script>
+		// Esta función se ejecuta cuando se termina de cargar la ventana.
+		window.onload = (event) => { // window.onload = function (event) {
+			console.log('mrk 6\nInformación del evento: ', event);
+		};
+
+	</script>
+</head>
+
+<!-- Cuerpo del documento. Esta parte del documento es visible. -->
+
+<body>
+	<!-- Cabecera del documento. Aquí va el Título y el Menú del documento. -->
+	<header>
+		<!-- Título de la cabecera. -->
+		<h1>Bienvenido a mi primera página Web 😆</h1>
+		<!-- Barra de navegación / Menú. -->
+		<nav>
+			<ul>
+				<li><a href="css/style.css">Estilo externo</a></li>
+				<li><a href="js/script.js">Script externo</a></li>
+				<li><a href="img/favicon.svg">Imagen externa</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Parte principal del documento. Aquí está el contenido del documento. -->
+	<main>
+		<!-- Sección. Suele tener título y contenido.
+			Puede contener otras secciones, párrafos, artículos, etc... -->
+		<section>
+			<!-- Título de la Sección. -->
+			<h2>Esto está en &lt;section&gt;</h2>
+			<!-- Artículo. -->
+			<article>
+				<!-- Párrafo. -->
+				<p>Lista no ordenada</p>
+				<!-- Lista desordenada. 
+					Los elementos de la lista pueden contener listas. -->
+				<ul>
+					<!-- Elemento de la lista. -->
+					<li>Elemento 1</li>
+					<li>Elemento 2</li>
+					<li>Elemento 3</li>
+				</ul>
+				<!-- Lista ordenada. -->
+				<p>Lista ordenada</p>
+				<ol>
+					<li>Elemento 1</li>
+					<li>Elemento 2</li>
+					<li>Elemento 3</li>
+				</ol>
+			</article>
+			<!-- Dirección de contacto del artículo anterior. -->
+			<address>
+				<a href="mailto:marcoariasantolin@google.com">marcoariasantolin@google.com</a><br>
+				<a href="tel:+34123456789">123 456 789</a>
+			</address>
+		</section>
+		<!-- Barra lateral. Contiene información relativa a la sección. -->
+		<aside>
+			<!-- Título de la barra lateral. -->
+			<h3>Esto está en &lt;aside&gt;</h3>
+		</aside>
+		<!-- Suele haber varias secciones y artículos en la parte principal del documento. -->
+		<section>
+			<h2>Esto está en &lt;section&gt;</h2>
+			<article>
+				<p>Lista no ordenada</p>
+				<ul>
+					<li>Elemento 1</li>
+					<li>Elemento 2</li>
+					<li>Elemento 3</li>
+				</ul>
+				<p>Lista ordenada</p>
+				<ol>
+					<li>Elemento 1</li>
+					<li>Elemento 2</li>
+					<li>Elemento 3</li>
+				</ol>
+			</article>
+			<address>
+				<a href="mailto:marcoariasantolin@google.com">marcoariasantolin@google.com</a><br>
+				<a href="tel:+34123456789">123 456 789</a>
+			</address>
+		</section>
+		<aside>
+			<h3>Esto está en &lt;aside&gt;</h3>
+		</aside>
+	</main>
+	<!-- Pie del documento. Aquí se pone la información del Creador del documento o de la Empresa.
+		Se puede poner también un Menú con RRSS, Mapa de la web, etc... -->
+	<footer>
+		<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
+		Marco Antonio Arias Antolín. 2023
+	</footer>
+	<!-- Antiguamente se ponían aquí los scripts para asegurarse que el DOM
+		está cargado y que el script no ralentiza la carga del documento. -->
+	<script>
+		console.log('mrk 2');
+
+	</script>
+</body>
+
+</html>

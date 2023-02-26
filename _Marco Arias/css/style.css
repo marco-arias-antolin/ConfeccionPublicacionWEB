@@ -1,0 +1,83 @@
+html {
+	height: 100%;
+}
+
+body {
+	background: black;
+	color: green;
+	display: flex;
+	flex-direction: column;
+	font-family: Courier;
+	height: 100%;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+/* Centrado horizontal y vertical */
+header,
+main,
+footer {
+	align-self: center;
+	justify-self: center;
+}
+
+header h1 {
+	text-align: center;
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding: 0;
+}
+
+nav li {
+	background: rgba(200, 200, 200, .6);
+	list-style: none;
+	margin: 0 2px;
+	padding: 6px;
+	transition: .3s;
+}
+
+nav li:hover {
+	background: rgba(200, 200, 200, .8);
+	transform: scale(1.1);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 75% 25%;
+	width: 96%;
+}
+
+main > * {
+	overflow: auto;
+	padding: 6px;
+}
+
+footer {
+	animation: footerAni .2s ease-in 6 alternate;
+	border-top: 2px solid darkgreen;
+	bottom: 2px;
+	font-size: 16px;
+	padding-bottom: 16px;
+	padding-top: 6px;
+	position: relative;
+	text-align: center;
+	transition: .6s;
+	width: 66%;
+}
+
+footer:hover {
+	color: lightgreen;
+	transform: scale(1.06) translate(0, -1px);
+}
+
+@keyframes footerAni {
+	to {
+		color: lightgreen;
+		transform: scale(1.06) translate(0, -1px);
+	}
+}
