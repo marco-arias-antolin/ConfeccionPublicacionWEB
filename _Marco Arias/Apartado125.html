@@ -1,5 +1,15 @@
 <!DOCTYPE html>
-<!--
+
+<!-- Documento en español. -->
+
+<html lang="es">
+
+<!-- Cabecera del documento. Esta parte del documento no es visible. -->
+
+<head>
+	<!-- Codificación del documento. -->
+	<meta charset="UTF-8">
+	<!--
 	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
 
 	This program is free software: you can redistribute it and/or modify
@@ -20,17 +30,7 @@
 	Descripción:	Tema 1. Apartado 1.2.5.
 					"Identificación de etiquetas básicas para la estructura de un documento web".
 	Uso:			Didáctico. Plantilla html con comentarios.
--->
-
-<!-- Documento en español. -->
-
-<html lang="es">
-
-<!-- Cabecera del documento. Esta parte del documento no es visible. -->
-
-<head>
-	<!-- Codificación del documento. -->
-	<meta charset="UTF-8" />
+	-->
 	<!-- SVG es escalable y no hacen falta distitos tamaños para cada navegador. -->
 	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 	<!-- Se puede incorporar la imagen del favicon en base64, así no necesita cargar un archivo externo.
@@ -39,33 +39,31 @@
 	<title>Mi primera página Web 😆</title>
 	<!-- Los metadatos incluyen información del documento.
 		Es util para buscadores, navegadores y RRSS. -->
-	<meta name="author" content="Marco Antonio Arias Antolín" />
-	<meta name="description" content="Descripción del documento." />
-	<meta name="keywords" content="Palabras clave" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="robots" content="index,follow" />
-	<meta property="og:image" content="img/favicon.svg" />
-	<meta property="og:title" content="Título del documento para FaceBook" />
-	<meta property="og:description" content="Descripción del documento para FaceBook." />
-	<meta name="twitter:title" content="Título del documento para Twitter" />
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Descripción del documento.">
+	<meta name="keywords" content="Palabras clave">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index,follow">
+	<meta property="og:image" content="img/favicon.svg">
+	<meta property="og:title" content="Título del documento para FaceBook">
+	<meta property="og:description" content="Descripción del documento para FaceBook.">
+	<meta name="twitter:title" content="Título del documento para Twitter">
 	<!-- Estilo CSS en un archivo aparte. No se recomienda poner type="text/css". -->
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style.css">
 	<!-- Estilo CSS en el mismo archivo. Sobreescribe el estilo anterior. -->
 	<style>
 		/* body	{ background:  lightgrey; } */
-
 	</style>
 	<!-- Javascript en un archivo aparte. No se recomienda poner type="text/javascript".
 		Al poner defer se carga cuando termine de cargar el documento,
 		por lo que sobreescribe los scripts de la página. -->
-	<script src="js/script.js" defer></script>
+	<script src="js/script125.js" defer></script>
 	<!-- Javascript en el mismo archivo. Se ejecuta según se lee el documento. -->
 	<script>
 		// Esta función se ejecuta cuando se termina de cargar la ventana.
 		window.onload = (event) => { // window.onload = function (event) {
 			console.log('mrk 6\nInformación del evento: ', event);
 		};
-
 	</script>
 </head>
 
@@ -91,9 +89,10 @@
 			Puede contener otras secciones, párrafos, artículos, etc... -->
 		<section>
 			<!-- Título de la Sección. -->
-			<h2>Esto está en &lt;section&gt;</h2>
+			<h2>Sección 1</h2>
 			<!-- Artículo. -->
 			<article>
+				<h3>Artículo externo 1</h3>
 				<!-- Párrafo. -->
 				<p>Lista no ordenada</p>
 				<!-- Lista desordenada. 
@@ -121,12 +120,14 @@
 		<!-- Barra lateral. Contiene información relativa a la sección. -->
 		<aside>
 			<!-- Título de la barra lateral. -->
-			<h3>Esto está en &lt;aside&gt;</h3>
+			<h3>Barra lateral 1</h3>
+			<p>Contenido de la barra lateral 1</p>
 		</aside>
 		<!-- Suele haber varias secciones y artículos en la parte principal del documento. -->
 		<section>
-			<h2>Esto está en &lt;section&gt;</h2>
+			<h2>Sección 2</h2>
 			<article>
+				<h3>Artículo externo 2</h3>
 				<p>Lista no ordenada</p>
 				<ul>
 					<li>Elemento 1</li>
@@ -146,7 +147,8 @@
 			</address>
 		</section>
 		<aside>
-			<h3>Esto está en &lt;aside&gt;</h3>
+			<h3>Barra lateral 2</h3>
+			<p>Contenido de la barra lateral 2</p>
 		</aside>
 	</main>
 	<!-- Pie del documento. Aquí se pone la información del Creador del documento o de la Empresa.
@@ -159,8 +161,5 @@
 		está cargado y que el script no ralentiza la carga del documento. -->
 	<script>
 		console.log('mrk 2');
-
 	</script>
-</body>
-
-</html>
+</body></html>
