@@ -1,0 +1,29 @@
+nav ul {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding: 0;
+}
+
+nav li {
+	background: rgba(200, 200, 200, .6);
+	list-style: none;
+	margin: 0 2px;
+	padding: 6px;
+	transition: .3s;
+}
+
+nav li:hover {
+	background: rgba(200, 200, 200, .8);
+	transform: scale(1.1);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 75% 25%;
+}
+
+main>* {
+	overflow: auto;
+	padding: 6px;
+}

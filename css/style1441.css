@@ -1,4 +1,5 @@
 main {
+	display: grid;
 	grid-template-columns: 66% 34%;
 }
 
@@ -41,19 +42,19 @@ tbody td {
 	content: counter(contadorCeldas);
 }
 
-td > ul {
+td>ul {
 	list-style-image: radial-gradient(black, fuchsia, black);
 }
 
-td > ul > li > ul {
+td>ul>li>ul {
 	list-style-image: none;
 }
 
-td > ol > li > ol {
+td>ol>li>ol {
 	list-style-type: hiragana;
 }
 
-td > ol > li > ol > li > ol {
+td>ol>li>ol>li>ol {
 	list-style-type: katakana;
 }
 
