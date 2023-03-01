@@ -1,0 +1,69 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	box-sizing: border-box;
+	float: left;
+	overflow: hidden;
+}
+
+#contenedor1 {
+	background: red;
+	border: 2px solid grey;
+	height: 22%;
+	width: 100%;
+}
+
+#contenedor2 {
+	height: 78%;
+	width: 100%;
+}
+
+#contenedor3 {
+	background: green;
+	border: 2px solid grey;
+	height: 100%;
+	width: 25%;
+}
+
+#contenedor4 {
+	height: 100%;
+	width: 75%;
+}
+
+#contenedor5 {
+	background: blue;
+	border: 2px solid grey;
+	height: 50%;
+	width: 100%;
+}
+
+#contenedor6 {
+	height: 50%;
+	width: 100%;
+}
+
+#contenedor7 {
+	background: orange;
+	border: 2px solid grey;
+	height: 100%;
+	width: 66.67%;
+}
+
+#contenedor8 {
+	background: purple;
+	border: 2px solid grey;
+	height: 100%;
+	width: 33.33%;
+}
+
+iframe {
+	box-sizing: border-box;
+	border: 0;
+	height: 100%;
+	width: 100%;
+}
