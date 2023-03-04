@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.5.2.
+					"Interpretación de script que añada efectos estéticos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Apartado 1.5.2. Main</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Tema 1. Apartado 1.5.2. Main.">
+	<script src="js/script152iframes.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Actividad asociada al CE1.3</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enlaces</h2>
+			<p>La etiqueta que se usa para insertar enlaces es &lt;a&gt;</a></p>
+			<p>Los principales atributos de &lt;a&gt; son:</p>
+			<ul>
+				<li>href: Especifica la URL. Puede contener una dirección de
+					internet, un correo, un teléfono, una sección de la misma
+					página o ejecutar javascript.</li>
+				<li>target: Cuyo valor puede ser: _blank (nueva pestaña),
+					_parent (en el frame padre), _self (en el mismo frame) y
+					_top (en todo el cuerpo de la ventana).</li>
+			</ul>
+			<p>Para enlazar con la misma página hay que poner un id (por ejemplo
+				"identificador") y hacerle referencia en href (#identificador).
+				<br>Para que la página se desplace tiene que haber suficiente
+				espacio por debajo.
+			</p>
+			<p>Para cargar una página en un iframe con un enlace se hace así:</p>
+			<p> &nbsp; &nbsp;
+				&lt;a href="https://www.direcciónDeLaPágina.com"
+				target="iframe_1"&gt;Página.com&lt;/a&gt;
+				<br><br>
+				&nbsp; &nbsp;
+				&lt;iframe src="OtraPágina.html"
+				name="iframe_1"&gt;&lt;/iframe&gt;
+			</p>
+		</section>
+	</main>
+</body>
+
+</html>

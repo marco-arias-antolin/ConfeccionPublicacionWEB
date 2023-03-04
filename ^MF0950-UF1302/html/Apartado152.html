@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.5.2.
+					"Interpretación de script que añada efectos estéticos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Apartado 1.5.2. Index</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Tema 1. Apartado 1.5.2. Index.">
+	<link rel="stylesheet" href="css/style152.css">
+	<style>
+		section {
+			/* A veces se veían las secciones al cargar la página */
+			opacity: 0;
+		}
+	</style>
+	<script src="js/script152.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Mi primer sitio HTML5</h1>
+	</header>
+	<button id="boton">Tema OSCURO</button>
+	<nav>
+		<ul>
+			<li><label for="p2" id="p2l">Inicio</label></li>
+			<li><label for="p3" id="p3l">Contacto</label></li>
+			<li><label for="p4" id="p4l">Servicios</label></li>
+			<li><label for="p5" id="p5l">Vídeos</label></li>
+		</ul>
+	</nav>
+	<input type="radio" id="p1" name="seciones" hidden checked>
+	<input type="radio" id="p2" name="seciones" hidden>
+	<input type="radio" id="p3" name="seciones" hidden>
+	<input type="radio" id="p4" name="seciones" hidden>
+	<input type="radio" id="p5" name="seciones" hidden>
+	<main>
+		<section>
+			<h2>Bienvenido</h2>
+			<h3>Tema 1. Apartado 1.5.2.<br>
+				Interpretación de script que añada efectos estéticos.</h3>
+			<p>Puede cambiar el tema de la página usando JavaScript.<br>
+				Use el botón localizado arriba a la derecha.</p>
+		</section>
+		<section>
+			<h2 style="display: none; margin: 0;"> </h2>
+			<iframe src="Apartado152main.html" title="Apartado 1.5.2. Main"></iframe>
+		</section>
+		<section>
+			<h2>Contacto</h2>
+			<address>
+				<a href="mailto:marcoariasantolin@google.com">marcoariasantolin@google.com</a>
+				<br>
+				<a href="tel:+34123456789">123 456 789</a>
+			</address>
+		</section>
+		<section>
+			<h2>Servicios</h2>
+			<p>Nuestros servicios son:</p>
+			<ul>
+				<li>Servicio falso 1</li>
+				<li>Servicio falso 2</li>
+				<li>Servicio falso 3</li>
+			</ul>
+		</section>
+		<section>
+			<h2 style="display: none; margin: 0;"> </h2>
+			<iframe src="Apartado152videos.html" title="Apartado 1.5.2. Videos"></iframe>
+		</section>
+	</main>
+	<footer>
+		<span>
+			<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
+			Marco Antonio Arias Antolín. 2023
+		</span>
+	</footer>
+</body>
+
+</html>

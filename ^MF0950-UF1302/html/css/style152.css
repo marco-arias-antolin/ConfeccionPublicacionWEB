@@ -1,0 +1,112 @@
+html {
+	background: #EEE;
+	height: 100%;
+	transition: 1.6s;
+}
+
+.temaOscuro {
+	background: black;
+	color: green;
+}
+
+body {
+	box-shadow: 1px 1px 4px 1px orangered;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-areas:
+		"cabecera	cabecera	boton"
+		"enlaces	contenido	contenido"
+		".			pie			pie";
+	grid-template-columns: 166px auto 166px;
+	grid-template-rows: 66px auto 66px;
+	/* Se restan los márgenes superior e inferior */
+	height: calc(100% - 36px);
+	margin: 18px 36px;
+}
+
+header,
+main,
+footer {
+	display: grid;
+}
+
+h1 {
+	margin-left: 18px;
+}
+
+header {
+	grid-area: cabecera;
+}
+
+#boton {
+	grid-area: boton;
+	padding: 12px;
+	place-self: center;
+}
+
+nav {
+	grid-area: enlaces;
+}
+
+nav>ul {
+	list-style-type: none;
+	padding-left: 18px;
+}
+
+nav li {
+	border: 3px solid white;
+	border-radius: 12px 32px 18px 12px;
+	color: orangered;
+	margin: 6px 0;
+	transition: .3s;
+}
+
+nav li:hover {
+	background: white;
+	transform: scale(1.1);
+}
+
+nav label {
+	display: block;
+	padding: 12px;
+}
+
+main {
+	grid-area: contenido;
+}
+
+section {
+	box-sizing: border-box;
+	grid-column: 1;
+	grid-row: 1;
+	opacity: 0;
+	padding: 6px 18px;
+	transition: .6s;
+	width: 100%;
+}
+
+#p1:checked~main>section:nth-of-type(1),
+#p2:checked~main>section:nth-of-type(2),
+#p3:checked~main>section:nth-of-type(3),
+#p4:checked~main>section:nth-of-type(4),
+#p5:checked~main>section:nth-of-type(5) {
+	opacity: 1;
+	z-index: 2;
+}
+
+iframe {
+	border: 0;
+	height: 100%;
+	width: 100%;
+}
+
+footer {
+	border: 2px solid white;
+	border-radius: 6px;
+	grid-area: pie;
+	margin: 6px 6px 6px 0;
+}
+
+footer>span {
+	place-self: center;
+}
