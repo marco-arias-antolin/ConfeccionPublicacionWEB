@@ -6,6 +6,7 @@ main {
 table {
 	border-collapse: collapse;
 	counter-reset: contadorFilas contadorCeldas;
+	margin: 6px;
 }
 
 th,
