@@ -1,0 +1,33 @@
+:root {
+	--color: green;
+	--bg: black;
+	--bg-t: rgba(0, 255, 0, .06);
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 2px solid var(--color);
+	padding: 6px;
+}
+
+tbody tr:nth-of-type(odd) {
+	background: var(--bg-t);
+}
+
+.huecoEn3 th:nth-of-type(2),
+.huecoEn3 td:nth-of-type(3),
+.huecoEn6 tr:nth-of-type(1) th:nth-of-type(3),
+.huecoEn6 th:nth-of-type(6),
+.huecoEn6 td:nth-of-type(6) {
+	background: var(--bg);
+	border-bottom: 0;
+	border-top: 0;
+}
+
+sup>a {
+	text-decoration: none;
+}

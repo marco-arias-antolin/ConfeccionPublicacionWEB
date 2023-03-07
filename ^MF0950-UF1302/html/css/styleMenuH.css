@@ -1,0 +1,99 @@
+:root {
+	--color: green;
+	--bg: black;
+}
+
+#btn {
+	background: var(--bg);
+	border: 6px solid var(--color);
+	border-radius: 66px;
+	cursor: pointer;
+	padding: 6px;
+	position: fixed;
+	right: 6px;
+	top: 6px;
+	user-select: none;
+	z-index: 2;
+}
+
+#btn span {
+	background: var(--color);
+	border-radius: 3px;
+	display: block;
+	height: 6px;
+	margin: 6px;
+	transition: .6s;
+	width: 30px;
+}
+
+#btn:hover .top {
+	transform: translateY(-66%);
+}
+
+#btn:hover .bottom {
+	transform: translateY(66%);
+}
+
+#show:checked~#btn .top {
+	transform: translateY(200%) rotate(45deg);
+}
+
+#show:checked~#btn .mid {
+	opacity: 0;
+}
+
+#show:checked~#btn .bottom {
+	transform: translateY(-200%) rotate(-45deg);
+}
+
+/* Puesto aparte para que funcione en firefox */
+/* #menu:has(a:focus), */
+#show:checked~#menu {
+	transform: scale(1);
+	/* transform: translate(0); */
+}
+
+/* has() no funciona en firefox */
+#menu:has(a:focus) {
+	transform: scale(1);
+}
+
+#menu {
+	position: fixed;
+	right: 6px;
+	top: 72px;
+	transform: scaleY(0);
+	/* transform: translate(0, calc(-100% - 72px)); */
+	transform-origin: top;
+	transition: .6s;
+	z-index: 1;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu li {
+	list-style: none;
+}
+
+#menu a {
+	background: var(--bg);
+	border: 0 solid var(--color);
+	border-radius: 6px;
+	border-width: 1px 2px;
+	color: var(--color);
+	display: block;
+	font-weight: bold;
+	padding: 12px;
+	text-decoration: none;
+	transition: .6s;
+}
+
+#menu a:hover {
+	background: var(--color);
+	border-color: var(--bg);
+	color: var(--bg);
+	transform: translate(-6px);
+}

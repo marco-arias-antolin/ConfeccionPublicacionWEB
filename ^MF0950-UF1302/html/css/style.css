@@ -1,51 +1,55 @@
+:root {
+	--color: green;
+	--bg: black;
+}
+
 html {
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
-	background: black;
-	color: green;
+	background: var(--bg);
+	color: var(--color);
 	display: flex;
 	flex-direction: column;
 	font-family: Courier;
-	height: 100%;
+	min-height: 100%;
 	justify-content: space-between;
-	margin: 0;
-	padding: 0 18px;
+	margin: 0 66px;
+	padding: 6px 18px;
 }
 
-/* Centrado horizontal y vertical */
 header,
-main,
 footer {
-	align-self: center;
-}
-
-main {
-	width: 100%;
-}
-
-footer {
-	animation: footerAni .2s ease-in 6 alternate;
-	border-top: 2px solid darkgreen;
-	bottom: 2px;
-	font-size: 16px;
-	padding-bottom: 16px;
-	padding-top: 6px;
-	position: relative;
 	text-align: center;
+}
+
+footer {
+	bottom: 0;
+	font-size: 18px;
+	margin-top: 18px;
+	position: sticky;
+}
+
+footer>span {
+	animation: footerAni .2s ease-in 6 alternate;
+	background: black;
+	border-top: 2px solid var(--color);
+	display: block;
+	margin: auto;
+	padding: 6px;
+	position: relative;
+	transform-origin: bottom;
 	transition: .6s;
 	width: 66%;
 }
 
-footer:hover {
-	color: lightgreen;
-	transform: scale(1.06) translate(0, -1px);
+footer>span:hover {
+	transform: scale(1.16);
 }
 
 @keyframes footerAni {
 	to {
-		color: lightgreen;
-		transform: scale(1.06) translate(0, -1px);
+		transform: scale(1.16);
 	}
 }

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 2. Apartado 2.4.1.
+					"Identificación de tipo de formatos para audio y vídeo"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Formatos de Audio y Vídeo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Identificación de tipo de formatos para audio y vídeo.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleMenuH.css">
+	<link rel="stylesheet" href="css/style241.css">
+</head>
+
+<body id="arriba">
+	<input type="checkbox" id="show" hidden>
+	<label id="btn" for="show">
+		<span class="top"></span>
+		<span class="mid"></span>
+		<span class="bottom"></span>
+	</label>
+	<nav id="menu">
+		<ul>
+			<li><a href="#arriba">Ir arriba</a></li>
+			<li><a href="#formatos">Formatos</a></li>
+			<li><a href="#comparativa">Comparativa</a></li>
+			<li><a href="#extMIME">Extentiones y MIME</a></li>
+			<li><a href="#soporte">Soporte</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h1>Identificación de tipo de formatos para audio y vídeo</h1>
+	</header>
+	<main>
+		<section id="formatos">
+			<h2>Formatos de Audio y Vídeo</h2>
+			<table class="huecoEn3">
+				<thead>
+					<tr>
+						<th colspan="2">Audio</th>
+						<th>&nbsp;&nbsp;</th>
+						<th colspan="2">Vídeo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>WAV</td>
+						<td>Es demasiado pesado para la web</td>
+						<td></td>
+						<td>MPEG-4</td>
+						<td>Amplio soporte</td>
+					</tr>
+					<tr>
+						<td>MP3</td>
+						<td>Está obsoleto. Amplio soporte</td>
+						<td></td>
+						<td>H264</td>
+						<td>Derechos de autor. Buena compresión</td>
+					</tr>
+					<tr>
+						<td>OGG</td>
+						<td>Código abierto, buen soporte y buena calidad</td>
+						<td></td>
+						<td>OGG Theodora</td>
+						<td>Código abierto, buen soporte y buena calidad</td>
+					</tr>
+					<tr>
+						<td>WebM</td>
+						<td>Código abierto, amplio soporte y buena calidad</td>
+						<td></td>
+						<td>WebM</td>
+						<td>Código abierto, amplio soporte y buena calidad</td>
+					</tr>
+					<tr>
+						<td>MIDI</td>
+						<td>Para música instrumental</td>
+						<td></td>
+						<td>FLV</td>
+						<td>Está obsoleto</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>En conclusión:</h3>
+			<p> Tanto para audio como vídeo se recomienda usar WebM pero
+				poniendo como alternativa mp3 y mp4 respectivamente.<br>
+				OGG está bien pero tiene menos soporte sobre todo en vídeo.<br>
+				MIDI para cosas concretas.
+			</p>
+		</section>
+		<section id="comparativa">
+			<h2>Comparativa</h2>
+			<table class="huecoEn3">
+				<thead>
+					<tr>
+						<th colspan="2">Audio</th>
+						<th>&nbsp;&nbsp;</th>
+						<th colspan="2">Vídeo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>WAV</td>
+						<td>Siglas: WaveForm Audio File.<br>
+							Comprimir audios originales.<br>
+							Gran calidad de audio.<br>
+							Los archivos pesan bastante.<br>
+							Compresión PCM y la ADPCM.</td>
+						<td></td>
+						<td>MPEG-4</td>
+						<td>Siglas: Moving Pictures Expert Group.
+							Diferentes tipos de códecs para su compresión:
+							<ul>
+								<li>MPEG-1 CD.</li>
+								<li>MPEG-2 DVD.</li>
+								<li>MPEG-3 audio MP3.</li>
+								<li>MPEG-4 WEB.</li>
+							</ul>
+							Códecs DivX y Xdiv para vídeo y AAC para audio.<br>
+							Códecs muy comunes en los dispositivos.<br>
+							Soporta audio, vídeo, contenido 3D, codificación de
+							baja velocidad binaria, entre otros.<br>
+							Soporte para la gestión de derecho de autor o copyright.<br>
+							Se suele utilizar para las televisiones HDTV.
+						</td>
+					</tr>
+					<tr>
+						<td>mp3</td>
+						<td>Compresión alta y buena calidad de audio.<br>
+							Se recomienda para implementar elementos de audio en las páginas web.<br>
+							Pesa poco y puede reproducirse en la mayoría de dispositivos de audio.<br>
+							Es fácil convertir un archivo en formato wav a uno en formato mp3.
+						</td>
+						<td></td>
+						<td>H264</td>
+						<td>MPEG-4 Advanced Video Coding.<br>
+							Extraordinaria calidad de vídeo.<br>
+							Compresión muy elevada.<br>
+							Bueno para vídeo en una página web.<br>
+							Está sujeto a derecho de autor.<br>
+							Muy utilizado para la codificación de vídeos en HD.
+						</td>
+					</tr>
+					<tr>
+						<td>ogg</td>
+						<td>Código abierto.<br>
+							Grado de compresión similar y mejor calidad de sonido que el formato mp3.<br>
+							No todos los reproductores de audio son capaces de reproducirlo.<br>
+							Puede contener información de audio y de vídeo.
+						</td>
+						<td></td>
+						<td>OGG Theodora</td>
+						<td>Código abierto.<br>
+							No todos los reproductores de audio son capaces de reproducirlo.<br>
+							Puede contener información de audio y de vídeo.
+						</td>
+					</tr>
+					<tr>
+						<td>WebM</td>
+						<td>Código abierto.<br>
+							WebM utiliza el códec de audio Vorbis.<br>
+							No tiene problemas de soporte en navegadores.<br>
+							Almacena información tanto de audio, como de vídeo.
+						</td>
+						<td></td>
+						<td>WebM</td>
+						<td>Código abierto.<br>
+							WebM utiliza los códec de vídeo VP8 y VP9 y el códec de audio Vorbis.<br>
+							No tiene problemas de soporte en navegadores.<br>
+							Almacena información tanto de audio, como de vídeo.
+						</td>
+					</tr>
+					<tr>
+						<td>midi</td>
+						<td>Musical Instrument Digital Interface.<br>
+							Pueden reproducirse en la mayoría de los dispositivos de reproducción de audio.<br>
+							Puede ser editado fácilmente.<br>
+							Tamaño pequeño.<br>
+							Sirve para sonidos de fondo de páginas web y composiciones únicamente instrumentales.
+						</td>
+						<td></td>
+						<td>FLV</td>
+						<td>Está obsoleto.<br>
+							Se usaba en muchas páginas web.<br>
+							Necesita el reproductor o plugin específico de Adobe Flash Player.<br>
+							Códecs On2 VP6 y Sorenson Spark.<br>
+							Calidad visual muy buena.<br>
+							Permite hacer streaming.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section id="extMIME">
+			<h2>Extensiones y MIME
+				<sup>
+					<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types">1</a>
+					<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">2</a>
+				</sup>
+			</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Extensión</th>
+						<th>MIME</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.webm</td>
+						<td>audio/webm<br>video/webm</td>
+					</tr>
+					<tr>
+						<td>.mp3</td>
+						<td>audio/mp3<br>audio/mpeg</td>
+					</tr>
+					<tr>
+						<td>.mp4<br>.avi</td>
+						<td>video/mp4</td>
+					</tr>
+					<tr>
+						<td>.ogg</td>
+						<td>audio/ogg<br>video/ogg</td>
+					</tr>
+					<tr>
+						<td>.mpg<br>.mpeg</td>
+						<td>video/mpeg</td>
+					</tr>
+					<tr>
+						<td>.mid<br>.midi</td>
+						<td>audio/midi</td>
+					</tr>
+					<tr>
+						<td>.wav</td>
+						<td>audio/x-wav</td>
+					</tr>
+					<tr>
+						<td>.flv</td>
+						<td>vídeo/x-flv</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section id="soporte">
+			<h2>Soporte de Navegadores</h2>
+		</section>
+		<table class="huecoEn6">
+			<thead>
+				<tr>
+					<th></th>
+					<th colspan="4">Audio</th>
+					<th>&nbsp;&nbsp;</th>
+					<th colspan="4">Vídeo</th>
+				</tr>
+				<tr>
+					<th>Nombre</th>
+					<th>WAV</th>
+					<th>MP3</th>
+					<th>OGG Vorbis</th>
+					<th>WebM</th>
+					<th></th>
+					<th>MPEG-4</th>
+					<th>H.264</th>
+					<th>OGG Theodora</th>
+					<th>WebM</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Safari</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>No</td>
+					<td>Si</td>
+					<td></td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>No</td>
+					<td>Si</td>
+				</tr>
+				<tr>
+					<td>Mozilla Firefox</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td></td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr>
+					<td>Opera</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td></td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr>
+					<td>Google Chrome</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td></td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<footer>
+		<span>
+			<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
+			Marco Antonio Arias Antolín. 2023
+		</span>
+	</footer>
+</body>
+
+</html>
