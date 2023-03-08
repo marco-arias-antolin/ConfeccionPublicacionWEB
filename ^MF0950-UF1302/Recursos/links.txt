@@ -1,0 +1,38 @@
+vs code		https://code.visualstudio.com/download
+bootstrap	https://getbootstrap.com/
+jquery		https://releases.jquery.com/
+
+Accesividad y usabilidad:
+Normas de accesibilidad		https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html
+Ley 34/2002					https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758
+Ley 51/2003					https://www.boe.es/buscar/act.php?id=BOE-A-2003-22066
+	RDL 1/2013				https://www.boe.es/buscar/act.php?id=BOE-A-2013-12632
+Real Decreto 1414/2006		https://www.boe.es/buscar/doc.php?id=BOE-A-2006-22080
+Real Decreto 366/2007		https://www.boe.es/buscar/doc.php?id=BOE-A-2007-6239
+Ley 11/2007					https://www.boe.es/buscar/act.php?id=BOE-A-2007-12352
+Real Decreto 1494/2007		https://www.boe.es/buscar/doc.php?id=BOE-A-2007-19968
+Ley 27/2007					https://www.boe.es/buscar/doc.php?id=BOE-A-2007-18476
+Ley 49/2007					https://www.boe.es/buscar/act.php?id=BOE-A-2007-22293
+Ley 56/2007					https://www.boe.es/buscar/act.php?id=BOE-A-2007-22440
+Ley 7/2010					https://www.boe.es/buscar/act.php?id=BOE-A-2010-5292
+Ley 26/2011					https://www.boe.es/buscar/act.php?id=BOE-A-2011-13241
+UNE 139803:2012				https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0049614
+UNE 139802:2009				https://eqa.es/certificacion-sistemas/accesibilidad-digital/une-139802
+Real Decreto 1112/2018		https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-12699
+
+WAI						https://www.w3.org/WAI/
+Test de usabilidad		https://www.hostinger.es/tutoriales/test-de-usabilidad-web
+Usabilidad				http://usabilidad.tv/
+nosolousabilidad		https://www.nosolousabilidad.com/
+
+TAW						https://www.tawdis.net/
+
+HTML Validator					https://validator.w3.org/
+CSS  Validator					https://jigsaw.w3.org/css-validator/
+Evaluating Web Accessibility	https://www.w3.org/WAI/test-evaluate/
+
+Seminario de Iniciativas en Discapacidades y Accesibilidad a la Red		http://www.sidar.org/
+
+
+Flotando contenedores	https://www.youtube.com/watch?v=csBOfVYbdEo
+Creando una cabecera en HTML con bootstrap	https://www.youtube.com/watch?v=BBTkvcZY_6o
