@@ -1,6 +1,6 @@
 html {
 	background: #EEE;
-	height: 100%;
+	min-height: 100vh;
 	transition: 1.6s;
 }
 

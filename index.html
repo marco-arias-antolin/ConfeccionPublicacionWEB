@@ -31,23 +31,38 @@
 	<meta name="description" content="Índice de las entregas.">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
-		header {
-			text-align: center;
+		body {
+			margin: 0;
 		}
 
 		main {
-			height: 100%;
+			display: flex;
 		}
 
 		iframe {
 			border: 0;
-			height: 100%;
-			width: 100%;
+			flex: 1;
+		}
+
+		nav {
+			display: inline-block;
+			margin: 0;
+			padding: 6px;
+		}
+
+		h2 {
+			margin: 0;
 		}
 
 		nav ul {
 			list-style: none;
+			margin: 0;
 			padding: 0;
+			position: absolute;
+			transform: scale(0);
+			transform-origin: top left;
+			transition: .6s;
+			width: 12rem;
 		}
 
 		nav li {
@@ -55,28 +70,14 @@
 			border: 2px solid green;
 		}
 
-		nav>ul>li {
-			display: inline-block;
-			padding: 6px;
-		}
-
 		nav a {
-			box-sizing: border-box;
 			display: inline-block;
 			padding: 6px;
 			width: 100%;
 		}
 
-		nav li>ul {
-			position: absolute;
-			transform: scale(0);
-			transform-origin: top left;
-			transition: .6s;
-			width: 12em;
-		}
-
-		nav>ul>li:hover ul {
-			transform: scale(1) translate(-4em, .5em);
+		nav:hover ul {
+			transform: scale(1) translate(-3rem, -7rem);
 		}
 	</style>
 </head>
@@ -85,26 +86,25 @@
 	<header>
 		<h1>Índice de las entregas<br>146/FOD/47/2022 IFCD0110</h1>
 		<nav>
+			<h2>Módulos</h2>
 			<ul>
-				<li>Módulos
-					<ul>
-						<li><a href="MF0950-UF1302.html" target="iframe1">MF0950-UF1302</a></li>
-						<li><a href="MF0950-UF1303.html" target="iframe1">MF0950-UF1303</a></li>
-						<li><a href="MF0950-UF1304.html" target="iframe1">MF0950-UF1304</a></li>
-						<li><a href="MF0951-UF1305.html" target="iframe1">MF0951-UF1305</a></li>
-						<li><a href="MF0951-UF1306.html" target="iframe1">MF0951-UF1306</a></li>
-						<li><a href="MF0952.html" target="iframe1">MF0952</a></li>
-					</ul>
-				</li>
+				<li><a href="MF0950-UF1302.html" target="iframe1">MF0950-UF1302</a></li>
+				<li><a href="MF0950-UF1303.html" target="iframe1">MF0950-UF1303</a></li>
+				<li><a href="MF0950-UF1304.html" target="iframe1">MF0950-UF1304</a></li>
+				<li><a href="MF0951-UF1305.html" target="iframe1">MF0951-UF1305</a></li>
+				<li><a href="MF0951-UF1306.html" target="iframe1">MF0951-UF1306</a></li>
+				<li><a href="MF0952.html" target="iframe1">MF0952</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<iframe src="about:blank" name="iframe1"></iframe>
+		<iframe src="about:blank" name="iframe1" id="iframe1"></iframe>
 	</main>
 	<footer>
-		<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
-		Marco Antonio Arias Antolín. 2023
+		<span>
+			<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
+			Marco Antonio Arias Antolín. 2023
+		</span>
 	</footer>
 </body>
 
