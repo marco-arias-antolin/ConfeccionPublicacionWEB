@@ -8,6 +8,7 @@
 | Editor:Rulers                                 | 80             |
 | HTML>Format:Wrap Line Length                  | 0              |
 | Live Preview: Show Preview (internal browser) | Ctrl + Alt + S |
+| git.allowForcePush                            | true           |
 settings.json (Para que no quite los espacios del final).  
 ```json
     "[markdown]": {  
@@ -16,6 +17,7 @@ settings.json (Para que no quite los espacios del final).
 ```
 
 # Extensions:
+- GitHub Pull Requests and Issues
 - JavaScript (ES6) code snippets
 - Live Preview
 - PHP Intelephense
