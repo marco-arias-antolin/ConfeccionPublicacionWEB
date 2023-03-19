@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
 	<!--
 	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
 
@@ -27,55 +27,65 @@
 	-->
 	<title>Ejemplo de tabla avanzada</title>
 	<style>
-		table,
-		td,
-		th {
-			border: 1px solid silver;
+		table {
 			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			border: 1px solid silver;
 			padding: 3px 6px;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>Resultado de la búsqueda</h1>
-	<table title="Tabla con los datos de los resultados de la búsqueda">
-		<caption>Resultado de la búsqueda</caption>
-		<tr>
-			<th abbr="Imagen del producto" scope="col">Imagen</th>
-			<th abbr="Datos del producto" scope="col">Datos</th>
-		</tr>
-		<tr>
-			<td>
-				<img alt="Portátil" title="Portátil" src="imagenes/portatil.png">
-			</td>
-			<td>
-				<h4><a href="#">Portátil - 3 GHz - 4 GB RAM</a></h4>
-				<p><a href="#">Comprar:</a> <del>2.990 &euro;</del> <strong>2.599 &euro;</strong></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="Videocámara" title="Videocámara" src="imagenes/videocamara.png"></td>
-			<td>
-				<h4><a href="#">Videocámara - Alta definición 1080p - 60 GB</a></h4>
-				<p><a href="#">Comprar:</a> <del>1.099 &euro;</del> <strong>999 &euro;</strong></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="TV" title="TV" src="imagenes/tv.png"></td>
-			<td>
-				<h4><a href="#">Televisor - 46" - Full HD</a></h4>
-				<p><a href="#">Comprar:</a> <del>1.999 &euro;</del> <strong>1.799 &euro;</strong></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="Móvil" title="Móvil" src="imagenes/movil.png"></td>
-			<td>
-				<h4><a href="#">Móvil - 3G - Wi-Fi - 8 GB</a></h4>
-				<p><a href="#">Comprar:</a> <del>399 &euro;</del> <strong>349 &euro;</strong></p>
-			</td>
-		</tr>
-	</table>
+	<header>
+		<h1>Resultado de la búsqueda</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Tabla con los datos de los resultados de la búsqueda</h2>
+			<table>
+				<caption>Resultado de la búsqueda</caption>
+				<tr>
+					<th abbr="Imagen del producto" scope="col">Imagen</th>
+					<th abbr="Datos del producto" scope="col">Datos</th>
+				</tr>
+				<tr>
+					<td>
+						<img alt="Portátil" title="Portátil" src="imagenes/portatil.png">
+					</td>
+					<td>
+						<h3><a href="#" title="Ver Portátil">Portátil - 3 GHz - 4 GB RAM</a></h3>
+						<p><a href="#" title="Comprar Portátil">Comprar:</a> <del>2.990 &euro;</del> <strong>2.599 &euro;</strong></p>
+					</td>
+				</tr>
+				<tr>
+					<td><img alt="Videocámara" title="Videocámara" src="imagenes/videocamara.png"></td>
+					<td>
+						<h3><a href="#" title="Ver Videocámara">Videocámara - Alta definición 1080p - 60 GB</a></h3>
+						<p><a href="#" title="Comprar Videocámara">Comprar:</a> <del>1.099 &euro;</del> <strong>999 &euro;</strong></p>
+					</td>
+				</tr>
+				<tr>
+					<td><img alt="TV" title="TV" src="imagenes/tv.png"></td>
+					<td>
+						<h3><a href="#" title="Ver Televisor">Televisor - 46" - Full HD</a></h3>
+						<p><a href="#" title="Comprar Televisor">Comprar:</a> <del>1.999 &euro;</del> <strong>1.799 &euro;</strong></p>
+					</td>
+				</tr>
+				<tr>
+					<td><img alt="Móvil" title="Móvil" src="imagenes/movil.png"></td>
+					<td>
+						<h3><a href="#" title="Ver Móvil">Móvil - 3G - Wi-Fi - 8 GB</a></h3>
+						<p><a href="#" title="Comprar Móvil">Comprar:</a> <del>399 &euro;</del> <strong>349 &euro;</strong></p>
+					</td>
+				</tr>
+			</table>
+		</section>
+	</main>
+	<footer></footer>
 </body>
 
 </html>
