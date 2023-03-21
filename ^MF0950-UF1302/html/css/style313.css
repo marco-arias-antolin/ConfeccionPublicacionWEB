@@ -1,0 +1,57 @@
+.checkMark li::marker {
+	content: '✅ ';
+	font-size: larger;
+}
+
+.crossMark::marker {
+	content: '❌ ' !important;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th,
+td {
+	border: 1px solid silver;
+	padding: 3px 6px;
+}
+
+.busqueda {
+	counter-reset: contador;
+}
+
+.busqueda img {
+	height: 166px;
+}
+
+.busqueda tbody td:nth-of-type(1) {
+	display: flex;
+	justify-content: center;
+}
+
+.busqueda tbody tr {
+	counter-increment: contador;
+}
+
+.busqueda tfoot td::after {
+	content: counter(contador);
+}
+
+.warning {
+	background: #faa;
+	color: black;
+	padding: 6px 18px;
+}
+
+.activado {
+	background: var(--bg);
+	border: 2px solid var(--color);
+	color: var(--color);
+}
+
+#navegador {
+	border: 2px solid var(--color);
+	font-size: larger;
+	padding: 6px;
+}

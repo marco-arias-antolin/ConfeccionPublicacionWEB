@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Apartado 3.1.3.
+					"Realización de página según los criterios especificados"
+	Uso:			Didáctico.
+	-->
+	<!--
+		Imágenes Open Source:
+			https://pixabay.com/
+		Creador de mapas de imagen:
+			https://www.image-map.net/
+		Sonidos:
+			https://www.freesoundslibrary.com/
+		Vídeos:
+			https://www.pexels.com/
+		Audio/Video converter:
+			https://www.videolan.org/
+			https://ffmpeg.org/
+			https://converterpoint.com/
+		Información de html5, css3 y JS:
+			https://www.w3schools.com/
+			https://developer.mozilla.org/en-US/
+	-->
+	<!--
+		Como ya hice la documentación del documento en el Apartado 1.2.5. aquí
+		comentaré cosas específicas.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Apartado 3.1.3.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Realización de página según los criterios especificados.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style313.css">
+	<script src="js/script313.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Realización de página según los criterios especificados.</h1>
+	</header>
+	<main>
+		<section id="criterios">
+			<h2>Criterios</h2>
+			<!-- Pongo ✅ para indicar las tareas realizadas -->
+			<ul class="checkMark">
+				<li> Debe añadir las etiquetas correspondientes para que sea una web accesible.</li>
+				<li> Elija las etiquetas que permitan dar formato al documento.</li>
+				<li> <a href="#mapaImagen" title="Mapeo de imagen">Mapee una imagen</a> creando varias zonas activas.</li>
+				<li> Elija las marcas que presente la información en forma de listas y de tablas.</li>
+				<li> Inserte etiquetas que enlacen con otros <a href="#enlace" title="Enlace a un documento">documentos</a> y <a href="#mapaImagen" title="Enlaces a otras webs">direcciones web.</a></li>
+				<li> Inserte marcas para presentar <a href="#tabla" title="Imágenes">imágenes</a>, <a href="#AV" title="Audio y vídeo">sonidos y vídeos.</a></li>
+				<li> Especifique las etiquetas para crear <a href="#marcos" title="Marcos">marcos</a> y relacione varias páginas.</li>
+				<li> Inserte las marcas que permitan la <a href="#programas" title="Ejecución de programas">ejecución de programas</a>.</li>
+				<li> Cree capas para presentar información en distintas zonas de la página.</li>
+				<li> Identifique varios <a href="#navegadores" title="Navegadores">navegadores</a> y pruebe la funcionalidad de la página.</li>
+				<li> Aplique criterios de “accesividad” y “usabilidad”.</li>
+				<li> Documente la página realizada.</li>
+			</ul>
+		</section>
+		<section id="tabla">
+			<!-- Esta tabla es la que venía en el ejercicio. He añadido las imágenes -->
+			<h2>Tabla con los datos de los resultados de la búsqueda</h2>
+			<table class="busqueda">
+				<caption>Resultado de la búsqueda</caption>
+				<thead>
+					<tr>
+						<th abbr="Imagen del producto" scope="col">Imagen</th>
+						<th abbr="Datos del producto" scope="col">Datos</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<img alt="Portátil" title="Portátil" src="img/Apartado313/laptop.jpg">
+						</td>
+						<td>
+							<h3><a href="#" title="Ver Portátil">Portátil - 3 GHz - 4 GB RAM</a></h3>
+							<p><a href="#" title="Comprar Portátil">Comprar:</a> <del>2.990 &euro;</del> <strong>2.599 &euro;</strong></p>
+						</td>
+					</tr>
+					<tr>
+						<td><img alt="Videocámara" title="Videocámara" src="img/Apartado313/videoCamera.jpg"></td>
+						<td>
+							<h3><a href="#" title="Ver Videocámara">Videocámara - Alta definición 1080p - 60 GB</a></h3>
+							<p><a href="#" title="Comprar Videocámara">Comprar:</a> <del>1.099 &euro;</del> <strong>999 &euro;</strong></p>
+						</td>
+					</tr>
+					<tr>
+						<td><img alt="TV" title="TV" src="img/Apartado313/TV.png"></td>
+						<td>
+							<h3><a href="#" title="Ver Televisor">Televisor - 46" - Full HD</a></h3>
+							<p><a href="#" title="Comprar Televisor">Comprar:</a> <del>1.999 &euro;</del> <strong>1.799 &euro;</strong></p>
+						</td>
+					</tr>
+					<tr>
+						<td><img alt="Móvil" title="Móvil" src="img/Apartado313/mobile.png"></td>
+						<td>
+							<h3><a href="#" title="Ver Móvil">Móvil - 3G - Wi-Fi - 8 GB</a></h3>
+							<p><a href="#" title="Comprar Móvil">Comprar:</a> <del>399 &euro;</del> <strong>349 &euro;</strong></p>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<!-- Incluyo un contador con CSS -->
+						<td colspan="2">Total de artículos:</td>
+					</tr>
+				</tfoot>
+			</table>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="mapaImagen">
+			<!-- He creado un SVG para hacer el ejemplo de los enlaces.
+				He exportado a .png para hacer el mapa de imagen y para el
+				fallback del SVG -->
+			<h2>Mapas de imagen</h2>
+			<section>
+				<h3>Mapa de imagen con HTML</h3>
+				<img src="img/Apartado313/mapaImagen.png" alt="Enlaces a Google, Wikipedia y Youtube" usemap="#image-map">
+				<map name="image-map">
+					<area target="_blank" alt="Ir a Google" title="Ir a Google" href="https://www.google.com/" coords="0,0,256,256" shape="rect">
+					<area target="_blank" alt="Ir a Wikipedia" title="Ir a Wikipedia" href="https://es.wikipedia.org/" coords="400,128,128" shape="circle">
+					<area target="_blank" alt="Ir a YouTube" title="Ir a YouTube" href="https://www.youtube.com/" coords="545,99,636,88,672,0,708,88,799,99,731,160,751,255,672,207,593,255,612,161" shape="poly">
+				</map>
+			</section>
+			<section>
+				<h3>Mapa de imagen con SVG</h3>
+				<!-- Si no se añade el SVG con la etiqueta <object> no se
+					ejecuta. Con la etiqueta <img> hace una instantánea. -->
+				<object data="img/Apartado313/mapaImagen.svg" type="image/svg+xml"><img src="img/Apartado313/mapaImagen.png" alt="Enlaces a Google, Wikipedia y Youtube"></object>
+			</section>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="enlace">
+			<h2>Enlace a otro documento</h2>
+			<p><a href="css/style.css" target="_blank" title="Hoja de estilos">Enlace a la hoja de estilos</a></p>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="AV">
+			<h2>Audio y Vídeo</h2>
+			<p>
+				<audio controls>
+					<source src="media/Tada-sound.webm" type="audio/webm">
+					<source src="media/Tada-sound.mp3" type="audio/mp3">
+				</audio>
+			</p>
+			<p>
+				<video controls>
+					<source src="media/DataEncrypting.webm" type="video/webm">
+					<source src="media/DataEncrypting.mp4" type="video/mp4">
+				</video>
+			</p>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="marcos">
+			<h2>Etiquetas para crear marcos</h2>
+			<p>En html5 hay una etiqueta para crear marcos: la etiqueta &lt;iframe&gt;</p>
+			<p>Ejemplo de &lt;iframe&gt;:</p>
+			<p><iframe src="css/style.css"></iframe></p>
+			<p>En html4 existían las etiquetas &lt;frameset&gt; y &lt;frame&gt;</p>
+			<p>Ejemplo de &lt;frameset&gt;:</p>
+			<!-- Da un montón de errores en la consola. Por limpieza se abre en otra pestaña -->
+			<!-- <iframe src="Apartado16frames.html" title="Apartado16frames"></iframe> -->
+			<p><a href="Apartado16frames.html" target="_blank" title="Ejemplo de frameset (html4)">Abrir ejemplo en otra página</a></p>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="programas">
+			<h2>Marcas que permiten la ejecución de programas</h2>
+			<p>En html5 la única ejecución que se permite es la de JavaScript</p>
+			<p>Se utiliza la etiqueta &lt;script&gt;</p>
+			<p>Se puede usar de dos maneras:</p>
+			<!-- Faltaba una lista ordenada, así que la incluyo aquí -->
+			<ol>
+				<li>Código embebido en la página:<br>
+					&nbsp; &nbsp; &lt;script&gt; /* Código JavaScript */ &lt;/script&gt;</li>
+				<li>Código en otro archivo:<br>
+					&nbsp; &nbsp; &lt;script src="myscripts.js"&gt;&lt;/script&gt;</li>
+			</ol>
+			<p>Se puede ejecutar un texto/página alternativa si el navegador no soporta JavaScript:<br>
+				&nbsp; &nbsp; &lt;noscript&gt;¡Tu navegador no soporta JavaScript!&lt;/noscript&gt;<br>
+			</p>
+			<p> Todos los navegadores modernos soportan JavaScript.<br>
+				Los navegadores que no lo soporten (como por ejemplo los de
+				texto) interpretarán correctamente la página si se usan
+				correctamente las etiquetas de html5 y no se abusa del
+				JavaScript (me refiero a añadir el contenido con el,
+				AJAX aparte)
+			</p>
+			<p>Ejemplo de ejecución de JavaScript.<br>
+				Al pulsar el siguiente botón se cambia el color del botón.</p>
+			<button id="botonJS" title="Este botón cambia de color">Ejecutar</button>
+			<p>En html5 no se permite la ejecución de otros lenguajes:</p>
+			<div class="warning">
+				<p><strong>Warning !</strong></p>
+				<p>Most browsers no longer support Java Applets and Plug-ins.</p>
+				<p>ActiveX controls are no longer supported in any browser.</p>
+				<p>The support for Shockwave Flash has also been turned off in modern browsers.</p>
+			</div>
+			<p><a href="https://www.w3schools.com/tags/tag_object.asp" target="_blank" title="Etiqueta object">Fuente w3schools</a></p>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+		<section id="navegadores">
+			<h2>Identificar el navegador y probar la funcionalidad de la página</h2>
+			<!-- El nombre del navegador se añade con JavaScript -->
+			<p>Estás usando el navegador: <span id="navegador"></span></p>
+			<p>Esta página está probada en:</p>
+			<ul class="checkMark">
+				<li>Avast Secure Browser: Versión 111.0.20600.111 (Build oficial) (64 bits)</li>
+				<li>Chrome: Versión 111.0.5563.111 (Build oficial) (64 bits)</li>
+				<li>Firefox: 111.0.1 (64-bit)</li>
+				<li>Microsoft Edge: Versión 111.0.1661.51 (Compilación oficial) (64 bits)</li>
+				<!-- crossMark ❌ -->
+				<li class="crossMark">Internet Explorer 11 (No carga las variables CSS y tiene problemas con el ES6)</li>
+			</ul>
+			<p>Nota: La detección del navegador se usaba antiguamente por la
+				compatibilidad con Internet Explorer.<br>
+				Actualmente como todos los navegadores funcionan casi igual no
+				tiene sentido hacer la detección de navegador.<br>
+				Se puede usar la detección del navegador con fines estadísticos.
+			</p>
+			<p><a href="#criterios" title="Ir Arriba">Ir arriba</a></p>
+		</section>
+	</main>
+	<footer>
+		<span>
+			<span style="display:inline-block; transform:scale(-1.6,1.6);">&copy;</span>&nbsp;
+			Marco Antonio Arias Antolín. 2023
+		</span>
+	</footer>
+</body>
+
+</html>
