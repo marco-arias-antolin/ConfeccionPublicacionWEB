@@ -59,6 +59,8 @@
 }
 
 #menu {
+	bottom: 18px;
+	overflow: auto;
 	position: fixed;
 	right: 6px;
 	top: 72px;
@@ -70,7 +72,7 @@
 }
 
 #menu ul {
-	margin: 0;
+	margin: 0 6px;
 	padding: 0;
 }
 

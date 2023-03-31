@@ -1,0 +1,38 @@
+section {
+	border-top: 1px solid var(--color);
+	margin-top: 6px;
+}
+
+dl {
+	box-shadow: 0 0 6px;
+	padding: 6px;
+}
+
+dd {
+	box-shadow: -8px 0 6px -6px;
+	padding: 6px;
+}
+
+details {
+	box-shadow: 0 0 6px;
+}
+
+details[open] {
+	padding-bottom: 6px;
+}
+
+summary {
+	border: 2px solid var(--color);
+	border-radius: 6px;
+	cursor: pointer;
+	padding: 6px;
+}
+
+summary::marker {
+	content: '👉 ';
+	font-size: larger;
+}
+
+details[open]>summary::marker {
+	content: '👇 ';
+}

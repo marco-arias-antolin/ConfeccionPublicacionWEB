@@ -52,6 +52,11 @@ footer>span:hover {
 	transform: scale(1.16);
 }
 
+footer>span>span {
+	display: inline-block;
+	transform: scale(-1.6, 1.6);
+}
+
 @keyframes footerAni {
 	to {
 		transform: scale(1.16);
