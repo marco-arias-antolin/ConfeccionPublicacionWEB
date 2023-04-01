@@ -1,0 +1,42 @@
+input[name=modalImages] {
+	display: none;
+}
+
+label[for=img01],
+label[for=img02] {
+	cursor: pointer;
+}
+
+#imagenesCompletas {
+	background: black;
+	inset: 0;
+	position: fixed;
+	z-index: -1;
+}
+
+#contenido:not(:checked)~#imagenesCompletas {
+	z-index: 1;
+}
+
+#imagenesCompletas label {
+	display: grid;
+	height: 100vh;
+}
+
+#imagenesCompletas a {
+	place-self: center;
+	grid-area: 1 / 1;
+	transition: .6s;
+	transform: scale(0);
+}
+
+#imagenesCompletas img {
+	max-width: 96vw;
+	max-height: 96vh;
+}
+
+#img01:checked~#imagenesCompletas a:nth-of-type(1),
+#img02:checked~#imagenesCompletas a:nth-of-type(2) {
+	transform: scale(1);
+	z-index: 1;
+}
