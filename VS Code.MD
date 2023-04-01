@@ -1,14 +1,14 @@
 # VSCode settings:
 | Propiedad                                     | Valor          |
 |-----------------------------------------------|----------------|
-| Editor:font size                              | 16             |
-| Editor:Insert Spaces                          | false          |
-| Files:Trim Trailing Whitespace                | True           |
-| Editor:Format On Save                         | True           |
-| Editor:Rulers                                 | 80             |
+| Editor: Font size                             | 16             |
+| Editor: Format On Save                        | True           |
+| Editor: Insert Spaces                         | false          |
+| Editor: Rulers                                | 80             |
+| Files: Trim Trailing Whitespace               | True           |
+| git.allowForcePush                            | true           |
 | HTML>Format:Wrap Line Length                  | 0              |
 | Live Preview: Show Preview (internal browser) | Ctrl + Alt + S |
-| git.allowForcePush                            | true           |
 settings.json (Para que no quite los espacios del final).  
 ```json
     "[markdown]": {  
@@ -20,6 +20,6 @@ settings.json (Para que no quite los espacios del final).
 - GitHub Pull Requests and Issues
 - JavaScript (ES6) code snippets
 - Live Preview
-- PHP Intelephense
 - Spanish Language Pack for Visual Studio Code
 - W3C Web Validator
+- XML Tools
