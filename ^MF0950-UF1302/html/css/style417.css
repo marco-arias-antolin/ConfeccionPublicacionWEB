@@ -1,10 +1,25 @@
+:root {
+	--svgCrossCircleB64: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gQ29weXJpZ2h0IChDKSAyMDIzCU1hcmNvIEFyaWFzIC0gbWFpbDovL21hcmNvYXJpYXNhbnRvbGluQGdtYWlsLmNvbQ0KCUdQTHYzLiBUaGlzIHByb2dyYW0gaXMgZnJlZSBzb2Z0d2FyZSA8aHR0cHM6Ly93d3cuZ251Lm9yZy9saWNlbnNlcy8+IC0tPg0KPHN2ZyBoZWlnaHQ9IjQ4IiB3aWR0aD0iNDgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDQ4IDQ4Ig0KICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPGcgc3Ryb2tlPSJncmVlbiIgc3Ryb2tlLXdpZHRoPSI2Ij4NCiAgICAgICAgPGNpcmNsZSBpZD0iY2lyY2xlIiBjeD0iMjQiIGN5PSIyNCIgcj0iMjAiIGZpbGw9Im5vbmUiLz4NCiAgICAgICAgPGxpbmUgeDE9IjE2IiB4Mj0iMzIiIHkxPSIxNiIgeTI9IjMyIi8+DQogICAgICAgIDxsaW5lIHgxPSIxNiIgeDI9IjMyIiB5MT0iMzIiIHkyPSIxNiIvPg0KICAgIDwvZz4NCjwvc3ZnPg);
+}
+
 input[name=modalImages] {
 	display: none;
 }
 
 label[for=img01],
 label[for=img02] {
-	cursor: pointer;
+	cursor: zoom-in;
+}
+
+label[for=contenido] {
+	/* Google Chrome Versión 111.0.5563.147
+	Sintaxis: cursor: url(...), fallback;
+	cursor no funciona con url() sin fallback
+	Si se usa var():
+		No funciona el fallback con un nombre de variable erroneo
+		Si funciona el fallback si está mal el texto en base64 */
+	cursor: var(--svgCrossCircleB64), zoom-out;
+	/* cursor: url(../img/Apartado417/crossCircle.svg), zoom-out; */
 }
 
 #imagenesCompletas {
