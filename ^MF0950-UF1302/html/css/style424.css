@@ -1,0 +1,77 @@
+input[name=seccion] {
+	display: none;
+}
+
+nav li {
+	display: inline;
+}
+
+nav label {
+	border: 1px solid var(--color);
+	border-radius: 6px;
+	font-size: larger;
+	font-weight: bolder;
+	padding: 6px;
+	transition: .6s;
+}
+
+nav label:hover,
+#inicio:checked~header label[for=inicio],
+#contacto:checked~header label[for=contacto],
+#servicios:checked~header label[for=servicios] {
+	background: var(--color);
+	color: var(--bg);
+}
+
+/* Sistema de pestañas */
+main {
+	display: grid;
+}
+
+main>section {
+	grid-area: 1 / 1;
+	height: 0;
+	transition: .6s;
+	transform: scale(0);
+	transform-origin: top;
+}
+
+#inicio:checked~main #sInicio,
+#contacto:checked~main #sContacto,
+#servicios:checked~main #sServicios {
+	height: auto;
+	transform: scale(1);
+}
+
+/* Personalización del Contacto */
+address a {
+	text-decoration: none;
+	position: relative;
+	transition: .6s;
+}
+
+address span {
+	font-size: 48px;
+	font-style: normal;
+}
+
+address a:hover {
+	color: var(--color);
+}
+
+/* Subrayado links */
+address a+a::after {
+	position: absolute;
+	content: '';
+	height: 3px;
+	inset: auto 0 -6px;
+	margin: 0 auto;
+	width: 66%;
+	background: blue;
+	transition: .6s;
+}
+
+address a+a:hover::after {
+	width: 96%;
+	background: var(--color);
+}
