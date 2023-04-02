@@ -9,6 +9,7 @@
 | git.allowForcePush                            | true           |
 | HTML>Format:Wrap Line Length                  | 0              |
 | Live Preview: Show Preview (internal browser) | Ctrl + Alt + S |
+| telemetry.telemetryLevel                      | Off            | 
 settings.json (Para que no quite los espacios del final).  
 ```json
     "[markdown]": {  
