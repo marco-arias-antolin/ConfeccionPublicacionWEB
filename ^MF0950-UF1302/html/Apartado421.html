@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 4. Apartado 4.2.1.
+					"Identificación de funciones y características de las herramientas web"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Funciones y características de VS Code</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Identificación de funciones y características de las herramientas web.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style421.css">
+	<base target="_blank">
+</head>
+
+<body>
+	<header>
+		<h1>Identificación de funciones y características de VS Code</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Historia</h2>
+			<p>Visual Studio Code fue anunciado el 29 de abril de 2015 por Microsoft en la conferencia Build de 2015. Una versión preliminar se lanzó poco después.</p>
+			<p>El 18 de noviembre de 2015, Visual Studio Code fue lanzado bajo la <a href="https://es.wikipedia.org/wiki/Licencia_MIT" title="licencia MIT">licencia MIT</a> y su código fuente fue publicado en GitHub. También fue anunciada una nueva capacidad para agregar extensiones.</p>
+			<p>El 14 de abril de 2016, Visual Studio Code graduó la etapa de vista previa pública y se lanzó a la web.</p>
+		</section>
+		<section>
+			<h2>Características</h2>
+			<p>Visual Studio Code es un editor de código fuente construido sobre el framework Electron. Es compatible con varios lenguajes de programación y un conjunto de características que pueden o no estar disponibles para un lenguaje dado, como se muestra en la siguiente tabla. Muchas de las características de Visual Studio Code no están expuestas a través de los menús o la interfaz de usuario. Más bien, se accede a través de la paleta de comandos o a través de archivos .json (por ejemplo, preferencias del usuario). La paleta de comandos es una interfaz de línea de comandos. Sin embargo, desaparece si el usuario hace clic fuera de él o presiona una combinación de teclas en el teclado para interactuar con algo que está fuera de él. Esto también se aplica a los comandos que requieren mucho tiempo. Cuando esto sucede, el comando en progreso se cancela.</p>
+			<p>En el rol de editor de código fuente, Visual Studio Code permite cambiar la página de códigos en la que se guarda el documento activo, el carácter que identifica el salto de línea (una opción entre LF y CRLF) y el lenguaje de programación del documento activo.</p>
+			<p>Recientemente, se lanzó al público la versión web del editor bajo el dominio vscode.dev. A diferencia de la versión de escritorio, esta no hace uso de Electron, no posee compatibilidades con ciertos complementos y no se puede acceder al terminal integrado que posee.</p>
+			<table>
+				<caption>Características según lenguaje</caption>
+				<thead>
+					<tr>
+						<th>Características</th>
+						<th>Lenguajes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Resaltado de sintaxis</td>
+						<td>
+							<ul class="comprimida">
+								<li><a href="https://es.wikipedia.org/wiki/Archivo_batch" title="Archivo batch">Archivo batch</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/C_(lenguaje_de_programaci%C3%B3n)" title="C (lenguaje de programación)">C</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/C_Sharp" title="C Sharp">C#</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/C%2B%2B" title="C++">C++</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/CSS" title="CSS">CSS</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Clojure" title="Clojure">Clojure</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/CoffeeScript" title="CoffeeScript">CoffeeScript</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Diff" title="Diff">Diff</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Docker_(software)" title="Docker (software)">Dockerfile</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/F_Sharp" title="F Sharp">F#</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Fortran" title="Fortran">Fortran</a></li>
+								<li>Git-commit</li>
+								<li>Git-rebase</li>
+								<li id="CITAREF"><a href="https://es.wikipedia.org/wiki/Go_(lenguaje_de_programaci%C3%B3n)" title="Go (lenguaje de programación)">Go</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Groovy_(lenguaje_de_programaci%C3%B3n)" title="Groovy (lenguaje de programación)">Groovy</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/HLSL" class="mw-redirect" title="HLSL">HLSL</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/HTML" title="HTML">HTML</a></li>
+								<li><a href="https://en.wikipedia.org/wiki/Handlebars_(template_system)" class="extiw" title="en:Handlebars (template system)">Handlebars</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/INI_(extensi%C3%B3n_de_archivo)" title="INI (extensión de archivo)">archivo INI</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/JSON" title="JSON">JSON</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)" title="Java (lenguaje de programación)">Java</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript">JavaScript</a></li>
+								<li>JavaScript React (JSX)</li>
+								<li><a href="https://es.wikipedia.org/wiki/LESS_(lenguaje_de_hojas_de_estilo)" title="LESS (lenguaje de hojas de estilo)">Less</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Lua" title="Lua">Lua</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Makefile" class="mw-redirect" title="Makefile">Makefile</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown">Markdown</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Objective-C" title="Objective-C">Objective-C</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Objective-C%2B%2B" class="mw-redirect" title="Objective-C++">Objective-C++</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/PHP" title="PHP">PHP</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Perl" title="Perl">Perl</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Raku_(lenguaje_de_programaci%C3%B3n)" title="Raku (lenguaje de programación)">Raku</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/PowerShell" title="PowerShell">PowerShell</a></li>
+								<li>Properties</li>
+								<li>Pug template language,</li>
+								<li><a href="https://es.wikipedia.org/wiki/Python" title="Python">Python</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/R_(lenguaje_de_programaci%C3%B3n)" title="R (lenguaje de programación)">R</a></li>
+								<li><a href="/w/index.php?title=ASP.NET_Razor&amp;action=edit&amp;redlink=1" class="new" title="ASP.NET Razor (aún no redactado)">Razor</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Ruby" title="Ruby">Ruby</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Rust_(lenguaje_de_programaci%C3%B3n)" title="Rust (lenguaje de programación)">Rust</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/SQL" title="SQL">SQL</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Sass" title="Sass">Sass</a></li>
+								<li>ShaderLab</li>
+								<li><a href="https://en.wikipedia.org/wiki/Shell_script" class="extiw" title="en:Shell script">Shell script</a> (Bash)</li>
+								<li><a href="https://es.wikipedia.org/wiki/Swift_(lenguaje_de_programaci%C3%B3n)" title="Swift (lenguaje de programación)">Swift</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a></li>
+								<li>TypeScript React (TSX)</li>
+								<li><a href="https://es.wikipedia.org/wiki/Visual_Basic" title="Visual Basic">Visual Basic</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/XML" class="mw-redirect" title="XML">XML</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/XQuery" title="XQuery">XQuery</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/XSL" class="mw-redirect" title="XSL">XSL</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/YAML" title="YAML">YAML</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Snippets</td>
+						<td>
+							<ul class="comprimida">
+								<li><a href="https://es.wikipedia.org/wiki/Groovy_(lenguaje_de_programaci%C3%B3n)" title="Groovy (lenguaje de programación)">Groovy</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Markdown" title="Markdown">Markdown</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Nim" class="mw-redirect" title="Nim">Nim</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/PHP" title="PHP">PHP</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Swift_(lenguaje_de_programaci%C3%B3n)" title="Swift (lenguaje de programación)">Swift</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Autocompletado de código</td>
+						<td>
+							<ul class="comprimida">
+								<li><a href="https://es.wikipedia.org/wiki/CSS" title="CSS">CSS</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/HTML" title="HTML">HTML</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript">JavaScript</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/JSON" title="JSON">JSON</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/LESS_(lenguaje_de_hojas_de_estilo)" title="LESS (lenguaje de hojas de estilo)">Less</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/Sass" title="Sass">Sass</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Refactorización</td>
+						<td>
+							<ul class="comprimida">
+								<li><a href="https://es.wikipedia.org/wiki/C_Sharp" title="C Sharp">C#</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Depuración</td>
+						<td>
+							<ul>
+								<li><a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript">JavaScript</a> and <a href="https://es.wikipedia.org/wiki/TypeScript" title="TypeScript">TypeScript</a> for <a href="https://es.wikipedia.org/wiki/Node.js" title="Node.js">Node.js</a> projects</li>
+								<li><a href="https://es.wikipedia.org/wiki/C_Sharp" title="C Sharp">C#</a> and <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)" class="extiw" title="en:F Sharp (programming language)">F#</a> for <a href="https://en.wikipedia.org/wiki/Mono_(software)" class="extiw" title="en:Mono (software)">Mono</a> projects on <a href="https://en.wikipedia.org/wiki/Linux" class="extiw" title="en:Linux">Linux</a> and <a href="https://en.wikipedia.org/wiki/MacOS" class="extiw" title="en:MacOS">macOS</a></li>
+								<li><a href="https://es.wikipedia.org/wiki/C_(lenguaje_de_programaci%C3%B3n)" title="C (lenguaje de programación)">C</a> and <a href="https://es.wikipedia.org/wiki/C%2B%2B" title="C++">C++</a> on <a href="https://es.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a>, <a href="https://es.wikipedia.org/wiki/Linux" class="mw-redirect" title="Linux">Linux</a> and <a href="https://es.wikipedia.org/wiki/MacOS" title="MacOS">macOS</a></li>
+								<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" class="extiw" title="en:Python (programming language)">Python</a> with <a rel="nofollow" class="external text" href="https://github.com/DonJayamanne/pythonVSCode/wiki/Debugging">Python plug-in</a> installed</li>
+								<li><a href="https://en.wikipedia.org/wiki/PHP" class="extiw" title="en:PHP">PHP</a> with <a href="https://en.wikipedia.org/wiki/Xdebug" class="extiw" title="en:Xdebug">XDebug</a> and <a rel="nofollow" class="external text" href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug">PHP Debug plug-in</a> installed</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Visual Studio Code se puede extender a través de complementos, disponible a través de un repositorio central. Esto incluye adiciones al editor y soporte de lenguajes. Una característica notable es la capacidad de crear extensiones que analizan código, como linters y herramientas para análisis estático, utilizando el Protocolo de Servidor de Idioma.</p>
+		</section>
+		<section>
+			<h2>Recolección de datos</h2>
+			<p>Visual Studio Code recopila datos de uso y los envía a Microsoft, aunque esto puede ser deshabilitado (poner telemetry.enableTelemetry a false). Además, debido a la naturaleza open-source de la aplicación se puede ver exactamente qué datos se recopilan. Los datos se comparten entre las filiales y subsidiarias controladas por Microsoft y con las autoridades conforme a la declaración de privacidad.</p>
+			<p>Fuente: <a href="https://es.wikipedia.org/wiki/Visual_Studio_Code" title="Visual Studio Code - Wikipedia"><img src="img/Logos/Wikipedia.svg" alt="Logo Wikipedia"> Visual Studio Code - Wikipedia, la enciclopedia libre</a></p>
+		</section>
+		<section>
+			<h2>Características de Visual Studio Code</h2>
+			<p>VS Code tiene una gran variedad de características útiles para agilizar el trabajo, que lo hacen el editor preferido por muchos (me incluyo) para trabajar en proyectos.</p>
+			<ul>
+				<li>Multiplataforma: Es una característica importante en cualquier aplicación y más si trata de desarrollo. Visual Studio Code está disponible para Windows, GNU/Linux y macOS.</li>
+				<li>IntelliSense: Esta característica está relacionada con la edición de código, autocompletado y resaltado de sintaxis, lo que permite ser más ágil a la hora de escribir código. Como su nombre lo indica, proporciona sugerencias de código y terminaciones inteligentes en base a los tipos de variables, funciones, etc. Con la ayuda de extensiones se puede personalizar y conseguir un IntelliSense más completo para cualquier lenguaje.</li>
+				<li>Depuración: Visual Studio Code incluye la función de depuración que ayuda a detectar errores en el código. De esta manera, nos evitamos tener que revisar línea por línea a puro ojo humano para encontrar errores. VS Code también es capaz de detectar pequeños errores de forma automática antes de ejecutar el código o la depuración como tal.</li>
+				<li>Uso del control de versiones: Visual Studio Code tiene compatibilidad con Git, por lo que puedes revisar diferencias o lo que conocemos con git diff, organizar archivos, realizar commits desde el editor, y hacer push y pull desde cualquier servicio de gestión de código fuente (SMC). Los demás SMC están disponible por medio de extensiones.</li>
+				<li>Extensiones: Hasta ahora, he mencionado varias veces el término extensiones porque es uno de los puntos fuertes. Visual Studio Code es un editor potente y en gran parte por las extensiones. Las extensiones nos permiten personalizar y agregar funcionalidad adicional de forma modular y aislada. Por ejemplo, para programar en diferentes lenguajes, agregar nuevos temas al editor, y conectar con otros servicios. Realmente las extensiones nos permiten tener una mejor experiencia, y lo más importante, no afectan en el rendimiento del editor, ya que se ejecutan en procesos independientes.</li>
+			</ul>
+			<p>Fuente: <a href="https://openwebinars.net/blog/que-es-visual-studio-code-y-que-ventajas-ofrece/" title="Qué es Visual Studio Code y qué ventajas ofrece">Qué es Visual Studio Code y qué ventajas ofrece | OpenWebinars</a></p>
+		</section>
+		<section>
+			<h2>Ventajas de Visual Studio Code</h2>
+			<p>Un aspecto fundamental de un editor de código es que podamos utilizarlo con los lenguajes de programación que trabajamos a diario. Visual Studio Code es una herramienta que tiene soporte nativo para gran variedad de lenguajes, entre ellos podemos destacar los principales del desarrollo Web: HTML, CSS, y JavaScript, entre otros.</p>
+			<p>Otra ventaja interesante es la posibilidad de configurar la vista a nuestro gusto. De esta forma, podremos tener más de un código visible al mismo tiempo, las carpetas de nuestro proyecto y también acceso a la terminal o un detalle de problemas, entre otras posibilidades.</p>
+			<p>Visual Studio Code ofrece código destacado en color para los lenguajes soportados. Nos permite fácilmente encontrar principio y fin de nuestros bloques de código. Si trabajamos con tecnologías Web veremos que está integrado Emmet (un conjunto de atajos de código) sin necesidad de agregar ningún plugin. También encontraremos de manera integrada el acceso a GIT , el mapa de navegación de nuestro código y a las opciones de agregar extensiones.</p>
+			<p>Precisamente buena parte del potencial de esta herramienta llega de la mano de las extensiones. Visual Studio Code tiene un buscador de extensiones que nos ofrecerá en los mismos resultados la posibilidad de instalarlas sin necesidad de salir del programa.</p>
+			<p>Entre las características que podremos agregar en Visual Studio Code, encontraremos desde herramientas de Debug hasta opciones para actualización en tiempo real de nuestro código en la vista del navegador y compilación en vivo de los lenguajes que lo requieran (por ejemplo en el caso de SASS a CSS).</p>
+			<p>Además de las extensiones, tendremos la posibilidad de optar por otros themes o bien configurarlo a nuestro gusto. Para modificar el esquema de colores y los iconos del theme podemos leer la documentación disponible en: https://code.visualstudio.com/docs/getstarted/themes. En mi caso prefiero quedarme con el tema oscuro que ofrece de manera predeterminada el editor, pero las posibilidades disponibles son muy amplias.</p>
+			<p>Fuente: <a href="https://damiandeluca.com.ar/visual-studio-code-caracteristicas-principales#:~:text=Visual%20Studio%20Code%20es%20una,la%20vista%20a%20nuestro%20gusto." title="Visual Studio Code: características principales">Visual Studio Code: características principales - Damián De Luca</a></p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
