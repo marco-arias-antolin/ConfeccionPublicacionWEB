@@ -1,6 +1,8 @@
 :root {
 	--bg: black;
-	--color: green;
+	--color: lightgreen;
+	--link: lightblue;
+	--link-visited: violet;
 }
 
 html {
@@ -17,6 +19,14 @@ body {
 	min-height: 100vh;
 }
 
+a {
+	color: var(--link);
+}
+
+a:visited {
+	color: var(--link-visited);
+}
+
 header {
 	padding: 0 66px;
 }
@@ -27,7 +37,6 @@ main {
 	margin-bottom: 46px;
 	padding: 0 66px;
 }
-
 
 header,
 footer {

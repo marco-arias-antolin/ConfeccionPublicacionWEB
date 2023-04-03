@@ -5,7 +5,7 @@ onmessage = (event) => {
 	if (event.data == "CLARO") {
 		document.documentElement.style.color = "black";
 	} else {
-		document.documentElement.style.color = "green";
+		document.documentElement.style.color = "lightgreen";
 	}
 }
 /*

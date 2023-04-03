@@ -6,7 +6,9 @@ nav ul {
 }
 
 nav li {
-	background: rgba(200, 200, 200, .6);
+	border: 2px solid var(--color);
+	font-size: larger;
+	font-weight: bolder;
 	list-style: none;
 	margin: 0 2px;
 	padding: 6px;
@@ -14,8 +16,16 @@ nav li {
 }
 
 nav li:hover {
-	background: rgba(200, 200, 200, .8);
+	background: var(--color);
 	transform: scale(1.1);
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav li:hover a {
+	color: var(--bg);
 }
 
 main {

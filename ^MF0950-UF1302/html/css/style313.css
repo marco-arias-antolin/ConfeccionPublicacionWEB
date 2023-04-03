@@ -40,7 +40,7 @@ td {
 
 .warning {
 	background: #faa;
-	color: black;
+	color: var(--bg);
 	padding: 6px 18px;
 }
 
