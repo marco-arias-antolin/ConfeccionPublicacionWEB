@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Caso Práctico Tema 3
+					"Accesibilidad y usabilidad web"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Uso de elementos multimedia en HTML</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Uso de elementos multimedia en HTML.">
+	<script>
+		window.onload = () => {
+			if (window.location.search) {
+				const searchParams = new URLSearchParams(window.location.search);
+				var s = 'Datos Recibidos:<br>';
+				for (const [key, value] of searchParams) {
+					s += key + ' = ' + value + '<br>';
+				}
+				datosRecibidos = document.getElementById('datosRecibidos');
+				datosRecibidos.innerHTML = s;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+	</header>
+	<main>
+		<form action="CPT3.html">
+			<label for="nombre">Nombre</label><br>
+			<input type="text" id="nombre" name="nombre"><br>
+			<label for="apellidos">Apellidos</label><br>
+			<input type="text" id="apellidos" name="apellidos" size="50"><br>
+			<label for="contrasena">Contraseña</label><br>
+			<input type="password" id="contrasena" name="contrasena"><br>
+			<label for="DNI">DNI</label><br>
+			<input type="text" id="dni" name="dni"><br>
+			<label for="sexo">Sexo</label><br>
+			<input type="radio" name="sexo" id="hombre" value="Hombre" checked><label for="hombre">Hombre</label><br>
+			<input type="radio" name="sexo" id="mujer" value="Mujer"><label for="mujer">Mujer</label><br>
+			<p>
+				<label for="myfile">Incluir mi foto</label>
+				<input type="file" id="foto" name="foto">
+			</p>
+			<p>
+				<input type="checkbox" name="suscribirme" id="suscribirme" value="Suscribirme" checked>
+				<label for="suscribirme">Suscribirme al boletín de novedades</label>
+			</p>
+			<input type="submit" value="Guardar cambios">
+			<input type="submit" value="Borrar los datos introducidos">
+		</form>
+		<p id="datosRecibidos"></p>
+	</main>
+	<footer>
+	</footer>
+</body>
+
+</html>
