@@ -1,0 +1,60 @@
+body {
+	display: grid;
+	margin: 0;
+	/* Dimensiones de la imagen */
+	height: 514px;
+	width: 444px;
+	/* Los porcentajes están medidos con una regla. Error 1% = 1mm */
+	/*	6% 17% 39% 71% 81% 94%
+		4% 12% 18% 85% 92% 94% */
+	grid-template-rows: 6% 11% 22% 32% 10% 13% 6%;
+	grid-template-columns: 4% 8% 6% 67% 7% 2% 6%;
+}
+
+img {
+	/* display: none; */
+	grid-area: 1/8;
+}
+
+div {
+	border: 1px solid #41729c;
+}
+
+body>div:nth-of-type(1) {
+	background: #ebf0f9;
+	grid-area: 3/3/4/6;
+	z-index: 2;
+}
+
+body>div:nth-of-type(2) {
+	background: #c5e0b4;
+	display: grid;
+	grid-area: 2/4/6/5;
+	/*	9 20 57 72 86 98
+		5 35 42 90 94 */
+	grid-template-rows: 9% 11% 37% 15% 14% 12%;
+	grid-template-columns: 5% 30% 7% 48% 4%;
+	z-index: 1;
+}
+
+body>div:nth-of-type(3) {
+	background: #ffe699;
+	grid-area: 5/2/7/7;
+}
+
+div>div:nth-of-type(1) {
+	background: #5b9ad5;
+	grid-area: 3/2/4/6;
+	z-index: 2;
+}
+
+div>div:nth-of-type(2) {
+	background: #d0cece;
+	grid-area: 2/4/6/5;
+	z-index: 1;
+}
+
+div>div:nth-of-type(3) {
+	background: #ffb9b9;
+	grid-area: 5/3/7/6;
+}
