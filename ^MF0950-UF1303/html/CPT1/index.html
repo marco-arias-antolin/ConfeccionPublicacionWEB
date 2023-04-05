@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAwIiB3aWR0aD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHRleHQgeD0iNTAlIiB5ID0iMTEwcHgiIHN0eWxlPSJmaWxsOmdyZWVuO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWw7Zm9udC1zaXplOjMzM3B4O2ZvbnQtZmFtaWx5OkNvdXJpZXI7Zm9udC13ZWlnaHQ6Ym9sZDt0ZXh0LWFuY2hvcjptaWRkbGUiPk08L3RleHQ+PC9zdmc+">
+	<title>Ejemplo de selectores avanzados</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
+<body>
+	<h2>Con Unicode en CSS</h2>
+	<!-- Primera tabla: se insertan los iconos de las monedas con CSS -->
+	<table>
+		<thead>
+			<tr>
+				<th>Cambio</th>
+				<th>Compra</th>
+				<th>Venta</th>
+				<th>Máximo</th>
+				<th>Mínimo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th class="euro"><a href="https://www.google.com/finance/quote/EUR-USD" target="_blank">Euro/Dolar</a></th>
+				<td>1.25</td>
+				<td>1.25</td>
+				<td>1.25</td>
+				<td>1.24</td>
+			</tr>
+			<tr>
+				<th class="dolar"><a href="https://www.google.com/finance/quote/USD-JPY" target="_blank">Dolar/Yen</a></th>
+				<td>119.01</td>
+				<td>119.05</td>
+				<td>119.82</td>
+				<td>119.82</td>
+			</tr>
+			<tr>
+				<th class="libra"><a href="https://www.google.com/finance/quote/GBP-USD" target="_blank">Libra/Dolar</a></th>
+				<td>1.86</td>
+				<td>1.86</td>
+				<td>1.86</td>
+				<td>1.85</td>
+			</tr>
+			<tr>
+				<th class="yen"><a href="https://www.google.com/finance/quote/JPY-EUR" target="_blank">Yen/Euro</a></th>
+				<td>0.67</td>
+				<td>0.67</td>
+				<td>0.66</td>
+				<td>0.67</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Con imagenes</h2>
+	<!-- Segunda tabla: se insertan los iconos de las monedas con SVG
+		(Ya que el ejercicio lo pide de esta manera)
+	 -->
+	<table>
+		<!-- Cabecera de la tabla -->
+		<thead>
+			<!-- Encabezados de columna -->
+			<tr>
+				<th>Cambio</th>
+				<th>Compra</th>
+				<th>Venta</th>
+				<th>Máximo</th>
+				<th>Mínimo</th>
+			</tr>
+		</thead>
+		<!-- Cuerpo de la tabla -->
+		<tbody>
+			<tr>
+				<!-- Encabezado de fila -->
+				<th class="euro1"><img src="img/euro.svg" alt="euro"><a href="https://www.google.com/finance/quote/EUR-USD" target="_blank">Euro/Dolar</a></th>
+				<td>1.25</td>
+				<td>1.25</td>
+				<td>1.25</td>
+				<td>1.24</td>
+			</tr>
+			<tr>
+				<th class="dolar1"><img src="img/dolar.svg" alt="dolar"><a href="https://www.google.com/finance/quote/USD-JPY" target="_blank">Dolar/Yen</a></th>
+				<td>119.01</td>
+				<td>119.05</td>
+				<td>119.82</td>
+				<td>119.82</td>
+			</tr>
+			<tr>
+				<th class="libra1"><img src="img/libra.svg" alt="libra"><a href="https://www.google.com/finance/quote/GBP-USD" target="_blank">Libra/Dolar</a></th>
+				<td>1.86</td>
+				<td>1.86</td>
+				<td>1.86</td>
+				<td>1.85</td>
+			</tr>
+			<tr>
+				<th class="yen1"><img src="img/yen.svg" alt="yen"><a href="https://www.google.com/finance/quote/JPY-EUR" target="_blank">Yen/Euro</a></th>
+				<td>0.67</td>
+				<td>0.67</td>
+				<td>0.66</td>
+				<td>0.67</td>
+			</tr>
+		</tbody>
+	</table>
+	<!--
+	Según mi opinión la primera opción es más versátil y requiere menos código.
+	Con la segunda opción si se quieren otros colores hay que crear más imágenes.
+	Además hay que modificar el HTML para cambiar una "decoración".
+	 -->
+</body>
+
+</html>

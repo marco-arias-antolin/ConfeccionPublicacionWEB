@@ -1,0 +1,102 @@
+/* Común para las 2 tablas */
+table {
+	border: 1px solid black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th,
+td {
+	border: 1px solid black;
+	padding: 6px;
+}
+
+thead {
+	background: #EEE;
+}
+
+tbody th {
+	background: lightblue;
+	padding: 0;
+}
+
+td {
+	background: lightyellow;
+	text-align: right;
+}
+
+/* Al pasar por la fila se colorea entera */
+tr:hover td {
+	background: #FF6 !important;
+}
+
+/* La última fila es blanca */
+tbody tr:last-child td {
+	background: white;
+}
+
+tr {
+	position: relative;
+}
+
+/* Los enlaces en ambas tablas son iguales */
+.euro a,
+.dolar a,
+.libra a,
+.yen a,
+.euro1 a,
+.dolar1 a,
+.libra1 a,
+.yen1 a {
+	padding-left: 1em;
+	padding-right: .2em;
+	text-decoration: none;
+	color: black;
+}
+
+/* Primera tabla:
+	Se insertan los iconos de las monedas con "content" en unicode
+	Se cambia de color con "color" */
+/* Se agrupan las propiedades comunes */
+.euro::before,
+.dolar::before,
+.libra::before,
+.yen::before {
+	left: .2em;
+	position: absolute;
+	transform: scale(1.2);
+}
+
+/* Cada moneda tiene su propio carácter y color */
+.euro::before {
+	color: gold;
+	content: "€";
+}
+
+.dolar::before {
+	color: green;
+	content: "$";
+}
+
+.libra::before {
+	color: blue;
+	content: "£";
+}
+
+.yen::before {
+	color: green;
+	content: "¥";
+}
+
+/* Segunda tabla:
+	Se insertan los iconos de las monedas con SVG
+	Se cambia el tamaño con height
+	Se cambia el color dentro del SVG con la propiedad fill
+	Si se quieren más colores se necesita modificar el HTML y el SVG */
+.euro1 img,
+.dolar1 img,
+.libra1 img,
+.yen1 img {
+	height: 1em;
+	position: absolute;
+	left: .2em;
+}
