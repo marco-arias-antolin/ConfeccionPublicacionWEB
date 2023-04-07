@@ -1,0 +1,12 @@
+.gallery {
+	max-width: 650px;
+}
+
+.gallery img {
+	height: 182px;
+	width: 275px;
+	margin: 1em;
+	padding: 0.5em;
+	border: 1px solid #CCC;
+	float: left;
+}
