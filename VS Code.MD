@@ -24,3 +24,4 @@ settings.json (Para que no quite los espacios del final).
 - Spanish Language Pack for Visual Studio Code
 - W3C Web Validator
 - XML Tools
+- HTML CSS Support
