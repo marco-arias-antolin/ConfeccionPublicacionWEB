@@ -1,0 +1,111 @@
+body {
+	background: white;
+	color: black;
+}
+
+.general {
+	margin: 100px auto 0;
+	text-align: center;
+	width: 800px;
+}
+
+.titulo {
+	border-radius: 10px;
+	border: 2px solid black;
+	font: bold xx-large Verdana, Geneva, Tahoma, sans-serif;
+	padding: 20px 0;
+}
+
+.menu {
+	background: #74eaee;
+	border: 2px solid darkslateblue;
+	border-radius: 10px;
+	font-variant: small-caps;
+	font-weight: bold;
+	margin: 10px 0;
+	padding: 10px 0;
+	word-spacing: 10px;
+}
+
+.menu a {
+	color: darkred;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	color: fuchsia;
+}
+
+.menu a:visited {
+	color: blueviolet;
+}
+
+.contenido {
+	border: 2px solid grey;
+	border-radius: 10px;
+	min-height: 300px;
+	padding: 20px 15px 15px;
+	position: relative;
+	text-align: justify;
+}
+
+table {
+	border-style: none;
+	height: 300px;
+	margin: 0 auto;
+	width: 70%;
+}
+
+td {
+	margin: 0 auto;
+	width: 20%;
+}
+
+.foto {
+	border: 1px solid limegreen;
+	width: 100%;
+}
+
+.tiendaDescripciones {
+	height: 266px;
+	padding: 10px;
+	overflow: auto;
+}
+
+#capitular {
+	font-size: xx-large;
+}
+
+#oferta {
+	align-items: center;
+	background-image: url("../img/img01.jpg"), url("../img/img02.jpg"), url("../img/img03.jpg");
+	background-position: left, right, top;
+	background-repeat: no-repeat;
+	background-size: 34%;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: blue;
+	display: flex;
+	height: 5em;
+	justify-content: center;
+	position: absolute;
+	top: 10px;
+	width: 800px;
+}
+
+#oferta span {
+	animation: oferta 2s infinite ease-in-out;
+	background: rgba(255, 255, 255, .8);
+	border-radius: 10px;
+	padding: 6px 18px;
+}
+
+@keyframes oferta {
+	0% {
+		transform: scale(1.0);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+}

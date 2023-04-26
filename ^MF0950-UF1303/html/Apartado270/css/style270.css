@@ -1,0 +1,146 @@
+#oferta {
+	align-items: center;
+	background-image: url("../img/img01.jpg"), url("../img/img02.jpg"), url("../img/img03.jpg");
+	background-position: left, right, top;
+	background-repeat: no-repeat;
+	background-size: 34%;
+	border-radius: 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	height: 5em;
+	justify-content: center;
+	margin: 1em;
+	opacity: 0;
+	top: 10px;
+	transform: scale(0);
+	transition: .6s;
+}
+
+#oferta span {
+	animation: oferta 2s infinite ease-in-out;
+	background: rgba(0, 255, 0, .8);
+	border-radius: 10px;
+	color: var(--bg);
+	padding: 6px 18px;
+}
+
+@keyframes oferta {
+	0% {
+		transform: scale(1.0);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+input[name=navegacion] {
+	display: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav label {
+	background: var(--bg);
+	border: 2px solid var(--color);
+	display: inline-block;
+	padding: .6rem 1rem;
+	transition: .6s;
+}
+
+#idNav1:checked~header li:nth-of-type(1) label,
+#idNav2:checked~header li:nth-of-type(2) label,
+#idNav3:checked~header li:nth-of-type(3) label {
+	background: var(--color);
+	color: var(--bg);
+}
+
+main {
+	position: relative;
+}
+
+main section {
+	inset: 0;
+	opacity: 0;
+	overflow: auto;
+	padding: 1rem;
+	position: absolute;
+	transform: scale(0);
+	transition: .6s;
+}
+
+section h2 {
+	display: none;
+}
+
+#idNav1:checked~header #oferta,
+#idNav1:checked~main section:nth-of-type(1),
+#idNav2:checked~main section:nth-of-type(2),
+#idNav3:checked~main section:nth-of-type(3) {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.capitular::first-letter {
+	font-size: xx-large;
+}
+
+#imgGallery {
+	inset: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+#imgGallery>a {
+	color: var(--color);
+	text-decoration: none;
+}
+
+#imgGallery>a:visited {
+	color: var(--color);
+}
+
+#imgGallery>a {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: auto;
+	padding: 1rem;
+	width: 100%;
+}
+
+#imgGallery img {
+	max-height: calc(100% - 6em);
+	max-width: 100%;
+	object-fit: contain;
+}
+
+#imgGallery .titulo {
+	font-size: larger;
+	padding: .6rem;
+}
+
+#idImg00 {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	justify-content: center;
+	overflow: auto;
+	width: 100%;
+}
+
+#idImg00 a {
+	padding: 1rem;
+}
+
+#idImg00 img {
+	height: 133px;
+	width: 200px;
+}
