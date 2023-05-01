@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Caso Práctico Tema 2
+					"Creación de sitio web con CSS y HTML"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Blog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de sitio web con CSS y HTML.">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="m-4">
+	<header>
+		<nav id="cabecera" class="nav d-flex align-items-center text-light">
+			<h1 class="fs-2 text-decoration-underline my-4 ms-5">Mi sitio web</h1>
+			<form class="ms-auto me-4">
+				<input type="text" id="busqueda" name="busqueda">
+				<input type="submit" value="Buscar">
+			</form>
+		</nav>
+		<nav id="enlaces" class="navbar nav-tabs navbar-expand-md pb-0 mx-2">
+			<div class="container ms-0">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link mx-1 px-3 py-0 mb-0 rounded-0" href="#">Inicio</a>
+						<a class="nav-link mx-1 px-3 py-0 active rounded-0" aria-current="page" href="blog.html">Blog</a>
+						<a class="nav-link mx-1 px-3 py-0 text-nowrap mb-0 rounded-0" href="#">Sobre mi</a>
+						<a class="nav-link mx-1 px-3 py-0 mb-0 rounded-0" href="#">Fotos</a>
+						<a class="nav-link mx-1 px-3 py-0 mb-0 rounded-0" href="#">Portfolio</a>
+						<a class="nav-link mx-1 px-3 py-0 mb-0 rounded-0" href="#">Contacto</a>
+						<a class="nav-link mx-1 px-3 py-0 mb-0 rounded-0" href="#">Enlaces</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main class="p-3 mx-2">
+		<div class="row">
+			<div class="col-9 pe-0" id="contenido">
+				<section class="ms-3">
+					<h4 class="p-2 mt-3"><a href="#">Lorem ipsum dolor sit amet</a></h4>
+					<ul class="list-group list-group-horizontal mb-2 mx-3 d-flex flex-wrap">
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">dd-mm-aaaa 00:00</a></li>
+						<li class="list-group-item border-0"><a href="#">diseño</a></li>
+						<li class="list-group-item border-0 text-nowrap"><a href="#">Nombre Apellido</a></li>
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">Añadir comentario</a></li>
+					</ul>
+					<div class="mx-3">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quae in repellat velit doloremque perspiciatis unde eveniet pariatur ducimus nemo perferendis blanditiis minima iure saepe eum possimus, eligendi, repudiandae quos?</p>
+						<p><a href="#">Seguir Leyendo...</a></p>
+					</div>
+				</section>
+				<section class="ms-3">
+					<h4 class="p-2 mt-3"><a href="#">Lorem ipsum dolor sit amet</a></h4>
+					<ul class="list-group list-group-horizontal mb-2 mx-3 d-flex flex-wrap">
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">dd-mm-aaaa 00:00</a></li>
+						<li class="list-group-item border-0"><a href="#">diseño</a></li>
+						<li class="list-group-item border-0 text-nowrap"><a href="#">Nombre Apellido</a></li>
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">Añadir comentario</a></li>
+					</ul>
+					<div class="mx-3">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quae in repellat velit doloremque perspiciatis unde eveniet pariatur ducimus nemo perferendis blanditiis minima iure saepe eum possimus, eligendi, repudiandae quos?</p>
+						<p><a href="#">Seguir Leyendo...</a></p>
+					</div>
+				</section>
+				<section class="ms-3">
+					<h4 class="p-2 mt-3"><a href="#">Lorem ipsum dolor sit amet</a></h4>
+					<ul class="list-group list-group-horizontal mb-2 mx-3 d-flex flex-wrap">
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">dd-mm-aaaa 00:00</a></li>
+						<li class="list-group-item border-0"><a href="#">diseño</a></li>
+						<li class="list-group-item border-0 text-nowrap"><a href="#">Nombre Apellido</a></li>
+						<li class="list-group-item border-0 rounded-0 text-nowrap"><a href="#">Añadir comentario</a></li>
+					</ul>
+					<div class="mx-3">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quae in repellat velit doloremque perspiciatis unde eveniet pariatur ducimus nemo perferendis blanditiis minima iure saepe eum possimus, eligendi, repudiandae quos?</p>
+						<p><a href="#">Seguir Leyendo...</a></p>
+					</div>
+				</section>
+			</div>
+			<div class="col-3 p-0 pb-3" id="barraLateral">
+				<section>
+					<h4 class="p-2 mt-3"><a href="#" class="fs-6">Sobre mi</a></h4>
+					<div class="p-2 d-flex flex-row">
+						<span class="p-1">
+							<img src="foto.png" alt="Mi foto">
+						</span>
+						<span class="p-1">
+							<strong>Nombre apellidos</strong><br>
+							Edad<br>
+						</span>
+					</div>
+					<div class="px-2">
+						Ciudad de residencia<br>
+						<a href="#">Mi perfil público</a>
+					</div>
+				</section>
+				<section>
+					<h4 class="p-2 mt-5"><span class="fs-6">Categorías</span></h4>
+					<ol class="list-group list-group-flush">
+						<li class="list-group-item active"><a href="#">Categoría 1</a></li>
+						<li class="list-group-item"><a href="#">Categoría 2</a></li>
+						<li class="list-group-item"><a href="#">Categoría 3</a></li>
+						<li class="list-group-item"><a href="#">Categoría 4</a></li>
+						<li class="list-group-item"><a href="#">Categoría 5</a></li>
+					</ol>
+				</section>
+				<section>
+					<h4 class="p-2 mt-5"><span class="fs-6">Archivo</span></h4>
+					<ol class="list-group list-group-flush">
+						<li class="list-group-item active"><a href="#">Enero 2023</a></li>
+						<li class="list-group-item"><a href="#">Diciembre 2022</a></li>
+						<li class="list-group-item"><a href="#">Noviembre 2022</a></li>
+						<li class="list-group-item"><a href="#">Octubre 2022</a></li>
+						<li class="list-group-item"><a href="#">Septiembre 2022</a></li>
+					</ol>
+				</section>
+				<section>
+					<h4 class="p-2 mt-5"><span class="fs-6">Enlaces</span></h4>
+					<ol class="list-group list-group-flush">
+						<li class="list-group-item"><a href="#">Categoría 1</a></li>
+						<li class="list-group-item"><a href="#">Categoría 2</a></li>
+						<li class="list-group-item"><a href="#">Categoría 3</a></li>
+						<li class="list-group-item"><a href="#">Categoría 4</a></li>
+						<li class="list-group-item"><a href="#">Categoría 5</a></li>
+					</ol>
+				</section>
+			</div>
+		</div>
+	</main>
+	<footer class="mt-2 ms-5">
+		<span><span>&copy;</span> 2023 Marco Antonio Arias Antolín.</span>
+	</footer>
+	<script src="js/jquery-3.6.4.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/fontawesome-6.4.0-all.min.js"></script>
+</body>
+
+</html>
