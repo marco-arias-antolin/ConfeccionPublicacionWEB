@@ -1,0 +1,78 @@
+:root {
+	--bg: black;
+	--color: lightgreen;
+	--link: lightblue;
+	--link-visited: violet;
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	background: var(--bg);
+	color: var(--color);
+	display: flex;
+	flex-direction: column;
+	font-family: Courier;
+	margin: 0;
+	min-height: 100vh;
+}
+
+a {
+	color: var(--link);
+}
+
+a:visited {
+	color: var(--link-visited);
+}
+
+header {
+	padding: 0 66px;
+}
+
+main {
+	background: var(--bg);
+	flex: 1;
+	margin-bottom: 46px;
+	padding: 0 66px;
+}
+
+header,
+footer {
+	text-align: center;
+	background: var(--bg);
+}
+
+footer {
+	inset: auto 0 0 0;
+	position: fixed;
+}
+
+footer>span {
+	animation: footerAni .2s ease-in 6 alternate;
+	background: var(--bg);
+	border-top: 2px solid var(--color);
+	display: block;
+	font-size: larger;
+	margin: 0 auto;
+	padding: 6px;
+	transform-origin: bottom;
+	transition: .6s;
+	width: 66%;
+}
+
+footer>span:hover {
+	transform: scale(1.16);
+}
+
+footer>span>span {
+	display: inline-block;
+	transform: scale(-1.6, 1.6);
+}
+
+@keyframes footerAni {
+	to {
+		transform: scale(1.16);
+	}
+}

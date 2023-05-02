@@ -1,0 +1,10 @@
+#formulario1 {
+	background: white;
+	color: black;
+	display: inline-block;
+}
+
+#formulario1 pre {
+	margin: 0;
+	padding: .6rem 1rem 3rem 2rem;
+}

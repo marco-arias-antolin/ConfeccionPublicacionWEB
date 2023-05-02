@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.2.4.
+					"Identificación de las etiquetas y los atributos en la creación de formularios"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Etiquetas y atributos en formularios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Identificación de las etiquetas y los atributos en la creación de formularios.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style124.css">
+</head>
+
+<body>
+	<header>
+		<h1>Identificación de las etiquetas y los atributos en la creación de formularios</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Crear el siguiente formulario</h2>
+			<p>Como ya se ha visto, un formulario es un conjunto de controles (botones, cajas de texto, casillas de verificación, botones radio, etc.) que permiten al usuario introducir datos y enviarlos al servidor web para su procesamiento.</p>
+			<p>Como primera actividad de esta unidad formativa, le solicitamos:</p>
+			<p>Cree un formulario de registro donde deberá recopilar la siguiente información del usuario:</p>
+			<ul>
+				<li>Nombre</li>
+				<li>Apellidos</li>
+				<li>Género</li>
+				<li>Email</li>
+				<li>Contraseña</li>
+			</ul>
+			<p>Además, deberá añadir dos casillas de verificación. Una será para que el usuario acepte recibir novedades y noticias, la cual deberá estar seleccionada. La otra será para aceptar las condiciones de la página.</p>
+			<p>Además, identifique las etiquetas y atributos que ha utilizado en la creación de esta actividad.</p>
+			<p>Importante: Debe utilizar la etiqueta &lt;pre&gt;</p>
+			<p>El resultado será el siguiente:</p>
+			<img src="img/Apartado124.png" alt="Resultado buscado" title="Resultado buscado">
+		</section>
+		<section>
+			<h2>Formulario</h2>
+			<form action="#" method="post" name="formulario1" id="formulario1">
+				<pre>
+<label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" required>
+<label for="apellidos">Apellidos: </label><input type="text" id="apellidos" name="apellidos" required>
+<label>Género:</label> <input type="radio" id="genero-m" name="genero" value="masculino" required> <label for="genero-m">Hombre</label> <input type="radio" id="genero-f" name="genero" value="femenino" required> <label for="genero-f">Mujer</label>
+<label for="email">Email: </label><input type="email" id="email" name="email" required>
+<label for="contrasena">Contraseña: </label><input type="password" id="contrasena" name="contrasena" minlength="8" required>
+
+<input type="checkbox" id="novedades" name="novedades" checked><label for="novedades">Deseo recibir información sobre novedades y ofertas</label>
+<input type="checkbox" id="condiciones" name="condiciones" required><label for="condiciones">Declaro haber leído y acepto las condiciones generales y la normativa sobre protección de datos.</label>
+
+<input type="submit" value="Enviar">
+				</pre>
+			</form>
+		</section>
+		<section>
+			<h2>Actividad asociada al CE2.1</h2>
+			<p>Identificar las etiquetas y los atributos que se utilizan en la creación de los formularios, teniendo en cuenta las especificaciones del lenguaje de marcas.</p>
+			<p>En el formulario se utilizan las siguientes etiquetas y atributos:</p>
+			<p>&lt;form&gt;: etiqueta que indica el inicio y el final del formulario.</p>
+			<ul>
+				<li>'action' atributo que especifica la URL del script que procesará los datos del formulario.</li>
+				<li>'method' atributo que indica el método HTTP a utilizar para enviar los datos del formulario. En este caso se utiliza "post".</li>
+			</ul>
+			<p>&lt;label&gt;: etiqueta que se utiliza para asociar un texto a un control de formulario. Se utiliza para dar una descripción al usuario sobre el propósito del campo de entrada.</p>
+			<ul>
+				<li>'for' atributo que especifica el id del control al que se refiere el label.</li>
+			</ul>
+			<p>&lt;input&gt;: etiqueta que se utiliza para crear un control de formulario.</p>
+			<ul>
+				<li>'type' atributo que indica el tipo de control que se va a crear. En este formulario se utilizan varios tipos: "text", "radio", "email", "password", y "checkbox".</li>
+				<li>'id' atributo que especifica un identificador único para el control.</li>
+				<li>'name' atributo que especifica el nombre del control. Este es el nombre que se utilizará para identificar el valor del control en el servidor.</li>
+				<li>'required' atributo que indica que el control es obligatorio. El usuario no podrá enviar el formulario si este control no contiene un valor.</li>
+				<li>'value' atributo que especifica el valor que se enviará al servidor cuando el usuario seleccione una opción (en el caso de los radio buttons).</li>
+				<li>'checked' atributo que indica que el checkbox estará marcado por defecto.</li>
+			</ul>
+			<p>&lt;input type="submit"&gt;: Tipo que se utiliza para crear un botón de envío de formulario.</p>
+			<ul>
+				<li>'value' atributo que especifica el texto que se mostrará en el botón. En este caso, "Enviar".</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
