@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.3.
+					"Descripción de las etiquetas y atributos para definir los controles del formulario"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Definir controles del formulario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Descripción de las etiquetas y atributos para definir los controles del formulario.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style130.css">
+</head>
+
+<body>
+	<header>
+		<h1>Descripción de las etiquetas y atributos para definir los controles del formulario</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Crear el siguiente formulario</h2>
+			<p>Para esta actividad, le pedimos:</p>
+			<ul>
+				<li>Cree un formulario de recepción de un producto. Dichos productos serán: ordenador, bicicleta y monopatín.</li>
+				<li>Además, cree un espacio en el que el usuario pueda escoger un color y la hora de entrega.</li>
+				<li>Añada un área de texto para que el usuario pueda dejar un comentario.</li>
+			</ul>
+			<p>El resultado deberá ser el siguiente:</p>
+			<img src="img/Apartado130.png" alt="Resultado buscado" title="Resultado buscado">
+		</section>
+		<section>
+			<h2>Formulario</h2>
+			<form action="#" method="post" name="formulario1" id="formulario1">
+				<fieldset>
+					<legend>Escoja el producto y el color</legend>
+					<select id="producto" name="producto">
+						<option value="ordenador">Ordenador</option>
+						<option value="bicicleta">Bicicleta</option>
+						<option value="monopatín">Monopatín</option>
+					</select><br>
+					<label for="color">Elija un color: </label><input type="color" id="color" name="color"><br>
+					<label for="hora-entrega">Elija una hora de entrega: </label><input type="time" id="hora-entrega" name="hora-entrega" required><br>
+					<textarea id="comentario" name="comentario" cols="46" rows="5" placeholder="Añada un comentario para su envío"></textarea>
+				</fieldset><input type="submit" value="Enviar">
+			</form>
+		</section>
+		<section>
+			<h2>Actividad asociada al CE2.2</h2>
+			<p>Explicación de las etiquetas y atributos utilizados:</p>
+			<ul>
+				<li>&lt;form&gt;: etiqueta que define el inicio del formulario y sus atributos, en este caso, 'action' (indica la URL a la que se enviarán los datos del formulario) y 'method' (indica el método HTTP que se utilizará para enviar los datos, en este caso, 'POST').</li>
+				<li>&lt;label&gt;: etiqueta utilizada para asociar un texto con un control de formulario, su atributo 'for' se utiliza para indicar el id del control al que hace referencia.</li>
+				<li>&lt;select&gt;: etiqueta utilizada para crear una lista desplegable, su atributo 'name' se utiliza para definir el nombre del control de formulario y 'required' indica que es obligatorio seleccionar una opción.</li>
+				<li>&lt;option&gt;: etiqueta utilizada para definir una opción dentro de un control '&lt;select&gt;', su atributo 'value' se utiliza para definir el valor asociado a la opción y su contenido se utiliza para mostrar el texto de la opción.</li>
+				<li>&lt;input&gt;: etiqueta utilizada para crear varios tipos de controles de formulario. Los atributos comunes a todos los controles son 'type' (que indica el tipo de control) y 'name' (que indica el nombre del control de formulario). Los atributos utilizados en este formulario son:
+					<ul>
+						<li>type="color": crea un selector de color.</li>
+						<li>type="time": crea un control para seleccionar la hora.</li>
+						<li>type="submit": crea un botón para enviar el formulario.</li>
+						<li>required: indica que el campo es obligatorio.</li>
+						<li>id: se utiliza para asociar el control con una etiqueta '&lt;label&gt;'.</li>
+					</ul>
+				</li>
+				<li>&lt;textarea&gt;: etiqueta utilizada para crear un área de texto para que el usuario pueda escribir comentarios. Su atributo 'name' se utiliza para definir el nombre del control de formulario.</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
