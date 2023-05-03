@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1304. Caso Práctico Tema 1
+					"Creación de un formulario"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Creación de un formulario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de un formulario.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleCPT1.css">
+</head>
+
+<body>
+	<header>
+		<h1>Creación de un formulario</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Crear el siguiente formulario</h2>
+			<p>Las páginas web no solo permiten presentar documentos de forma más o menos atractiva al destinatario final, sino que también proporcionan elementos para interactuar con él. De esta manera, el usuario puede enviar respuestas a consultas, realizar compras, dar datos personales… Estos elementos se conocen como formularios.</p>
+			<p>Como actividad final le solicitamos que cree un formulario en el que solicite al usuario final (en este caso un alumno/a):</p>
+			<ul>
+				<li>Nombre</li>
+				<li>Apellidos</li>
+				<li>Dirección</li>
+				<li>Fecha de nacimiento</li>
+				<li>Foto de perfil</li>
+				<li>Clases a las que quiere asistir que serán: Lengua, Matemáticas, Historia y Geografía.</li>
+				<li>El idioma en el que quiere dar la clase: inglés, alemán o francés.</li>
+				<li>Fecha para comenzar la clase y hora.</li>
+				<li>Además, se añadirá un recuadro para que el usuario añada algún comentario extra.</li>
+				<li>Por último, añadiremos los botones borrar datos y enviar.</li>
+			</ul>
+			<p>Los datos deberán estar agrupados. Se deberán poner como campos obligatorios: nombre, apellidos, dirección.</p>
+			<p>Además, al crear el formulario:</p>
+			<ul>
+				<li>Identifique cuáles han sido los controles que ha creado y ha tenido que colocar en el formulario.
+					<p>Los controles creados en el formulario son:</p>
+					<ul>
+						<li>Etiquetas de "Nombre", "Apellidos" y "Dirección" para ingresar información de texto.</li>
+						<li>Etiqueta de "Fecha de nacimiento" para ingresar información de fecha.</li>
+						<li>Etiqueta de "Foto de perfil" para cargar un archivo de imagen.</li>
+						<li>Botones de radio para seleccionar el género (masculino o femenino).</li>
+						<li>Cuadros de verificación para seleccionar las clases de "Matemáticas", "Historia", "Geografía" y "Lengua".</li>
+						<li>Etiqueta desplegable para seleccionar el idioma de las clases.</li>
+						<li>Etiqueta de "Fecha de inicio" para ingresar la fecha de inicio de las clases.</li>
+						<li>Etiqueta de "Hora de inicio" para ingresar la hora de inicio de las clases.</li>
+						<li>Área de texto para agregar comentarios.</li>
+						<li>Botón de "Borrar datos" para restablecer todos los campos del formulario.</li>
+						<li>Botón de "Enviar" para enviar los datos del formulario.</li>
+					</ul>
+				</li>
+				<li>Asigne las propiedades que se han especificado a los controles insertados.</li>
+				<li>Asigne las propiedades al formulario (acción, método y tipo de codificación).</li>
+				<li>Aplique criterios de “usabilidad” y accesibilidad.</li>
+				<li>Pruebe la página y el formulario utilizando varios navegadores.</li>
+				<li>Corrija los posibles errores que surjan en la elaboración de la página y el formulario.</li>
+				<li>Documente toda la página y pasos realizados y remítalo a su tutor/a para su corrección.</li>
+			</ul>
+			<p>El formulario debe quedar de esta manera:</p>
+			<img src="img/CPT1.PNG" alt="Resultado buscado" title="Resultado buscado">
+		</section>
+		<section>
+			<h2>Formulario</h2>
+			<!-- Comienzo del formulario -->
+			<form action="#" method="post" enctype="multipart/form-data" name="formulario1" id="formulario1">
+				<!-- Primer grupo: Datos personales -->
+				<fieldset>
+					<legend>Indique sus datos personales</legend>
+					<label for="nombre">Nombre*:</label>
+					<input type="text" id="nombre" name="nombre" required>
+					<br>
+					<label for="apellidos">Apellidos*:</label>
+					<input type="text" id="apellidos" name="apellidos" required>
+					<br>
+					<label for="direccion">Dirección*:</label>
+					<input type="text" id="direccion" name="direccion" required>
+					<br>
+					<label for="fecha_nacimiento">Fecha de nacimiento:</label>
+					<input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+					<br>
+					<label for="foto_perfil">Foto de perfil:</label>
+					<input type="file" id="foto_perfil" name="foto_perfil"><br>
+					<label>Género:</label>
+					<input type="radio" id="genero-m" name="genero" value="masculino">
+					<label for="genero-m">Hombre</label>
+					<input type="radio" id="genero-f" name="genero" value="femenino">
+					<label for="genero-f">Mujer</label>
+				</fieldset>
+				<!-- Segundo grupo: Clases -->
+				<fieldset>
+					<legend>Indique la clase o clases a las que quiera asistir</legend>
+					<input type="checkbox" id="matematicas" name="clases[]" value="matematicas"><label for="matematicas">Matemáticas</label>
+					<input type="checkbox" id="historia" name="clases[]" value="historia"><label for="historia">Historia</label>
+					<input type="checkbox" id="geografia" name="clases[]" value="geografia"><label for="geografia">Geografía</label>
+					<input type="checkbox" id="lengua" name="clases[]" value="lengua"><label for="lengua">Lengua</label>
+					<br>
+					<label for="idioma">Elija el idioma en el que dar las clases:</label>
+					<select id="idioma" name="idioma">
+						<option value="ingles">Inglés</option>
+						<option value="aleman">Alemán</option>
+						<option value="frances">Francés</option>
+					</select>
+					<br>
+					<label for="fecha_inicio">Elija una fecha para comenzar con las clases:</label>
+					<input type="date" id="fecha_inicio" name="fecha_inicio">
+					<br>
+					<label for="hora_inicio">Elija una hora:</label>
+					<input type="time" id="hora_inicio" name="hora_inicio">
+					<br>
+					<br>
+					<textarea id="comentarios" name="comentarios" cols="60" rows="6" placeholder="Añada algún comentario"></textarea>
+				</fieldset>
+				<br>
+				<!-- Botones -->
+				<input type="reset" value="Borrar datos">
+				<input type="submit" value="Enviar">
+			</form>
+		</section>
+		<section>
+			<h2>Actividad asociada al CE2.3</h2>
+			<p>Realizar páginas que incorporan formularios para interactuar con el usuario, según un diseño especificado:</p>
+			<ul>
+				<li>Identificar los controles que hay que crear y colocarlos dentro del formulario.</li>
+				<li>Asignar las propiedades especificadas a los controles insertados.</li>
+				<li>Asignar las propiedades el formulario (acción, método y tipo de codificación).</li>
+				<li>Aplicar criterios de “usabilidad” y accesibilidad.</li>
+				<li>Probar la página y el formulario utilizando varios navegadores web.</li>
+				<li>Corregir los posibles errores que surjan en la elaboración de la página y el formulario.</li>
+				<li>Documentar la página web realizada.</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
