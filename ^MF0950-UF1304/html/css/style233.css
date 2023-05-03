@@ -1,0 +1,10 @@
+main>section {
+	border: 1px solid var(--color);
+	border-radius: .6rem;
+	margin: 0 0 1rem;
+	padding: 0 1rem;
+}
+
+main>section>section {
+	border-bottom: 1px solid var(--color);
+}
