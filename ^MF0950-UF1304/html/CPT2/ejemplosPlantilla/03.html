@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Comienzo de la plantilla -->
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		<!-- Ejemplo plantilla JavaScript -->
+	</title>
+	<script>
+		function abrirVentana(pag) {
+			var opciones = `
+				toolbar=no,
+				location=no,
+				directories=no,
+				status=no,
+				menubar=no,
+				scrollbars = no,
+				resizable = yes,
+				width = 508,
+				height = 365,
+				top = 85,
+				left = 140`;
+			window.open(pag, "", opciones);
+		}
+	</script>
+</head>
+
+<body onload="abrirVentana('ventanaEmergente.html')">
+	<!-- Este elemento se debe sustitutir por la url que quiera que se muestre
+		en la ventana emergente que se abrirá cuando cargue la página -->
+</body>
+
+</html>
+<!-- Fin de la plantilla -->

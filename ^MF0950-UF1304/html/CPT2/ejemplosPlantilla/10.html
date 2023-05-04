@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Comienzo de la plantilla -->
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<!-- Inicio de datos editables. Poner título del documento -->
+	<title><!-- Ejemplo plantilla formulario --></title>
+	<!-- Fin de datos editables. -->
+</head>
+
+<body>
+	<!-- Inicio de datos editables. Colocar tras "action" la web de destino del formulario -->
+	<form action="datosPersonales.php" method="post">
+		<!-- Fin de datos editables. -->
+		<!-- Inicio de datos no editables. -->
+		<table>
+			<tr>
+				<td><label for="nombre">Nombre: </label></td>
+				<td><input type="text" name="nombre" id="nombre" required></td>
+			</tr>
+			<tr>
+				<td><label for="apellidos">Apellidos: </label></td>
+				<td><input type="text" name="apellidos" id="apellidos" required></td>
+			</tr>
+			<tr>
+				<td><label for="dni">DNI: </label></td>
+				<td><input type="text" name="dni" id="dni" required></td>
+			</tr>
+			<tr>
+				<td><label for="domicilio">Domicilio: </label></td>
+				<td><input type="text" name="domicilio" id="domicilio"></td>
+			</tr>
+			<tr>
+				<td><label for="poblacion">Población: </label></td>
+				<td><input type="text" name="poblacion" id="poblacion"></td>
+			</tr>
+			<tr>
+				<td><label for="cp">Código postal: </label></td>
+				<td><input type="text" name="cp" id="cp"></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email: </label></td>
+				<td><input type="text" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td><label for="telefono">Teléfono: </label></td>
+				<td><input type="text" name="telefono" id="telefono"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Enviar"></td>
+			</tr>
+		</table>
+		<!-- Fin de los datos no editables -->
+	</form>
+</body>
+
+</html>
+<!-- Fin de la plantilla -->

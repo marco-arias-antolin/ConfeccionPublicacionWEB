@@ -1,0 +1,31 @@
+main>section {
+	border: 1px solid var(--color);
+	border-radius: 1em;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+
+img {
+	max-width: 100%;
+	width: auto;
+}
+
+.resultado {
+	animation: animacion 3s infinite;
+	display: inline-block;
+	font-size: x-large;
+}
+
+@keyframes animacion {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(.6rem);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}

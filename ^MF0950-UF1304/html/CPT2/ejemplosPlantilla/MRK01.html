@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Comienzo de la plantilla -->
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Caso Práctico Tema 2
+					"Implementación de plantilla"
+	Uso:			Didáctico.
+	-->
+	<!-- Inicio de datos editables. -->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title><!-- Ejemplo de plantilla --></title>
+	<!-- Fin de datos editables. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Inicio de datos editables. -->
+	<link rel="stylesheet" href="estilos.css">
+	<!-- Fin de datos editables. -->
+</head>
+
+<body>
+	<!-- Inicio del encabezado -->
+	<header>
+		<!-- Menú principal -->
+		<nav>
+			<ul>
+				<!-- Inicio de datos editables. -->
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Productos</a></li>
+				<li><a href="#">Contacto</a></li>
+				<!-- Fin de datos editables. -->
+			</ul>
+		</nav>
+	</header>
+	<!-- Fin del encabezado -->
+
+	<!-- Inicio del contenido principal -->
+	<main>
+		<!-- Sección principal -->
+		<section>
+			<h1>H1<!-- Título de la sección --></h1>
+			<p><!-- Contenido de la sección --></p>
+			<form name="formhtml" method="post" action="htmlSend.php">
+				<label for="nombre">Nombre* </label>
+				<input type="text" name="nombre" id="nombre" maxlength="50" size="30" required><br>
+				<label for="apellidos">Apellidos* &nbsp;</label>
+				<input type="text" name="apellidos" id="apellidos" maxlength="50" size="30" required><br>
+				<label for="email">Email* </label>
+				<input type="email" name="email" id="email" maxlength="80" size="30" required><br>
+				<label for="telefono">Teléfono</label>
+				<input type="tel" name="telefono" id="telefono" maxlength="30" size="30"><br>
+				<label for="comentarios">Comentarios</label><br>
+				<textarea name="comentarios" id="comentarios" maxlength="1000" cols="25" rows="6"></textarea><br>
+				<input type="submit" value="Enviar">
+			</form>
+		</section>
+		<!-- Inicio de datos editables. -->
+		<!-- Aside -->
+		<aside>
+			<h2>H2<!-- Título de la sección lateral --></h2>
+			<ul>
+				<li><a href="#">Enlace 1</a></li>
+				<li><a href="#">Enlace 2</a></li>
+				<li><a href="#">Enlace 3</a></li>
+			</ul>
+		</aside>
+		<!-- Fin de datos editables. -->
+	</main>
+	<!-- Fin del contenido principal -->
+
+	<!-- Inicio del Footer -->
+	<footer>
+		<!-- Inicio de datos editables. -->
+		<ul>
+			<li><a href="#">Términos y condiciones</a></li>
+			<li><a href="#">Política de privacidad</a></li>
+			<li><a href="#">Aviso legal</a></li>
+		</ul>
+		<p>
+			<span style="display: inline-block; transform: scale(-1.6,1.6);">&copy;</span>
+			Marco Antonio Arias Antolín. 2023
+		</p>
+		<!-- Fin de datos editables. -->
+	</footer>
+	<!-- Fin del Footer -->
+	<!-- Inicio de datos editables. -->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+	<!-- Fin de datos editables. -->
+</body>
+
+</html>
+<!-- Fin de la plantilla -->

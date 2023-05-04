@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Comienzo de la plantilla -->
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo plantilla HTML</title>
+	<style>
+		table {
+			width: 450px;
+		}
+
+		td {
+			vertical-align: top;
+		}
+
+		.center {
+			text-align: center;
+			vertical-align: baseline;
+		}
+	</style>
+</head>
+
+<body>
+	<form name="formhtml" method="post" action="htmlSend.php">
+		<table>
+			<tr>
+				<td><label for="nombre">Nombre *</label></td>
+				<td><input type="text" name="nombre" id="nombre" maxlength="50" size="30"></td>
+			</tr>
+			<tr>
+				<td><label for="apellidos">Apellidos *</label></td>
+				<td><input type="text" name="apellidos" id="apellidos" maxlength="50" size="30"></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email *</label></td>
+				<td><input type="text" name="email" id="email" maxlength="80" size="30"></td>
+			</tr>
+			<tr>
+				<td><label for="telefono">Número de teléfono</label></td>
+				<td><input type="text" name="telefono" id="telefono" maxlength="30" size="30"></td>
+			</tr>
+			<tr>
+				<td><label for="comentarios">Comentarios *</label></td>
+				<td><textarea name="comentarios" id="comentarios" maxlength="1000" cols="25" rows="6"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="center">
+					<!-- Se agradece que mantenga este link en su web. Gracias. -->
+					<input type="submit" value="Enviar"><a href="http://freecontactform.com/htmlForm.php">Formulario HTML</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
+<!-- Fin de la plantilla -->
