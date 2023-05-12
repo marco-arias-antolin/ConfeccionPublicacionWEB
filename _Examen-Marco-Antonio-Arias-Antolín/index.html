@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Examen 12/05/2023
+	Uso:			Examen.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Examen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Examen 12/05/2023.">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header class="container-fluid p-0">
+		<section class="corporativo p-3" id="cabeceraContacto">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="#" class="text-dark text-decoration-none"><i class="fa-solid fa-phone"></i> +34 965 177 201</a>
+				</div>
+				<div class="col-auto">
+					<a href="#" class="text-dark text-decoration-none"><i class="fa-solid fa-envelope"></i> info@alicanteturismo.com
+					</a>
+				</div>
+				<div class="col-auto">
+					<a href="#" class="text-dark text-decoration-none"><i class="fa-brands fa-facebook"></i>
+					</a>
+				</div>
+				<div class="col-auto">
+					<a href="#" class="text-dark text-decoration-none"><i class="fa-brands fa-twitter"></i>
+					</a>
+				</div>
+				<div class="col-auto">
+					<a href="#" class="text-dark text-decoration-none"><i class="fa-solid fa-rss"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="container p-5">
+			<section class="row align-items-center">
+				<div class="col-2">
+					<img src="images/alicante-city-beach-logo.png" alt="logo" class="img-fluid">
+				</div>
+				<div class="col-10">
+					<nav class="navbar navbar-expand-lg">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="#"></a>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="#">Inicio</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Qué visitar y hacer
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">Qué Visitar</a></li>
+											<li><a class="dropdown-item" href="#">Qué Hacer</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Planifica tu viaje
+										</a>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">Donde Dormir</a></li>
+											<li><a class="dropdown-item" href="#">Donde Comer</a></li>
+											<li><a class="dropdown-item" href="#">Como Llegar</a></li>
+											<li><a class="dropdown-item" href="#">Transporte público</a></li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Agenda</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Noticias</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Contacto</a>
+									</li>
+								</ul>
+								<form class="d-flex" role="search">
+									<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+									<button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+								</form>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</section>
+		</section>
+	</header>
+	<section class="container-fluid p-0 m-0">
+		<div class="slider">
+			<div><img src="images/slider1.jpg" alt="imagen de slider 1"></div>
+			<div><img src="images/slider2.jpg" alt="imagen de slider 2"></div>
+			<div><img src="images/slider3.jpg" alt="imagen de slider 3"></div>
+		</div>
+	</section>
+	<section class="container mx-5" id="contenido">
+		<div class="row corporativo columnas" id="informacionCarrusel">
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-info"></i></p>
+				<p><a href="#">INFORMACIÓN</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Oficinas de turismo, transporte, guías turísticos, otros servicios.</p>
+			</div>
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-building"></i></p>
+				<p><a href="#">DONDE DORMIR</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Hoteles, hostales, apartamentos, pensiones, albergues de ciudad…</p>
+			</div>
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-map-location-dot"></i></p>
+				<p><a href="#">COMO LLEGAR</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Vuelos, alquiler de vehículos y otras maneras de llegar a Alicante</p>
+			</div>
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-ship"></i></p>
+				<p><a href="#">CRUCEROS</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Información práctica para cruceristas y visitas de un solo día</p>
+			</div>
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-chalkboard-user"></i></p>
+				<p><a href="#">APRENDE ESPAÑOL</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Escuelas especializadas en la enseñanza del español.</p>
+			</div>
+			<div class="col-md-6 col-lg-2">
+				<p class="pt-2 fs-3"><i class="fa-solid fa-clipboard"></i></p>
+				<p><a href="#">STICTED</a></p>
+				<p class="p-2 border border-dark border-start-0 border-end-0 border-bottom-0">Sistema Integral de Calidad Turística en Destino.</p>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-12"></div>
+			<iframe width="1078" height="607" src="https://www.youtube.com/embed/9yYrBeLkqkk" title="Alicante por ti" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
+
+		</div>
+		<div class="row py-2">
+			<div class="col-lg-4 mt-3">
+				<h2 class="textoCorporativo"><i class="fa-solid fa-shoe-prints"></i> QUE VISITAR</h2>
+				<p class="justificado">Enamórate de la luz de Alicante y descubre sus rincones más bellos y emblemáticos: Isla de Tabarca, Playas, Castillo de Santa Bárbara, Monumentos y edificios históricos, museos y Centros Culturales, paseos y jardines.</p>
+				<p class="pt-2">
+					<a href="#" class="btn btn-danger">VER</a>
+				</p>
+			</div>
+			<div class="col-lg-8">
+				<div class="card-group">
+					<div class="card">
+						<img src="images/castillo.webp" class="card-img-top" alt="Castillo Santa Bárbara">
+						<div class="card-footer">
+							<small class="text-body-secondary">Castillo Santa Bárbara</small>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/parques.webp" class="card-img-top" alt="Parques y jardines">
+						<div class="card-footer">
+							<small class="text-body-secondary">Parques y jardines</small>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/islatabarca.webp" class="card-img-top" alt="Isla Tabarca">
+						<div class="card-footer">
+							<small class="text-body-secondary">Isla Tabarca</small>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/monumentos.webp" class="card-img-top" alt="Monumentos">
+						<div class="card-footer">
+							<small class="text-body-secondary">Monumentos</small>
+						</div>
+					</div>
+				</div> <!-- fin card group-->
+			</div>
+		</div>
+
+		<div class="row py-2 borde">
+			<div class="col-lg-4 mt-3">
+				<h2 class="textoCorporativo"><i class="fa-solid fa-sailboat"></i> QUE HACER</h2>
+				<p class="justificado">Vive Alicante de día y de noche o si vienes en crucero: disfruta de sus preciosas playas, de las mejores compras, del deporte, de la náutica o del golf. Disfruta de Alicante en pareja, con tus amigos o en familia. Vive las fiestas, descubre nuestras rutas y saborea la ciudad. Alicante es toda una experiencia para tus sentidos.</p>
+				<p class="pt-2">
+					<a href="#" class="btn btn-danger">VER</a>
+				</p>
+			</div>
+			<div class="col-lg-8">
+				<div class="card-group">
+					<div class="card">
+						<img src="images/nautico.webp" class="card-img-top" alt="Castillo Santa Bárbara">
+						<div class="card-footer">
+							<small class="text-body-secondary">Servicios Naúticos</small>
+						</div>
+					</div>
+					<div class="card">
+						<img src="images/glof.webp" class="card-img-top" alt="Parques y jardines">
+						<div class="card-footer">
+							<small class="text-body-secondary">Golf en Alicante</small>
+						</div>
+					</div>
+
+				</div> <!-- fin card group-->
+			</div>
+		</div>
+		<div class="row py-2 borde">
+			<div class="col-lg-4 mt-3">
+				<h2 class="textoCorporativo"><i class="fa-solid fa-clipboard"></i> PLANIFICA</h2>
+				<p class="justificado">Si vienes a Alicante, te interesará conocer nuestros alojamientos​ y ​restaurantes​ o​ ​cómo llegar hasta tu destino. Puede que también quieras conocer ​​los ​servicios de visitas guiadas​ que te ofrece la ciudad​,​ las oficinas de turismo​ donde puedes consultar tus dudas​, cómo moverte en transporte​ púbico​ o ​dónde coger el ​bus turístico. Puede que necesites​ mapas, guías y apps ​para que tu estancia sea cómoda y puede que incluso quieras aprender español. ¡Bienvenid@ a Alicante!</p>
+			</div>
+			<div class="col-lg-8">
+				<h2 class="textoCorporativo">SOLICITAR INFORMACIÓN</h2>
+				<form>
+					<div>
+						<label class="form-label">Nombre <span class="text-danger">(*)</span></label>
+						<input type="text" name="nombre" class="form-control" required placeholder="Escribe tu nombre">
+						<label class="form-label">Apellidos <span class="text-danger">(*)</span></label>
+						<input type="text" name="apellidos" class="form-control" required placeholder="Escribe tus apellidos">
+						<label class="form-label">Tipo de Información <span class="text-danger">(*)</span></label>
+						<select class="form-select" required>
+							<option value="" disabled selected>Selecciona una opción</option>
+							<option value="Alojamiento">Alojamientos</option>
+							<option value="turistica">Rutas Turísticas</option>
+							<option value="playas">Playas</option>
+							<option value="transporte">Transporte</option>
+						</select>
+						<label class="form-label">Fecha de llegada</label>
+						<input type="date" class="form-control">
+						<label class="form-label">Observaciones</label>
+						<textarea class="form-control" placeholder="Observaciones"></textarea>
+						<input type="submit" class="btn btn-dark mt-2" value="Enviar Datos">
+						<p>
+							<span class="text-danger">(*) Datos obligatorios</span>
+						</p>
+				</form>
+
+			</div>
+
+		</div>
+	</section>
+	<footer class="container-fluid">
+		<div class="container">
+			<div class="row justify-content-center mx-5">
+				<div class="col-3 p-4 border-end border-dark text-center">
+					<img src="images/logo-footer1.png" alt="logo" class="img-fluid">
+				</div>
+				<div class="col-3 p-4 border-end border-dark text-center">
+					<img src="images/logo-footer2.png" alt="logo" class="img-fluid">
+				</div>
+				<div class="col-3 p-4 border-end border-dark text-center">
+					<img src="images/logo-footer3.png" alt="logo" class="img-fluid">
+				</div>
+				<div class="col-3 p-4 text-center">
+					<img src="images/logo-footer4.jpg" alt="logo" class="img-fluid">
+				</div>
+			</div>
+		</div>
+		<div class="row corporativo p-5">
+			<span class="col-auto p-0" style="display: inline-block; transform: scaleX(-1);">&copy;</span>
+			&nbsp;2023 - Evaluación final de módulo - Marco Antonio Arias Antolín
+		</div>
+	</footer>
+	<script src="js/jquery-3.6.4.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/fontawesome-6.4.0-all.min.js"></script>
+	<script src="js/jquery.bxslider.min.js"></script>
+	<script>
+		$(".slider").bxSlider({
+			auto: true,
+			controls: false,
+			pager: false
+		});
+	</script>
+</body>
+
+</html>

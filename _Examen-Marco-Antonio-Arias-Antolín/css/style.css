@@ -1,0 +1,50 @@
+#cabeceraContacto {
+	background: #00b0b9;
+}
+
+#navbarSupportedContent a {
+	color: #0b0b7a;
+}
+
+#navbarSupportedContent a:hover {
+	background: #0b0b7a;
+	color: white;
+}
+
+.slider img {
+	height: 600px;
+	width: 100%;
+}
+
+#informacionCarrusel {
+	background: #00b0b9;
+}
+
+#informacionCarrusel a {
+	font-size: 1.25em;
+	color: #0b0b7a;
+	text-decoration: none;
+}
+
+#informacionCarrusel a:hover {
+	background-color: orange;
+	color: white;
+}
+
+#contenido h2 {
+	color: #1b1bb3;
+	/* color: #0b0b7a;
+	font-size: 1.25em; */
+}
+
+.justificado {
+	text-align: justify;
+}
+
+.borde {
+	border-top: solid 2px #0b0b7a;
+}
+
+footer>div:nth-of-type(2) {
+	background: #00b0b9;
+}
