@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Ejemplo de formulario.
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Formulario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Ejemplo de formulario.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleForm.css">
+</head>
+
+<body>
+	<!-- <header>
+		<h1>Ejemplo de formulario</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Mi versión</h2> -->
+	<form name="form1" id="form1" class="formulario">
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre" required>
+		<label for="apellidos">Apellidos</label>
+		<input type="text" name="apellidos" id="apellidos" required>
+		<label for="direccion">Dirección</label>
+		<input type="text" name="direccion" id="direccion" required>
+		<label for="fecha">Fecha de Nacimiento</label>
+		<input type="date" name="fecha" id="fecha">
+		<label for="foto">Foto Perfil</label>
+		<input type="file" name="foto" id="foto">
+		<label for="clase">Clases</label>
+		<select name="clases" id="clase">
+			<option value="matemáticas">Lengua</option>
+			<option value="matemáticas">Matemáticas</option>
+			<option value="geografia">Geografía</option>
+			<option value="historia">Historia</option>
+		</select>
+		<div class="radio">Idioma a dar las clases
+			<label>
+				<input type="radio" name="idioma" id="ingles" checked>
+				Inglés
+			</label>
+			<label>
+				<input type="radio" name="idioma" id="frances">
+				Francés
+			</label>
+			<label>
+				<input type="radio" name="idioma" id="aleman">
+				Alemán
+			</label>
+		</div>
+		<label for="fechaInicio">Fecha/hora inicio de clase</label>
+		<input type="date" name="fechaInicio" id="fechaInicio">
+		<input type="time" name="horaInicio" id="horaInicio">
+		<label for="comentario">
+			Cometarios
+		</label>
+		<textarea name="comentario" id="comentario"></textarea>
+		<div>
+			<input type="submit" value="Enviar Datos">
+			<input type="reset" value="Limpiar Datos">
+		</div>
+	</form>
+	<!-- </section>
+	</main> -->
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
