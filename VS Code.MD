@@ -19,9 +19,10 @@ settings.json (Para que no quite los espacios del final).
 
 # Extensions:
 - GitHub Pull Requests and Issues
+- HTML CSS Support
 - JavaScript (ES6) code snippets
 - Live Preview
 - Spanish Language Pack for Visual Studio Code
+- vscode-base64
 - W3C Web Validator
 - XML Tools
-- HTML CSS Support
