@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.3.1.
+					"Descripción de las Descripción de las estructuras secuencial, condicional y de iteración"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Estructuras: secuencial, condicional e iteración</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Descripción de las estructuras secuencial, condicional y de iteración.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		td {
+			border-radius: .6rem;
+			border: 1px solid var(--color);
+			padding: .6rem;
+			vertical-align: top;
+		}
+
+		pre {
+			background: #111;
+			border-radius: .6rem;
+			border: 1px solid var(--color);
+			padding: .6rem;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Descripción de las estructuras secuencial, condicional y de iteración</h1>
+	</header>
+	<main>
+		<section>
+			<h2>ENUNCIADO</h2>
+			<p>Una de las mejores formas de aprender a programar es empezar por los diagramas de flujo y el pseudocódigo. Ambos ayudarán en la resolución de problemas mediante algoritmos. El pseudocódigo es una forma de expresar los distintos pasos que va a realizar un programa, de la forma más parecida a un lenguaje de programación.</p>
+			<p>Para afianzar su aprendizaje, le solicitamos:</p>
+			<ul>
+				<li>Describa y señale las siguientes estructuras en pseudocódigo e indique para qué sirven</li>
+				<li>Cree un pequeño ejemplo de cada una:
+					<table>
+						<tr>
+							<td>Instrucción_1;<br>
+								Instrucción_2;</td>
+							<td>Si (expresión lógica) Entonces<br>
+								Instrucciones;<br>
+								Fin Si</td>
+							<td>Para i=x, i=y Con i=i++<br>
+								Instrucciones;<br>
+								Fin Para</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+			<h3>Actividad asociada al CE1.1</h3>
+			<p>Describir las estructuras secuencial, condicional y de iteración que se utilizan para agrupar y organizar las acciones de un programa.</p>
+		</section>
+		<section>
+			<h2>Respuesta</h2>
+			<ul>
+				<li>
+					<h3>Estructura secuencial:</h3>
+					<p>La estructura secuencial en pseudocódigo permite ejecutar una serie de instrucciones en orden secuencial, una después de la otra, sin realizar ninguna condición o repetición. Esta estructura se utiliza cuando se desea ejecutar una serie de pasos de forma lineal.</p>
+					<p>Ejemplo:</p>
+					<pre><code>Inicio
+	Imprimir "Introduce tu nombre: "
+	Leer nombre
+	Imprimir "Hola, " + nombre
+Fin</code></pre>
+					<p>En este ejemplo, se ejecutan las instrucciones de forma secuencial, una después de la otra, sin realizar ninguna comprobación adicional.</p>
+				</li>
+				<li>
+					<h3>Estructura condicional:</h3>
+					<p>La estructura condicional en pseudocódigo permite tomar decisiones y ejecutar un conjunto de instrucciones si se cumple una determinada condición. Si la condición es verdadera, se ejecutan las instrucciones; de lo contrario, se omiten.</p>
+					<p>Ejemplo:</p>
+					<pre><code>Inicio
+	Imprimir "Introduce tu edad"
+	Leer edad
+	Si edad >= 18 Entonces
+		Imprimir "Eres mayor de edad"
+	Fin Si
+Fin</code></pre>
+					<p>En este ejemplo, se evalúa una expresión lógica en la línea "Si edad >= 18 Entonces", si la expresión es verdadera, se ejecuta Imprimir "Eres mayor de edad", de lo contrario, se pasa al final del bloque "Fin Si".</p>
+				</li>
+				<li>
+					<h3>Estructura de iteración (bucle):</h3>
+					<p>La estructura de iteración en pseudocódigo permite repetir un conjunto de instrucciones varias veces mientras se cumpla una determinada condición. Esto se conoce comúnmente como bucle o ciclo. La variable utilizada para controlar la iteración generalmente se incrementa o decrementa con cada iteración.</p>
+					<p>Ejemplo:</p>
+					<pre><code>Inicio
+	Para i=1, i&lt;=6 Con i=i++
+		Imprimir i
+	Fin Para
+Fin</code></pre>
+					<p>En este ejemplo, se establece un bucle utilizando la estructura "Para" , donde i se inicializa con el valor 1, y mientras i sea menor o igual a 6, se ejecutan Imprimir i. Después de cada iteración, i se incrementa en uno mediante i++.</p>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
