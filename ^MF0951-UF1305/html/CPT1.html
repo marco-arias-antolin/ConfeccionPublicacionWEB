@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Caso Práctico Tema 1
+					"Creación de algoritmo"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Creación de algoritmo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de algoritmo.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		img {
+			background: white;
+			padding: 1rem;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de algoritmo</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, se le pide:</p>
+			<ul>
+				<li>Cree una calculadora con diagrama de flujo utilizando las estructuras correspondientes de iteración, condición y secuencia.</li>
+				<li>Además, deberá identificar los operadores a utilizar y reflejar adecuadamente las operaciones de entrada y salida de datos.</li>
+				<li>La calculadora deberá recoger 2 números para efectuar una operación. La calculadora deberá tener un menú donde las opciones serán:
+					<ol>
+						<li>Sumar.</li>
+						<li>Restar.</li>
+						<li>Multiplicar.</li>
+						<li>Dividir.</li>
+						<li>Salir.</li>
+					</ol>
+				</li>
+			</ul>
+			<p>Además, la calculadora ha de detectar fallos como que, por ejemplo, si ingresa un número que no vaya de 1 a 5 en el menú, debe devolver al menú para elegir un número correcto. Si ingresa como números a operar una letra en vez de un número, debe dar error y pedir que ingrese un número.</p>
+			<h3>Actividad asociada al CE1.1, CE1.4 y CE1.5</h3>
+			<ul>
+				<li>CE1.1 Describir las estructuras secuencial, condicional y de iteración que se utilizan para agrupar y organizar las acciones de un programa.</li>
+				<li>CE1.4 Identificar los operadores que se utilizan para hacer los cálculos y operaciones dentro de un script.</li>
+				<li>CE1.5 Citar las instrucciones proporcionadas por el lenguaje de guion para realizar operaciones de entrada y salida de datos, de acuerdo a las especificaciones técnicas del lenguaje.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Calculadora</h2>
+			<!-- https://lucid.app/ -->
+			<img src="img/Calculadora.svg" alt="Diagrama de flujo de una calculadora">
+		</section>
+		<section>
+			<h3>CE1.1 Descripción de las estructuras de control en programación:</h3>
+			<ul>
+				<li>Estructura Secuencial: La estructura secuencial es la forma más básica de agrupar y organizar acciones en un programa. Consiste en una secuencia de instrucciones que se ejecutan una tras otra en orden lineal. Cada instrucción se ejecuta solo después de que la anterior haya finalizado. Es la estructura por defecto en la mayoría de los lenguajes de programación, ya que sigue el flujo natural de las acciones.</li>
+				<li>Estructura Condicional: La estructura condicional permite tomar decisiones en función de una condición. Se evalúa una expresión booleana que resulta en verdadero o falso, y en función de eso, se ejecuta un bloque de instrucciones específico. La estructura condicional más común es la instrucción "if-else" (si-sino), que permite ejecutar un bloque de instrucciones si se cumple una condición y otro bloque si no se cumple. También existen variantes como "if-else if-else" (si-sino si-sino) para evaluar múltiples condiciones consecutivas.</li>
+				<li>Estructura de Iteración: La estructura de iteración, también conocida como bucle, permite repetir un bloque de instrucciones varias veces hasta que se cumpla una condición de salida. El bucle más común es el bucle "while" (mientras), que ejecuta un bloque de instrucciones mientras una condición sea verdadera. Otro bucle común es el bucle "for" (para), que se utiliza para recorrer una secuencia de elementos, como una lista o un rango de números, ejecutando un bloque de instrucciones para cada elemento.</li>
+			</ul>
+			<h3>CE1.4 Operadores para cálculos y operaciones en un script:</h3>
+			<p>Los operadores son símbolos o palabras clave utilizados para realizar cálculos y operaciones en un programa. Algunos operadores comunes incluyen:</p>
+			<ul>
+				<li>Operadores Aritméticos: Permiten realizar operaciones matemáticas básicas. Ejemplos: suma (+), resta (-), multiplicación (*), división (/), módulo (%), etc.</li>
+				<li>Operadores de Comparación: Permiten comparar dos valores y devuelven un valor booleano (verdadero o falso). Ejemplos: igualdad (==), desigualdad (!=), mayor que (>), menor que (&lt;), mayor o igual que (>=), menor o igual que (&lt;=), etc.</li>
+				<li>Operadores Lógicos: Permiten combinar expresiones booleanas y realizar operaciones lógicas. Ejemplos: AND lógico (&&), OR lógico (||), NOT lógico (!), etc.</li>
+				<li>Operadores de Asignación: Permiten asignar un valor a una variable. Ejemplo: asignación (=).</li>
+				<li>Otros operadores: Dependiendo del lenguaje de programación, pueden existir operadores específicos para operaciones más complejas, como desplazamiento de bits, operaciones sobre cadenas, etc.</li>
+			</ul>
+		</section>
+		<section>
+			<h3>CE1.5 Instrucciones para entrada y salida de datos en un lenguaje de programación:</h3>
+			<p>Las instrucciones para entrada y salida de datos pueden variar según el lenguaje de programación, pero a continuación se presentan algunas instrucciones comunes:</p>
+			<ul>
+				<li>Entrada de Datos: Permite recibir datos desde el usuario o desde una fuente externa.
+					<ul>
+						<li>En muchos lenguajes, se utiliza la función "input" para solicitar al usuario que ingrese datos desde el teclado.</li>
+						<li>Algunos lenguajes también proporcionan funciones específicas para leer datos de archivos, bases de datos u otras fuentes externas.</li>
+					</ul>
+				</li>
+				<li>Salida de Datos: Permite mostrar información o resultados en la pantalla o en un archivo.
+					<ul>
+						<li>En muchos lenguajes, se utiliza la función "print" para mostrar texto o el valor de variables en la consola o en la salida estándar.</li>
+						<li>También se pueden utilizar funciones específicas para escribir datos en archivos, bases de datos u otras salidas externas.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Es importante tener en cuenta que las instrucciones exactas y la sintaxis pueden variar según el lenguaje de programación utilizado. Es recomendable consultar la documentación o las especificaciones técnicas del lenguaje específico para obtener información más precisa sobre las instrucciones de entrada y salida de datos.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
