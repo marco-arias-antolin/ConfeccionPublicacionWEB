@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 2. Apartado 2.3.4.
+					"Citar instrucciones para realizar operaciones de entrada y salida de datos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Instrucciones de entrada y salida de datos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Citar instrucciones para realizar operaciones de entrada y salida de datos.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		form,
+		pre {
+			border: 1px solid var(--color);
+			border-radius: .6rem;
+			margin: 1rem 0;
+			padding: 1rem;
+		}
+	</style>
+	<script type="module">
+		function mostrarDatos() {
+			var nombre = prompt("Introduce tu nombre:");
+			var edad = prompt("Introduce tu edad:");
+
+			var mensaje = `Se llama ${nombre} y tiene ${edad} años.`;
+			alert(mensaje);
+		}
+		class Datos {
+			static mostrarDatos() {
+				var nombre = document.getElementById("nombre").value;
+				var edad = document.getElementById("edad").value;
+				if (document.getElementById("nombre").value != '' &&
+					document.getElementById("edad").value != '') {
+					const datos = new Datos();
+					var mensaje = `Se llama ${nombre} y tiene ${edad} años.`;
+					document.getElementById("resultado").innerText = mensaje;
+					// Si el input es tipo "button" no pide los required
+					event.preventDefault(); // Evita la recarga de la página
+				}
+			}
+		}
+		document.getElementById('mostrarDatos').onclick = mostrarDatos;
+		document.getElementById('mostrarDatos2').onclick = Datos.mostrarDatos;
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Citar instrucciones para realizar operaciones de entrada y salida de datos</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En esta nueva actividad seguimos practicando son los lenguajes de guion. Para ello, le solicitamos:
+			<ul>
+				<li>En primer lugar, programe un pequeño código dentro de un documento HTML capaz de recoger datos por pantalla y luego mostrarlos.</li>
+				<li>El programa deberá abrir una ventana y pedir nombre y edad.</li>
+				<li>Después deberá escribir Se llama “nombre que se haya introducido” y tiene “edad que se haya introducido” años.</li>
+				<li>Cite las instrucciones proporcionadas para realizar las operaciones de entrada y salida.</li>
+				<li>Compruebe el funcionamiento de la web en distintos navegadores</li>
+			</ul>
+			<h3>Actividad asociada al CE1.5</h3>
+			<p>Citar las instrucciones proporcionadas por el lenguaje de guion para realizar operaciones de entrada y salida de datos, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p>Para solicitar datos de entrada al usuario, se puede usar la función prompt() que muestra una ventana emergente con un campo de entrada de texto. El usuario puede ingresar datos y hacer clic en "Aceptar" para confirmar la entrada. Por ejemplo:</p>
+			<pre><code>var nombre = prompt("Introduce tu nombre:");</code></pre>
+			<p>Para mostrar datos de salida al usuario, se puede utilizar la función alert() que muestra una ventana emergente con un mensaje. Por ejemplo:</p>
+			<pre><code>var mensaje = "Hola, mundo!";
+alert(mensaje);</code></pre>
+			También se puede usar la función console.log() para imprimir datos en la consola del navegador o del entorno de desarrollo. Esta función es útil para propósitos de depuración o para mostrar información en el registro de la consola. Por ejemplo:
+			<pre><code>var nombre = "Juan";
+var edad = 25;
+console.log(`El nombre es ${nombre} y la edad es ${edad}`);</code></pre>
+			<h3>Se puede hacer de varias maneras:</h3>
+			<ol>
+				<li>De la manera explicada con "prompt" y "alert"
+					<p><button id="mostrarDatos">Mostrar datos</button></p>
+				</li>
+				<li>Con un formulario:
+					<form>
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre" required><br><br>
+
+						<label for="edad">Edad:</label>
+						<input type="number" id="edad" required><br><br>
+
+						<input type="submit" value="Mostrar datos" id="mostrarDatos2">
+						<h3>Resultado:</h3>
+						<output id="resultado">Introduzca nombre, edad y pulse el botón</output>
+					</form>
+				</li>
+			</ol>
+
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
