@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 2. Apartado 2.4.3.
+					"Reconocimiento de la sintaxis del lenguaje de guion"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Sintaxis del lenguaje de guion</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Reconocimiento de la sintaxis del lenguaje de guion.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		pre {
+			border: 1px solid var(--color);
+			border-radius: .6rem;
+			margin: 1rem 0;
+			padding: 1rem;
+		}
+	</style>
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Reconocimiento de la sintaxis del lenguaje de guion</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+
+			<p>Los lenguajes de scripts son un tipo específico de lenguajes informáticos que se pueden utilizar para dar instrucciones a otro software, como un navegador web, un servidor o una aplicación independiente.</p>
+
+			<p>Para conocerlo un poco más, le solicitamos:</p>
+			<ul>
+				<li>Identifique la diferencia entre método y función y ponga un ejemplo de cada una.</li>
+				<li>Describa lo que es una variable, una operación, una comparación y una asignación y ponga ejemplos de todas ellas.</li>
+			</ul>
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>Reconocer la sintaxis del lenguaje de guion que describen las estructuras de programación en la elaboración de scripts, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<h3>Diferencia entre método y función:</h3>
+			<p>En JavaScript, tanto los métodos como las funciones son bloques de código reutilizables, pero tienen una diferencia fundamental. Los métodos están asociados a objetos específicos y se invocan a través de esos objetos, mientras que las funciones son independientes y se pueden llamar directamente.</p>
+			<h4>Ejemplo de método:</h4>
+			<p>Supongamos que tenemos un objeto llamado "coche" con un método "arrancar" que inicia el motor del coche:</p>
+			<pre><code>const coche = {
+	arrancar: function() {
+		console.log("El motor del coche está encendido.");
+	}
+};
+coche.arrancar(); // Llamada al método arrancar del objeto coche
+</code></pre>
+			<h4>Ejemplo de método con class:</h4>
+			<pre><code>class Coche {
+	arrancar() {
+		console.log("El motor del coche está encendido.");
+	}
+}
+const coche = new Coche();
+coche.arrancar();</code></pre>
+			<p>En este caso, he definido una clase llamada Coche con un método arrancar(). Luego, creamos una instancia de la clase Coche mediante la palabra clave new, asignándola a la variable coche. Finalmente, llamamos al método arrancar() en la instancia coche, que imprimirá "El motor del coche está encendido." en la consola.</p>
+			<p>Usar una clase en lugar de un objeto literal tiene ventajas cuando necesitas crear múltiples instancias de un mismo tipo de objeto y cuando deseas aprovechar la herencia y otros conceptos orientados a objetos.</p>
+			<h4>Ejemplo de función:</h4>
+			<p>Aquí hay una función independiente llamada "saludar" que imprime un saludo en la consola:</p>
+			<pre><code>function saludar() {
+	console.log("¡Hola! ¿Cómo estás?");
+}
+saludar(); // Llamada a la función saludar
+</code></pre>
+			<h3>Definiciones y ejemplos:</h3>
+			<ul>
+				<li>Variable: Una variable es un contenedor para almacenar datos en la memoria durante la ejecución de un programa. En JavaScript, se pueden declarar variables utilizando la palabra clave "var", "let" o "const".
+					<p>Ejemplo de variable:
+					<pre><code>var edad = 25;</code></pre>
+				</li>
+				<li>Operación: Una operación es una acción que se realiza en los datos, como una suma, resta, multiplicación o división. En JavaScript, se pueden realizar diversas operaciones aritméticas, lógicas y de concatenación de cadenas.
+					<p>Ejemplo de operación:
+					<pre><code>var suma = 10 + 5; // 15</code></pre>
+				</li>
+				<li>Comparación: Una comparación se utiliza para evaluar si dos valores son iguales o diferentes, o para verificar si un valor es mayor, menor o igual a otro. En JavaScript, se utilizan operadores de comparación, como "==", "!=", "&gt;", "&lt;", "&gt;=" , "&lt;=" .
+					<p>Ejemplo de comparación:
+					<pre><code>var x = 10;
+var y = 5;
+var esMayor = x > y; // true
+</code></pre>
+				</li>
+				<li>Asignación: La asignación se utiliza para almacenar un valor en una variable. En JavaScript, se utiliza el operador de asignación "=" para asignar un valor a una variable.
+					<p>Ejemplo de asignación:
+					<pre><code>var nombre = "Juan";</code></pre>
+				</li>
+			</ul>
+			<h3>Actividad asociada al CE1.2</h3>
+			<ul>
+				<li>Declaración de variables:
+					<p>Se pueden declarar variables utilizando palabras clave como var, let o const, seguidas del nombre de la variable.</p>
+					<pre><code>var edad = 25;</code></pre>
+				</li>
+				<li>Estructuras de control condicional:
+					<p>Sirven para tomar decisiones en función de condiciones.</p>
+					<ul>
+						<li>Ejemplo de una estructura if (si):
+							<pre><code>if (condicion) {
+	// Código a ejecutar si la condición es verdadera
+} else {
+	// Código a ejecutar si la condición es falsa
+}</code></pre>
+						</li>
+						<li>Ejemplo de una estructura switch (caso):
+							<pre><code>switch (valor) {
+	case 1:
+		// Código a ejecutar si el valor es 1
+		break;
+	case 2:
+		// Código a ejecutar si el valor es 2
+		break;
+	default:
+		// Código a ejecutar si el valor no coincide con ningún caso
+}</code></pre>
+						</li>
+					</ul>
+				</li>
+				<li>Bucles:
+					<p>Los bucles permiten repetir una porción de código múltiples veces.</p>
+					<ul>
+						<li>Ejemplo de un bucle for (para):
+							<pre><code>for (var i = 0; i &lt; 5; i++) {
+	// Código a ejecutar en cada iteración
+}</code></pre>
+						</li>
+						<li>Ejemplo de un bucle while (mientras):
+							<pre><code>while (condicion) {
+	// Código a ejecutar mientras la condición sea verdadera
+}</code></pre>
+						</li>
+					</ul>
+				</li>
+				<li>Funciones:
+					<p>Las funciones permiten agrupar bloques de código reutilizables y ejecutarlos cuando sea necesario.</p>
+					<p>Ejemplo de una función:</p>
+					<pre><code>function saludar(nombre) {
+	console.log("¡Hola, " + nombre + "!");
+}
+saludar("Juan"); // Llamada a la función saludar con el argumento "Juan"</code></pre>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
