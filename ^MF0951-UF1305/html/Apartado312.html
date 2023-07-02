@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Realiza en Equipo 1. Tema 3. Apartado 3.1.2.
+					"Descripción de lógica de script"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Ejercicio de grupo tema 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Descripción de lógica de script.">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		/* Esta versión tiene errores de sintaxis
+		var input = ""
+		var input = window.prompt(escribe un contenido, "*");
+		document.write = "input";
+		*/
+
+		/* En esta versión analizo los errores y los corrijo.
+		Como se va a definir en la siguiente línea, esta línea sobra.
+		Falta el ; (no es obligatorio pero si recomendable).
+		1) var input = ""
+		1c) // Esta línea sobra
+		El texto tiene que estar entre comillas.
+		2) var input = window.prompt(escribe un contenido, "*");
+		2c) var input = window.prompt('escribe un contenido', '*');
+		Se desaconseja usar document.write().
+		write es una función así que usa paréntesis.
+		input es una variable así que va sin comillas.
+		3) document.write = "input";
+		3c) document.write(input);
+		*/
+
+		// Esta versión está corregida.
+		var input = window.prompt('Escribe un contenido', '*');
+		document.getElementById('resultado').innerText = input;
+
+		// Se podría hacer en una línea.
+		// document.getElementById('resultado').innerText = window.prompt('Escribe un contenido', '*');
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Descripción de lógica de script</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Texto escrito:</h2>
+			<p id="resultado">El texto introducido se inserta aquí.</p>
+			<h3>Actividad asociada al CE3.4</h3>
+			<p>Describir la lógica de funcionamiento del script identificando las estructuras de programación y los datos con los que opera.</p>
+			<p>La lógica de funcionamiento del script se describe de la siguiente manera:</p>
+			<ol>
+				<li>Se utiliza la función window.prompt() para mostrar un cuadro de diálogo al usuario con el mensaje "Escribe un contenido" y un valor predeterminado de "*".</li>
+				<li>El contenido ingresado por el usuario se guarda en la variable input.</li>
+				<li>Se accede al elemento HTML con el id "resultado" utilizando document.getElementById('resultado').</li>
+				<li>Se actualiza el contenido de ese elemento utilizando .innerText y se establece como el valor de la variable input.</li>
+				<li>El contenido ingresado por el usuario se muestra en la página web dentro del elemento identificado por el id "resultado".</li>
+			</ol>
+			<p>Estructuras de programación utilizadas:</p>
+			<ul>
+				<li>Declaración de variables: var input = window.prompt('Escribe un contenido', '*');</li>
+				<li>Funciones:
+					<ul>
+						<li>window.prompt(): muestra un cuadro de diálogo para que el usuario ingrese un contenido.</li>
+						<li>document.getElementById(): busca un elemento HTML en el documento utilizando su id.</li>
+						<li>.innerText: establece el texto interno de un elemento HTML.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Datos con los que opera:</p>
+			<ul>
+				<li>Variable input: almacena el contenido ingresado por el usuario.</li>
+			</ul>
+			<p>En resumen, la lógica del script implica mostrar un cuadro de diálogo al usuario, capturar el contenido ingresado y luego mostrar ese contenido en un elemento específico de la página web. Utiliza las funciones window.prompt() y document.getElementById() para interactuar con el usuario y manipular los elementos HTML.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
