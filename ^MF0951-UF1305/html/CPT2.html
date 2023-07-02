@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 2
+					"Creación de script dentro de documento HTML"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Creación de script dentro de documento HTML</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de script dentro de documento HTML.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#formulario {
+			background: white;
+			color: black;
+			display: inline-block;
+			font-family: initial;
+			padding: 1rem;
+		}
+
+		pre {
+			border: 1px solid var(--color);
+			border-radius: .6rem;
+			margin: 1rem 0;
+			padding: 1rem;
+		}
+	</style>
+	<script src="js/scriptCPT2.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de script dentro de documento HTML</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, deberá crear un documento HTML que contenga un campo de texto tipo input, un botón que se llame Insertar y un botón que se llame Borrar Lista. Aparte, deberá crear un documento JavaScript donde deberá darle a los elementos el siguiente comportamiento:</p>
+			<ol>
+				<li>En el input deberá aparecer un texto por defecto que diga Insertar texto…</li>
+				<li>Cuando el usuario escriba un texto en el input y le dé al botón Insertar, el texto se deberá insertar abajo como una lista no ordenada. El campo input deberá quedar vacío.</li>
+				<li>Si el usuario no escribe ningún texto y pulsa el botón Insertar, deberá salir una alerta que diga que el campo no puede estar vacío.</li>
+				<li>Si el usuario pulsa el botón borrar lista, todo lo que haya escrito en la lista deberá desaparecer.</li>
+				<li>Compruebe la funcionalidad del script en la web.</li>
+			</ol>
+			<p>El resultado deberá ser el siguiente:</p>
+			<img src="img/cp2.png" alt="Ejemplo de resultado">
+			<h3>Actividad asociada al CE1.2, CE1.5 y CE1.7</h3>
+			<p>CE1.2 Reconocer la sintaxis del lenguaje de guion que describen las estructuras de programación en la elaboración de scripts, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+			<p>CE1.5 Citar las instrucciones proporcionadas por el lenguaje de guion para realizar operaciones de entrada y salida de datos, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+			<p>CE1.7 Interpretar scripts que resuelvan un problema previamente especificado:</p>
+			<ul>
+				<li>Identificar el tipo y el uso de los datos declarados dentro del script.</li>
+				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa.</li>
+				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos.</li>
+				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas.</li>
+				<li>Probar la funcionalidad del script utilizando un navegador.</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+				<li>Documentar los cambios realizados en el script.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Resultado</h2>
+			<form id="formulario">
+				<input type="text" id="textoInput" placeholder="Insertar texto...">
+				<button type="submit">Insertar</button>
+				<button type="button" id="borrarBtn">Borrar Lista</button>
+				<ul id="lista">
+					<li>Francisco</li>
+					<li>Carlos</li>
+					<li>Amalia</li>
+				</ul>
+			</form>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<ul>
+				<li>Declaración de variables:
+					<p>Se pueden declarar variables utilizando palabras clave como var, let o const, seguidas del nombre de la variable.</p>
+					<pre><code>var edad = 25;</code></pre>
+				</li>
+				<li>Estructuras de control condicional:
+					<p>Sirven para tomar decisiones en función de condiciones.</p>
+					<ul>
+						<li>Ejemplo de una estructura if (si):
+							<pre><code>if (condicion) {
+	// Código a ejecutar si la condición es verdadera
+} else {
+	// Código a ejecutar si la condición es falsa
+}</code></pre>
+						</li>
+						<li>Ejemplo de una estructura switch (caso):
+							<pre><code>switch (valor) {
+	case 1:
+		// Código a ejecutar si el valor es 1
+		break;
+	case 2:
+		// Código a ejecutar si el valor es 2
+		break;
+	default:
+		// Código a ejecutar si el valor no coincide con ningún caso
+}</code></pre>
+						</li>
+					</ul>
+				</li>
+				<li>Bucles:
+					<p>Los bucles permiten repetir una porción de código múltiples veces.</p>
+					<ul>
+						<li>Ejemplo de un bucle for (para):
+							<pre><code>for (var i = 0; i &lt; 5; i++) {
+	// Código a ejecutar en cada iteración
+}</code></pre>
+						</li>
+						<li>Ejemplo de un bucle while (mientras):
+							<pre><code>while (condicion) {
+	// Código a ejecutar mientras la condición sea verdadera
+}</code></pre>
+						</li>
+					</ul>
+				</li>
+				<li>Funciones:
+					<p>Las funciones permiten agrupar bloques de código reutilizables y ejecutarlos cuando sea necesario.</p>
+					<p>Ejemplo de una función:</p>
+					<pre><code>function saludar(nombre) {
+	console.log("¡Hola, " + nombre + "!");
+}
+saludar("Juan"); // Llamada a la función saludar con el argumento "Juan"</code></pre>
+				</li>
+			</ul>
+
+			<h3>Actividad asociada al CE1.5</h3>
+			<p>Para solicitar datos de entrada al usuario, se puede usar la función prompt() que muestra una ventana emergente con un campo de entrada de texto. El usuario puede ingresar datos y hacer clic en "Aceptar" para confirmar la entrada. Por ejemplo:</p>
+			<pre><code>var nombre = prompt("Introduce tu nombre:");</code></pre>
+			<p>Para mostrar datos de salida al usuario, se puede utilizar la función alert() que muestra una ventana emergente con un mensaje. Por ejemplo:</p>
+			<pre><code>var mensaje = "Hola, mundo!";
+alert(mensaje);</code></pre>
+			También se puede usar la función console.log() para imprimir datos en la consola del navegador o del entorno de desarrollo. Esta función es útil para propósitos de depuración o para mostrar información en el registro de la consola. Por ejemplo:
+			<pre><code>var nombre = "Juan";
+var edad = 25;
+console.log(`El nombre es ${nombre} y la edad es ${edad}`);</code></pre>
+
+			<h3>Actividad asociada al CE1.7</h3>
+			<ol>
+				<li>
+					<p>Identificación del tipo y uso de los datos declarados dentro del script:</p>
+					<ul>
+						<li>En el script, se declaran variables para almacenar referencias a elementos del DOM, como textoInput, formulario, borrarBtn y lista. Estos son de tipo HTMLElement.</li>
+						<li>Además, se utiliza la variable texto para almacenar el valor del texto ingresado por el usuario. Es de tipo string.</li>
+						<li>El texto se inserta en la lista como elementos de lista (&lt;li&gt;).</li>
+					</ul>
+				</li>
+				<li>
+					<p>Descripción de las estructuras de programación utilizadas para organizar las acciones del programa:</p>
+					<ul>
+						<li>Se utiliza una clase ListaTexto para encapsular la funcionalidad del script.</li>
+						<li>El constructor de la clase inicializa las variables y establece los manejadores de eventos para el formulario y el botón de borrado.</li>
+						<li>Se utiliza la estructura de una clase para organizar los métodos insertarTexto y borrarLista.</li>
+						<li>Los métodos están definidos dentro de la clase y se accede a las variables y elementos del DOM a través de la instancia de la clase.</li>
+					</ul>
+				</li>
+				<li>
+					<p>Reconocimiento de las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos:</p>
+					<ul>
+						<li>Se utiliza document.getElementById() para obtener referencias a elementos del DOM.</li>
+						<li>Se utiliza addEventListener() para establecer los manejadores de eventos.</li>
+						<li>Se utiliza event.preventDefault() para evitar que el formulario se envíe y la página se recargue.</li>
+						<li>Se utiliza value para obtener el valor del campo de texto.</li>
+						<li>Se utiliza textContent para establecer el contenido de los elementos de lista.</li>
+						<li>Se utiliza appendChild() para agregar elementos de lista a la lista existente.</li>
+						<li>Se utiliza alert() para mostrar una alerta en caso de que el campo esté vacío.</li>
+					</ul>
+				</li>
+				<li>
+					<p>Inserción del script dentro de la página web utilizando las etiquetas apropiadas:</p>
+					<ul>
+						<li>El script JavaScript se inserta dentro de la etiqueta &lt;script&gt;&lt;/script&gt;. Puede colocarse en la sección &lt;head&gt; o en la sección &lt;body&gt; del archivo HTML, dependiendo de los requisitos.
+							<p>En este caso lo inserto en el head &lt;script src="js/scriptCPT2.js" defer&gt;&lt;/script&gt;</p>
+							<p>defer se usa para que el script cargue de manera asíncrona y se ejecute después de cargar la página</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Prueba de la funcionalidad del script utilizando un navegador:</p>
+					<ul>
+						<li>El script se ejecutará cuando se cargue la página en un navegador web compatible. Se puede probar ingresando texto en el campo de texto y haciendo clic en el botón "Insertar" para ver cómo se agrega a la lista. También se puede probar el botón "Borrar Lista" para eliminar todos los elementos de la lista.</li>
+					</ul>
+				</li>
+				<li>
+					<p>Detección y corrección de errores de sintaxis y de ejecución:</p>
+					<ul>
+						<li>Es importante revisar la consola del navegador para verificar si hay errores de sintaxis o de ejecución en el script. Si se encuentran errores, se deben corregir para asegurarse de que el script funcione correctamente.</li>
+					</ul>
+				</li>
+				<li>
+					<p>Documentación de los cambios realizados en el script:</p>
+					<ul>
+						<li>Es recomendable documentar cualquier cambio realizado en el script, especialmente si se modifica la funcionalidad original o se agregan nuevas características. Esto facilitará la comprensión y el mantenimiento del código en el futuro.</li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
