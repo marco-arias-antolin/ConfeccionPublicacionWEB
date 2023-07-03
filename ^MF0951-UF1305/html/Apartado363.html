@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 3. Apartado 3.6.3.
+					"Utilizar objetos del documento para permitir la interactividad entre el script y el usuario"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Interactividad con el usuario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Utilizar objetos del documento para permitir la interactividad entre el script y el usuario.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		form {
+			background: white;
+			color: black;
+			padding: 1rem;
+		}
+	</style>
+	<script src="js/script363.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Utilizar objetos del documento para permitir la interactividad entre el script y el usuario</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>La interactividad sirve de ayuda para escribir scripts flexibles, con una capacidad de aplicación más amplia. No se necesita especificar toda la información de entrada de antemano.</p>
+			<p>En la presente actividad, le solicitamos:</p>
+			<ul>
+				<li>Cree un script en el que se le pida al usuario insertar su nombre y su año de nacimiento y, posteriormente, se muestre por pantalla con la siguiente frase: Hola, “nombre del usuario” tiene “años del usuario”.</li>
+				<li>Para sacar la edad del usuario se deberá usar una variable que coja el año actual, es decir, no vale utilizar var año=2021;.</li>
+				<li>Identifique los elementos de interactividad del script y los métodos usados en dicho script.</li>
+			</ul>
+			<h3>Actividad asociada al CE2.3</h3>
+			<p>Describir e identificar los objetos del documento que permiten añadir interactividad entre el usuario y el script, así como sus propiedades y métodos.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<ul>
+				<li>Con <code>prompt()</code> y <code>alert()</code>
+					<button type="button" onclick="calcularEdad1()">Calcular Edad</button>
+
+				</li>
+				<li>Con un formulario
+					<form>
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre"><br>
+
+						<label for="anioNacimiento">Año de Nacimiento:</label>
+						<input type="number" id="anioNacimiento"><br>
+
+						<button type="button" onclick="calcularEdad2()">Calcular Edad</button>
+						<p id="salida"></p>
+					</form>
+				</li>
+			</ul>
+			<p>Nota: El calculo puede ser inexacto si todavía no se han cumplido los años en el año actual. Para solucionarlo habría que introducir la fecha de nacimiento en vez de sólo el año.</p>
+			<h3>Actividad asociada al CE2.3</h3>
+			<p>Para añadir interactividad entre el usuario y el script en un documento HTML, existen varios objetos del documento (DOM) que se utilizan comúnmente. Aquí describo algunos de los objetos principales y sus propiedades y métodos relevantes:</p>
+			<ol>
+				<li>document: Este objeto representa todo el documento HTML cargado en el navegador. Proporciona acceso a otros objetos y métodos útiles para interactuar con el documento.
+					<br>Propiedades destacadas:
+					<ul>
+						<li>document.getElementById(id): Devuelve una referencia al elemento del documento con el ID especificado.</li>
+						<li>document.querySelector(selector): Devuelve el primer elemento que coincida con el selector CSS especificado.</li>
+						<li>document.querySelectorAll(selector): Devuelve una lista de todos los elementos que coinciden con el selector CSS especificado.</li>
+					</ul>
+				</li>
+				<li>element: Los elementos HTML son objetos que representan las etiquetas HTML en el documento. Pueden ser manipulados para añadir interactividad.
+					<br>Propiedades y métodos destacados:
+					<ul>
+						<li>element.textContent: Obtiene o establece el contenido de texto de un elemento.</li>
+						<li>element.value: Obtiene o establece el valor de un elemento de formulario.</li>
+						<li>element.addEventListener(evento, función): Registra un evento en el elemento y especifica la función que se ejecutará cuando ocurra el evento.</li>
+						<li>element.innerHTML: Obtiene o establece el contenido HTML del elemento.</li>
+					</ul>
+				</li>
+				<li>window: El objeto window representa la ventana del navegador y proporciona métodos y propiedades relacionados con la ventana actual.
+					<br>Propiedades y métodos destacados:
+					<ul>
+						<li>window.alert(mensaje): Muestra una ventana emergente con el mensaje especificado.</li>
+						<li>window.prompt(mensaje, valorPredeterminado): Muestra una ventana emergente que solicita al usuario que ingrese un valor.</li>
+						<li>window.confirm(mensaje): Muestra una ventana emergente con un mensaje y los botones de confirmación "Aceptar" y "Cancelar".</li>
+					</ul>
+				</li>
+			</ol>
+			<p>Estos son solo algunos ejemplos de objetos del documento que permiten añadir interactividad en JavaScript. El Document Object Model (DOM) proporciona una amplia gama de objetos, propiedades y métodos para interactuar con el contenido y la estructura de un documento HTML.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
