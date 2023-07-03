@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 3. Apartado 3.2.4.
+					"Tipos de datos que se utilizan para representar y almacenar los valores de las variables"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Tipos de datos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Tipos de datos que se utilizan para representar y almacenar los valores de las variables.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 1px solid var(--color);
+			padding: .6rem;
+		}
+	</style>
+	<script type="module">
+		var esMayorDeEdad = true;
+		var esBisiesto = new Boolean(false);
+		var cantidad = 10;
+		var precio = 9.99;
+		var numero = new Number(10);
+		var decimales = new Number(9.99);
+		var nombre = "Juan";
+		var Apellido = new String("Perez");
+		var objetoNulo = null;
+		var objetoNoDefinido;
+		var salida = `<table>
+			<tr><td>esMayorDeEdad: ${esMayorDeEdad}</td><td>tipo: ${typeof esMayorDeEdad}</td></tr>
+			<tr><td>esBisiesto: ${esBisiesto}</td><td>tipo: ${typeof esBisiesto}</td></tr>
+			<tr><td>cantidad: ${cantidad}</td><td>tipo: ${typeof cantidad}</td></tr>
+			<tr><td>precio: ${precio}</td><td>tipo: ${typeof precio}</td></tr>
+			<tr><td>numero: ${numero}</td><td>tipo: ${typeof numero}</td></tr>
+			<tr><td>decimales: ${decimales}</td><td>tipo: ${typeof decimales}</td></tr>
+			<tr><td>nombre: ${nombre}</td><td>tipo: ${typeof nombre}</td></tr>
+			<tr><td>Apellido: ${Apellido}</td><td>tipo: ${typeof Apellido}</td></tr>
+			<tr><td>objetoNulo: ${objetoNulo}</td><td>tipo: ${typeof objetoNulo}</td></tr>
+			<tr><td>objetoNoDefinido: ${objetoNoDefinido}</td><td>tipo: ${typeof objetoNoDefinido}</td></tr>
+			`;
+		document.getElementById('salida').innerHTML = salida;
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Tipos de datos que se utilizan para representar y almacenar los valores de las variables</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A diferencia de las personas, un ordenador no conoce la diferencia entre “1234” y “abcd”. Un tipo de datos es una clasificación del tipo de datos que una variable u objeto puede contener en los programas de ordenador. Los tipos de datos son un factor importante en prácticamente todos los lenguajes de programación.</p>
+			<p>Para afianzar el aprendizaje de tipos de datos le solicitamos:</p>
+			<p>Defina los tipos de datos siguientes:</p>
+			<ul>
+				<li>Datos booleanos.</li>
+				<li>Datos numéricos.</li>
+				<li>Datos de texto.</li>
+				<li>Datos nulos.</li>
+			</ul>
+			<p>Dé un ejemplo para cada uno de ellos.</p>
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>Explicar los tipos de datos que se utilizan para representar y almacenar los valores de las variables en la elaboración de scripts, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p>En JavaScript, los tipos de datos se clasifican en varios tipos, incluyendo los siguientes:</p>
+			<p>Datos booleanos: Los datos booleanos representan un valor de verdadero o falso. En JavaScript, se utilizan los valores true (verdadero) y false (falso) para este tipo de datos. Un ejemplo sería:</p>
+			<pre><code>var esMayorDeEdad = true;
+var esBisiesto = new Boolean(false);</code></pre>
+			<p>Datos numéricos: Los datos numéricos representan valores numéricos. En JavaScript, se pueden utilizar tanto números enteros como números decimales. Un ejemplo sería:</p>
+			<pre><code>var cantidad = 10;
+var precio = 9.99;
+var numero = new Number(10);
+var decimales = new Number(9.99);</code></pre>
+			<p>Datos de texto: Los datos de texto, también conocidos como cadenas de caracteres, representan secuencias de caracteres. En JavaScript, las cadenas se encierran entre comillas simples o dobles. Un ejemplo sería:</p>
+			<pre><code>var nombre = "Juan";
+var Apellido = new String("Perez");</code></pre>
+			<p>Datos nulos: El valor nulo representa la ausencia intencional de cualquier objeto o valor. En JavaScript, se utiliza el valor null para representar datos nulos. Un ejemplo sería:</p>
+			<pre><code>var objetoNulo = null;</code></pre>
+			<p>Las variables creadas con new son objetos. Tienen sus propias propiedades y métodos pero ocupan más en memoria.</p>
+			<p>Es importante tener en cuenta que JavaScript también tiene otros tipos de datos, como los objetos, las matrices (arrays) y los símbolos, que no se mencionan en la lista anterior.</p>
+		</section>
+		<section>
+			<h2>Salida en JavaScript</h2>
+			<p id="salida"></p>
+		</section>
+		<section>
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>En la elaboración de scripts en JavaScript, existen varios tipos de datos que se utilizan para representar y almacenar valores en las variables. Estos tipos de datos están definidos en las especificaciones técnicas del lenguaje y proporcionan diferentes formas de almacenar y manipular la información. A continuación, proporcionaré una descripción de los tipos de datos principales en JavaScript:</p>
+			<ul>
+				<li>Número (Number): Este tipo de datos se utiliza para representar valores numéricos, ya sean enteros o de punto flotante (decimales). Los números en JavaScript se pueden representar directamente, por ejemplo: 10, 3.14, -5, etc.</li>
+				<li>Cadena de caracteres (String): Este tipo de datos se utiliza para representar secuencias de caracteres, como texto. Las cadenas se representan entre comillas simples o dobles, por ejemplo: "Hola", 'Mundo', "123", etc.</li>
+				<li>Booleano (Boolean): Este tipo de datos se utiliza para representar valores de verdadero o falso. Puede tomar dos posibles valores: true (verdadero) o false (falso).</li>
+				<li>Nulo (null): Este tipo de datos representa la ausencia intencional de cualquier objeto o valor. Se utiliza el valor null para indicar que una variable no tiene ningún valor o referencia a un objeto.</li>
+				<li>Indefinido (Undefined): Este tipo de datos se asigna automáticamente a las variables que no tienen un valor asignado. Si una variable se declara pero no se le asigna ningún valor, su valor será undefined.</li>
+				<li>Objeto (Object): Este tipo de datos es utilizado para representar una colección de propiedades y valores. Los objetos se crean utilizando la sintaxis de llaves {} y pueden contener cualquier combinación de propiedades y métodos.</li>
+			</ul>
+			<p>Además de estos tipos de datos principales, JavaScript también tiene otros tipos de datos, como arreglos (Arrays), símbolos (Symbols), fechas (Dates), entre otros.</p>
+			<p>En JavaScript, los tipos de datos son dinámicos, lo que significa que no se requiere declarar explícitamente el tipo de una variable al momento de crearla. El tipo de datos de una variable puede cambiar dinámicamente durante la ejecución del programa, ya que JavaScript es un lenguaje de tipado dinámico. Esto permite una gran flexibilidad, pero también requiere precaución al realizar operaciones y comparaciones para evitar errores.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
