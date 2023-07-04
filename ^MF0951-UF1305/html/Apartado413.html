@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 4. Apartado 4.1.3.
+					"Localizar y descargar componente ya desarrollado e interpretar la documentación técnica"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Bootstrap nesting</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Localizar y descargar componente ya desarrollado e interpretar la documentación técnica.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Localizar y descargar componente ya desarrollado e interpretar la documentación técnica</h1>
+	</header>
+	<main>
+		<section>
+			<h2 class="text-decoration-underline">Enunciado</h2>
+			<p>Bootstrap es una herramienta que todo desarrollador web debería conocer. Es un kit de herramientas de código abierto para desarrollos web responsive con HMTL, CSS y JavaScript.</p>
+			<p>Le solicitamos:</p>
+			<ul>
+				<li>Localice en la página oficial de Bootstrap <a href="https://getbootstrap.com/docs/5.3/components/button-group/#nesting" target="_blank">el complemento Nesting dentro de Button group</a> e insértelo en su página web.</li>
+				<li>Entre en la <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">página oficial de Bootstrap</a> e integre los componentes necesarios para utilizar Bootstrap en su página web.</li>
+			</ul>
+			<h3 class="text-decoration-underline">Actividad asociada al CE2.7 y CE3.1</h3>
+			<p>CE2.7: Interpretar la documentación técnica asociada al lenguaje de guion, incluso si está editada en la lengua extranjera de uso más frecuente en el sector, utilizándola de ayuda en la integración de scripts.</p>
+			<p>CE3.1: Localizar y descargar el componente ya desarrollado ya desde internet o desde las colecciones indicadas siguiendo las especificaciones recibidas.</p>
+		</section>
+		<section>
+			<h2 class="text-decoration-underline">Solución</h2>
+			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+				<button type="button" class="btn btn-primary">Link 1</button>
+				<button type="button" class="btn btn-primary">Link 2</button>
+
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Dropdown
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Dropdown link 1</a></li>
+						<li><a class="dropdown-item" href="#">Dropdown link 2</a></li>
+					</ul>
+				</div>
+			</div>
+			<p>&nbsp;</p>
+			<h3>Actividad asociada al CE2.7 <span style="color: green;">✔</span></h3>
+			<h3>Actividad asociada al CE3.1 <span style="color: green;">✔</span></h3>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span><span style="display: inline-block; transform: scale(-1.6, 1.6);">&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
