@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 3
+					"Creación de calculadora"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Mi calculadora en JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de calculadora.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#calculadora {
+			background: white;
+			display: inline-block;
+			padding: 1rem;
+		}
+
+		#result {
+			border-width: 1px;
+			float: left;
+			font-size: 20px;
+			height: 40px;
+			margin: 1px;
+			padding: 5px;
+			text-align: right;
+			width: 246px;
+		}
+
+		.btn {
+			border-width: 1px;
+			float: left;
+			font-size: 20px;
+			height: 50px;
+			margin: 1px;
+			width: 50px;
+		}
+
+		.btn2 {
+			width: 102px;
+		}
+
+		.clear {
+			clear: both;
+		}
+	</style>
+	<script src="js/calculator.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Mi calculadora en JavaScript</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, deberá crear una calculadora en JavaScript haciendo dos documentos, uno que será .js y otro .html.</p>
+			<p>El documento html deberá contener:</p>
+			<ol>
+				<li>Un título que será “Mi calculadora en JavaScript”</li>
+				<li>Un título h1 que será el mismo que el anterior.</li>
+				<li>Una caja de texto donde aparecerán los resultados de las operaciones</li>
+				<li>Los botones necesarios para la calculadora</li>
+			</ol>
+			<p>La calculadora deberá tener una estética parecida a la siguiente:</p>
+			<img src="img/Calculadora.PNG" alt="Ejemplo de Calculadora">
+			<p>En el archivo .js deberá crear las siguientes funcionalidades:</p>
+			<ol>
+				<li>Realizar las operaciones aritméticas de suma, resta, multiplicación y división</li>
+				<li>Crear una tecla igual para que muestre el resultado de la operación</li>
+				<li>Crear una tecla que limpie el resultado de la operación</li>
+				<li>Crear una tecla que elimine el último carácter escrito</li>
+				<li>Validar que cuando introduzca caracteres por teclado, solo acepte números y teclas de dirección. (opcional)</li>
+			</ol>
+			<h3>Actividad asociada al CE1.7, CE2.2, CE2.3 y CE2.4</h3>
+			<p>CE1.7 Interpretar scripts que resuelvan un problema previamente especificado:</p>
+			<ul>
+				<li>Identificar el tipo y el uso de los datos declarados dentro del script.</li>
+				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa.</li>
+				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos.</li>
+				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas.</li>
+				<li>Probar la funcionalidad del script utilizando un navegador.</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+				<li>Documentar los cambios realizados en el script.</li>
+			</ul>
+			<p>CE2.2 Identificar los objetos predefinidos por el lenguaje de guion para manejar nuevas estructuras y utilidades que añadirán nuevas funcionalidades a las páginas, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+			<p>CE2.3 Describir e identificar los objetos del documento que permiten añadir interactividad entre el usuario y el script, así como sus propiedades y métodos.</p>
+			<p>CE2.4 Describir los eventos que proporciona el lenguaje de guion: de ratón, de teclado, de enfoque, de formulario y de carga, entre otros, para interactuar con el usuario y relacionarlos con los objetos del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<div id="calculadora">
+				<input id="result" type="text" readonly>
+				<br class="clear">
+				<button class="btn" onclick="appendToResult('7')">7</button>
+				<button class="btn" onclick="appendToResult('8')">8</button>
+				<button class="btn" onclick="appendToResult('9')">9</button>
+				<button class="btn" onclick="appendToResult('+')">+</button>
+				<button class="btn" onclick="appendToResult('-')">-</button>
+				<br class="clear">
+				<button class="btn" onclick="appendToResult('4')">4</button>
+				<button class="btn" onclick="appendToResult('5')">5</button>
+				<button class="btn" onclick="appendToResult('6')">6</button>
+				<button class="btn" onclick="appendToResult('*')">*</button>
+				<button class="btn" onclick="appendToResult('/')">/</button>
+				<br class="clear">
+				<button class="btn" onclick="appendToResult('1')">1</button>
+				<button class="btn" onclick="appendToResult('2')">2</button>
+				<button class="btn" onclick="appendToResult('3')">3</button>
+				<button class="btn" onclick="deleteLastCharacter()">&#9003;</button>
+				<button class="btn" onclick="clearResult()">C</button>
+				<br class="clear">
+				<button class="btn btn2" onclick="appendToResult('0')">0</button>
+				<button class="btn" onclick="appendToResult('.')">.</button>
+				<button class="btn btn2" onclick="calculateResult()">=</button>
+				<br class="clear">
+			</div>
+		</section>
+		<section>
+			<h3>Actividad asociada al CE1.7</h3>
+			<p>El código proporcionado utiliza variables, funciones y eventos para implementar la calculadora en JavaScript.</p>
+			<ul>
+				<li>Variables:
+					<ul>
+						<li>result: Almacena la referencia al elemento de entrada de texto donde se muestra el resultado de las operaciones.</li>
+					</ul>
+				</li>
+				<li>Funciones:
+					<ul>
+						<li>appendToResult(value): Agrega el valor especificado al resultado actual en la caja de texto.</li>
+						<li>calculateResult(): Calcula el resultado de la expresión matemática ingresada en la caja de texto y lo muestra.</li>
+						<li>clearResult(): Limpia el contenido de la caja de texto del resultado.</li>
+						<li>deleteLastCharacter(): Elimina el último carácter ingresado en la caja de texto del resultado.</li>
+					</ul>
+				</li>
+				<li>Eventos:
+					<ul>
+						<li>keydown: Se utiliza para detectar las teclas presionadas por el usuario y realizar acciones correspondientes, como agregar caracteres, calcular el resultado, limpiar el resultado o eliminar el último carácter.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>El código utiliza instrucciones proporcionadas por JavaScript para manipular los elementos del documento HTML:</p>
+			<ul>
+				<li>getElementById("elementId"): Obtiene una referencia a un elemento del documento HTML utilizando su ID.</li>
+				<li>addEventListener("event", callback): Agrega un controlador de eventos a un elemento HTML para escuchar un evento específico y ejecutar una función de devolución de llamada cuando ocurra el evento.</li>
+				<li>event.preventDefault(): Evita que se ejecute el comportamiento predeterminado asociado a un evento, como el envío de un formulario o el desplazamiento de la página.</li>
+			</ul>
+			<p>Para insertar el script dentro de la página web, se utiliza la etiqueta &lt;script&gt; en el archivo HTML, y se especifica el nombre del archivo de script utilizando el atributo src. defer sirve para que se cargue el script de manera asíncrona y se ejecute cuando el HTML termine de cargar.</p>
+			<p>Para probar la funcionalidad del script, se debe abrir el archivo HTML en un navegador web. Al interactuar con los botones de la calculadora y presionar las teclas correspondientes, se realizarán las operaciones matemáticas y se mostrarán los resultados en la caja de texto.</p>
+			<p>Si se detectan errores de sintaxis o ejecución, se deben corregir en el archivo JavaScript. Algunos errores comunes pueden ser olvidar cerrar una llave {}, una paréntesis (), o utilizar un nombre de función o variable incorrecto.</p>
+			<p>Es importante documentar los cambios realizados en el script, como añadir nuevas funcionalidades, corregir errores o mejorar el rendimiento. Esto ayuda a mantener un registro claro de las modificaciones y facilita la colaboración y el mantenimiento del código a largo plazo.</p>
+
+			<h3>Actividad asociada al CE2.2</h3>
+			<p>En JavaScript, hay varios objetos predefinidos que proporcionan estructuras y utilidades para agregar nuevas funcionalidades a las páginas web. Algunos de estos objetos incluyen:</p>
+			<ol>
+				<li>Document Object (Objeto Documento): Representa el documento HTML cargado en el navegador y proporciona métodos y propiedades para interactuar con los elementos y contenido del documento.</li>
+				<li>Window Object (Objeto Ventana): Representa la ventana del navegador y proporciona métodos y propiedades para controlar y manipular la ventana del navegador, como redireccionar a otras páginas, abrir nuevas ventanas, ajustar tamaños y ubicaciones, etc.</li>
+				<li>HTMLElement Object (Objeto Elemento HTML): Representa un elemento HTML en el documento y proporciona métodos y propiedades para interactuar con ese elemento, como agregar clases, modificar atributos, adjuntar eventos, etc.</li>
+				<li>Event Object (Objeto Evento): Representa un evento que ocurre en el documento, como hacer clic en un botón o presionar una tecla. El objeto evento proporciona información sobre el evento y métodos para controlarlo.</li>
+				<li>XMLHttpRequest Object (Objeto XMLHttpRequest): Permite realizar peticiones HTTP asíncronas desde el navegador, lo que permite la comunicación con servidores y la carga de contenido dinámico en una página web.</li>
+				<li>JSON Object (Objeto JSON): Proporciona métodos para trabajar con objetos JavaScript en formato JSON (JavaScript Object Notation), que es un formato comúnmente utilizado para intercambiar datos entre un servidor y una página web.</li>
+			</ol>
+			<p>Estos son solo algunos ejemplos de los objetos predefinidos en JavaScript que se utilizan comúnmente para agregar funcionalidades a las páginas web. Hay muchos más objetos disponibles en el lenguaje que proporcionan diferentes capacidades y características.</p>
+
+			<h3>Actividad asociada al CE2.3</h3>
+			<p>En el ejemplo de la calculadora, se utilizan objetos del documento para permitir la interactividad entre el usuario y el script. Estos objetos y sus propiedades y métodos asociados son:</p>
+			<ol>
+				<li>document.getElementById(): Este método del objeto 'document' permite obtener una referencia a un elemento del documento HTML utilizando su ID. Se utiliza en el código para obtener la referencia al elemento de entrada de texto donde se mostrarán los resultados de las operaciones.
+					<ul>
+						<li>Propiedades y métodos asociados: No hay propiedades o métodos específicos asociados a este método. Una vez obtenida la referencia al elemento, se pueden utilizar las propiedades y métodos generales de los objetos del documento para interactuar con él.</li>
+					</ul>
+				</li>
+				<li>result.value: La propiedad 'value' se utiliza para acceder al valor del elemento de entrada de texto. En el ejemplo, se utiliza para obtener o establecer el contenido de la caja de texto donde se muestran los resultados de las operaciones.
+					<ul>
+						<li>Propiedades y métodos asociados: No hay propiedades o métodos específicos asociados a esta propiedad. Se utiliza como una propiedad estándar de los elementos de entrada de texto en el documento HTML.</li>
+					</ul>
+				</li>
+				<li>document.addEventListener(): Este método del objeto 'document' se utiliza para agregar un controlador de eventos a un elemento HTML para escuchar un evento específico y ejecutar una función de devolución de llamada cuando ocurra el evento. En el ejemplo, se utiliza para detectar el evento 'keydown' y realizar acciones correspondientes cuando el usuario presiona una tecla.
+					<ul>
+						<li>Propiedades y métodos asociados: No hay propiedades o métodos específicos asociados a este método. Una vez agregado el controlador de eventos, se pueden utilizar las propiedades y métodos generales del objeto Event para obtener información sobre el evento.</li>
+					</ul>
+				</li>
+				<li>event.key: La propiedad 'key' del objeto Event se utiliza para obtener la tecla presionada por el usuario en el evento 'keydown'. En el ejemplo, se utiliza para determinar qué acción realizar en función de la tecla presionada.
+					<ul>
+						<li>Propiedades y métodos asociados: No hay propiedades o métodos específicos asociados a esta propiedad. Se utiliza como una propiedad estándar del objeto Event.</li>
+					</ul>
+				</li>
+			</ol>
+			<p>Estos son los principales objetos y propiedades/métodos utilizados en el ejemplo de la calculadora para permitir la interactividad entre el usuario y el script. Hay otros objetos y métodos disponibles en el documento que se pueden utilizar según las necesidades específicas de interacción con el usuario.</p>
+
+			<h3>Actividad asociada al CE2.4</h3>
+			<p>JavaScript proporciona una amplia gama de eventos que permiten interactuar con el usuario en diferentes contextos. A continuación se describen algunos de los eventos más comunes y se relacionan con los objetos del lenguaje:</p>
+			<ol>
+				<li>
+					<p>Eventos de ratón:</p>
+					<ul>
+						<li>click: Se dispara cuando se hace clic con el botón izquierdo del ratón en un elemento.</li>
+						<li>mouseover y mouseout: Se disparan cuando el cursor del ratón entra o sale de un elemento.</li>
+						<li>mousedown, mouseup y mousemove: Se disparan cuando se presiona, se suelta o se mueve el ratón sobre un elemento.</li>
+					</ul>
+					<p>Estos eventos pueden ser escuchados y controlados utilizando los métodos del objeto document o el objeto específico del elemento HTML al que se desea añadir la interacción.</p>
+				</li>
+				<li>
+					<p>Eventos de teclado:</p>
+					<ul>
+						<li>keydown y keyup: Se disparan cuando se presiona o se suelta una tecla del teclado.</li>
+						<li>keypress: Se dispara cuando se mantiene presionada una tecla del teclado.</li>
+					</ul>
+					<p>Estos eventos se pueden escuchar utilizando el método addEventListener() del objeto document o del elemento específico al que se desea agregar la interacción.</p>
+				</li>
+				<li>
+					<p>Eventos de enfoque:</p>
+					<ul>
+						<li>focus: Se dispara cuando un elemento recibe el foco, es decir, cuando se selecciona para interactuar con él.</li>
+						<li>blur: Se dispara cuando un elemento pierde el foco, es decir, cuando se deselecciona.</li>
+					</ul>
+					<p>Estos eventos se pueden escuchar utilizando el método addEventListener() del objeto document o del elemento específico al que se desea agregar la interacción.</p>
+				</li>
+				<li>
+					<p>Eventos de formulario:</p>
+					<ul>
+						<li>submit: Se dispara cuando se envía un formulario.</li>
+						<li>input y change: Se disparan cuando se modifica el valor de un elemento de formulario, como un campo de texto o una casilla de verificación.</li>
+					</ul>
+					<p>Estos eventos se pueden escuchar utilizando el método addEventListener() del objeto document o del elemento de formulario específico al que se desea agregar la interacción.</p>
+				</li>
+				<li>
+					<p>Eventos de carga:</p>
+					<ul>
+						<li>load: Se dispara cuando se carga completamente un recurso, como una página web, una imagen o un archivo de JavaScript.</li>
+						<li>DOMContentLoaded: Se dispara cuando el documento HTML ha sido completamente cargado y parseado, sin necesidad de esperar la carga de recursos externos.</li>
+					</ul>
+					<p>Estos eventos se pueden escuchar utilizando el método addEventListener() del objeto window.</p>
+				</li>
+			</ol>
+			<p>Estos son solo algunos ejemplos de los eventos disponibles en JavaScript para interactuar con el usuario. Hay muchos más eventos disponibles que permiten realizar acciones específicas en respuesta a las interacciones del usuario. Cada objeto del lenguaje, como document, window o elementos HTML específicos, puede tener diferentes eventos asociados, y se pueden utilizar los métodos addEventListener() y otros métodos relacionados para gestionar estos eventos.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
