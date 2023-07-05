@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 4
+					"Menú de navegación"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Menú de navegación</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Menú de navegación.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="js/scriptCPT4.js" defer></script>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<button class="btn btn-light float-end" id="cambiarTema">Tema Claro</button>
+		<h1>Menú de navegación</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			A continuación, deberá crear un menú de navegación utilizando elementos de Bootstrap:
+			<ul>
+				<li>Deberá tener un Home.</li>
+				<li>Deberá tener tres secciones desplegables.</li>
+				<li>Se llamarán Partes de arriba, Pantalones y Zapatos.</li>
+				<li>Dentro de la sección Partes de arriba, deberá aparecer en el desplegable Camisetas, Camisas y Jerséis.</li>
+				<li>Dentro del desplegable Zapatos, deberá aparecer Botas, Mocasines y Zapatillas.</li>
+				<li>Dentro de la sección Pantalones, deberá aparecer Jeans, Shorts y Chinos.</li>
+				<li>El menú deberá tener una barra de búsqueda donde el botón será verde y pondrá buscar, en la barra de búsqueda deberá poner ¿Qué desea buscar?</li>
+				<li>El fondo de la barra de navegación deberá ser transparente.</li>
+			</ul>
+			<p>Deberá obtener el siguiente resultado:</p>
+			<p class="text-center"><img src="img/cpt4.png" alt="Resultado a obtener"></p>
+			<ul>
+				<li>Identifique los objetos creados, sus propiedades, métodos y funcionalidad.</li>
+			</ul>
+			<h3>Actividad asociada al CE2.3 y CE3.2</h3>
+			<p>CE2.3 Describir e identificar los objetos del documento que permiten añadir interactividad entre el usuario y el script, así como sus propiedades y métodos.</p>
+			<p>CE3.2 Identificar los objetos, sus propiedades y sus métodos y su funcionalidad dentro del script ya desarrollado con el fin de ajustarlos a la página donde se va a integrar.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Home</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Partes de arriba
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+									<li><a class="dropdown-item" href="#">Camisetas</a></li>
+									<li><a class="dropdown-item" href="#">Camisas</a></li>
+									<li><a class="dropdown-item" href="#">Jerséis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Pantalones
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+									<li><a class="dropdown-item" href="#">Jeans</a></li>
+									<li><a class="dropdown-item" href="#">Shorts</a></li>
+									<li><a class="dropdown-item" href="#">Chinos</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Zapatos
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+									<li><a class="dropdown-item" href="#">Botas</a></li>
+									<li><a class="dropdown-item" href="#">Mocasines</a></li>
+									<li><a class="dropdown-item" href="#">Zapatillas</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form class="d-flex ms-auto">
+							<input class="form-control me-2" type="search" placeholder="¿Qué desea buscar?" aria-label="Search">
+							<button class="btn btn-success" type="submit">Buscar</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+
+			<h3>Identifique los objetos creados, sus propiedades, métodos y funcionalidad.</h3>
+			<p>Se crean varios objetos de Bootstrap y se les asignan propiedades y métodos para que funcionen correctamente en el menú de navegación. A continuación, se detallan los objetos y sus funcionalidades:</p>
+			<ol>
+				<li>Objeto navbar: Es el objeto principal que crea la barra de navegación. Tiene la clase .navbar y se expande en dispositivos móviles con la clase .navbar-expand-sm. Tiene la propiedad bg-transparent que establece el fondo de la barra de navegación como transparente.</li>
+				<li>Objeto container-fluid: Es un contenedor flexible proporcionado por Bootstrap que envuelve todo el contenido del menú de navegación. Permite que los elementos dentro de él se ajusten correctamente al ancho del dispositivo.</li>
+				<li>Objeto navbar-brand: Representa el enlace de la marca/logo del sitio web en la barra de navegación. No tiene métodos, pero tiene la propiedad href que se puede establecer para redirigir al usuario a la página de inicio o cualquier otra página al hacer clic en el logo.</li>
+				<li>Objeto navbar-toggler: Es el botón que se muestra en dispositivos móviles para desplegar el menú en un formato de hamburguesa. Tiene el atributo data-bs-toggle que activa el despliegue del menú al hacer clic en el botón.</li>
+				<li>Objeto navbar-collapse: Es el contenedor que envuelve los elementos del menú que se mostrarán cuando se despliegue el menú en dispositivos móviles. Tiene la clase .collapse para ocultar inicialmente los elementos del menú.</li>
+				<li>Objeto navbar-nav: Es el contenedor de la lista de elementos del menú. Agrupa los enlaces y elementos desplegables en la barra de navegación.</li>
+				<li>Objeto nav-item: Representa un elemento de la lista del menú. Contiene enlaces o elementos desplegables dentro de él.</li>
+				<li>Objeto dropdown: Representa un elemento de lista con un menú desplegable. Tiene la clase .dropdown y un enlace que sirve como elemento de activación para mostrar el menú desplegable.</li>
+				<li>Objeto dropdown-menu: Es el menú desplegable que se muestra cuando se hace clic en el enlace activador. Contiene enlaces dentro de él.</li>
+				<li>Objeto form-inline: Es un formulario en línea de Bootstrap que agrupa elementos de formulario (en este caso, el campo de búsqueda y el botón de búsqueda) en una sola línea horizontal.</li>
+				<li>Objeto form-control: Representa un campo de entrada del formulario. Permite a los usuarios ingresar texto.</li>
+				<li>Objeto btn: Representa un botón. Tiene la clase .btn-success para darle un estilo de botón verde.</li>
+				<li>Objeto form: Representa un formulario en HTML. No tiene propiedades o métodos específicos, pero es utilizado para agrupar elementos de formulario relacionados.</li>
+			</ol>
+			<p>En general, estos objetos de Bootstrap junto con sus propiedades y métodos permiten crear un menú de navegación con elementos desplegables y una barra de búsqueda funcional, siguiendo las especificaciones proporcionadas.</p>
+
+			<h3>Actividad asociada al CE2.3</h3>
+			<p>Hay varios objetos y elementos que permiten añadir interactividad entre el usuario y el script. A continuación, se describen los principales objetos y elementos involucrados, así como sus propiedades y métodos relevantes:</p>
+			<ol>
+				<li>Objeto navbar-toggler: Es un botón de alternancia que permite mostrar u ocultar el menú de navegación en dispositivos móviles. Tiene el atributo data-bs-toggle que activa el despliegue del menú al hacer clic en el botón. El objeto navbar-toggler está vinculado a la funcionalidad del menú desplegable.</li>
+				<li>Objeto collapse: Es una clase de Bootstrap que permite ocultar o mostrar elementos HTML mediante animaciones. Se aplica a la clase navbar-collapse, que es el contenedor del menú de navegación en dispositivos móviles. Tiene métodos relevantes como show() y hide() que permiten mostrar u ocultar el contenido respectivamente.</li>
+				<li>Objeto dropdown: Es un componente interactivo de Bootstrap que crea un menú desplegable. Se aplica a los elementos con la clase dropdown. Tiene métodos como toggle() que muestra u oculta el menú desplegable al hacer clic en el elemento.</li>
+				<li>Objeto form: Representa un formulario en HTML. Puede contener elementos de entrada como campos de texto y botones. Permite al usuario enviar datos o interactuar con el script. No tiene propiedades o métodos específicos, pero se puede utilizar para capturar la entrada del usuario.</li>
+				<li>Objeto input: Representa un campo de entrada en un formulario HTML. Tiene propiedades como type, placeholder y value que permiten especificar el tipo de entrada, el texto de marcador de posición y el valor actual del campo, respectivamente.</li>
+				<li>Objeto button: Representa un botón en HTML. Puede tener atributos como type, class y onclick. El atributo type especifica el tipo de botón, mientras que class se utiliza para aplicar estilos. El atributo onclick permite asociar una función o script que se ejecutará cuando se haga clic en el botón.</li>
+				<li>Objeto script: Es un elemento HTML que se utiliza para incrustar o referenciar scripts en una página web. Puede contener código JavaScript que añade interactividad al documento. Permite definir funciones y manipular elementos HTML para responder a las interacciones del usuario.</li>
+			</ol>
+			<p>Estos objetos y elementos permiten la interacción del usuario con el menú de navegación y otros elementos de la página web. A través de eventos como clicks en botones o enlaces, se desencadenan funciones o scripts que modifican la visualización y el comportamiento de los elementos, proporcionando una experiencia interactiva al usuario.</p>
+
+			<h3>Actividad asociada al CE3.2</h3>
+			<p>No se incluye ninguna funcionalidad o interacción específica. Sin embargo, se puede añadir un script adicional para adaptar los objetos, propiedades y métodos a la página donde se integrará el menú de navegación. Por ejemplo:</p>
+			<pre><code>&lt;script&gt;
+// Función que se ejecuta cuando se hace clic en el botón de búsqueda
+function buscar() {
+	// Obtener el valor del campo de búsqueda
+	var searchTerm = document.getElementById("searchInput").value;
+
+	// Realizar alguna acción con el término de búsqueda (por ejemplo, redirigir a una página de resultados)
+	alert("Realizando búsqueda: " + searchTerm);
+	// window.location.href = "resultados.html?q=" + searchTerm;
+}
+&lt;/script&gt;</code></pre>
+			<p>Este script que define una función llamada buscar(). Esta función se ejecutará cuando el usuario haga clic en el botón de búsqueda. Dentro de la función, se obtiene el valor del campo de búsqueda utilizando document.getElementById("searchInput").value, donde "searchInput" es el ID del campo de búsqueda en el HTML.</p>
+			<p>Se puede realizar cualquier acción deseada con el término de búsqueda. En este caso se muestra una alerta con el término de búsqueda, pero se puede modificar según las necesidades. Por ejemplo, redirigir al usuario a una página de resultados de búsqueda utilizando window.location.href.</p>
+			<p>Al ajustar y personalizar el script de esta manera, puedes adaptar los objetos, propiedades y métodos a la página donde se va a integrar el menú de navegación, proporcionando la funcionalidad deseada al interactuar con los elementos del menú.</p>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span><span style="display: inline-block; transform: scale(-1.6, 1.6);">&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
