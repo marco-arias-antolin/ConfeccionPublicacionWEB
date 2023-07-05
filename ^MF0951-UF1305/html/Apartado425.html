@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 4. Apartado 4.2.5.
+					"Distinción de métodos para ejecutar el script en distintos navegadores identificando los objetos y sus propiedades"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Script en distintos navegadores</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Distinción de métodos para ejecutar el script en distintos navegadores identificando los objetos y sus propiedades.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script src="js/script425.js" defer></script>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Distinción de métodos para ejecutar el script en distintos navegadores identificando los objetos y sus propiedades</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A veces el código que escriben los desarrolladores de software no siempre hace lo que se espera sino algo totalmente distinto. Así que hay que averiguar la razón y pasar a depurar. Un depurador no puede revelar todos los problemas del código, pero sí puede ayudar.</p>
+			<p>Le solicitamos:</p>
+			<ul>
+				<li>Ejecute el siguiente script en el navegador Chrome y en Microsoft Edge.</li>
+				<li>Y después, depure el código para hacer que el programa funcione:
+					<pre><code>var numero = prompt("Introduce un número entero");
+var resultado = parImpar(numero);
+alert("El número " + nmero + " es " + resultado);
+
+function parImpar(numero) {
+	if (numero % 2 = 0) {
+		return "par";
+	} else {
+		return "impar";
+	}
+}</code></pre>
+				</li>
+				<li>
+					<p>A continuación, modifique el script del menú que se ha creado con el fin de crear un menú desplegable que deberá llamarse menú y al desplegarse se deberán ver opción 1, opción 2 y opción 3. El botón menú deberá ser verde y para cambiar el color deberá modificarse su clase. El resultado deberá ser como la siguiente imagen:</p>
+					<div class="text-center"><img src="img/Apartado425.PNG" alt="Ejemplo de Menu"></div>
+				</li>
+			</ul>
+			<h3>Actividad asociada al CE1.6 y CE3.2</h3>
+			<p>CE1.6: Distinguir los métodos para ejecutar un script utilizando varios navegadores web.</p>
+			<p>CE3.2: Identificar los objetos, sus propiedades y sus métodos y su funcionalidad dentro del script ya desarrollado con el fin de ajustarlos a la página donde se va a integrar.</p>
+		</section>
+		<section>
+			<h2>Solución:</h2>
+			<p>Primero voy a marcar los errores en el script.</p>
+			<pre><code>var numero = prompt("Introduce un número entero");
+var resultado = parImpar(numero);
+alert("El número " + <span class="text-danger">nmero</span> + " es " + resultado);
+
+function parImpar(numero) {
+	if (numero % 2 <span class="text-danger">=</span> 0) {
+		return "par";
+	} else {
+		return "impar";
+	}
+}</code></pre>
+			<p>La versión corregida:</p>
+			<pre><code>var numero = prompt("Introduce un número entero");
+var resultado = parImpar(numero);
+alert("El número " + <span class="text-success">numero</span> + " es " + resultado);
+
+function parImpar(numero) {
+	if (numero % 2 <span class="text-success">==</span> 0) {
+		return "par";
+	} else {
+		return "impar";
+	}
+}</code></pre>
+			<button type="button" class="btn btn-primary" onclick="esParOImpar()">Ejecutar script</button>
+			<br><br>
+			<p>El tercer punto supongo que hace referencia al Apartado 4.1.3. Por lo que modifico ese menú.</p>
+			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Menú
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Opción 1</a></li>
+						<li><a class="dropdown-item" href="#">Opción 2</a></li>
+						<li><a class="dropdown-item" href="#">Opción 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<p>Para cambiar de color el botón del menú hay que sustituir la clase 'btn-primary' por la clase 'btn-success'</p>
+			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Menú
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Opción 1</a></li>
+						<li><a class="dropdown-item" href="#">Opción 2</a></li>
+						<li><a class="dropdown-item" href="#">Opción 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<p>Como estamos haciendo Javascript aquí dejo un ejemplo en el que se pueden cambiar los colores dinámicamente.</p>
+			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+				<div class="btn-group" role="group">
+					<button type="button" id="menuBtn" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						Menú
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Opción 1</a></li>
+						<li><a class="dropdown-item" href="#">Opción 2</a></li>
+						<li><a class="dropdown-item" href="#">Opción 3</a></li>
+					</ul>
+				</div>
+			</div>
+			<p>Elija el color con los botones siguientes:<br>
+				<button type="button" class="btn btn-primary cambiarColor">Primary</button>
+				<button type="button" class="btn btn-secondary cambiarColor">Secondary</button>
+				<button type="button" class="btn btn-success cambiarColor">Success</button>
+				<button type="button" class="btn btn-danger cambiarColor">Danger</button>
+				<button type="button" class="btn btn-warning cambiarColor">Warning</button>
+				<button type="button" class="btn btn-info cambiarColor">Info</button>
+				<button type="button" class="btn btn-light cambiarColor">Light</button>
+				<button type="button" class="btn btn-dark cambiarColor">Dark</button>
+				<button type="button" class="btn btn-link cambiarColor">Link</button>
+			</p>
+			<h3>Actividad asociada al CE1.6</h3>
+			<p>La detección del agente de usuario tiene sus limitaciones y puede no ser completamente confiable. Además, en general, es una buena práctica de desarrollo web evitar la detección de navegadores y, en su lugar, usar características de JavaScript y CSS compatibles con todos los navegadores modernos.</p>
+			<h3>Actividad asociada al CE3.2</h3>
+			<p>En el código proporcionado, hay un objeto 'window' implícito que es el objeto global en el navegador web y contiene varias propiedades y métodos. Aquí está el análisis de los objetos, propiedades y métodos presentes en el script:</p>
+			<ol>
+				<li>Objeto "window": Es el objeto global en el navegador web.
+					<ul>
+						<li>Propiedad "prompt": Un método del objeto "window" que muestra un cuadro de diálogo modal con un mensaje para que el usuario ingrese un valor. Devuelve el valor ingresado por el usuario como una cadena de texto.</li>
+						<li>Propiedad "alert": Un método del objeto "window" que muestra un cuadro de diálogo modal con un mensaje y un botón de aceptar. En el código, se utiliza para mostrar el resultado final.</li>
+					</ul>
+				</li>
+				<li>Objeto "window.esParOImpar": Es una función definida en el ámbito global (objeto "window").
+					<ul>
+						<li>Propiedad "esParOImpar.numero": Es una variable local de la función esParOImpar que almacena el número entero ingresado por el usuario.</li>
+						<li>Propiedad "esParOImpar.resultado": Es una variable local de la función "esParOImpar" que almacena el resultado de la función "parImpar(numero)".</li>
+						<li>Método "esParOImpar()": Es una función que se ejecuta al invocar "esParOImpar()". Realiza las siguientes acciones:
+							<ul>
+								<li>Muestra un cuadro de diálogo para que el usuario ingrese un número entero.</li>
+								<li>Llama a la función "parImpar(numero)" y almacena su resultado en la variable "resultado".</li>
+								<li>Muestra un cuadro de diálogo con el número ingresado y su clasificación como "par" o "impar".</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Objeto "window.esParOImpar.parImpar": Es una función definida dentro de la función "esParOImpar".
+					<ul>
+						<li>Propiedad "esParOImpar.parImpar.numero": Es un parámetro de la función "esParOImpar.parImpar" que recibe un número.</li>
+						<li>Método "esParOImpar.parImpar()": Es una función que determina si un número es par o impar. Devuelve "par" si el número es divisible por 2 y "impar" en caso contrario.</li>
+					</ul>
+				</li>
+			</ol>
+			<p>He creado un botón (&lt;button&gt;) para ejecutar la función esParOImpar() al hacer clic:</p>
+			<pre><code>&lt;button type="button" class="btn btn-primary" onclick="esParOImpar()"&gt;Ejecutar script&lt;/button&gt;</code></pre>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span><span style="display: inline-block; transform: scale(-1.6, 1.6);">&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
