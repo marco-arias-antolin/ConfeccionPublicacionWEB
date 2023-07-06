@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 5. Apartado 5.2.2.
+					"Explicación de los objetos del navegador y uso de sus propiedades y métodos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Objetos del navegador</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Explicación de los objetos del navegador y uso de sus propiedades y métodos.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script type="module">
+		// Nombre de la aplicación
+		var nombreNavegador = navigator.appName;
+
+		// Versión de la aplicación
+		var versionNavegador = navigator.appVersion;
+
+		// Plugins soportados por la aplicación
+		var pluginsSoportados = navigator.plugins;
+
+		// Crear un elemento para mostrar la información
+		var resultado = document.getElementById('resultado');
+
+		// Mostrar la información en el documento
+		resultado.innerHTML = `
+			Nombre del navegador: ${nombreNavegador}<br>
+			Versión del navegador: ${versionNavegador}<br>
+			Plugins soportados: ${pluginsSoportados.length}
+		  `;
+	</script>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Explicación de los objetos del navegador y uso de sus propiedades y métodos</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Los navegadores proporcionan una serie de objetos organizados de acuerdo con una jerarquía a los que se puede acceder con JavaScript. Estos objetos se ajustan al denominado DOM (Document Object Model).</p>
+			<p>Para entender las posibilidades que ofrecen los objetos del navegador:</p>
+			<p>Cree un documento en el que, al pulsar un botón, muestre la siguiente información del navegador:</p>
+			<ul>
+				<li>Nombre de la aplicación</li>
+				<li>Versión de la aplicación</li>
+				<li>Plugins soportados por la aplicación.</li>
+			</ul>
+
+			<h3>Actividad asociada al CE2.1</h3>
+			<p>Explicar los objetos del navegador, así como sus propiedades y métodos, que se utilizan para añadir funcionalidad a las páginas web teniendo en cuenta las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<h3>Información del Navegador</h3>
+			<button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#contenedor">Mostrar Información</button>
+			<p></p>
+			<div id="contenedor" class="collapse">
+				<div id="resultado" class="card card-body"></div>
+			</div>
+
+			<h3>Actividad asociada al CE2.1</h3>
+			<p>El objeto navigator proporciona información sobre el navegador y el entorno en el que se está ejecutando el código JavaScript. Contiene propiedades y métodos que permiten acceder a detalles específicos del navegador. A continuación se presentan algunas de las propiedades y métodos más comunes del objeto navigator:
+			<ol>
+				<li>navigator.userAgent: Propiedad que devuelve una cadena que representa el agente de usuario (User Agent) del navegador, que proporciona información sobre el navegador y el sistema operativo utilizado.</li>
+				<li>navigator.appName: Propiedad que devuelve el nombre del navegador. Por ejemplo, "Netscape" o "Microsoft Internet Explorer".</li>
+				<li>navigator.appVersion: Propiedad que devuelve la versión del navegador. Por ejemplo, "5.0 (Windows; en-US)".</li>
+				<li>navigator.platform: Propiedad que devuelve el sistema operativo en el que se está ejecutando el navegador. Por ejemplo, "Win32" o "MacIntel".</li>
+				<li>navigator.language: Propiedad que devuelve el lenguaje preferido del usuario, en formato de código de idioma. Por ejemplo, "es-ES" para español de España.</li>
+				<li>navigator.plugins: Propiedad que devuelve una lista de los plugins instalados en el navegador. Cada plugin se representa como un objeto con propiedades como name (nombre), filename (nombre del archivo), description (descripción) y más.</li>
+				<li>navigator.cookieEnabled: Propiedad booleana que indica si las cookies están habilitadas en el navegador.</li>
+			</ol>
+			<p>Estas son solo algunas de las propiedades comunes del objeto navigator. También hay otros métodos y propiedades más específicos que pueden variar según el navegador y su implementación.</p>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span><span style="display: inline-block; transform: scale(-1.6, 1.6);">&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
