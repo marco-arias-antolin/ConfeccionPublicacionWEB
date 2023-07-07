@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 5
+					"Creación de un formulario dinámico"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Caso práctico 5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de un formulario dinámico.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#formulario {
+			font-family: Arial, sans-serif;
+			background-color: white;
+			padding: 20px;
+			border: 1px solid #ccc;
+			width: 300px;
+			margin: 0 auto;
+			color: black;
+		}
+
+		input[type="submit"] {
+			display: block;
+			margin: auto;
+		}
+
+		#botones {
+			display: flex;
+			justify-content: center;
+		}
+
+		.button {
+			border: 1px solid var(--color);
+			border-radius: .6rem;
+			margin: 1rem;
+			padding: 1rem;
+		}
+
+		.purple-button {
+			background-color: purple;
+			color: white;
+		}
+
+		.green-button {
+			background-color: green;
+			color: white;
+		}
+
+		.black-button {
+			background-color: black;
+			color: white;
+		}
+
+		.white-button {
+			background-color: white;
+			color: black;
+		}
+	</style>
+	<script>
+		function changeFormColor(color) {
+			var form = document.getElementById("formulario");
+
+			switch (color) {
+				case "purple":
+					form.style.backgroundColor = "purple";
+					form.style.color = "white";
+					break;
+
+				case "green":
+					form.style.backgroundColor = "green";
+					form.style.color = "white";
+					break;
+
+				case "black":
+					form.style.backgroundColor = "black";
+					form.style.color = "white";
+					break;
+
+				case "white":
+					form.style.backgroundColor = "white";
+					form.style.color = "black";
+					break;
+
+				default:
+					break;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de un formulario dinámico</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, deberá crear un formulario con los siguientes requisitos:</p>
+			<ul>
+				<li>Un título que ponga Caso práctico 5.</li>
+				<li>Un título h2 que ponga mi formulario.</li>
+				<li>Deberá crear un formulario con los campos nombre, email y mensaje.</li>
+				<li>Deberá crear un botón submit.</li>
+				<li>El formulario deberá enviarse con los datos en segundo plano a su email.</li>
+				<li>Deberá crear tres botones que cambie el color de fondo, solo y únicamente, del formulario. Los colores serán morado, verde, negro y blanco.</li>
+				<li>Cuando el fondo del formulario cambie de color, las letras, únicamente, del formulario deberán cambiar a color blanco. Sin embargo, cuando el fondo del formulario cambie a blanco, las letras deberán cambiar a negro como estaban por defecto.</li>
+				<li>El botón enviar deberá estar dentro del propio formulario y alineado en el centro</li>
+				<li>Los botones que cambian el fondo deberán estar aparte del formulario.</li>
+			</ul>
+			<p>Importante. Deberá usar los estándares actualizados, es decir, no se permite usar ni bgColor, ni fgColor.</p>
+
+			<p>Además, para saber que el botón enviar funciona, al pulsarlo deberá salir lo siguiente y el formulario deberá tener el siguiente resultado estético:</p>
+			<img src="img/CPT5.PNG" alt="Ventana emergente al enviar formulario">
+			<h3>Actividad asociada al CE2.2 y CE2.3</h3>
+			<p>CE2.2 Identificar los objetos predefinidos por el lenguaje de guion para manejar nuevas estructuras y utilidades que añadirán nuevas funcionalidades a las páginas, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+			<p>CE2.3 Describir e identificar los objetos del documento que permiten añadir interactividad entre el usuario y el script, así como sus propiedades y métodos.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<form id="formulario" action="mailto:nuestroemail@gmail.com?subject=Datos Usuario" method="post" enctype="multipart/form-data">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre" required><br><br>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required><br><br>
+
+				<label for="mensaje">Mensaje:</label>
+				<textarea id="mensaje" name="mensaje" required></textarea><br><br>
+
+				<input type="submit" value="Enviar">
+			</form>
+
+			<div id="botones">
+				<button class="button purple-button" onclick="changeFormColor('purple')">Morado</button>
+				<button class="button green-button" onclick="changeFormColor('green')">Verde</button>
+				<button class="button black-button" onclick="changeFormColor('black')">Negro</button>
+				<button class="button white-button" onclick="changeFormColor('white')">Blanco</button>
+			</div>
+
+			<h3>Actividad asociada al CE2.2 y CE2.3</h3>
+			<p>En el código proporcionado, se utilizan los siguientes objetos predefinidos en JavaScript:</p>
+			<ul>
+				<li>document: Es un objeto predefinido que representa el documento HTML cargado en el navegador. Permite acceder y manipular los elementos del documento, como obtener elementos por su identificador (getElementById).</li>
+				<li>form: Es un objeto que representa un formulario HTML. En este caso, se obtiene el formulario mediante document.getElementById("formulario"), lo que implica que existe un elemento con el identificador "formulario" en el documento HTML.</li>
+				<li>form.style: Es una propiedad del objeto form que proporciona acceso a las propiedades de estilo CSS del formulario. Permite modificar las propiedades de estilo, como el color de fondo (backgroundColor) y el color de texto (color).</li>
+				<li>switch: Es una estructura de control que permite evaluar diferentes casos y ejecutar el código correspondiente según el valor de una expresión. En este caso, se utiliza para evaluar el valor de la variable color y modificar el estilo del formulario en función del caso.</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
