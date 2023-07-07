@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Realiza en Equipo 2. Tema 6. Apartado 6.2.
+					"Identificar eventos incluidos en el script"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Ejercicio - La lista de la compra</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Identificar eventos incluidos en el script.">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Identificar eventos incluidos en el script</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Dado el siguiente código que sirve para crear una lista de la compra, se deberán crear determinados scripts con eventos que permitan resetear la lista cuando el usuario desee, la lista no debe añadir nuevas líneas cuando el usuario no haya escrito nada.</p>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="description" content="Creación de nodos mediante javascript"&gt;
+  &lt;title&gt;Ejercicio - La lista de la compra&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action="#"&gt;
+    &lt;input type="text" class="introduccionDatos" id="introduccionDatos"&gt;
+    &lt;input type="button" value="Añadir a la lista" id="anadir"&gt;
+    &lt;input type="button" value="Reiniciar" id="reiniciar"&gt;
+  &lt;/form&gt;
+  &lt;ul id="elementoUl"&gt;
+  &lt;/ul&gt;
+  &lt;script&gt;
+    window.onload = init;
+    function init() {
+      document.getElementById("anadir").addEventListener("click", anadirElemento);
+      document.getElementById("reiniciar").addEventListener("click", reiniciarLista);
+    }
+    function anadirElemento() {
+      //...
+    }
+    function reiniciarLista() {
+      //...
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<h3>Actividad asociada al CE3.3</h3>
+			<p>Identificar los eventos incluidos en el script para distinguir las interacciones con el usuario.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p>El código de las funciones es el siguiente:</p>
+			<pre><code>function anadirElemento() {
+  var input = document.getElementById("introduccionDatos");
+  var texto = input.value.trim();
+
+  if (texto !== "") {
+    var lista = document.getElementById("elementoUl");
+    var nuevoElemento = document.createElement("li");
+    nuevoElemento.textContent = texto;
+    lista.appendChild(nuevoElemento);
+    input.value = "";
+  }
+}
+
+function reiniciarLista() {
+  var lista = document.getElementById("elementoUl");
+  lista.innerHTML = "";
+}</code></pre>
+			<p>El ejercicio funcionando:</p>
+			<form action="#">
+				<input type="text" class="introduccionDatos" id="introduccionDatos">
+				<input type="button" value="Añadir a la lista" id="anadir">
+				<input type="button" value="Reiniciar" id="reiniciar">
+			</form>
+			<ul id="elementoUl">
+			</ul>
+			<script>
+				window.onload = init;
+				function init() {
+					document.getElementById("anadir").addEventListener("click", anadirElemento);
+					document.getElementById("reiniciar").addEventListener("click", reiniciarLista);
+				}
+				function anadirElemento() {
+					var input = document.getElementById("introduccionDatos");
+					var texto = input.value.trim();
+
+					if (texto !== "") {
+						var lista = document.getElementById("elementoUl");
+						var nuevoElemento = document.createElement("li");
+						nuevoElemento.textContent = texto;
+						lista.appendChild(nuevoElemento);
+						input.value = "";
+						input.focus();
+					}
+				}
+
+				function reiniciarLista() {
+					var lista = document.getElementById("elementoUl");
+					lista.innerHTML = "";
+				}
+			</script>
+
+			<h3>Actividad asociada al CE3.3</h3>
+			<p>En el script proporcionado, se incluyen dos eventos que permiten interactuar con el usuario:</p>
+			<p>Evento "click" en el botón "Añadir a la lista":</p>
+			<pre><code>document.getElementById("anadir").addEventListener("click", anadirElemento);</code></pre>
+			<p>Este evento se dispara cuando el usuario hace clic en el botón "Añadir a la lista". El evento está asociado a la función "anadirElemento()", que se ejecutará cuando ocurra el evento.</p>
+			<p>Evento "click" en el botón "Reiniciar":</p>
+			<pre><code>document.getElementById("reiniciar").addEventListener("click", reiniciarLista);</code></pre>
+			<p>Este evento se activa cuando el usuario hace clic en el botón "Reiniciar". El evento está asociado a la función "reiniciarLista()", que se ejecutará cuando ocurra el evento.</p>
+			<p>Estos eventos permiten al usuario interactuar con la página web al hacer clic en los botones correspondientes. El evento "click" se desencadena cuando se hace clic en un elemento específico, lo que permite ejecutar las funciones asociadas para realizar acciones como añadir elementos a la lista o reiniciarla.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
