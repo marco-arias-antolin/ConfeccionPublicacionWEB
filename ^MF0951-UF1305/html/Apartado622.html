@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 6. Apartado 6.2.2.
+					"Interpretación de scripts para validar las entradas de
+					datos en los campos de un formulario"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Formulario de validación</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Interpretación de scripts para validar las entradas de datos en los campos de un formulario.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		form {
+			display: grid;
+			grid-template-columns: auto auto;
+			justify-content: start;
+		}
+
+		form>label,
+		form>input {
+			margin: .3rem;
+		}
+
+		input[type=submit] {
+			grid-column: span 2;
+		}
+	</style>
+	<script>
+		function validarFormulario() {
+			// Obtener los valores de los campos del formulario.
+			// Con trim() se eliminan los espacios en blanco
+			var nombre = document.forms["miFormulario"]["nombre"].value.trim();
+			var edad = document.forms["miFormulario"]["edad"].value.trim();
+			var cpostal = document.forms["miFormulario"]["cpostal"].value.trim();
+			var dni = document.forms["miFormulario"]["dni"].value.trim();
+			var email = document.forms["miFormulario"]["email"].value.trim();
+
+			// Comprobar si algún campo está vacío
+			// Como los imput son "required" aquí entra si algún campo tiene espacios en blanco
+			if (nombre == "" || edad == "" || cpostal == "" || dni == "" || email == "") {
+				alert("Falta información en uno o más campos");
+				return false;
+			}
+
+			// Comprobar si el campo "Edad" es un número
+			// Se podría comprobar que el número está en un rango válido
+			if (isNaN(edad)) {
+				alert("El campo 'Edad' debe ser un número");
+				return false;
+			}
+
+			// Comprobar el formato del campo "DNI" utilizando una expresión regular
+			if (!/^\d{8}-[A-Za-z]$/.test(dni)) {
+				alert("El campo 'DNI' debe tener 8 dígitos, un guion (-) y una letra");
+				return false;
+			}
+
+			// Comprobar el formato del campo "Código Postal" utilizando una expresión regular
+			if (!/^\d{5}$/.test(cpostal)) {
+				alert("El campo 'Código Postal' debe tener 5 dígitos");
+				return false;
+			}
+
+			// Comprobar el formato del campo "Email" utilizando una expresión regular
+			if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)) {
+				alert("El campo 'Email' debe contener una @ y un punto");
+				return false;
+			}
+
+			// Aquí puedes realizar acciones adicionales, como enviar el formulario a un correo electrónico de ejemplo
+			// Esta debería ser la opción elegida ya que hay un mayor control de lo que se envía y su formato.
+
+			// Devolver true para permitir el envío del formulario
+			return true;
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Interpretación de scripts para validar las entradas de datos en los campos de un formulario</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Cuando, en una web, se introducen datos, el navegador y/o servidor web verifican que estén en el formato correcto y dentro de las restricciones establecidas por la aplicación. La validación realizada en el navegador se denomina validación en el lado del cliente, mientras que la validación realizada en el servidor se denomina validación en el lado del servidor.</p>
+			<p>Para practicar sobre la validación de entrada de datos en los campos de formulario, le solicitamos:</p>
+			<p>En primer lugar, cree un documento que contenga un formulario en el que deberán aparecer cinco campos:</p>
+			<ol>
+				<li>Nombre</li>
+				<li>Edad</li>
+				<li>Cpostal</li>
+				<li>DNI</li>
+				<li>Email</li>
+			</ol>
+			<p>Además, deberá crear un botón Enviar.
+			<p>El formulario deberá validar todos los campos con los siguientes requisitos:
+			<ul>
+				<li>Deberá saltar una notificación si hay un campo vacío, la notificación dirá que falta información.</li>
+				<li>En el campo edad notificará si no ha introducido un número, que el campo debe ser un número.</li>
+				<li>El campo DNI debe validarse para que el contenido de los datos tenga una estructura de 8 dígitos, un guion (-) y una letra.</li>
+				<li>El campo de código postal deberá tener 5 dígitos.</li>
+				<li>El campo de email deberá contener una @ y un punto.</li>
+				<li>Debe “enviar” el formulario a un email de ejemplo.</li>
+			</ul>
+			<p>Una vez realizado usted:</p>
+			<ul>
+				<li>Identificará los objetos del formulario que son validados dentro del script así como las propiedades y métodos utilizados para validar cada entrega.</li>
+				<li>Indicará las funciones proporcionadas por el lenguaje de guion utilizadas para la validación de datos.</li>
+				<li>Describirá los eventos que se utilizan en la realización de las acciones.</li>
+				<li>Describirá la función o funciones de validación identificando los parámetros de la misma</li>
+				<li>Documente todo el script realizado y envíelo a su tutor/a para su corrección.</li>
+			</ul>
+
+			<h3>Actividad asociada al CE2.6</h3>
+			<p>Interpretar scripts en los que se validan las entradas de datos de los campos de un formulario:</p>
+			<ul>
+				<li>Identificar los objetos del formulario que son validados dentro del script.</li>
+				<li>Identificar las propiedades y métodos utilizados para validar cada entrada.</li>
+				<li>Reconocer las funciones proporcionadas por el lenguaje de guion utilizadas para la validación de datos.</li>
+				<li>Describir los eventos que se utilizan en la realización de las acciones.</li>
+				<li>Describir la función o funciones de validación identificando los parámetros de la misma.</li>
+				<li>Realizar cambios en el script siguiendo unas especificaciones recibidas.</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+				<li>Documentar el script realizado.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+		</section>
+		<form name="miFormulario" action="mailto:nuestroemail@gmail.com?subject=Datos Usuario" onsubmit="return validarFormulario()" method="post">
+			<label for="nombre">Nombre:</label>
+			<input type="text" id="nombre" name="nombre" required>
+
+			<label for="edad">Edad:</label>
+			<input type="text" id="edad" name="edad" required>
+
+			<label for="cpostal">Código Postal:</label>
+			<input type="text" id="cpostal" name="cpostal" required>
+
+			<label for="dni">DNI:</label>
+			<input type="text" id="dni" name="dni" required>
+
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" required>
+
+			<input type="submit" value="Enviar">
+		</form>
+		<h3>Validación</h3>
+		<p>El formulario deberá validar todos los campos con los siguientes requisitos:
+		<ul>
+			<li>Deberá saltar una notificación si hay un campo vacío, la notificación dirá que falta información. ✔
+				<p>Si los campos están vacíos saltará el mensaje predeterminado por el navegador ya que los campos son "required". Sin embargo si se introducen espacios en blanco es JavaScript quien se encarga de validar.</p>
+			</li>
+			<li>En el campo edad notificará si no ha introducido un número, que el campo debe ser un número. ✔</li>
+			<li>El campo DNI debe validarse para que el contenido de los datos tenga una estructura de 8 dígitos, un guion (-) y una letra. ✔</li>
+			<li>El campo de código postal deberá tener 5 dígitos. ✔</li>
+			<li>El campo de email deberá contener una @ y un punto. ✔</li>
+			<li>Debe “enviar” el formulario a un email de ejemplo. ✔</li>
+		</ul>
+		<p>Una vez realizado usted:</p>
+		<ul>
+			<li>Identificará los objetos del formulario que son validados dentro del script así como las propiedades y métodos utilizados para validar cada entrega.
+				<p>En el script, se utilizan los siguientes objetos del formulario y sus propiedades:</p>
+				<ul>
+					<li>document.forms["miFormulario"]: Obtiene una referencia al formulario con el nombre "miFormulario".</li>
+					<li>nombre: Propiedad value del campo de texto con el nombre "nombre".</li>
+					<li>edad: Propiedad value del campo de texto con el nombre "edad".</li>
+					<li>cpostal: Propiedad value del campo de texto con el nombre "cpostal".</li>
+					<li>dni: Propiedad value del campo de texto con el nombre "dni".</li>
+					<li>email: Propiedad value del campo de texto con el nombre "email".</li>
+				</ul>
+			</li>
+			<li>Indicará las funciones proporcionadas por el lenguaje de guion utilizadas para la validación de datos.
+				<p>En el script, se utilizan las siguientes funciones proporcionadas por JavaScript para la validación de datos:</p>
+				<ul>
+					<li>isNaN(valor): Devuelve true si el valor no es un número.</li>
+					<li>.test(valor): Método de los objetos de tipo RegExp que verifica si un valor coincide con una expresión regular.</li>
+				</ul>
+			</li>
+			<li>Describirá los eventos que se utilizan en la realización de las acciones.
+				<p>Eventos utilizados en la realización de las acciones:</p>
+				<ul>
+					<li>onsubmit: Evento del formulario que se dispara cuando se envía el formulario. Se utiliza para llamar a la función validarFormulario() antes de enviar los datos.</li>
+				</ul>
+				<p>También se podría tener un mayor control con los campos introducidos haciendo uso del evento "onblur" que se dispara al salir del "input" (cuando pierde el foco). De esta manera se podría marcar el campo inválido cuando el usuario salga de el.</p>
+			</li>
+			<li>Describirá la función o funciones de validación identificando los parámetros de la misma
+				<p>La función validarFormulario() se utiliza para realizar la validación de los campos del formulario. No recibe parámetros explícitos, pero accede a los valores de los campos a través de las propiedades mencionadas anteriormente.</p>
+
+				<p>La función realiza las siguientes validaciones y acciones:</p>
+				<ul>
+					<li>Comprueba si algún campo está vacío.</li>
+					<li>Verifica si el campo "Edad" es un número.</li>
+					<li>Valida el formato del campo "DNI" utilizando una expresión regular.</li>
+					<li>Valida el formato del campo "Código Postal" utilizando una expresión regular.</li>
+					<li>Valida el formato del campo "Email" utilizando una expresión regular.</li>
+					<li>Devuelve false para evitar el envío del formulario si alguna validación falla.</li>
+					<li>Devuelve true si todas las validaciones son exitosas, lo que permite el envío del formulario.</li>
+					<li>Los parámetros de la función son implícitos y se accede a los valores de los campos a través de las propiedades mencionadas anteriormente. No se pasan parámetros directamente a la función.</li>
+				</ul>
+			</li>
+			<li>Documente todo el script realizado y envíelo a su tutor/a para su corrección. ✔</li>
+		</ul>
+
+		<h3>Nota:</h3>
+		<p>En el ejemplo anterior, el atributo "action" se establece en mailto:nuestroemail@gmail.com, donde "nuestroemail@gmail.com" es la dirección de correo electrónico a la que se enviarán los datos del formulario.</p>
+		<p>Ten en cuenta que al utilizar el atributo "mailto", el navegador del usuario se abrirá por defecto con su cliente de correo electrónico predeterminado, y será responsabilidad del usuario enviar el correo electrónico.</p>
+		<p>Es importante tener en cuenta que el atributo "mailto" tiene limitaciones y depende del cliente de correo electrónico del usuario. Además, no proporciona un control completo sobre el proceso de envío de correo electrónico y no es adecuado para aplicaciones de producción o que requieran funcionalidad avanzada de correo electrónico. Para un control más completo y seguro del envío de correo electrónico desde un formulario, generalmente se recomienda utilizar un servidor de correo o un servicio de envío de correo electrónico en el lado del servidor.</p>
+
+		<h3>Actividad asociada al CE2.6</h3>
+		<p>En el script proporcionado, se validan los siguientes objetos del formulario:</p>
+		<ul>
+			<li>nombre: Se valida que no esté vacío utilizando la propiedad required en el elemento &lt;input&gt; correspondiente.</li>
+			<li>edad: Se valida que no esté vacío y que sea un número utilizando la función isNaN().</li>
+			<li>cpostal: Se valida que no esté vacío y que contenga exactamente 5 dígitos utilizando una expresión regular y el método match().</li>
+			<li>dni: Se valida que no esté vacío y que tenga el formato correcto de 8 dígitos, un guion y una letra, utilizando otra expresión regular y el método match().</li>
+			<li>email: Se valida que no esté vacío y que tenga un formato de dirección de correo válido utilizando una expresión regular y el método match().</li>
+		</ul>
+		<p>El script utiliza las siguientes propiedades y métodos para validar cada entrada:</p>
+		<ul>
+			<li>value: Propiedad que obtiene el valor del campo de texto en el formulario.</li>
+			<li>isNaN(): Función global en JavaScript que evalúa si un valor no es un número.</li>
+			<li>match(): Método de cadena de JavaScript que busca coincidencias de una expresión regular en una cadena dada.</li>
+			<li>required: Atributo HTML que especifica que un campo de entrada debe ser completado antes de enviar el formulario.</li>
+		</ul>
+		<p>El script utiliza el evento onsubmit en el formulario para llamar a la función validarFormulario() cuando se envía el formulario. Este evento se desencadena cuando el usuario hace clic en el botón "Enviar" o presiona la tecla "Enter" mientras está en un campo de entrada.</p>
+		<p>La función validarFormulario() es responsable de realizar todas las validaciones necesarias. Toma los valores de los campos del formulario como parámetros, los valida utilizando las propiedades y métodos mencionados anteriormente, y muestra notificaciones de error utilizando alert() en caso de que alguna validación falle. Al finalizar, la función devuelve true si el formulario se validó correctamente y false si hubo algún error. No recibe parámetros específicos, pero utiliza variables locales para almacenar los valores de los campos del formulario.</p>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
