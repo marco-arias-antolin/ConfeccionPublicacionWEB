@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 6. Apartado 6.4.2.
+					"Descripción y uso de los eventos que proporciona el lenguaje de guion"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Eventos de JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Descripción y uso de los eventos que proporciona el lenguaje de guion.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.frutas {
+			background-color: brown;
+			color: white;
+		}
+
+		.frutas:hover {
+			background-color: green;
+		}
+
+		.frutas option {
+			background-color: brown;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Descripción y uso de los eventos que proporciona el lenguaje de guion.</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Cree un documento en el que haya una lista desplegable con 4 frutas diferentes. Cuando el usuario seleccione una de ellas, deberá aparecer debajo una frase que diga:</p>
+			<p>Usted ha seleccionado (la fruta que se haya seleccionado).</p>
+			<p>Además, esa lista desplegable tendrá un color marrón con letras blancas, cuando pase el puntero del ratón por encima deberá tornarse el color a verde y cuando salga el puntero del ratón, la lista deberá pasar a su estado inicial.</p>
+			<p>Vea un ejemplo de cómo deberá quedar:</p>
+			<img src="img/Apartado642.PNG" alt="Ejemplo del resultado">
+
+			<h3>Actividad asociada al CE2.4</h3>
+			<p>Describir los eventos que proporciona el lenguaje de guion: de ratón, de teclado, de enfoque, de formulario y de carga, entre otros, para interactuar con el usuario y relacionarlos con los objetos del lenguaje.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p>Selecciona una fruta:</p>
+			<select class="frutas" onchange="mostrarSeleccion(this)">
+				<option value="" disabled selected>Elige una fruta</option>
+				<option value="Manzana">Manzana</option>
+				<option value="Naranja">Naranja</option>
+				<option value="Plátano">Plátano</option>
+				<option value="Uva">Uva</option>
+			</select>
+			<p id="resultado"></p>
+			<script>
+				function mostrarSeleccion(elemento) {
+					var seleccion = elemento.value;
+					var resultado = document.getElementById("resultado");
+					resultado.innerHTML = "Usted ha seleccionado " + seleccion + ".";
+				}
+			</script>
+
+			<h3>Nota:</h3>
+			<p>En vez de usar los eventos "onmouseover" y "onmouseout" hago el cambio de color con CSS. Se podría hacer en JavaScript de la siguiente manera:</p>
+			<select class="frutas" onchange="mostrarSeleccion2(this)" onmouseover="cambiarColor(this)" onmouseout="restaurarColor(this)">
+				<option value="" disabled selected>Elige una fruta</option>
+				<option value="Manzana">Manzana</option>
+				<option value="Naranja">Naranja</option>
+				<option value="Plátano">Plátano</option>
+				<option value="Uva">Uva</option>
+			</select>
+			<p id="resultado2"></p>
+			<script>
+				function mostrarSeleccion2(elemento) {
+					var seleccion = elemento.value;
+					var resultado = document.getElementById("resultado2");
+					resultado.innerHTML = "Usted ha seleccionado " + seleccion + ".";
+				}
+
+				function cambiarColor(elemento) {
+					elemento.style.backgroundColor = 'green';
+					elemento.style.color = 'black';
+				}
+
+				function restaurarColor(elemento) {
+					elemento.style.backgroundColor = 'brown';
+					elemento.style.color = 'white';
+				}
+			</script>
+
+			<h3>Actividad asociada al CE2.4</h3>
+			<p>El lenguaje de guion JavaScript proporciona una amplia variedad de eventos que permiten interactuar con el usuario. Aquí tienes una descripción de algunos de los eventos más comunes y cómo se relacionan con los objetos del lenguaje:</p>
+			<ul>
+				<li>Eventos de ratón:
+					<ul>
+						<li>click: Se dispara cuando se hace clic con el botón izquierdo del ratón. Se relaciona con los elementos del DOM (Document Object Model), y puedes asignar un controlador de eventos para manejarlo.</li>
+						<li>mouseover y mouseout: Se disparan cuando el puntero del ratón entra o sale de un elemento. También se relacionan con los elementos del DOM.</li>
+					</ul>
+				</li>
+				<li>Eventos de teclado:
+					<ul>
+						<li>keydown, keypress y keyup: Estos eventos se disparan cuando se presiona, mantiene presionada o suelta una tecla en el teclado. Se pueden asociar a elementos del DOM, como campos de entrada (input), y se pueden utilizar para capturar la entrada del usuario y realizar acciones correspondientes.</li>
+					</ul>
+				</li>
+				<li>
+					Eventos de enfoque:
+					<ul>
+						<li>focus y blur: Estos eventos se disparan cuando un elemento recibe o pierde el enfoque. Por ejemplo, cuando un campo de entrada obtiene el foco, se puede usar el evento focus para validar o modificar su contenido.</li>
+					</ul>
+				</li>
+				<li>
+					Eventos de formulario:
+					<ul>
+						<li>submit: Se dispara cuando se envía un formulario. Se utiliza para validar los datos del formulario antes de enviarlos al servidor. Puedes asociar este evento al elemento form del DOM.</li>
+						<li>reset: Se dispara cuando se restablecen los valores de un formulario. También se puede asociar al elemento form.</li>
+					</ul>
+				</li>
+				<li>
+					Eventos de carga:
+					<ul>
+						<li>load: Se dispara cuando se carga completamente un objeto, como una página web o una imagen. Se puede utilizar para realizar acciones una vez que todos los elementos se hayan cargado.</li>
+						<li>DOMContentLoaded: Se dispara cuando se completa la carga inicial del documento HTML, incluidos los recursos externos como imágenes y hojas de estilo. Se utiliza a menudo para ejecutar código JavaScript después de que el DOM esté listo para ser manipulado.</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Estos son solo algunos ejemplos de los eventos que JavaScript proporciona para interactuar con el usuario. Hay muchos otros eventos disponibles, y cada uno se relaciona con objetos específicos del lenguaje, como elementos del DOM, formularios y ventanas del navegador. Los eventos se pueden capturar y manejar utilizando funciones de JavaScript, lo que permite crear interacciones dinámicas y responder a las acciones del usuario de manera personalizada.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
