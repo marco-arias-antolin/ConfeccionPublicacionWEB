@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Foro de Actividad Grupal 1
+					"Los tipos de datos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Tipos de datos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Los tipos de datos.">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Los tipos de datos</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En este foro le pedimos que reflexione sobre cuáles son los tipos de datos que se utilizan para representar y almacenar los valores de las variables en la elaboración de scripts.</p>
+
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>Explicar los tipos de datos que se utilizan para representar y almacenar los valores de las variables en la elaboración de scripts, de acuerdo a las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<div style="color:#adb5bd;background:#212529;padding:1rem;">
+			<h2>Solución</h2>
+			<p>En JavaScript, existen varios tipos de datos utilizados para representar y almacenar valores en variables. Estos tipos de datos incluyen:</p>
+			<ol>
+				<li>Números (Numbers): Se utilizan para representar valores numéricos, ya sean enteros o de punto flotante. Por ejemplo, 1, 3.14, -7, etc.</li>
+				<li>Cadenas de texto (Strings): Se utilizan para representar secuencias de caracteres. Las cadenas de texto se encierran entre comillas simples ('') o comillas dobles (""). Por ejemplo, "Hola", 'JavaScript', "123", etc.</li>
+				<li>Booleanos (Booleans): Se utilizan para representar valores de verdadero (true) o falso (false). Estos valores son útiles para realizar evaluaciones y tomar decisiones en el código. Por ejemplo, true, false.</li>
+				<li>Arreglos (Arrays): Se utilizan para almacenar una colección ordenada de valores en una sola variable. Los elementos de un arreglo pueden ser de cualquier tipo de dato, incluyendo números, cadenas, objetos, etc. Los arreglos se declaran usando corchetes ([]). Por ejemplo, [1, 2, 3], ["manzana", "naranja", "plátano"].</li>
+				<li>Objetos (Objects): Se utilizan para almacenar colecciones de pares clave-valor, donde cada valor está asociado a una clave única. Los objetos se declaran utilizando llaves ({}) y consisten en propiedades y métodos. Por ejemplo, {nombre: "Juan", edad: 25, ciudad: "Madrid"}.</li>
+				<li>Valores nulos (null) y indefinidos (undefined): null se utiliza para representar la ausencia intencional de cualquier objeto o valor, mientras que undefined se utiliza para representar variables sin un valor asignado o propiedades no definidas en un objeto.</li>
+			</ol>
+			<p>Estos son los tipos de datos básicos en JavaScript. Además de ellos, JavaScript también proporciona otros tipos de datos como funciones, fechas y expresiones regulares, que se utilizan para tareas más específicas.</p>
+
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>En JavaScript, los tipos de datos que se utilizan para representar y almacenar valores en las variables, de acuerdo a las especificaciones técnicas del lenguaje, son los siguientes:</p>
+			<ol>
+				<li>Undefined: Representa una variable que no ha sido asignada o a la que no se le ha dado un valor. Es el valor predeterminado de una variable recién declarada.
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let x;
+console.log(x); // undefined
+</code></pre>
+				</li>
+				<li>Null: Representa la ausencia intencional de cualquier objeto o valor. Se utiliza para indicar que una variable no tiene un valor válido.
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let y = null;
+console.log(y); // null
+</code></pre>
+				</li>
+				<li>Boolean: Representa un valor lógico que puede ser verdadero (true) o falso (false). Se utiliza en lógica condicional y operaciones de control de flujo.
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let isActive = true;
+let isLoggedIn = false;
+</code></pre>
+				</li>
+				<li>Number: Representa valores numéricos, ya sean enteros o de punto flotante. También se utiliza para representar valores especiales como Infinity y NaN (Not a Number).
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let a = 42; // número entero
+let b = 3.14; // número de punto flotante
+let c = Infinity; // infinito positivo
+let d = -Infinity; // infinito negativo
+let e = NaN; // valor inválido de número
+</code></pre>
+				</li>
+				<li>String: Representa una secuencia de caracteres. Se utiliza para almacenar texto y se puede encerrar entre comillas simples ('') o comillas dobles ("").
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let greeting = "Hola";
+let name = 'Juan';
+</code></pre>
+				</li>
+				<li>Symbol: Introducido en ECMAScript 6, representa un identificador único e inmutable. Se utiliza principalmente como claves de propiedades de objetos.
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let id = Symbol("id");
+let obj = { [id]: "12345" };
+</code></pre>
+				</li>
+				<li>Object: Representa un objeto, que es una colección de pares clave-valor. Las propiedades de un objeto pueden ser de cualquier tipo de datos, incluyendo otros objetos.
+					<pre style="border: 1px solid grey;border-radius: .6rem;color:#adb5bd;margin: 1rem 0;padding: 1rem;"><code>let person = {
+  name: "Juan",
+  age: 25,
+  city: "Madrid"
+};
+console.log(person); // Object
+</code></pre>
+				</li>
+			</ol>
+			<p>Estos son los tipos de datos principales en JavaScript según las especificaciones técnicas del lenguaje. Sin embargo, JavaScript también es un lenguaje dinámicamente tipado, lo que significa que las variables pueden cambiar de tipo durante la ejecución del programa.</p>
+		</div>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
