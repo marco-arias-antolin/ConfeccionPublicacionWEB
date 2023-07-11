@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 6. Apartado 6.7.3.
+					"Interpretación de script que añaden efectos estéticos y
+					corrección de errores de sintaxis"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Corrección de un Script</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Interpretación de script que añaden efectos estéticos y corrección de errores de sintaxis.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#start {
+			background: green;
+		}
+
+		#stop {
+			background: red;
+		}
+
+		#reiniciar {
+			background: orange;
+		}
+
+		iframe {
+			background: white;
+		}
+	</style>
+	<script>
+		let id;
+		let h, m, s;
+		window.onload = init;
+		function init() {
+			document.getElementById("start").addEventListener("click", cronometrar);
+			document.getElementById("stop").addEventListener("click", parar);
+			document.getElementById("reiniciar").addEventListener("click", reiniciar);
+			h = 0;
+			m = 0;
+			s = 0;
+			document.getElementById("hms").innerHTML = "00:00:00";
+		}
+		function cronometrar() {
+			escribir();
+			id = setInterval(escribir, 1000);
+			document.getElementById("start").removeEventListener("click", cronometrar);
+		}
+		function escribir() {
+			var hAux, mAux, sAux;
+			s++;
+			if (s > 59) { m++; s = 0; }
+			if (m > 59) { h++; m = 0; }
+			if (h > 24) { h = 0; }
+			if (s < 10) { sAux = "0" + s; } else { sAux = s; }
+			if (m < 10) { mAux = "0" + m; } else { mAux = m; }
+			if (h < 10) { hAux = "0" + h; } else { hAux = h; }
+			document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux;
+		}
+		function parar() {
+			clearInterval(id);
+			document.getElementById("start").addEventListener("click", cronometrar);
+		}
+		function reiniciar() {
+			clearInterval(id);
+			document.getElementById("hms").innerHTML = "00:00:00";
+			h = 0; m = 0; s = 0;
+			document.getElementById("start").addEventListener("click", cronometrar);
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Interpretación de script que añaden efectos estéticos y corrección de errores de sintaxis</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Dado el siguiente código, deberá corregir los errores para que sea un código totalmente funcional. Para ello, deberá identificar los eventos necesarios. Además, deberá crear los botones con color verde para el de start, rojo para stop y naranja para reiniciar. Deberá documentar los cambios y dar una razón para cada uno de ellos.</p>
+			<p>El código es el siguiente:</p>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;script&gt;
+    window.onload = init;
+    function init() {
+      document.querySelector(".start").addEventListener(cronometrar);
+      document.querySelector(".stop").addEventListener(parar);
+      document.querySelector(".reiniciar").addEventListener(reiniciar);
+      h = 0;
+      m = 0;
+      s = 0;
+      document.getElementById().innerHTML = "00:00:00";
+    }
+    function cronometrar() {
+      escribir();
+      id = setInterval(escribir, 1000);
+      document.querySelector(".start").removeEventListener("click", cronometrar);
+    }
+    function escribir() {
+      var hAux, mAux, sAux;
+      s++;
+      if (s &gt; 59) { m++; s = 0; }
+      if (m &gt; 59) { h++; m = 0; }
+      if (h &gt; 24) { h = 0; }
+      if (s &lt; 10) { sAux = "0" + s; } else { sAux = s; }
+      if (m &lt; 10) { mAux = "0" + m; } else { mAux = m; }
+      if (h &lt; 10) { hAux = "0" + h; } else { hAux = h; }
+      document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux;
+    }
+    function parar() {
+      clearInterval(id);
+      document.querySelector(".start").addEventListener("click", cronometrar);
+    }
+    function reiniciar() {
+      clearInterval(id);
+      document.getElementById("hms").innerHTML = "00:00:00";
+      h = 0; m = 0; s = 0;
+      document.querySelector(".start").addEventListener("click", cronometrar);
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="cronometro"&gt;
+    &lt;div id="hms"&gt;&lt;/div&gt;
+    &lt;div class="boton start"&gt;Start&lt;/div&gt;
+    &lt;div class="boton stop"&gt;Stop&lt;/div&gt;
+    &lt;div class="boton reiniciar"&gt;Reiniciar&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+			<p>El ejemplo de cómo debería quedar es el siguiente:</p>
+			<img src="img/Apartado673.PNG" alt="Ejemplo del resultado">
+			<p>El original queda así:</p>
+			<iframe src="Apartado673original.html"></iframe>
+
+			<h3>Actividad asociada al CE2.5</h3>
+			<p>Interpretar scripts que añaden efectos estéticos a la presentación de las páginas:</p>
+			<ul>
+				<li>Identificar los objetos sobre los que se aplican los efectos estéticos.</li>
+				<li>Identificar las propiedades y métodos utilizados para añadir efectos.</li>
+				<li>Reconocer los eventos utilizados para la realización de las acciones.</li>
+				<li>Describir la función o funciones de efectos identificando los parámetros de la misma.</li>
+				<li>Realizar cambios en el script siguiendo unas especificaciones recibidas.</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+				<li>Documentar los cambios realizados.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;style&gt;
+  #start {
+    background: green;
+  }
+
+  #stop {
+    background: red;
+  }
+
+  #reiniciar {
+    background: orange;
+  }
+  &lt;/style&gt;
+  &lt;script&gt;
+  let id;
+  let h, m, s;
+  window.onload = init;
+  function init() {
+    document.getElementById("start").addEventListener("click", cronometrar);
+    document.getElementById("stop").addEventListener("click", parar);
+    document.getElementById("reiniciar").addEventListener("click", reiniciar);
+    h = 0;
+    m = 0;
+    s = 0;
+    document.getElementById("hms").innerHTML = "00:00:00";
+  }
+  function cronometrar() {
+    escribir();
+    id = setInterval(escribir, 1000);
+    document.getElementById("start").removeEventListener("click", cronometrar);
+  }
+  function escribir() {
+    var hAux, mAux, sAux;
+    s++;
+    if (s &gt; 59) { m++; s = 0; }
+    if (m &gt; 59) { h++; m = 0; }
+    if (h &gt; 24) { h = 0; }
+    if (s &lt; 10) { sAux = "0" + s; } else { sAux = s; }
+    if (m &lt; 10) { mAux = "0" + m; } else { mAux = m; }
+    if (h &lt; 10) { hAux = "0" + h; } else { hAux = h; }
+    document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux;
+  }
+  function parar() {
+    clearInterval(id);
+    document.getElementById("start").addEventListener("click", cronometrar);
+  }
+  function reiniciar() {
+    clearInterval(id);
+    document.getElementById("hms").innerHTML = "00:00:00";
+    h = 0; m = 0; s = 0;
+    document.getElementById("start").addEventListener("click", cronometrar);
+  }
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="cronometro"&gt;
+  &lt;div id="hms"&gt;&lt;/div&gt;
+  &lt;button id="start"&gt;Start&lt;/button&gt;
+  &lt;button id="stop"&gt;Stop&lt;/button&gt;
+  &lt;button id="reiniciar"&gt;Reiniciar&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+			<p>El corregido queda así:</p>
+			<iframe src="Apartado673corregido.html"></iframe>
+
+			<h3>Ejemplo funcionando</h3>
+			<div class="cronometro">
+				<div id="hms"></div>
+				<button id="start">Start</button>
+				<button id="stop">Stop</button>
+				<button id="reiniciar">Reiniciar</button>
+			</div>
+
+			<h3>Documentar los cambios y dar una razón para cada uno de ellos.</h3>
+			<ol>
+				<li>Se agregó el atributo lang="es" a la etiqueta &lt;html&gt;. Esto se hace para especificar el idioma del documento y mejorar la accesibilidad.</li>
+				<li>Se cambió la etiqueta &lt;div&gt; por &lt;button&gt; para los botones "Start", "Stop" y "Reiniciar". Los elementos &lt;button&gt; son más apropiados para representar botones en HTML.</li>
+				<li>Se asignaron identificadores únicos a los botones utilizando el atributo id. Los identificadores se establecieron como "start", "stop" y "reiniciar". Esto permite seleccionar los botones de manera más específica en el código JavaScript y mejora la legibilidad.</li>
+				<li>Se agregó un bloque &lt;style&gt; en la etiqueta &lt;head&gt; para definir estilos CSS para los botones. Los estilos se aplicaron utilizando los identificadores únicos de los botones. Esto permite personalizar el aspecto visual de los botones según los requisitos, utilizando los colores especificados.</li>
+				<li>Se cambiaron los selectores de clase (querySelector(".clase")) a selectores de ID (getElementById("id")) en el código JavaScript. Esto se hizo para seleccionar los elementos específicos mediante sus identificadores únicos. Además se consigue una mejora de rendimiento.</li>
+				<li>Se corrigió un error en la línea document.getElementById().innerHTML = "00:00:00";. Se agregó el identificador "hms" a la función getElementById() para seleccionar el elemento correcto.</li>
+				<li>Se declararon las variables id, h, m y s con el prefijo let antes de la función init(). Esto se hizo para asegurarse de que las variables sean accesibles en todo el ámbito del código JavaScript.</li>
+			</ol>
+			<p>En resumen, los cambios realizados incluyen la corrección de errores, el uso de identificadores únicos para los elementos, la aplicación de estilos CSS específicos a los botones y la mejora general de la legibilidad y la accesibilidad del código.</p>
+
+			<h3>Actividad asociada al CE2.5</h3>
+			<p>En el código corregido, se aplican efectos estéticos a los botones utilizando estilos CSS y se realizan acciones específicas cuando se activan los eventos de clic en los botones. A continuación, se detallan los objetos, propiedades, métodos y eventos utilizados:</p>
+			<ol>
+				<li>Objetos y propiedades utilizadas:
+					<ul>
+						<li>document.getElementById("id"): Se utiliza para seleccionar elementos por su ID y acceder a sus propiedades.</li>
+						<li>element.style: Se utiliza para modificar los estilos CSS de un elemento.</li>
+					</ul>
+				</li>
+				<li>Métodos utilizados para añadir efectos:
+					<ul>
+						<li>addEventListener(event, callback): Se utiliza para agregar un evento a un elemento y especificar la función de devolución de llamada (callback) que se ejecutará cuando ocurra el evento.</li>
+						<li>removeEventListener(event, callback): Se utiliza para eliminar un evento previamente agregado a un elemento.</li>
+					</ul>
+				</li>
+				<li>Eventos utilizados para realizar acciones:
+					<ul>
+						<li>"click": Se activa cuando se hace clic en un elemento.</li>
+					</ul>
+				</li>
+				<li>Descripción de las funciones de efectos identificando los parámetros:
+					<ol>
+						<li>init(): Esta función se ejecuta cuando la página se carga completamente. Establece los eventos de clic en los botones, inicializa las variables de tiempo y muestra el tiempo inicial en el elemento &lt;div id="hms"&gt;.</li>
+						<li>cronometrar(): Esta función se ejecuta cuando se hace clic en el botón "Start". Inicia el intervalo de tiempo utilizando setInterval() para llamar a la función escribir() cada segundo. También desactiva el evento de clic en el botón "Start" para evitar múltiples ejecuciones.</li>
+						<li>escribir(): Esta función se llama repetidamente cada segundo cuando el cronómetro está en funcionamiento. Incrementa los valores de hora, minuto y segundo y los formatea en una cadena de tiempo (hh:mm:ss). Luego, actualiza el contenido del elemento &lt;div id="hms"&gt; con la cadena de tiempo resultante.</li>
+						<li>parar(): Esta función se ejecuta cuando se hace clic en el botón "Stop". Detiene el intervalo de tiempo utilizando clearInterval() y vuelve a habilitar el evento de clic en el botón "Start".</li>
+						<li>reiniciar(): Esta función se ejecuta cuando se hace clic en el botón "Reiniciar". Detiene el intervalo de tiempo, restablece los valores de hora, minuto y segundo a cero y actualiza el contenido del elemento &lt;div id="hms"&gt; para mostrar "00:00:00". Luego, vuelve a habilitar el evento de clic en el botón "Start".</li>
+					</ol>
+				</li>
+			</ol>
+			<p>Cambios realizados:</p>
+			<ul>
+				<li>Se asignaron identificadores únicos a los botones utilizando el atributo id.</li>
+				<li>Se cambió el estilo de los botones utilizando los identificadores únicos en la sección &lt;style&gt;.</li>
+				<li>Se modificaron los selectores en el código JavaScript para utilizar getElementById() en lugar de querySelector().</li>
+				<li>Se corrigieron los errores de sintaxis en las llamadas a los métodos addEventListener() y removeEventListener().</li>
+				<li>Se agregaron comentarios para mejorar la comprensión del código.</li>
+			</ul>
+			<p>En resumen, los efectos estéticos se aplican mediante la modificación de los estilos CSS de los botones y las acciones se realizan utilizando eventos de clic y funciones de JavaScript. Se realizaron cambios para utilizar identificadores únicos, corregir errores y mejorar la legibilidad del código.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
