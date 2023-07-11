@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 6
+					"Creación de un programa capaz de decirnos la tecla que estamos pulsando"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Lectura de teclas con JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de un programa capaz de decirnos la tecla que estamos pulsando.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#solucion {
+			background: white;
+			color: black;
+			font-family: initial;
+			padding: .6rem;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de un programa capaz de decirnos la tecla que estamos pulsando</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, deberá crear una página web que muestre por pantalla la tecla del teclado que ha pulsado, es decir, si pulsa la tecla a, nos mostrará un mensaje diciendo que ha pulsado la tecla a. Se tiene que poder pulsar todas las teclas, es decir, letras, números y teclas especiales.</p>
+			<p>El programa deberá funcionar como se muestra en la siguiente imagen:</p>
+			<img src="img/CPT6.PNG" alt="Resultado deseado">
+
+			<h3>Actividad asociada al CE1.1, CE2.4 y CE3.2</h3>
+			<p>CE1.1 Describir las estructuras secuencial, condicional y de iteración que se utilizan para agrupar y organizar las acciones de un programa.</p>
+			<p>CE2.4 Describir los eventos que proporciona el lenguaje de guion: de ratón, de teclado, de enfoque, de formulario y de carga, entre otros, para interactuar con el usuario y relacionarlos con los objetos del lenguaje.</p>
+			<p>CE3.2 Identificar los objetos, sus propiedades y sus métodos y su funcionalidad dentro del script ya desarrollado con el fin de ajustarlos a la página donde se va a integrar.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<section id="solucion">
+				<h2>Ejercicio práctico Tema 6</h2>
+				<h3>Ejemplo JavaScript: pulse una tecla.</h3>
+				<p id="tecla-pulsada"></p>
+				<button onclick="document.getElementById('tecla-pulsada').innerHTML = ''">Borrar</button>
+				<script>
+					// Función para manejar el evento de pulsación de tecla
+					function manejarPulsacionTecla(evento) {
+						// Obtener la tecla pulsada
+						let tecla = evento.key;
+
+						// Mostrar el mensaje de tecla pulsada
+						document.getElementById('tecla-pulsada').innerHTML += `Tecla pulsada: ${tecla}<br>`;
+					}
+
+					// Asignar el evento de pulsación de tecla al documento
+					document.addEventListener('keydown', manejarPulsacionTecla);
+				</script>
+			</section>
+
+			<section>
+				<h3>Actividad asociada al CE1.1</h3>
+				<ul>
+					<li>Estructura secuencial:
+						La estructura secuencial es la forma más básica de organizar las acciones en un programa. Las instrucciones se ejecutan en orden secuencial, una tras otra, sin ninguna condición o repetición. Cada acción se completa antes de pasar a la siguiente. Es similar a seguir una lista de tareas en la que se realiza cada tarea en secuencia.</li>
+					<li>Estructura condicional:
+						La estructura condicional permite que el programa tome decisiones basadas en condiciones específicas. Se utiliza para ejecutar un bloque de código si se cumple una condición determinada. Las estructuras condicionales más comunes son:
+						<ul>
+							<li>If (si): Permite ejecutar un bloque de código si se cumple una condición dada. Si la condición es verdadera, se ejecuta el bloque de código asociado. Si la condición es falsa, se omite el bloque de código o se ejecuta otro bloque asociado a un "else" (si no).</li>
+							<li>Switch (selección): Permite seleccionar un caso específico a ejecutar de acuerdo con el valor de una variable o expresión. Se comparan diferentes casos y se ejecuta el bloque de código correspondiente al caso que coincide.</li>
+						</ul>
+					</li>
+					<li>Estructura de iteración:
+						La estructura de iteración o bucle permite repetir un bloque de código varias veces mientras se cumpla una condición. Las estructuras de iteración más comunes son:
+						<ul>
+							<li>For (para): Se utiliza cuando se conoce la cantidad exacta de repeticiones necesarias. Se especifica una variable de control, una condición de salida y una operación de actualización. El bloque de código se ejecuta mientras la condición de salida se cumpla.</li>
+							<li>While (mientras): Se utiliza cuando no se conoce la cantidad exacta de repeticiones necesarias. El bloque de código se ejecuta siempre que se cumpla una condición dada. La condición se verifica antes de cada iteración.</li>
+							<li>Do-While (hacer-mientras): Similar al bucle "while", pero la condición se verifica después de ejecutar el bloque de código al menos una vez. Esto garantiza que el bloque de código se ejecute al menos una vez, independientemente de si la condición es verdadera o falsa.</li>
+						</ul>
+					</li>
+				</ul>
+				<p>Estas estructuras son fundamentales para organizar el flujo de ejecución de un programa, tomar decisiones y repetir acciones según sea necesario.</p>
+
+				<h3>Actividad asociada al CE2.4</h3>
+				JavaScript proporciona una serie de eventos que permiten la interacción con el usuario. Algunos eventos comunes incluyen:
+				<ul>
+					<li>Eventos de ratón: Permiten detectar acciones realizadas con el ratón, como hacer clic en un elemento, mover el cursor, arrastrar y soltar, entrar o salir de un elemento, entre otros. Ejemplos de eventos de ratón son "click", "mouseover", "mouseout" y "dragstart".</li>
+					<li>Eventos de teclado: Permiten detectar acciones realizadas con el teclado, como pulsar una tecla, soltar una tecla o mantener presionada una tecla. Ejemplos de eventos de teclado son "keydown", "keyup" y "keypress".</li>
+					<li>Eventos de enfoque: Permiten detectar cambios en el foco de los elementos. Por ejemplo, cuando un campo de entrada obtiene o pierde el foco. Ejemplos de eventos de enfoque son "focus" y "blur".</li>
+					<li>Eventos de formulario: Permiten detectar acciones relacionadas con el envío y validación de formularios, como enviar un formulario, resetear un formulario o cambiar el valor de un campo de entrada. Ejemplos de eventos de formulario son "submit", "reset" y "change".</li>
+					<li>Evento de carga: Se dispara cuando se completa la carga de un documento o recurso web. Es útil para realizar acciones después de que se haya cargado completamente una página web. El evento de carga se llama "load".</li>
+				</ul>
+				<p>Estos son solo algunos ejemplos de eventos proporcionados por el lenguaje de guion. Cada evento se puede asociar a un objeto o elemento HTML específico y se puede utilizar para ejecutar código o desencadenar funciones en respuesta a la interacción del usuario.</p>
+
+				<h3>Actividad asociada al CE3.2</h3>
+				<p>Para ajustar objetos, propiedades y métodos en un script existente, debes examinar el código y comprender su funcionalidad. Algunos pasos a seguir son:</p>
+				<ul>
+					<li>Identificar los objetos: Busca en el código los nombres de variables o elementos que representen objetos. Los objetos pueden ser objetos del DOM (Document Object Model) que representan elementos HTML, objetos personalizados definidos en el script, o incluso objetos proporcionados por bibliotecas externas.</li>
+					<li>Identificar las propiedades: Una vez que hayas identificado los objetos, busca las propiedades que se utilizan con esos objetos. Las propiedades son valores asociados a un objeto que describen características o estados del objeto. Pueden ser propiedades predefinidas del objeto o propiedades personalizadas definidas en el script.</li>
+					<li>Identificar los métodos: Los métodos son funciones asociadas a un objeto que pueden realizar acciones o realizar operaciones en ese objeto. Busca los nombres de funciones o métodos que se utilizan con los objetos identificados. Estos métodos pueden ser métodos predefinidos del objeto o métodos personalizados definidos en el script.</li>
+				</ul>
+				<p>Una vez que hayas identificado los objetos, propiedades y métodos en el script existente, podrás ajustarlos según tus necesidades y la página web donde se va a integrar el script. Puedes modificar los valores de las propiedades, llamar a los métodos en los momentos adecuados y utilizar los objetos de manera apropiada para lograr la funcionalidad deseada.</p>
+			</section>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
