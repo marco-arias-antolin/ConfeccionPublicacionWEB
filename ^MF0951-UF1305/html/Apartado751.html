@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 7. Apartado 7.5.1.
+					"Integración de script ya desarrollado en una página web"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Script ya desarrollado</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Integración de script ya desarrollado en una página web.">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Estilo del script -->
+	<style>
+		.clock {
+			width: 300px;
+			height: 300px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-size: cover;
+			border: 4px;
+			border-radius: 50%;
+			border: 2px solid #06635b;
+			margin: 0 auto;
+		}
+
+		/* The small circle int the center */
+		.clock:before {
+			content: '';
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background: #06635b;
+			border-radius: 50%;
+
+			/* The z-index property specifies the stack order of an element.
+			/* An element with greater stack order is always in front of an element with a lower stack order.  */
+			/* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
+			z-index: 10000;
+			/* kept as a high value, since wanted at top */
+		}
+
+		.clock .hour,
+		.clock .min,
+		.clock .sec {
+			position: absolute;
+		}
+
+		.clock .hour,
+		.hr {
+			width: 160px;
+			height: 160px;
+		}
+
+		.clock .min,
+		.mn {
+			width: 190px;
+			height: 190px;
+		}
+
+		.clock .sec,
+		.sc {
+			width: 230px;
+			height: 230px;
+		}
+
+		.hr,
+		.mn,
+		.sc {
+			display: flex;
+			justify-content: center;
+			position: absolute;
+			border-radius: 50%;
+
+		}
+
+		.hr:before {
+			content: '';
+			position: absolute;
+			width: 7.5px;
+			height: 85px;
+			background: #06635b;
+			z-index: 10;
+			/* z-index least */
+			border-radius: 2.8px;
+		}
+
+		.mn:before {
+			content: '';
+			position: absolute;
+			width: 3.5px;
+			height: 100px;
+			background: #06635b;
+			z-index: 11;
+			/* z-index more than hour hand */
+			border-radius: 3px;
+		}
+
+		.sc:before {
+			content: '';
+			position: absolute;
+			width: 2px;
+			height: 150px;
+			background: #06635b;
+			z-index: 12;
+			/* z-index more than hour minute hand */
+			border-radius: 3px;
+		}
+	</style>
+	<script src="js/funciones.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Integración de script ya desarrollado en una página web</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Debe buscar en la web <a href="https://efectosjavascript.com" target="_blank">efectosjavascript.com</a> el script de un pop up que se active al ingresar a la web. Deberá pegar dicho código de pop up en un documento llamado funciones.js.</p>
+			<p>A continuación:</p>
+			<ul>
+				<li>Deberá buscar de nuevo en la página nombrada anteriormente el código del reloj analógico siempre visible. ✔</li>
+				<li>Péguelo en pop.html ✔</li>
+				<li>Además del reloj, deberá aparecer un título en la página que ponga “Soy un popup que le da la hora”. ✔</li>
+				<li>Por último, deberá crear un documento, que será la web principal, que se llame ejercicio.html. En ella, se escribe un título que diga “Esta es la página principal”. ✔</li>
+			</ul>
+			Requisitos:
+			<ul>
+				<li>El pop up tendrá un tamaño de 700 * 700 px. ✔</li>
+				<li>El reloj debe moverse. ✔</li>
+				<li>Comprobar la página en el navegador. ✔</li>
+				<li>Documente todo el proceso para su valoración por el tutor/a. ✔</li>
+			</ul>
+			<p>Así es como deberá quedar:</p>
+			<img src="img/Apartado751.PNG" alt="Resultado buscado">
+
+			<h3>Actividad asociada al CE3.5</h3>
+			<p>Integrar scripts ya desarrollados en una página web, para añadir funcionalidades específicas de acuerdo a las especificaciones recibidas:</p>
+			<ul>
+				<li>Descargar el componente ya desarrollado.</li>
+				<li>Utilizar la herramienta de edición script.</li>
+				<li>Modificar las propiedades y los atributos de los objetos que componen el script para justarlo a las especificaciones recibidas.</li>
+				<li>Comprobar la disponibilidad de utilización del script teniendo en cuenta los derechos de autor y la legislación vigente.</li>
+				<li>Integrar el script a la página web previamente indicada.</li>
+				<li>Probar la funcionalidad de la página resultado utilizando un navegador.</li>
+				<li>Corregir los errores detectados.</li>
+				<li>Documentar los procesos realizados.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<h3>Esta es la página principal</h3>
+			<!-- Inicio del script -->
+			<div class="clock">
+
+				<div class="hour">
+					<div class="hr" id="hr" style="transform: rotateZ(447deg);">
+
+					</div>
+				</div>
+
+				<div class="min">
+					<div class="mn" id="mn" style="transform: rotateZ(324deg);">
+
+					</div>
+				</div>
+
+				<div class="sec">
+					<div class="sc" id="sc" style="transform: rotateZ(276deg);">
+
+					</div>
+				</div>
+
+			</div>
+			<script>
+				// for time;
+				const deg = 6;
+				// 360 / (12 * 5);
+
+				const hr = document.querySelector('#hr');
+				const mn = document.querySelector('#mn');
+				const sc = document.querySelector('#sc');
+
+				setInterval(() => {
+
+					let day = new Date();
+					let hh = day.getHours() * 30;
+					let mm = day.getMinutes() * deg;
+					let ss = day.getSeconds() * deg;
+					let msec = day.getMilliseconds();
+
+					// VERY IMPORTANT STEP:
+
+					hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+					mn.style.transform = `rotateZ(${mm}deg)`;
+					sc.style.transform = `rotateZ(${ss}deg)`;
+
+					// gives the smooth transitioning effect, but there's a bug here!
+					// sc.style.transition = `1s`;
+
+				})
+			</script>
+			<!-- Fin del script -->
+
+			<h3>Actividad asociada al CE3.5</h3>
+			<p>Integrar scripts ya desarrollados en una página web, para añadir funcionalidades específicas de acuerdo a las especificaciones recibidas:</p>
+			<ul>
+				<li>Descargar el componente ya desarrollado. ✔</li>
+				<li>Utilizar la herramienta de edición script. ✔</li>
+				<li>Modificar las propiedades y los atributos de los objetos que componen el script para justarlo a las especificaciones recibidas. ✔</li>
+				<li>Comprobar la disponibilidad de utilización del script teniendo en cuenta los derechos de autor y la legislación vigente. ✔</li>
+				<li>Integrar el script a la página web previamente indicada. ✔</li>
+				<li>Probar la funcionalidad de la página resultado utilizando un navegador. ✔</li>
+				<li>Corregir los errores detectados. ✔</li>
+				<li>Documentar los procesos realizados. ✔
+					<p>Copio y pego los siguientes scripts:</p>
+					<ul>
+						<li><a href="https://efectosjavascript.com/popup3.html" target="_blank">Popup que carga al entrar, ingresar a la página</a> en <a href="js/funciones.js" target="_blank">funciones.js</a></li>
+						<li><a href="https://efectosjavascript.com/reloj2.html" target="_blank">Reloj Analógico siempre visible</a> en <a href="pop.html">pop.html</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
