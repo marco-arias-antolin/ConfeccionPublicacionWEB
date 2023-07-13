@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1305. Caso Práctico Tema 7
+					"Creación de web con scripts insertados"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Creación de web con scripts insertados</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de web con scripts insertados.">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		#visor {
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			width: 450px;
+		}
+
+		#fondouno {
+			animation: animacionFondo1 6s linear -3s infinite;
+			left: 0px;
+			position: absolute;
+			top: 0px;
+		}
+
+		#fondodos {
+			animation: animacionFondo1 6s linear 0s infinite;
+			left: 450px;
+			position: absolute;
+			top: 0px;
+		}
+
+		#micoche {
+			left: 120px;
+			position: absolute;
+			top: 180px;
+		}
+
+		@keyframes animacionFondo1 {
+			0% {
+				left: 450px;
+			}
+
+			50% {
+				left: 0px;
+			}
+
+			100% {
+				left: -450px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de web con scripts insertados</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>A continuación, deberá crear una página web que muestre un coche en movimiento. Para ello, deberá utilizar las dos imágenes .gif proporcionadas.</p>
+			<ul>
+				<li>Cree la estructura del documento HTML.</li>
+				<li>Cree el script con las funciones y los eventos pertinentes para dar funcionalidad a las imágenes.</li>
+				<li>Incluya el siguiente código CSS para completar el ejercicio correctamente:</li>
+			</ul>
+			<pre><code>&#x3C;style type=&#x22;text/css&#x22;&#x3E;
+* { margin: 0px auto; padding: 0px; }
+h1 { font:bold 1.5em arial; text-align: center; padding: 0.5em ; }
+#visor { position: absolute; top: 100px; left: 200px; width: 450px;
+			height: 300px; overflow: hidden; }
+#fondouno { position: absolute; top: 0px; left: 0px; }
+#fondodos { position: absolute; top: 0px; left: 450px; }
+#micoche { position: absolute; top: 180px; left: 120px; }
+&#x3C;/style&#x3E;</code></pre>
+			<p>Pista: Deberá insertar dos imágenes consecutivas del fondo en el código HTML.</p>
+			<img src="img/CPT7-coche.gif" alt="Coche">
+			<img src="img/CPT7-fondoCoche.gif" alt="Fondo para el coche">
+			<p>Deberá quedar como la siguiente imagen:</p>
+			<img src="img/CPT7-Resultado.PNG" alt="Resultado deseado">
+			<p>Finalmente, compruebe la funcionalidad de la web</p>
+
+			<h3>Actividad asociada al CE3.5</h3>
+			<p>CE3.5 Integrar scripts ya desarrollados en una página web, para añadir funcionalidades específicas de acuerdo a las especificaciones recibidas:</p>
+			<ul>
+				<li>Descargar el componente ya desarrollado.</li>
+				<li>Utilizar una herramienta de edición de script.</li>
+				<li>Modificar las propiedades y los atributos de los objetos que componen el script para ajustarlo a las especificaciones recibidas.</li>
+				<li>Comprobar la disponibilidad de utilización del script teniendo en cuenta los derechos de autor y la legislación vigente.</li>
+				<li>Integrar el script a la página web previamente indicada.</li>
+				<li>Probar la funcionalidad de la página resultante utilizando un navegador.</li>
+				<li>Corregir los errores detectados.</li>
+				<li>Documentar los procesos realizados.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<div id="visor">
+				<div id="fondouno">
+					<img src="img/CPT7-fondoCoche.gif" alt="Fondo para el coche">
+				</div>
+				<div id="fondodos">
+					<img src="img/CPT7-fondoCoche.gif" alt="Fondo para el coche">
+				</div>
+				<div id="micoche">
+					<img src="img/CPT7-coche.gif" alt="Coche">
+				</div>
+			</div>
+
+			<h3>Actividad asociada al CE3.5</h3>
+			<p>No ha hecho falta descargar ningún script ya que este tipo de animaciónes se hacen más rápido y son más eficientes con CSS.</p>
+			<p>Además no se especifica ningún sitio para buscar el script</p>
+			<p>Si se quisiera hacer con un script habría que modificar la propiedad "left" de los fondos al igual que se hace con las animaciones.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
