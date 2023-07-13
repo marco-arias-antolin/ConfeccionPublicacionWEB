@@ -1,8 +1,10 @@
 :root {
-	--bg: black;
-	--color: lightgreen;
-	--link: lightblue;
-	--link-visited: violet;
+	--bg: #212529;
+	--color: #adb5bd;
+	--fontFamily: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--link-hover: rgb(139, 185, 254);
+	--link-visited: var(--link);
+	--link: rgb(110, 168, 254);
 }
 
 html {
@@ -12,10 +14,10 @@ html {
 body {
 	background: var(--bg);
 	color: var(--color);
-	display: flex;
-	flex-direction: column;
-	font-family: Courier;
-	margin: 0;
+	/* display: flex;
+	flex-direction: column; */
+	font-family: var(--fontFamily);
+	margin: 3rem;
 	min-height: 100vh;
 }
 
@@ -23,29 +25,80 @@ a {
 	color: var(--link);
 }
 
+a:hover {
+	color: var(--link-hover);
+}
+
 a:visited {
 	color: var(--link-visited);
 }
 
-header {
-	padding: 0 66px;
+a:visited:hover {
+	color: var(--link-hover);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 500;
+	line-height: 1.2;
+	margin: 0;
+	margin-bottom: .5rem;
+}
+
+h1 {
+	font-size: 2.5rem;
+
+}
+
+h2 {
+	font-size: 2rem;
+
+}
+
+h3 {
+	font-size: 1.75rem;
+
+}
+
+h4 {
+	font-size: 1.5rem;
+
+}
+
+h5 {
+	font-size: 1.25rem;
+
+}
+
+h6 {
+	font-size: 1rem;
+
 }
 
 main {
 	background: var(--bg);
-	flex: 1;
-	margin-bottom: 46px;
-	padding: 0 66px;
+	/* flex: 1; */
+	margin-bottom: 3rem;
 }
 
-header,
+p {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0 0 1rem;
+}
+
 footer {
 	text-align: center;
 	background: var(--bg);
 }
 
 footer {
-	inset: auto 0 0 0;
+	inset: auto 0 0;
+	padding-bottom: .6rem;
 	position: fixed;
 }
 
@@ -53,6 +106,7 @@ footer>span {
 	animation: footerAni .2s ease-in 6 alternate;
 	background: var(--bg);
 	border-top: 2px solid var(--color);
+	border-radius: 1rem;
 	display: block;
 	font-size: larger;
 	margin: 0 auto;
