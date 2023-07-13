@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 7. Apartado 7.5.2.
+					"Interpretación de script que resuelva un problema especificado"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Corrección de script</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Interpretación de script que resuelva un problema especificado.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		pre {
+			height: 166px;
+			overflow: auto;
+		}
+
+		pre:hover {
+			background: #222;
+		}
+
+		iframe {
+			height: 166px;
+			width: 100%;
+		}
+	</style>
+	<script type="module">
+		const btnOriginal = document.getElementById('btnOriginal');
+		const btnCorregido = document.getElementById('btnCorregido');
+		const btnDiferencias = document.getElementById('btnDiferencias');
+		const btnsPre = [btnOriginal, btnCorregido];
+		for (let item of btnsPre) {
+			item.onclick = () => {
+				let el = item.parentNode.nextElementSibling;
+				if (item.innerText.indexOf('Expandir') > -1) {
+					el.style.height = el.firstChild.offsetHeight + 'px';
+					item.innerText = "Contraer";
+				} else {
+					el.style.height = '166px';
+					item.innerText = "Expandir";
+				}
+			}
+		}
+		btnDiferencias.onclick = (event) => {
+			let btn = event.srcElement
+			let iframe = event.srcElement.parentNode.nextElementSibling
+			if (btn.innerText.indexOf('Expandir') > -1) {
+				iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+				btn.innerText = "Contraer";
+			} else {
+				iframe.style.height = '166px';
+				btn.innerText = "Expandir";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Interpretación de script que resuelva un problema especificado</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En esta última actividad le facilitamos, en primer lugar, el siguiente código:</p>
+			<p><a href="Apartado752original.html" target="_blank">Apartado752original.html</a>
+				<button id="btnOriginal">Expandir</button>
+			</p>
+			<pre><code id="original">&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html&#x3E;
+
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;title&#x3E;Pagina 02&#x3C;/title&#x3E;
+  &#x3C;script language=&#x22;javascript&#x22;&#x3E;
+    &#x3C; !-
+      function Subir() {
+        var formulario = &#x22;&#x22;;
+        var usuario = document.usuario.value;
+        var nombre = document.nombre.value;
+        var apellido = document.apellido.value;
+        var email = document.email.value;
+        var clave1 = document.clave1.value;
+        var clave2 = document.clave2.value;
+        var hobbies = &#x22;&#x22;;
+        var b = document.form1.hobby;
+        for (a = 0; a &#x3C; b; a++) {
+          if (document.form1.hobby[a].checked)
+            hobbies += document.form1.hobby[a].value + &#x22;, &#x22;;
+        }
+        var pais = document.form1.pais.value;
+        var sexo = document.form1.sexo.value;
+        if (usuario == &#x22;&#x22; || nombre == &#x22;&#x22; || apellido == &#x22;&#x22; || pais == &#x22;&#x22;) {
+          alert(&#x22;Los campos con asterisco son obligatorios!!!&#x22;);
+          return false;
+        }
+        if (hobbies.length == 0) {
+          alert(&#x22;Debes seleccionar al menos un hobby!!&#x22;);
+          return false;
+        }
+        if ((clave1 != clave2) || (clave1 == &#x22;&#x22;)) {
+          alert(&#x22;Las claves deben ser iguales y no pueden ser en blanco!!!&#x22;);
+          return false;
+        }
+        if (email == &#x22;&#x22;) email = &#x22;No informado&#x22;;
+        if (sexo == &#x22;&#x22;) sexo = &#x22;No informado&#x22;;
+        formulario = &#x22;Usuario: &#x22; + usuario + &#x22;\nNombre: &#x22; + nombre + &#x22;\nApellido: &#x22; + apellido + &#x22;\n&#x22;
+          + &#x22;E-mail: &#x22; + email + &#x22;\nClave: &#x22; + clave1 + &#x22;\nHobbies: &#x22; + hobbies + &#x22;\nPais: &#x22;
+          + pais + &#x22;\nSexo: &#x22; + sexo;
+        alert(formulario);
+      }
+    //--&#x3E;
+  &#x3C;/script&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;form name=&#x22;form1&#x22; method=&#x22;POST&#x22; action=&#x22;&#x22;&#x3E;
+    &#x3C;table border=&#x22;0&#x22; cellpadding=&#x22;0&#x22; cellspacing=&#x22;0&#x22; width=&#x22;400&#x22;&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Ingresa el usuario: (*)&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;usuario&#x22; id=&#x22;usuario&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Ingresa el nombre: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;nombre&#x22; id=&#x22;nombre&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Ingresa el apellido: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;apellido&#x22; id=&#x22;apellido&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Ingresa el correo electronico:&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;email&#x22; id=&#x22;email&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Ingresa una password: (*)&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;&#x3C;input type=&#x22;password&#x22; name=&#x22;clave1&#x22; id=&#x22;clave1&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Repite la password: (*)&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;&#x3C;input type=&#x22;password&#x22; name=&#x22;clave2&#x22; id=&#x22;clave2&#x22; value=&#x22;&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22; align=&#x22;left&#x22; valign=&#x22;top&#x22;&#x3E;Seleccione sus hobbies: (*)&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;programar&#x22;&#x3E;Programar&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;deportes&#x22;&#x3E;Deportes&#x3C;br&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;meditar&#x22;&#x3E;Meditar&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;cine&#x22;&#x3E;Cine&#x3C;br&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;leer&#x22;&#x3E;Leer&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;videojuegos&#x22;&#x3E;Video Juegos&#x3C;br&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Pais: (*)&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;
+          &#x3C;select name=&#x22;pais&#x22; id=&#x22;pais&#x22;&#x3E;
+            &#x3C;option value=&#x22;&#x22;&#x3E;--&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;espa&#xF1;a&#x22;&#x3E;Espa&#xF1;a&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;francia&#x22;&#x3E;Francia&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;italia&#x22;&#x3E;Italia&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;b&#xE9;lgica&#x22;&#x3E;B&#xE9;lgica&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;alemania&#x22;&#x3E;Alemania&#x3C;/option&#x3E;
+          &#x3C;/select&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;Sexo:&#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22;&#x3E;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;m&#x22;&#x3E;M&#x26;nbsp;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;f&#x22;&#x3E;F&#x26;nbsp;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;n&#x22;&#x3E;N&#x26;nbsp;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td width=&#x22;50%&#x22; align=&#x22;center&#x22;&#x3E;
+          &#x3C;button type=&#x22;button&#x22; name=&#x22;boton&#x22; onClick=&#x22;Subir()&#x22;&#x3E;Crear usuario&#x3C;/button&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td width=&#x22;50%&#x22; align=&#x22;center&#x22;&#x3E;
+          &#x3C;button type=&#x22;reset&#x22; name=&#x22;botonR&#x22;&#x3E;Cancelar&#x3C;/button&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+    &#x3C;/table&#x3E;
+    Los campos con asteriscos(*) son obligatorios.
+  &#x3C;/form&#x3E;
+&#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;</code></pre>
+			<p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
+			<ul>
+				<li>Compruebe el código en el navegador.</li>
+				<li>Detecte todos los errores que pudiera tener.</li>
+				<li>Solucione los errores para que funcione correctamente.</li>
+				<li>Explique qué datos pide el formulario y cuáles restringe.</li>
+				<li>Documente todos los cambios realizados en el script.</li>
+			</ul>
+
+			<h3>Actividad asociada al CE1.7</h3>
+			<p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
+			<ul>
+				<li>Identificar el tipo y el uso de los datos declarados dentro del script.</li>
+				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa.</li>
+				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos.</li>
+				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas.</li>
+				<li>Probar la funcionalidad del script utilizando un navegador.</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+				<li>Documentar los cambios realizados en el script.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p><a href="Apartado752corregido.html" target="_blank">Apartado752corregido.html</a>
+				<button id="btnCorregido">Expandir</button>
+			</p>
+			<pre><code id="corregido">&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;es&#x22;&#x3E;
+
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;title&#x3E;Pagina 02&#x3C;/title&#x3E;
+  &#x3C;style&#x3E;
+    table {
+      width: 400px;
+    }
+
+    td {
+      width: 50%;
+    }
+  &#x3C;/style&#x3E;
+  &#x3C;script&#x3E;
+    function Subir() {
+      var formulario = &#x22;&#x22;;
+      var usuario = document.getElementById(&#x27;usuario&#x27;).value;
+      var nombre = document.getElementById(&#x27;nombre&#x27;).value;
+      var apellido = document.getElementById(&#x27;apellido&#x27;).value;
+      var email = document.getElementById(&#x27;email&#x27;).value;
+      var clave1 = document.getElementById(&#x27;clave1&#x27;).value;
+      var clave2 = document.getElementById(&#x27;clave2&#x27;).value;
+      var hobbies = [];
+      var hobby = document.querySelectorAll(&#x27;input[name=&#x22;hobby&#x22;]:checked&#x27;);
+      for (let node of hobby.values()) {
+        hobbies.push(node.value);
+      }
+      hobbies = hobbies.join(&#x27;, &#x27;);
+      var pais = document.getElementById(&#x27;pais&#x27;).value;
+      var sexo = document.querySelector(&#x27;input[name=&#x22;sexo&#x22;]:checked&#x27;);
+      sexo = sexo ? sexo.value : &#x27;n&#x27;;
+      if (usuario == &#x22;&#x22; || nombre == &#x22;&#x22; || apellido == &#x22;&#x22; || pais == &#x22;&#x22;) {
+        alert(&#x22;Los campos con asterisco son obligatorios!!!&#x22;);
+        return false;
+      }
+      if (hobbies.length == 0) {
+        alert(&#x22;Debes seleccionar al menos un hobby!!&#x22;);
+        return false;
+      }
+      if ((clave1 != clave2) || (clave1 == &#x22;&#x22;)) {
+        alert(&#x22;Las claves deben ser iguales y no pueden ser en blanco!!!&#x22;);
+        return false;
+      }
+      if (email == &#x22;&#x22;) email = &#x22;No informado&#x22;;
+      if (sexo == &#x22;&#x22; || sexo == &#x22;n&#x22;) sexo = &#x22;No informado&#x22;;
+      formulario = &#x60;Usuario: ${usuario}
+            Nombre: ${nombre}
+            Apellido: ${apellido}
+            E-mail: ${email}
+            Clave: ${clave1}
+            Hobbies: ${hobbies}
+            Pais: ${pais}
+            Sexo: ${sexo}&#x60;;
+      formulario = formulario.replace(/\t/g, &#x27;&#x27;);
+      alert(formulario);
+      return true;
+    }
+  &#x3C;/script&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;form name=&#x22;form1&#x22; method=&#x22;POST&#x22; action=&#x22;#&#x22;&#x3E;
+    &#x3C;table&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Ingresa el usuario: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;usuario&#x22; id=&#x22;usuario&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Ingresa el nombre: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;nombre&#x22; id=&#x22;nombre&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Ingresa el apellido: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;apellido&#x22; id=&#x22;apellido&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Ingresa el correo electronico:&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;text&#x22; name=&#x22;email&#x22; id=&#x22;email&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Ingresa una password: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;password&#x22; name=&#x22;clave1&#x22; id=&#x22;clave1&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Repite la password: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;&#x3C;input type=&#x22;password&#x22; name=&#x22;clave2&#x22; id=&#x22;clave2&#x22;&#x3E;&#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td style=&#x22;vertical-align: top;&#x22;&#x3E;Seleccione sus hobbies: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;programar&#x22;&#x3E;Programar&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;deportes&#x22;&#x3E;Deportes&#x3C;br&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;meditar&#x22;&#x3E;Meditar&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;cine&#x22;&#x3E;Cine&#x3C;br&#x3E;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;leer&#x22;&#x3E;Leer&#x26;nbsp;
+          &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;hobby&#x22; value=&#x22;videojuegos&#x22;&#x3E;Video Juegos&#x3C;br&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Pais: (*)&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;select name=&#x22;pais&#x22; id=&#x22;pais&#x22;&#x3E;
+            &#x3C;option value=&#x22;&#x22;&#x3E;--&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;espa&#xF1;a&#x22;&#x3E;Espa&#xF1;a&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;francia&#x22;&#x3E;Francia&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;italia&#x22;&#x3E;Italia&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;b&#xE9;lgica&#x22;&#x3E;B&#xE9;lgica&#x3C;/option&#x3E;
+            &#x3C;option value=&#x22;alemania&#x22;&#x3E;Alemania&#x3C;/option&#x3E;
+          &#x3C;/select&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td&#x3E;Sexo:&#x3C;/td&#x3E;
+        &#x3C;td&#x3E;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;m&#x22;&#x3E;M&#x26;nbsp;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;f&#x22;&#x3E;F&#x26;nbsp;
+          &#x3C;input type=&#x22;radio&#x22; name=&#x22;sexo&#x22; value=&#x22;n&#x22;&#x3E;N&#x26;nbsp;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+      &#x3C;tr&#x3E;
+        &#x3C;td style=&#x22;text-align: center;&#x22;&#x3E;
+          &#x3C;button type=&#x22;button&#x22; name=&#x22;boton&#x22; onClick=&#x22;Subir()&#x22;&#x3E;Crear usuario&#x3C;/button&#x3E;
+          &#x3C;!-- &#x3C;button type=&#x22;submit&#x22; name=&#x22;boton&#x22; onClick=&#x22;Subir()&#x22;&#x3E;Crear usuario&#x3C;/button&#x3E; --&#x3E;
+        &#x3C;/td&#x3E;
+        &#x3C;td style=&#x22;text-align: center;&#x22;&#x3E;
+          &#x3C;button type=&#x22;reset&#x22; name=&#x22;botonR&#x22;&#x3E;Cancelar&#x3C;/button&#x3E;
+        &#x3C;/td&#x3E;
+      &#x3C;/tr&#x3E;
+    &#x3C;/table&#x3E;
+    Los campos con asteriscos(*) son obligatorios.
+  &#x3C;/form&#x3E;
+&#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;</code></pre>
+			<p><a href="Apartado752vimdiff.html" target="_blank">Archivo de Diferencias</a>
+				<button id="btnDiferencias">Expandir</button>
+			</p>
+			<iframe id="diferencias" src="Apartado752vimdiff.html"></iframe>
+
+			<p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
+			<ul>
+				<li>Compruebe el código en el navegador. ✔</li>
+				<li>Detecte todos los errores que pudiera tener. ✔</li>
+				<li>Solucione los errores para que funcione correctamente. ✔</li>
+				<li>Explique qué datos pide el formulario y cuáles restringe. ✔
+					<p>Pide obligatoriamente los datos:</p>
+					<ul>
+						<li>Usuario</li>
+						<li>Nombre</li>
+						<li>Apellido</li>
+						<li>Password</li>
+						<li>Hobbies</li>
+						<li>Pais</li>
+					</ul>
+					<p>Los opcionales son:</p>
+					<ul>
+						<li>E-mail</li>
+						<li>Sexo</li>
+					</ul>
+				</li>
+				<li>Documente todos los cambios realizados en el script. ✔
+					<p>Lo voy a documentar en la "Actividad asociada al CE1.7"</p>
+				</li>
+			</ul>
+
+			<h3>Actividad asociada al CE1.7</h3>
+			<p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
+			<ul>
+				<li>Identificar el tipo y el uso de los datos declarados dentro del script. ✔</li>
+				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa. ✔</li>
+				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos. ✔</li>
+				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas. ✔</li>
+				<li>Probar la funcionalidad del script utilizando un navegador. ✔</li>
+				<li>Detectar y corregir los errores de sintaxis y de ejecución. ✔</li>
+				<li>Documentar los cambios realizados en el script. ✔</li>
+			</ul>
+			<p>El script contiene variables, estructuras de control y funciones para realizar operaciones de manipulación, entrada y salida de datos en el formulario. A continuación se describen los diferentes aspectos del código:</p>
+			<p>Variables:</p>
+			<ul>
+				<li>formulario: Almacena el contenido del formulario que se mostrará en el mensaje de alerta.</li>
+				<li>usuario, nombre, apellido, email, clave1, clave2: Variables que almacenan los valores ingresados en los campos de texto del formulario.</li>
+				<li>hobbies: Un array que almacena los valores de los hobbies seleccionados en el formulario.</li>
+				<li>b: Variable no definida en el código original.</li>
+				<li>a: Variable utilizada en el bucle for para recorrer los elementos del formulario.</li>
+			</ul>
+			<p>Estructuras de programación:</p>
+			<ul>
+				<li>Función Subir(): Es la función principal del script y se ejecuta cuando se hace clic en el botón "Crear usuario". Realiza las siguientes acciones:</li>
+				<li>Obtiene los valores ingresados en los campos del formulario utilizando los métodos getElementById y querySelectorAll.</li>
+				<li>Realiza diversas comprobaciones para validar los datos ingresados en el formulario, como verificar que los campos obligatorios no estén vacíos, que se haya seleccionado al menos un hobby y que las claves coincidan.</li>
+				<li>Construye la cadena formulario con los valores ingresados en el formulario.</li>
+				<li>Muestra el contenido del formulario en un mensaje de alerta.</li>
+				<li>Devuelve true si todas las validaciones son exitosas y el formulario se puede enviar.</li>
+			</ul>
+			<p>Instrucciones de manipulación, entrada y salida de datos:</p>
+			<ul>
+				<li>document.getElementById('id'): Obtiene el elemento del DOM con el ID especificado.</li>
+				<li>document.querySelectorAll('selector'): Obtiene una lista de elementos del DOM que coinciden con el selector especificado.</li>
+				<li>document.form1.hobby[a].checked: Verifica si un checkbox de hobby está seleccionado.</li>
+				<li>element.value: Obtiene el valor de un elemento del formulario.</li>
+				<li>element.values(): Devuelve un objeto iterable de los valores de los elementos seleccionados.</li>
+				<li>element.join(', '): Combina los elementos de un array en una cadena separada por comas y espacios.</li>
+				<li>element.replace(/\t/g, ''): Elimina las tabulaciones de la cadena formulario.</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pagina 02</title>
+	<style>
+		table {
+			width: 400px;
+		}
+
+		td {
+			width: 50%;
+		}
+	</style>
+	<script>
+		function Subir() {
+			var formulario = "";
+			var usuario = document.getElementById('usuario').value;
+			var nombre = document.getElementById('nombre').value;
+			var apellido = document.getElementById('apellido').value;
+			var email = document.getElementById('email').value;
+			var clave1 = document.getElementById('clave1').value;
+			var clave2 = document.getElementById('clave2').value;
+			var hobbies = [];
+			var hobby = document.querySelectorAll('input[name="hobby"]:checked');
+			for (let node of hobby.values()) {
+				hobbies.push(node.value);
+			}
+			hobbies = hobbies.join(', ');
+			var pais = document.getElementById('pais').value;
+			var sexo = document.querySelector('input[name="sexo"]:checked');
+			sexo = sexo ? sexo.value : 'n';
+			if (usuario == "" || nombre == "" || apellido == "" || pais == "") {
+				alert("Los campos con asterisco son obligatorios!!!");
+				return false;
+			}
+			if (hobbies.length == 0) {
+				alert("Debes seleccionar al menos un hobby!!");
+				return false;
+			}
+			if ((clave1 != clave2) || (clave1 == "")) {
+				alert("Las claves deben ser iguales y no pueden ser en blanco!!!");
+				return false;
+			}
+			if (email == "") email = "No informado";
+			if (sexo == "" || sexo == "n") sexo = "No informado";
+			formulario = `Usuario: ${usuario}
+						Nombre: ${nombre}
+						Apellido: ${apellido}
+						E-mail: ${email}
+						Clave: ${clave1}
+						Hobbies: ${hobbies}
+						Pais: ${pais}
+						Sexo: ${sexo}`;
+			formulario = formulario.replace(/\t/g, '');
+			alert(formulario);
+			return true;
+		}
+	</script>
+</head>
+
+<body>
+	<form name="form1" method="POST" action="#">
+		<table>
+			<tr>
+				<td>Ingresa el usuario: (*)</td>
+				<td><input type="text" name="usuario" id="usuario"></td>
+			</tr>
+			<tr>
+				<td>Ingresa el nombre: (*)</td>
+				<td><input type="text" name="nombre" id="nombre"></td>
+			</tr>
+			<tr>
+				<td>Ingresa el apellido: (*)</td>
+				<td><input type="text" name="apellido" id="apellido"></td>
+			</tr>
+			<tr>
+				<td>Ingresa el correo electronico:</td>
+				<td><input type="text" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td>Ingresa una password: (*)</td>
+				<td><input type="password" name="clave1" id="clave1"></td>
+			</tr>
+			<tr>
+				<td>Repite la password: (*)</td>
+				<td><input type="password" name="clave2" id="clave2"></td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;">Seleccione sus hobbies: (*)</td>
+				<td>
+					<input type="checkbox" name="hobby" value="programar">Programar&nbsp;
+					<input type="checkbox" name="hobby" value="deportes">Deportes<br>
+					<input type="checkbox" name="hobby" value="meditar">Meditar&nbsp;
+					<input type="checkbox" name="hobby" value="cine">Cine<br>
+					<input type="checkbox" name="hobby" value="leer">Leer&nbsp;
+					<input type="checkbox" name="hobby" value="videojuegos">Video Juegos<br>
+				</td>
+			</tr>
+			<tr>
+				<td>Pais: (*)</td>
+				<td>
+					<select name="pais" id="pais">
+						<option value="">--</option>
+						<option value="españa">España</option>
+						<option value="francia">Francia</option>
+						<option value="italia">Italia</option>
+						<option value="bélgica">Bélgica</option>
+						<option value="alemania">Alemania</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Sexo:</td>
+				<td>
+					<input type="radio" name="sexo" value="m">M&nbsp;
+					<input type="radio" name="sexo" value="f">F&nbsp;
+					<input type="radio" name="sexo" value="n">N&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">
+					<button type="button" name="boton" onClick="Subir()">Crear usuario</button>
+					<!-- <button type="submit" name="boton" onClick="Subir()">Crear usuario</button> -->
+				</td>
+				<td style="text-align: center;">
+					<button type="reset" name="botonR">Cancelar</button>
+				</td>
+			</tr>
+		</table>
+		Los campos con asteriscos(*) son obligatorios.
+	</form>
+</body>
+
+</html>
