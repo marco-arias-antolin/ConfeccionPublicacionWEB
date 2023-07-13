@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Foro "Propiedades de los objetos del navegador"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Propiedades de los objetos del navegador</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Propiedades de los objetos del navegador.">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Propiedades de los objetos del navegador</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En el presente foro, los participantes deberán aportar y debatir sobre cuáles son las propiedades y métodos adecuados para añadir funcionalidad a los navegadores.</p>
+			<h3>Actividad asociada al CE2.1</h3>
+			<p>Explicar los objetos del navegador, así como sus propiedades y métodos, que se utilizan para añadir funcionalidad a las páginas web teniendo en cuenta las especificaciones técnicas del lenguaje.</p>
+		</section>
+		<div style="color:#adb5bd;background:#212529;padding:1rem;">
+			<h2>Solución</h2>
+			<p>Para añadir funcionalidad a los navegadores, se utiliza JavaScript, un lenguaje de programación ampliamente utilizado en el desarrollo web. A través de JavaScript, es posible interactuar con los objetos del navegador y manipular la estructura y el contenido de las páginas web. A continuación, se describen algunos de los objetos del navegador más relevantes, así como sus propiedades y métodos utilizados para añadir funcionalidad a las páginas web:</p>
+			<ol>
+				<li>Objeto Document: El objeto Document representa el documento HTML cargado en el navegador y proporciona acceso a sus elementos y contenido. Algunas de las propiedades y métodos útiles incluyen:
+					<ul>
+						<li>document.getElementById(id): Devuelve la referencia al elemento con el ID especificado.</li>
+						<li>document.querySelector(selector): Devuelve la primera coincidencia del selector CSS especificado.</li>
+						<li>document.createElement(tagName): Crea un nuevo elemento con la etiqueta especificada.</li>
+						<li>document.addEventListener(event, function): Permite la adición de un manejador de eventos a un elemento.</li>
+					</ul>
+				</li>
+				<li>Objeto Window: El objeto Window representa una ventana o pestaña del navegador y proporciona métodos y propiedades relacionados con la ventana del navegador actual. Algunas de las propiedades y métodos útiles incluyen:
+					<ul>
+						<li>window.location: Proporciona información sobre la ubicación del documento actual y permite redirigir a otra página.</li>
+						<li>window.alert(message): Muestra un cuadro de diálogo con el mensaje especificado.</li>
+						<li>window.open(url, name, params): Abre una nueva ventana o pestaña con la URL y los parámetros especificados.</li>
+						<li>window.localStorage: Proporciona un almacén de datos persistente en el navegador.</li>
+					</ul>
+				</li>
+				<li>Objeto Navigator: El objeto Navigator proporciona información sobre el navegador y el sistema operativo en el que se está ejecutando. Algunas propiedades útiles incluyen:
+					<ul>
+						<li>navigator.userAgent: Devuelve el encabezado del agente de usuario del navegador.</li>
+						<li>navigator.language: Devuelve el idioma preferido del usuario.</li>
+						<li>navigator.geolocation: Proporciona acceso a la ubicación geográfica del dispositivo.</li>
+					</ul>
+				</li>
+				<li>Objeto XMLHttpRequest: El objeto XMLHttpRequest permite realizar solicitudes HTTP asíncronas desde JavaScript sin tener que recargar la página. Algunos métodos importantes incluyen:
+					<ul>
+						<li>open(method, url, async): Abre una nueva solicitud HTTP con el método y la URL especificados.</li>
+						<li>send(data): Envía la solicitud HTTP con los datos proporcionados.</li>
+						<li>onreadystatechange: Evento que se desencadena cuando el estado de la solicitud cambia.</li>
+					</ul>
+				</li>
+			</ol>
+			<p>Estos son solo algunos de los objetos y métodos utilizados para añadir funcionalidad a las páginas web mediante JavaScript. Hay muchos otros objetos y APIs disponibles, como el objeto History para manipular el historial del navegador, el objeto Storage para almacenar datos localmente en el navegador, y APIs como Canvas, Web Audio, y WebSockets, que permiten funcionalidades más avanzadas en el desarrollo web. La documentación oficial de JavaScript y de las APIs del navegador son recursos valiosos para explorar todas las posibilidades que ofrece la programación en el entorno del navegador.</p>
+		</div>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
