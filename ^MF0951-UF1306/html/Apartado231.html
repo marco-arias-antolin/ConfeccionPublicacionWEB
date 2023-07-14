@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1306. Realiza en Equipo nº 1. Tema 2. Apartado 2.3.1.
+					"Clasificar y verificar archivos y efectos que integrará la página"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Clasificar y verificar archivos y efectos que integrará la página</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Clasificar y verificar archivos y efectos que integrará la página.">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		const iframes = document.getElementsByTagName('iframe');
+		for (let iframe of iframes) {
+			iframe.onload = () => {
+				const altura = iframe.contentWindow.document.body.scrollHeight;
+				if (altura > 0) {
+					iframe.style.height = altura + 33 + 'px';
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Clasificar y verificar archivos y efectos que integrará la página</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Su tutor/a designará una serie de grupos de trabajo que trabajarán realizando:</p>
+			<p>Diseño de una página web en la que incluir diferentes tipos de archivos como:</p>
+			<ol>
+				<li>Un archivo de audio.</li>
+				<li>Un archivo de video.</li>
+				<li>Un archivo de imagen.</li>
+				<li>Configuren el funcionamiento del plugin correspondiente.</li>
+			</ol>
+			<p>A continuación, el equipo deberá programar en JavaScript el efecto de movimiento de los copos de nieve a partir del código HTML:</p>
+			<pre><code>&#x3C;!DOCTYPE html PUBLIC &#x22;-//W3C//DTD XHTML 1.0 Transitional//EN&#x22; &#x22;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#x22;&#x3E;
+&#x3C;html xmlns=&#x22;http://www.w3.org/1999/xhtml&#x22; lang=&#x22;es&#x22; xml:lang=&#x22;es&#x22;&#x3E;
+
+&#x3C;head&#x3E;
+  &#x3C;title&#x3E;Efecto nieve&#x3C;/title&#x3E;
+  &#x3C;meta http-equiv=&#x22;Content-Type&#x22; content=&#x22;text/html; charset=utf-8&#x22; /&#x3E;
+  &#x3C;link type=&#x22;text/css&#x22; rel=&#x22;stylesheet&#x22; href=&#x22;estilos.css&#x22;&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;canvas id=&#x27;snow&#x27;&#x3E;&#x3C;/canvas&#x3E;
+  &#x3C;script src=&#x22;funciones.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;</code></pre>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>Clasificar los distintos tipos de archivos que se van a integrar en la página, verificando la instalación del plugin correspondiente en el navegador web.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<ol>
+				<li><audio controls>
+						<!-- la inclusión de varias fuentes ya se vio en el Módulo 1 -->
+						<source src="Apartado231/media/Tada-sound.webm" type="audio/webm">
+						Tu navegador no soporta el elemento de audio.
+					</audio></li>
+				<li><video controls>
+						<source src="Apartado231/media/Cat.webm" type="video/webm">
+						Tu navegador no soporta el elemento de video.
+					</video></li>
+				<li><a href="Apartado231/media/Google.svg" target="_blank"><img src="Apartado231/media/Google.svg" alt="Logo de Google" style="width: 300px;"></a></li>
+				<li>
+					<p><a href="Apartado231/Apartado231corregido.html" target="_blank">Apartado231corregido.html</a></p>
+					<iframe src="Apartado231/Apartado231corregido.html"></iframe>
+					<p>Apartado231corregido.html código</p>
+					<pre><code>&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;es&#x22;&#x3E;
+
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;link rel=&#x22;icon&#x22; type=&#x22;image/svg+xml&#x22; href=&#x22;data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+&#x22;&#x3E;
+  &#x3C;title&#x3E;Efecto nieve&#x3C;/title&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta name=&#x22;author&#x22; content=&#x22;Marco Antonio Arias Antol&#xED;n&#x22;&#x3E;
+  &#x3C;meta name=&#x22;description&#x22; content=&#x22;Clasificar y verificar archivos y efectos que integrar&#xE1; la p&#xE1;gina.&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;css/estilos.css&#x22;&#x3E;
+  &#x3C;script src=&#x22;js/funciones.js&#x22; defer&#x3E;&#x3C;/script&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;canvas id=&#x27;snow&#x27;&#x3E;&#x3C;/canvas&#x3E;
+&#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;</code></pre>
+					<p><a href="Apartado231/js/funciones.js" target="_blank">funciones.js</a></p>
+					<iframe src="Apartado231/js/funciones.js"></iframe>
+					<p><a href="Apartado231/css/estilos.css" target="_blank">estilos.css</a></p>
+					<iframe src="Apartado231/css/estilos.css"></iframe>
+				</li>
+			</ol>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>Para clasificar los distintos tipos de archivos que se van a integrar en la página y verificar la instalación del plugin correspondiente en el navegador web, puedes seguir estos pasos:</p>
+			<ol>
+				<li>Archivo de audio: En tu página web, estás utilizando la etiqueta &lt;audio&gt; para agregar un archivo de audio. Para reproducir correctamente el audio, debes asegurarte de que el navegador web del usuario tenga instalado un plugin o soporte nativo para el formato de archivo de audio que estás utilizando (en este caso, WebM). Los formatos de audio más comunes admitidos por los navegadores son MP3, WAV y OGG.</li>
+				<li>Archivo de video: Estás utilizando la etiqueta &lt;video&gt; para agregar un archivo de video. Al igual que con el archivo de audio, debes verificar que el navegador web del usuario tenga instalado un plugin o soporte nativo para el formato de archivo de video que estás utilizando (en este caso, WebM). Los formatos de video más comunes admitidos por los navegadores son MP4, WebM y OGG.</li>
+				<li>Archivo de imagen: Estás utilizando la etiqueta &lt;img&gt; para agregar un archivo de imagen. En este caso, no se requiere un plugin adicional, ya que los navegadores web admiten una amplia gama de formatos de imagen como JPEG, PNG, GIF, SVG, entre otros. Sin embargo, es importante asegurarse de que el archivo de imagen esté en un formato compatible y correctamente enlazado en la etiqueta &lt;img&gt;.</li>
+			</ol>
+			<p>Para verificar si un navegador web tiene instalado un plugin o soporte nativo para un tipo específico de archivo, puedes utilizar la detección de características (feature detection) en JavaScript. Por ejemplo, para verificar si el navegador admite la reproducción de archivos WebM, se puede usar este código:</p>
+			<pre><code>// Verificar soporte para archivos WebM
+if ('canPlayType' in document.createElement('video')) {
+	var video = document.createElement('video');
+	var canPlayWebM = video.canPlayType('video/webm');
+	if (canPlayWebM === 'probably' || canPlayWebM === 'maybe') {
+		console.log('El navegador admite la reproducción de archivos WebM');
+	} else {
+		console.log('El navegador no admite la reproducción de archivos WebM');
+	}
+}</code></pre>
+			<p>También se pueden incluir varias fuentes de datos con la etiqueta &lt;source&gt; (WebM, MP4, ...)</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
