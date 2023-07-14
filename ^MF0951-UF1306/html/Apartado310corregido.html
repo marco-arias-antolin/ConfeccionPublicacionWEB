@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Formulario de alta
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Formulario de alta</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Formulario de alta.">
+	<style>
+		/* Formatear el formulario a dos columnas */
+		body {
+			font: 13px/1.6 Tahoma, sans-serif;
+			background: #F5F5F5;
+		}
+
+		.izquierda {
+			float: left;
+			clear: left;
+		}
+
+		.derecha {
+			float: right;
+			clear: right;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		#contenedor {
+			background: #FFF;
+			border: 1px solid silver;
+			margin: 1em auto;
+			padding: 1em;
+			width: 768px;
+		}
+
+		span.requerido {
+			font-size: 1.3em;
+			font-weight: bold;
+			color: #C00;
+		}
+
+		h2 {
+			font: normal 2em arial, sans-serif;
+			margin: 0;
+		}
+
+		ul li.botones {
+			border-top: 2px solid #CCC;
+			clear: both;
+			float: none;
+			padding: 1em 0;
+			margin-top: 1em;
+			text-align: right;
+			width: 100%;
+		}
+
+		ul li.botones input {
+			font-size: 1.3em;
+		}
+
+		ul li {
+			margin: 0.5em 0;
+			padding: 0.5em;
+			width: 46%;
+		}
+
+		ul li label.titulo {
+			font-weight: bold;
+		}
+
+		ul li div span {
+			float: left;
+			padding: 0.3em 0;
+		}
+
+		ul li div span.completo {
+			width: 100%;
+		}
+
+		ul li div span.mitad {
+			width: 50%;
+		}
+
+		ul li div span.tercio {
+			width: 33%;
+		}
+
+		ul li div span.dostercios {
+			width: 66%;
+		}
+
+		ul li div span label {
+			display: block;
+			font: normal 0.8em arial, sans-serif;
+			color: #333;
+		}
+
+		ul li p.ayuda {
+			display: none;
+		}
+
+		ul li input {
+			padding: 0.2em;
+		}
+
+		input#apellido1,
+		input#apellido2,
+		input#direccion,
+		input#email {
+			width: 260px;
+		}
+
+		input#codigopostal {
+			width: 80px;
+		}
+
+		select#provincia {
+			width: 90px;
+		}
+
+		select#pais {
+			width: 150px;
+		}
+
+		input#telefonofijo,
+		input#telefonomovil {
+			width: 135px;
+		}
+
+		/* Cambiar el color en el :hover y resaltar los campos en el :focus */
+		ul li:hover {
+			background-color: #FF9;
+		}
+
+		ul li.botones:hover {
+			background-color: transparent;
+		}
+
+		ul li input:focus {
+			border: 2px solid #E6B700;
+		}
+
+		/* Formatear el formulario a una columna */
+		ul li.izquierda,
+		ul li.derecha {
+			float: none;
+			width: auto;
+		}
+
+		ul li {
+			overflow: hidden;
+		}
+
+		ul li label.titulo {
+			float: left;
+			width: 150px;
+		}
+
+		ul li div {
+			margin-left: 160px;
+		}
+
+		/* Aspecto final del formulario con los mensajes de ayuda */
+		h2 {
+			margin-bottom: 0.3em;
+		}
+
+		ul li {
+			border-top: 1px solid #CCC;
+			margin: 0;
+			padding: 1em;
+		}
+
+		ul li.botones {
+			margin: 0;
+		}
+
+		ul li label.titulo {
+			text-align: right;
+			width: 100px;
+		}
+
+		ul li div {
+			margin-left: 110px;
+			overflow: hidden;
+		}
+
+		ul li {
+			position: relative;
+		}
+
+		ul li:hover p.ayuda {
+			display: block;
+			margin: 0.3em;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 150px;
+		}
+	</style>
+	<script type="module">
+		const formulario1 = document.getElementById('formulario1');
+		formulario1.onsubmit = (event) => {
+			let s = "";
+			for (let el of formulario1.elements)
+				s += `${el.name}: ${el.value}\n`;
+			console.log(s);
+			event.preventDefault();
+		}
+	</script>
+</head>
+
+<body>
+	<div id="contenedor">
+		<h2>Formulario de alta</h2>
+		<form method="post" action="#" id="formulario1">
+			<ul>
+				<li class="izquierda">
+					<label class="titulo" for="nombre">Nombre y apellidos <span class="requerido">*</span></label>
+					<div>
+						<span class="completo">
+							<input id="nombre" name="nombre" value="" required>
+							<label for="nombre">Nombre</label>
+						</span>
+
+						<span class="completo">
+							<input id="apellido1" name="apellido1" value="" required>
+							<label for="apellido1">Primer apellido</label>
+						</span>
+
+						<span class="completo">
+							<input id="apellido2" name="apellido2" value="" required>
+							<label for="apellido2">Segundo apellido</label>
+						</span>
+					</div>
+
+					<p class="ayuda">No se olvide de escribir también su segundo apellido</p>
+				</li>
+
+				<li class="derecha">
+					<label class="titulo" for="direccion">Dirección <span class="requerido">*</span></label>
+
+					<div>
+						<span class="completo">
+							<input id="direccion" name="direccion" value="" required>
+							<label for="direccion">Calle, número, piso, puerta</label>
+						</span>
+
+						<span class="tercio">
+							<input id="codigopostal" name="codigopostal" value="" required>
+							<label for="codigopostal">Código postal</label>
+						</span>
+
+						<span class="dostercios">
+							<input id="municipio" name="municipio" value="" required>
+							<label for="municipio">Municipio</label>
+						</span>
+
+						<span class="tercio">
+							<select id="provincia" name="provincia" required>
+								<option value="" disabled selected>Seleccione Provincia</option>
+								<option value="provincia1">Provincia 1</option>
+								<option value="provincia2">Provincia 2</option>
+								<option value="provincia3">Provincia 3</option>
+							</select>
+							<label for="provincia">Provincia</label>
+						</span>
+
+						<span class="dostercios">
+							<select id="pais" name="pais" required>
+								<option value="" disabled selected>Seleccione Pais</option>
+								<option value="pais1">País 1</option>
+								<option value="pais2">País 2</option>
+								<option value="pais3">País 3</option>
+							</select>
+							<label for="pais">País</label>
+						</span>
+					</div>
+
+					<p class="ayuda">El código postal es imprescindible para poder recibir los pedidos</p>
+				</li>
+
+				<li class="izquierda">
+					<label class="titulo" for="email">Email</label>
+
+					<div>
+						<span class="completo">
+							<input id="email" name="email" value="">
+						</span>
+					</div>
+
+					<p class="ayuda">Asegúrate de que sea válido</p>
+				</li>
+
+				<li class="derecha">
+					<label class="titulo" for="telefonofijo">Teléfono <span class="requerido">*</span></label>
+
+					<div>
+						<span class="mitad">
+							<input id="telefonofijo" name="telefonofijo" value="" required>
+							<label for="telefonofijo">Fijo</label>
+						</span>
+
+						<span class="mitad">
+							<input id="telefonomovil" name="telefonomovil" value="" required>
+							<label for="telefonomovil">Móvil</label>
+						</span>
+					</div>
+
+					<p class="ayuda">Sin prefijo de país y sin espacios en blanco</p>
+				</li>
+
+				<li class="botones">
+					<input id="alta" type="submit" name="Enviar" value="Darme de alta &rarr;">
+				</li>
+
+			</ul>
+		</form>
+
+	</div>
+</body>
+
+</html>

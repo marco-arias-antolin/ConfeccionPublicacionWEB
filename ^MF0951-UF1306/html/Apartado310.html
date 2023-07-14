@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 3. Apartado 3.1.
+					"Integración de archivos y clasificar archivos que utilizará en la web"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Integración de archivos y clasificar archivos que utilizará en la web</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Integración de archivos y clasificar archivos que utilizará en la web.">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		const iframes = document.getElementsByTagName('iframe');
+		for (let iframe of iframes) {
+			iframe.onload = () => {
+				iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Integración de archivos y clasificar archivos que utilizará en la web</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En esta actividad le facilitamos un código y usted debe realizar las siguientes tareas:</p>
+			<ul>
+				<li>Verificar su funcionamiento en diferentes navegadores.</li>
+				<li>Realizar diferentes pruebas de su correcto funcionamiento utilizando diferentes entornos.</li>
+				<li>Identificar los parámetros a verificar.</li>
+				<li>Documentar el proceso realizado.</li>
+			</ul>
+			<p>Documento adjunto: <a href="Apartado310.docx" target="_blank">Apartado310.docx</a> &nbsp; <a href="Apartado310original.html" target="_blank">Apartado310original.html</a></p>
+
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>Verificar la integración de scripts ya desarrollados en páginas web para probar su funcionalidad:</p>
+			<ul>
+				<li>Seleccionar varios navegadores.</li>
+				<li>Definir los entornos de prueba.</li>
+				<li>Identificar los parámetros a verificar.</li>
+				<li>Documentar los procesos realizados.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p><a href="Apartado310corregido.html" target="_blank">Apartado310corregido.html</a></p>
+			<p><a href="Apartado310diff.html" target="_blank">Apartado310diff.html</a></p>
+			<iframe src="Apartado310diff.html"></iframe>
+			<p>Para verificar el funcionamiento del código en diferentes navegadores y realizar pruebas de su correcto funcionamiento, podemos seguir los siguientes pasos:</p>
+			<ol>
+				<li>Copiar el código HTML proporcionado y guardarlo en un archivo con extensión ".html", por ejemplo, "<a href="Apartado310corregido.html" target="_blank">Apartado310corregido.html</a>".</li>
+				<li>Abrir el archivo HTML en diferentes navegadores, como Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, etc. Observar si el formulario se muestra correctamente en todos los navegadores y si todas las funcionalidades están disponibles.</li>
+				<li>Comprobar la funcionalidad del formulario llenando los campos con diferentes datos y enviando el formulario. Verificar que se envíen los datos correctamente o que se muestre algún tipo de mensaje de error en caso de que falten campos obligatorios.</li>
+				<li>Realizar pruebas adicionales en diferentes entornos, como dispositivos móviles y tabletas, para verificar si el formulario se adapta correctamente al tamaño de la pantalla y se mantiene legible y usable.</li>
+				<li>Verificar que los estilos CSS aplicados al formulario se vean correctamente en todos los navegadores y que no haya problemas de visualización o diseño.</li>
+				<li>Identificar los parámetros a verificar:
+					<ul>
+						<li>Verificar que todos los campos requeridos se validen correctamente y muestren mensajes de error si están vacíos.</li>
+						<li>Verificar que se apliquen las restricciones de formato en los campos de correo electrónico y teléfono.</li>
+						<li>Verificar que los campos de selección desplegable (provincia y país) funcionen correctamente y muestren las opciones disponibles.</li>
+						<li>Verificar que los estilos CSS se apliquen correctamente y que el formulario se vea correctamente en todos los navegadores y dispositivos.</li>
+					</ul>
+				</li>
+				<li>Documentar el proceso realizado, incluyendo los navegadores y entornos en los que se realizaron las pruebas, los resultados obtenidos y cualquier problema o error identificado durante las pruebas.</li>
+			</ol>
+			<p>El código proporcionado es un formulario de ejemplo y puede requerir funcionalidades adicionales, como validación de campos específicos, procesamiento de datos del formulario en el lado del servidor, entre otros.</p>
+
+			<h3>Actividad asociada al CE1.3</h3>
+			<p>Para verificar la integración de scripts ya desarrollados en páginas web y probar su funcionalidad, puedes seguir estos pasos:</p>
+			<ol>
+				<li>Seleccionar varios navegadores: Elige una combinación de navegadores populares, como Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, y otros que sean relevantes para tu audiencia objetivo. Asegúrate de incluir diferentes versiones de cada navegador si es posible.</li>
+				<li>Definir los entornos de prueba: Identifica los diferentes entornos en los que se utilizará la página web, como dispositivos móviles (iOS, Android), tabletas, diferentes sistemas operativos (Windows, macOS), resoluciones de pantalla, etc. Esto te permitirá probar la compatibilidad y funcionalidad en diferentes configuraciones.</li>
+				<li>Identificar los parámetros a verificar: Dependerá del script en particular, pero algunos parámetros comunes a verificar pueden incluir:
+					<ul>
+						<li>Funcionalidad principal: Asegúrate de que la funcionalidad principal del script se ejecute correctamente. Por ejemplo, si es un formulario de contacto, verifica que los mensajes se envíen correctamente.</li>
+						<li>Compatibilidad del navegador: Verifica que el script funcione correctamente en todos los navegadores seleccionados, sin errores ni problemas de visualización.</li>
+						<li>Responsividad: Verifica que el script sea responsivo y se adapte correctamente a diferentes tamaños de pantalla y dispositivos.</li>
+						<li>Rendimiento: Realiza pruebas para evaluar el rendimiento del script y asegurarte de que no haya demoras o bloqueos en la página web.</li>
+						<li>Seguridad: Si el script interactúa con datos sensibles o realiza acciones críticas, verifica que se implementen medidas de seguridad adecuadas.</li>
+					</ul>
+				</li>
+				<li>Documentar los procesos realizados: Mantén un registro de los navegadores utilizados, los entornos de prueba, los resultados obtenidos y cualquier problema o error identificado durante las pruebas. Registra los pasos de configuración y los resultados de las pruebas en un documento o en un sistema de seguimiento de problemas.</li>
+			</ol>
+			<p>Al realizar estas pruebas en diferentes navegadores y entornos, podrás asegurarte de que el script integrado funcione correctamente en una variedad de situaciones, brindando una experiencia fluida y consistente para los usuarios finales.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
