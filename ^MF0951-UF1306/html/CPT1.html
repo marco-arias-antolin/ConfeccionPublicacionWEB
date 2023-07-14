@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Caso Práctico Tema 1
+					"Validación de datos con HTML5 y Javascript".
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Validación de datos con HTML5 y Javascript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Validación de datos con HTML5 y Javascript.">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		form {
+			background: white;
+			border-radius: .6rem;
+			border: 2px solid var(--color);
+			color: black;
+			display: inline-block;
+			margin-bottom: 1rem;
+			padding: 1rem 1rem 0;
+		}
+
+		form>fieldset {
+			align-items: end;
+			border-radius: .6rem;
+			display: inline-grid;
+			grid-template-columns: auto auto;
+		}
+
+		input {
+			margin: .6rem 0 0 1rem;
+		}
+	</style>
+	<script>
+		onload = () => {
+			const formulario2 = document.getElementById('formulario2');
+			// Capturo el envío del segundo formulario
+			formulario2.onsubmit = (event) => {
+				event.preventDefault();
+				// Aquí se pueden tratar los datos y enviarlos con Ajax o fetch
+				console.log(mostrarDatosFormulario('formulario2'));
+			}
+		}
+		function mostrarDatosFormulario(nombreFormulario) {
+			let formulario = document.getElementById(nombreFormulario);
+			let s = '';
+			for (let el of formulario.elements)
+				if (el.value)
+					s += `${el.name}: ${el.value}\n`;
+			return s;
+		}
+		function validarFormulario(event) {
+			var dni = document.getElementById('dni').value;
+			var nombre = document.getElementById('nombre').value;
+			var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+			var email = document.getElementById('email').value;
+			var web = document.getElementById('web').value;
+			var contraseña = document.getElementById('contraseña').value;
+
+			// Validación de campos
+			if (dni === '' || nombre === '' || fechaNacimiento === '' || email === '' || web === '' || contraseña === '') {
+				alert('Todos los campos son obligatorios');
+				return false;
+			}
+
+			// Validación específica de cada campo
+			var dniPattern = /^\d{8}-[A-Za-z]$/;
+			if (!dniPattern.test(dni)) {
+				alert('El formato del DNI es incorrecto');
+				return false;
+			}
+
+			var nombrePattern = /^[A-Za-z]+\s[A-Za-z]+\s?([A-Za-z]+\s?[A-Za-z]+)?$/;
+			if (!nombrePattern.test(nombre)) {
+				alert('El formato del nombre es incorrecto');
+				return false;
+			}
+
+			// He cambiado la validación de dd/mm/aaaa aaaa/mm/dd ya que es el
+			// formato que devuelve el <input type="date"> que es el que se ve
+			// en la imagen del formulario.
+			//var fechaPattern = /^\d{2}\/\d{2}\/\d{4}$/; // formato dd/mm/aaaa
+			var fechaPattern = /^\d{4}-\d{2}-\d{2}$/; // formato aaaa/mm/dd
+			if (!fechaPattern.test(fechaNacimiento)) {
+				console.log(fechaNacimiento);
+				alert('El formato de la fecha de nacimiento es incorrecto');
+				return false;
+			}
+
+			// Se queda un poco limitada la validación
+			// var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+			var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+			if (!emailPattern.test(email)) {
+				alert('El formato del email es incorrecto');
+				return false;
+			}
+
+			var webPattern = /^http:\/\/www\.[a-zA-Z_]+\.[a-zA-Z]{2,3}$/;
+			if (!webPattern.test(web)) {
+				alert('El formato de la página web es incorrecto');
+				return false;
+			}
+
+			if (contraseña.length < 6 || contraseña.length > 20) {
+				alert('La contraseña debe tener entre 6 y 20 caracteres');
+				return false;
+			}
+
+			// Puesto para depuración
+			console.log(mostrarDatosFormulario('formulario1'));
+			return false;
+			// return true;
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Título</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En este primer caso práctico debe realizar las siguientes tareas:</p>
+
+			<p>Cree un código HTML donde haya 5 campos a los que tendrá que aplicarles una validación con JavaScript. Los campos son los siguientes:</p>
+			<ul>
+				<li>DNI, se deberá validar como 00000000 - Z</li>
+				<li>Nombre, deberá tener como mínimo un nombre y un apellido, como máximo dos nombres y dos apellidos.</li>
+				<li>Fecha de nacimiento, formato dd/mm/aaaa</li>
+				<li>Email formato aaaa@xxxx.zzz</li>
+				<li>Web formato http://www.xxxx.yyy</li>
+				<li>Contraseña entre 6 y 20 caracteres.</li>
+			</ul>
+			<p>NOTA: Los campos no se podrán dejar en blanco</p>
+			<p>El formulario se presentará como el ejemplo siguiente:</p>
+			<img src="img/CPT1.PNG" alt="Resultado deseado">
+			<p>Por último, identifique las fases que intervienen en la integración del formulario en una página web.</p>
+
+			<h3>Actividad asociada al CE1.1</h3>
+			<p>Identificar las fases que intervienen en la verificación de la integración de componentes en páginas.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<h3>Formulario verificado con JavaScript</h3>
+			<form action="#" id="formulario1" onsubmit="return validarFormulario()" method="post">
+				<fieldset>
+					<legend>Introduzca los datos y pulse Comprobar</legend>
+					<label for="dni">DNI:</label>
+					<input type="text" id="dni" name="dni">
+
+					<label for="nombre">Nombre y apellido:</label>
+					<input type="text" id="nombre" name="nombre">
+
+					<label for="fechaNacimiento">Fecha de nacimiento:</label>
+					<input type="date" id="fechaNacimiento" name="fechaNacimiento">
+
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email">
+
+					<label for="web">Página web:</label>
+					<input type="url" id="web" name="web">
+
+					<label for="contraseña">Contraseña:</label>
+					<input type="password" id="contraseña" name="contraseña">
+				</fieldset>
+				<p><input type="submit" name="Botón de envio" value="Comprobar"></p>
+			</form>
+
+			<h3>Formulario validado con HTML5</h3>
+			<form action="#" id="formulario2" method="post">
+				<fieldset>
+					<legend>Introduzca los datos y pulse Comprobar</legend>
+					<label for="dni2">DNI:</label>
+					<input type="text" id="dni2" name="dni2" pattern="\d{8}-[A-Za-z]" required>
+
+					<label for="nombre2">Nombre y apellido:</label>
+					<input type="text" id="nombre2" name="nombre2" pattern="^[A-Za-z]+\s[A-Za-z]+\s?([A-Za-z]+\s?[A-Za-z]+)?$" required>
+
+					<label for="fechaNacimiento2">Fecha de nacimiento:</label>
+					<input type="date" id="fechaNacimiento2" name="fechaNacimiento2" required>
+
+					<label for="email2">Email:</label>
+					<input type="email" id="email2" name="email2" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+
+					<label for="web2">Página web:</label>
+					<input type="url" id="web2" name="web2" required>
+
+					<label for="contraseña2">Contraseña:</label>
+					<input type="password" id="contraseña2" name="contraseña2" minlength="6" maxlength="20" required>
+				</fieldset>
+				<p><input type="submit" name="Botón de envio" value="Comprobar"></p>
+			</form>
+
+			<h3>Actividad asociada al CE1.1</h3>
+			<h4>Con JavaScript</h4>
+			<p>Las fases que intervienen en la integración del formulario en una página web son las siguientes:</p>
+			<ol>
+				<li>Diseño del formulario: Se define la estructura y apariencia visual del formulario en HTML.</li>
+				<li>Validación de campos con JavaScript: Se utiliza JavaScript para realizar la validación de los campos ingresados por el usuario, aplicando las reglas específicas establecidas.</li>
+				<li>Manejo de eventos: Se utilizan eventos de JavaScript, como el evento "onsubmit" en el ejemplo, para ejecutar una función de validación cuando se envía el formulario.</li>
+				<li>Procesamiento en el servidor: Una vez que se ha realizado la validación en el cliente, el formulario se envía al servidor para su procesamiento adicional, como almacenamiento en una base de datos o envío de correos electrónicos.</li>
+				<li>Retroalimentación al usuario: El servidor puede enviar una respuesta al cliente para informar si la información se procesó correctamente o si se encontraron errores. Esta retroalimentación se muestra al usuario en la página web.</li>
+			</ol>
+			<p>En resumen, las fases involucradas son: diseño del formulario, validación de campos con JavaScript, manejo de eventos, procesamiento en el servidor y retroalimentación al usuario.</p>
+
+			<h4>Con HTML5</h4>
+			<p>Las fases que intervienen en la verificación de la integración de componentes en páginas utilizando la versión del formulario hecha con HTML5 son similares a las mencionadas anteriormente. A continuación, se detallan las fases:</p>
+			<ol>
+				<li>Diseño del formulario: Se define la estructura y la apariencia visual del formulario en HTML.</li>
+				<li>Validación en el cliente: Utilizando las características de validación en HTML5, se aplican las restricciones y validaciones a los campos directamente en el cliente. Esto incluye el uso de atributos como required, pattern, type, minlength, maxlength, entre otros, para especificar las reglas de validación.</li>
+				<li>Manejo de eventos: Los eventos HTML5, como onsubmit en el formulario, se utilizan para ejecutar funciones de validación personalizadas antes de enviar los datos al servidor.</li>
+				<li>Procesamiento en el servidor: Una vez que se ha realizado la validación en el cliente, el formulario se envía al servidor para su procesamiento adicional, como almacenamiento en una base de datos o procesamiento de los datos recibidos.</li>
+				<li>Retroalimentación al usuario: El servidor puede enviar una respuesta al cliente, que se muestra en la página web, para informar si la información se procesó correctamente o si se encontraron errores durante el procesamiento.</li>
+			</ol>
+			<p>Es importante tener en cuenta que, con la validación en HTML5, gran parte de la validación se realiza en el cliente antes de enviar los datos al servidor. Esto ayuda a mejorar la experiencia del usuario al proporcionar retroalimentación instantánea sobre los errores de validación sin necesidad de interactuar con el servidor. Sin embargo, la validación en el cliente no reemplaza la validación en el servidor, ya que aún es necesario validar y procesar los datos recibidos para garantizar su integridad y seguridad.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
