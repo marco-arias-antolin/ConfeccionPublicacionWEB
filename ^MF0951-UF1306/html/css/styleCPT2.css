@@ -1,0 +1,55 @@
+/* Original */
+.menu * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	list-style-type: none;
+	position: relative;
+	width: 120px;
+}
+
+.menu li a {
+	border: 1px solid #000;
+	color: #000;
+	display: inline-block;
+	height: 30px;
+	padding: 5px 10px;
+	text-decoration: none;
+	width: 120px;
+}
+
+.menu .more {
+	display: inline-block;
+	font-size: 30px;
+	position: absolute;
+	right: 0px;
+}
+
+/* Agregado */
+.menu {
+	background-color: white;
+	display: inline-block;
+	font-size: smaller;
+	padding: 1rem;
+}
+
+.menu .more {
+	top: 0;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+}
+
+.dropdown-toggle .hide {
+	display: none;
+}
+
+.dropdown-menu.open {
+	display: block;
+	position: relative;
+}

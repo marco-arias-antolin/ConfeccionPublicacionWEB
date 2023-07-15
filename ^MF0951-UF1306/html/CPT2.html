@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	UF1306. Caso Práctico Tema 2
+					"Creación de efectos en una página web"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Creación de efectos en una página web</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Creación de efectos en una página web.">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleCPT2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<script src="js/scriptCPT2.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Creación de efectos en una página web</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Dado el siguiente código CSS:</p>
+			<ul>
+				<li>Cree la estructura de un menú desplegable con HTML y la funcionalidad con JavaScript. Ambos códigos tendrán que estar en sus respectivos archivos y ser enlazados al principal.</li>
+				<li>Además, cuando se clique la opción del menú deberán desplegarse las subopciones y cuando vuelva a clicar, el menú volverá a su estado inicial.</li>
+			</ul>
+			<p>Código CSS:</p>
+			<pre><code>* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+	position: relative;
+	width: 120px;
+}
+
+li a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 10px;
+	width: 120px;
+	height: 30px;
+	border: 1px solid #000;
+	color: #000;
+}
+
+.more {
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	font-size: 30px;
+}</code></pre>
+			<p>El menú debe quedar como en la siguiente imagen:</p>
+			<img src="img/CPT2.jpg" alt="Resultado buscado">
+			<p>NOTA: Debe utilizar la siguiente librería en HTML:</p>
+			<pre><code>&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"&gt;</code></pre>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>Clasificar los distintos tipos de archivos que se van a integrar en la página, verificando la instalación del «plug-in» correspondiente en el navegador web.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<nav class="menu">
+				<ul>
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Quienes Somos</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle">Servicios <i class="more far fa-caret-square-down"></i><i class="more far fa-caret-square-up hide"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Servicio A</a></li>
+							<li><a href="#">Servicio B</a></li>
+							<li><a href="#">Servicio C</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</nav>
+			<p>&nbsp;</p>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>En la página que estamos construyendo, los distintos tipos de archivos que se van a integrar son:</p>
+			<ol>
+				<li>Archivos HTML: Representados por el archivo "<a href="CPT2.html" target="_blank">CPT2.html</a>". Estos archivos contienen el código estructural y de contenido de la página web.</li>
+				<li>Archivos CSS: Representados por el archivo '<a href="css/styleCPT2.css" target="_blank">styleCPT2.css</a>'. Estos archivos contienen reglas de estilo que se aplican a los elementos HTML para definir su apariencia.</li>
+				<li>Archivos JavaScript: Representados por el archivo '<a href="js/scriptCPT2.js" target="_blank">scriptCPT2.js</a>'. Estos archivos contienen código que agrega interactividad y funcionalidad a la página web. En este caso, se utiliza para controlar el desplegable del menú.</li>
+				<li>Archivos de fuente: En este caso, se utiliza la biblioteca de fuentes Font Awesome. El archivo CSS de Font Awesome se enlaza mediante la etiqueta &lt;link&gt; en el archivo HTML. Hay que asegurarse de que se haya instalado correctamente el plugin correspondiente en el navegador web para que los iconos de Font Awesome se muestren correctamente.</li>
+			</ol>
+			<p>En resumen, los tipos de archivos que se integran en la página son HTML, CSS, JavaScript y archivos de fuentes externas. Es importante verificar que los plugins y bibliotecas correspondientes estén instalados y enlazados correctamente para que la página funcione adecuadamente.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
