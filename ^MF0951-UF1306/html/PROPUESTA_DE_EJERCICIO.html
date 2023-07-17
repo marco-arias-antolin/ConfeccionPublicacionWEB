@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	MF0951-UF1305
+					PROPUESTA DE EJERCICIO
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6bGlnaHRncmVlbjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>PROPUESTA DE EJERCICIO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="PROPUESTA DE EJERCICIO.">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>PROPUESTA DE EJERCICIO</h1>
+	</header>
+	<main>
+		<section>
+			<h2>PROPUESTA DE EJERCICIO</h2>
+			<h3>EJERCICIO COMPLEMENTARIOS Y DE SUSTITUCIÓN</h3>
+			<p>Una sala de proyección de cine nos encarga un proyecto para poder dar mantenimiento a las películas que proyecta y para ello se debe de desarrollar la siguiente herramienta Web.</p>
+			<p>En primer lugar se deberá de crear la Base de Datos BDCINE con la tabla películas que tiene la siguiente estructura:</p>
+			<table>
+				<thead>
+					<tr>Nombre de Campo</tr>
+					<td>Tipo</td>
+					<td>Tamaño</td>
+					<td>Observaciones</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Identificador</td>
+						<td>VARCHAR</td>
+						<td>20</td>
+						<td>Campo Clave Primaria.
+							Las películas tienen un identificador único que proporciona la distribuidora
+						</td>
+					</tr>
+					<tr>
+						<td>Titulo</td>
+						<td>VARCHAR</td>
+						<td>100</td>
+						<td>Campo índice</td>
+					</tr>
+					<tr>
+						<td>Genero</td>
+						<td>VARCHAR</td>
+						<td>100</td>
+						<td>Género de la película: Ciencia ficción, aventuras, etc.</td>
+					</tr>
+					<tr>
+						<td>FechaInicio</td>
+						<td>DATE</td>
+						<td></td>
+						<td>Fecha en que se inicia la proyección</td>
+					</tr>
+					<tr>
+						<td>FechaFin</td>
+						<td>DATE</td>
+						<td></td>
+						<td>Fecha en que finaliza la proyección</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Nota: Los nombres de los campos no lleva tildes.</p>
+			<p>Desde la página index.php y a través de un menú se accederán a las siguientes operaciones:</p>
+			<ul>
+				<li>Alta de películas en la Base de Datos teniendo cuidado que no se repitan los identificadores.</li>
+				<li>Consulta de películas:
+					<ul>
+						<li>Lista General de películas</li>
+						<li>Lista de películas por título</li>
+						<li>Lista de películas por género</li>
+						<li>Lista de películas entre dos fechas de inicio</li>
+					</ul>
+				</li>
+				<li>Las operaciones de consulta permitirán la modificación y eliminación de películas.</li>
+			</ul>
+			<p>Este ejercicio tiene la posibilidad como proyecto de sustituir al resto de ejercicios que queden en ambas UF.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+.header{
+    background-image: url(../images/fondo.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 300px;
+}
+.logos{
+    width: 200px;
+}
+.colorElefante{
+    background-color: #6E7CB7;
+}
+.nav-link{color: white;}
+.breadcrumb-item{
+    color: white;
+}
+.breadcrumb-item active{
+    color: yellow;
+}
