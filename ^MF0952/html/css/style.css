@@ -13,12 +13,23 @@ html {
 
 body {
 	background: var(--bg);
+	box-sizing: border-box;
 	color: var(--color);
-	/* display: flex;
-	flex-direction: column; */
+	display: flex;
+	flex-direction: column;
 	font-family: var(--fontFamily);
-	margin: 3rem;
+	margin: 0;
 	min-height: 100vh;
+	padding: 3rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	margin-bottom: 1rem;
 }
 
 a {
@@ -46,43 +57,32 @@ h6 {
 	font-weight: 500;
 	line-height: 1.2;
 	margin: 0;
-	margin-bottom: .5rem;
+	margin-bottom: .6rem;
+	text-align: center;
 }
 
 h1 {
 	font-size: 2.5rem;
-
 }
 
 h2 {
 	font-size: 2rem;
-
 }
 
 h3 {
 	font-size: 1.75rem;
-
 }
 
 h4 {
 	font-size: 1.5rem;
-
 }
 
 h5 {
 	font-size: 1.25rem;
-
 }
 
 h6 {
 	font-size: 1rem;
-
-}
-
-main {
-	background: var(--bg);
-	/* flex: 1; */
-	margin-bottom: 4rem;
 }
 
 p {
@@ -91,15 +91,25 @@ p {
 	margin: 0 0 1rem;
 }
 
-footer {
-	text-align: center;
-	background: var(--bg);
+pre {
+	border-radius: .6rem;
+	border: 1px solid var(--color);
+	margin: 1rem 0;
+	overflow: auto;
+	padding: 1rem;
+}
+
+iframe {
+	border-radius: .6rem;
+	width: 100%;
 }
 
 footer {
+	background: var(--bg);
 	inset: auto 0 0;
 	padding-bottom: .6rem;
 	position: fixed;
+	text-align: center;
 }
 
 footer>span {
@@ -129,17 +139,4 @@ footer>span>span {
 	to {
 		transform: scale(1.16);
 	}
-}
-
-pre {
-	border-radius: .6rem;
-	border: 1px solid var(--color);
-	margin: 1rem 0;
-	overflow: auto;
-	padding: 1rem;
-}
-
-iframe {
-	border-radius: .6rem;
-	width: 100%;
 }
