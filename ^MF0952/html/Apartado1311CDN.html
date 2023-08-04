@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.3.1.1.
+					"Clasificación de los comandos que realizan una modificación o generación en la estructura de almacenamiento"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6I2FkYjViZDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Clasificación de los comandos que realizan una modificación o generación en la estructura de almacenamiento</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Clasificación de los comandos que realizan una modificación o generación en la estructura de almacenamiento.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<style>
+		pre {
+			border-radius: .6rem;
+			border: 1px solid var(--bs-body-color);
+			margin: 1rem 0;
+			overflow: auto;
+			padding: 1rem;
+		}
+
+		footer {
+			transform-origin: bottom;
+			transition: .6s;
+		}
+
+		footer>span {
+			display: inline-block;
+			margin: 0 auto;
+			width: 66%;
+		}
+
+		footer>span>span {
+			display: inline-block;
+			transform: scale(-1.6, 1.6);
+		}
+
+		footer:hover {
+			transform: scale(1.16);
+		}
+	</style>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Clasificación de los comandos que realizan una modificación o generación en la estructura de almacenamiento</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>Cree una carpeta llamada ejemplo en el escritorio, dentro de la misma cree otra carpeta llamada ejemplo2, dentro de ella cree un archivo .txt. Utilice los comandos adecuados para que se muestre en el terminal de Windows todos los archivos contenidos en la carpeta ejemplo y sus subdirectorios.</p>
+
+			<h3>Actividad asociada al CE1.2</h3>
+			<p>Clasificar los mandatos y comandos de uso posible, para realizar la generación o modificación de la estructura de almacenamiento en el sitio web de acuerdo a unas instrucciones recibidas.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<p>Abre el menú Inicio y busca "cmd" para abrir el símbolo del sistema (terminal de Windows).</p>
+			<p>Para crear la carpeta "ejemplo" en el escritorio:</p>
+			<pre><code>mkdir C:\Users\TuUsuario\Desktop\ejemplo</code></pre>
+			<p>Cambiar al directorio "ejemplo":</p>
+			<pre><code>cd C:\Users\TuUsuario\Desktop\ejemplo</code></pre>
+			<p>Crear la carpeta "ejemplo2" dentro de la carpeta "ejemplo":</p>
+			<pre><code>mkdir ejemplo2</code></pre>
+			<p>Cambiar al directorio "ejemplo2":</p>
+			<pre><code>cd ejemplo2</code></pre>
+			<p>Crear un archivo de texto llamado "archivo.txt":</p>
+			<pre><code>echo Este es un archivo de ejemplo > archivo.txt</code></pre>
+			<p>Cambia el directorio actual al escritorio utilizando el comando cd (si no estás en el escritorio):</p>
+			<pre><code>cd C:\Users\TuUsuario\Desktop</code></pre>
+			<p>Utiliza el comando dir con la opción /S para mostrar todos los archivos en la carpeta "ejemplo" y sus subdirectorios:</p>
+			<pre><code>dir ejemplo /S</code></pre>
+
+			<h3>Actividad asociada al CE1.2</h3>
+
+			<h4>Creación de Carpetas y Archivos:</h4>
+			<p>Crear una carpeta en el directorio raíz del sitio web:</p>
+			<pre><code>mkdir nombre_carpeta</code></pre>
+			<p>Navegar a la carpeta recién creada:</p>
+			<pre><code>cd nombre_carpeta</code></pre>
+			<p>Crear una subcarpeta dentro de la carpeta actual:</p>
+			<pre><code>mkdir subcarpeta</code></pre>
+			<p>Crear un archivo HTML en la carpeta actual:</p>
+			<pre><code>echo "<html><head><title>Título</title></head><body><p>Contenido</p></body></html>" > archivo.html</code></pre>
+			<p>Crear un archivo CSS en la carpeta actual:</p>
+			<pre><code>echo "selector { propiedad: valor; }" > estilo.css</code></pre>
+
+			<h4>Edición de Archivos:</h4>
+			<p>Abrir un archivo HTML existente para edición (usando un editor de texto):</p>
+			<pre><code>notepad archivo.html</code></pre>
+			<p>Editar un archivo CSS existente (usando un editor de texto):</p>
+			<pre><code>notepad estilo.css</code></pre>
+
+			<h4>Visualización de Contenido:</h4>
+			<p>Listar todos los archivos y carpetas en el directorio actual:</p>
+			<pre><code>dir</code></pre>
+			<p>Mostrar el contenido de un archivo en la consola:</p>
+			<pre><code>type archivo.html</code></pre>
+			<p>Navegar a una carpeta específica:</p>
+			<pre><code>cd ruta_absoluta_o_relativa</code></pre>
+
+			<h4>Otros:</h4>
+			<p>Copiar un archivo de una carpeta a otra:</p>
+			<pre><code>copy origen\archivo.html destino\</code></pre>
+			<p>Mover una carpeta o archivo a otra ubicación:</p>
+			<pre><code>move origen\subcarpeta destino\</code></pre>
+			<p>Eliminar un archivo:</p>
+			<pre><code>del archivo.html</code></pre>
+			<p>Eliminar una carpeta y su contenido:</p>
+			<pre><code>rmdir /s /q nombre_carpeta</code></pre>
+			<p>Estos comandos pueden variar según el sistema operativo (por ejemplo, Windows o Linux) y la interfaz de línea de comandos que estés utilizando. Adicionalmente, hay que tener en cuenta que trabajar en un sitio web en producción puede requerir más consideraciones, como asegurarte de tener copias de seguridad y ser consciente de cómo los cambios afectan a la experiencia del usuario.</p>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span class="border-top border-light rounded"><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
