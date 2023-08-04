@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 1. Apartado 1.1.
+					"Distinción de características y parámetros de seguridad del sistema de archivos"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6I2FkYjViZDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Seguridad del sistema de archivos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Distinción de características y parámetros de seguridad del sistema de archivos.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<style>
+		footer {
+			transform-origin: bottom;
+			transition: .6s;
+		}
+
+		footer>span {
+			display: inline-block;
+			margin: 0 auto;
+			width: 66%;
+		}
+
+		footer>span>span {
+			display: inline-block;
+			transform: scale(-1.6, 1.6);
+		}
+
+		footer:hover {
+			transform: scale(1.16);
+		}
+	</style>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Distinción de características y parámetros de seguridad del sistema de archivos</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>En cualquier sistema de archivos, todos los mecanismos de seguridad tienen que complementarse entre sí, de tal forma que, si una persona logra saltarse alguna de las protecciones, se encuentre con otras que le hagan difícil acceder.</p>
+			<p>Para entender los distintos tipos de seguridad, le solicitamos:</p>
+			<p>Describa qué es y en qué se diferencian:</p>
+			<ul>
+				<li>La seguridad interna</li>
+				<li>La seguridad externa</li>
+				<li>La seguridad física</li>
+				<li>La seguridad de administración</li>
+			</ul>
+
+			<h3>Actividad asociada al CE1.1</h3>
+			<p>Distinguir las características y parámetros de seguridad del sistema de archivo del sitio web en el que se va a realizar la publicación de las páginas.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<h4>Seguridad Externa</h4>
+			<p>Este tipo de seguridad está relacionada con la instalación del sistema informático, el acceso de los usuarios al mismo y la información que este contiene. Se utiliza para proteger la instalación de desastres naturales o intrusos. La seguridad externa es la que protege al sistema informático sin necesidad de intervenir de manera directa. Además, este tipo de seguridad se divide en otros dos grupos:</p>
+			<ul>
+				<li>Seguridad Física</li>
+				<li>Seguridad de Administración</li>
+			</ul>
+			<h4>Seguridad Física</h4>
+			<p>Esta seguridad es la que se encarga de que agentes físicos no destruyan parte o la totalidad de la información que contiene el sistema. Por parte de la seguridad física debe saber que algunos de los agentes físicos que pueden amenazar la estabilidad y seguridad de las instalaciones son:</p>
+			<ul>
+				<li>Acceso y destrucción física del sistema por parte de personas.</li>
+				<li>Incendios.</li>
+				<li>Humo.</li>
+				<li>Inundaciones.</li>
+				<li>Campos magnéticos.</li>
+				<li>Descargas eléctricas.</li>
+			</ul>
+			<h4>Seguridad de Administración</h4>
+			<p>Esta seguridad se encarga de impedir el acceso al sistema informático de personas físicas con la finalidad de manipular o eliminar información.</p>
+			<h4>Seguridad Interna</h4>
+			<p>Está relacionada con los circuitos del sistema y la seguridad del sistema operativo. Se utiliza para tratar los controles incorporados al hardware. También, asegura la operabilidad, confiabilidad e integridad de los programas y los datos.</p>
+
+			<h3>Actividad asociada al CE1.1</h3>
+			<p>En el servidor <a href="https://www.infinityfree.com/" target="_blank">infinityfree</a> da dos opciones de conexion al sistema de archivos:</p>
+			<ol>
+				<li>A través de un cliente ftp online: <a href="https://www.monstaftp.com/" target="_blank">monstaftp</a></li>
+				<li>Se puede elegir un cliente ftp y acceder con usuario y contraseña</li>
+			</ol>
+			<p>El sistema de archivos es alguno de linux ya que se pueden ver los permisos de los archivos</p>
+			<p>La conexión se realiza mediante https</p>
+			<p>El servidor permite implementar medidas de seguridad:</p>
+			<ol>
+				<li>Bloquear IP</li>
+				<li>SSL / TLS</li>
+			</ol>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span class="border-top border-light rounded"><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
