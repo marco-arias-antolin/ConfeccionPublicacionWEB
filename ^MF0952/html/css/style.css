@@ -99,6 +99,10 @@ pre {
 	padding: 1rem;
 }
 
+img {
+	max-width: 100%;
+}
+
 iframe {
 	border-radius: .6rem;
 	width: 100%;
