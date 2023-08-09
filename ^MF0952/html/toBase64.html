@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Archivos a Base64
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6I2FkYjViZDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Archivos a Base64</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Archivos a Base64.">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Codificador de Archivos a Base64</h1>
+	</header>
+	<main>
+		<section>
+			<h4>Selecciona archivos</h4>
+			<input type="file" id="fileInput" multiple>
+			<div id="output"></div>
+
+			<script>
+				const fileInput = document.getElementById("fileInput");
+				const outputDiv = document.getElementById("output");
+
+				const createResultElement = (file, base64Data, mimeType) => {
+					const resultDiv = document.createElement("div");
+					resultDiv.innerHTML = `
+        <p>Nombre del archivo: ${file.name}</p>
+        <p>Tipo MIME: ${mimeType}</p>
+        <p>Tamaño: ${file.size} bytes</p>
+        <p>Representación Base64:</p>
+        <textarea rows="5" cols="50" readonly>${"data:" + mimeType + ";base64," + base64Data}</textarea>
+        <button class="copyButton">Copiar</button>
+      `;
+
+					return resultDiv;
+				};
+
+				const copyToClipboard = async (text) => {
+					try {
+						await navigator.clipboard.writeText(text);
+						console.log("Texto copiado al portapapeles");
+					} catch (error) {
+						console.error("Error al copiar al portapapeles:", error);
+					}
+				};
+
+				fileInput.addEventListener("change", function (event) {
+					outputDiv.innerHTML = ""; // Limpiar contenido anterior
+
+					const files = event.target.files;
+
+					for (let i = 0; i < files.length; i++) {
+						const file = files[i];
+						const reader = new FileReader();
+
+						reader.onload = function (e) {
+							const base64Data = e.target.result.split(",")[1];
+							const mimeType = file.type;
+
+							const resultDiv = createResultElement(file, base64Data, mimeType);
+							const copyButton = resultDiv.querySelector(".copyButton");
+							const base64TextArea = resultDiv.querySelector("textarea");
+
+							copyButton.addEventListener("click", () => copyToClipboard(base64TextArea.value));
+
+							outputDiv.appendChild(resultDiv);
+						};
+
+						reader.readAsDataURL(file);
+					}
+				});
+			</script>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
