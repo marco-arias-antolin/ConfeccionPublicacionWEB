@@ -63,8 +63,8 @@ h5,
 h6 {
 	font-weight: 500;
 	line-height: 1.2;
-	margin: 0;
-	margin-bottom: .6rem;
+	/* margin: 0;
+	margin-bottom: .6rem; */
 	text-align: center;
 }
 
@@ -95,7 +95,7 @@ h6 {
 p {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: 0 0 1rem;
+	/* margin: 0 0 1rem; */
 }
 
 pre {
