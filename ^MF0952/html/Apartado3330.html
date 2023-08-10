@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 3. Apartado 3.3.3.
+					"Identificación y descripción de los descriptores"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6I2FkYjViZDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Identificación y descripción de los descriptores</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Identificación y descripción de los descriptores.">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Identificación y descripción de los descriptores</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<p>El elemento head de un documento HMTL es la parte que no se muestra en el navegador cuando se carga la página. Contiene información como el título (&lt;title&gt;) de la página, enlaces al CSS (si se quiere aplicar estilo al contenido HTML con CSS), enlaces para personalizar y otros metadatos.</p>
+			<p>A continuación, le solicitamos:</p>
+			<ol>
+				<li>Escriba la estructura básica de un documento HTML que incluya descriptores en el head.</li>
+				<li>Describa dichos descriptores.</li>
+			</ol>
+
+			<h3>Actividad asociada al CE4.2</h3>
+			<p>Identificar y describir los descriptores que sintetizan el contenido de las páginas con el fin de que sean encontradas por los buscadores.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<ol>
+				<li>
+					<p>Estructura básica de un documento HTML que incluye descriptores en la sección &lt;head&gt;:</p>
+					<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Título de la Página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;meta name="description" content="Descripción de la página"&gt;
+  &lt;meta name="keywords" content="palabras clave, separadas por comas"&gt;
+  &lt;meta name="author" content="Nombre del autor"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- El contenido de la página va aquí --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</li>
+				<li>
+					<p>Descripciones de los descriptores incluidos en el &lt;head&gt;:</p>
+					<ol>
+						<li>&lt;meta charset="UTF-8"&gt;: Define el conjunto de caracteres (codificación) que se utilizará para interpretar y mostrar el contenido del documento. "UTF-8" es una codificación que incluye una amplia gama de caracteres de diferentes idiomas.</li>
+						<li>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;: Proporciona instrucciones al navegador sobre cómo ajustar y escalar el contenido para diferentes tamaños de dispositivos, como pantallas de teléfonos móviles y tabletas.</li>
+						<li>&lt;title&gt;Título de la Página&lt;/title&gt;: Define el título de la página que se muestra en la pestaña del navegador y en los resultados de búsqueda. Es un elemento importante para la accesibilidad y la optimización de motores de búsqueda (SEO).</li>
+						<li>&lt;link rel="stylesheet" href="styles.css"&gt;: Enlaza a una hoja de estilo externa (CSS) llamada "styles.css". El CSS se utiliza para aplicar estilos y diseño al contenido HTML.</li>
+						<li>&lt;meta name="description" content="Descripción de la página"&gt;: Proporciona una breve descripción de la página. Esta descripción puede aparecer en los resultados de búsqueda y ayuda a los usuarios a comprender el contenido de la página.</li>
+						<li>&lt;meta name="keywords" content="palabras clave, separadas por comas"&gt;: Solía ser utilizado para especificar palabras clave relacionadas con el contenido de la página, pero no tiene un gran impacto en el SEO moderno. Aún así, algunas herramientas de búsqueda pueden utilizarlo para contextualizar el contenido.</li>
+						<li>&lt;meta name="author" content="Nombre del autor"&gt;: Indica el nombre del autor o creador del contenido de la página.</li>
+					</ol>
+					<p>Estos descriptores y elementos en el &lt;head&gt; son importantes para la configuración inicial y la presentación de una página web.</p>
+				</li>
+			</ol>
+
+			<h3>Actividad asociada al CE4.2</h3>
+			<p>Descriptores principales:</p>
+			<ol>
+				<li>&lt;meta name="description" content="Descripción de la página"&gt;: Este descriptor proporciona una breve descripción del contenido de la página. Los buscadores a menudo muestran esta descripción en los resultados de búsqueda, lo que ayuda a los usuarios a comprender de qué trata la página antes de hacer clic en ella.</li>
+				<li>&lt;meta name="keywords" content="palabras clave, separadas por comas"&gt;: Aunque el impacto de las palabras clave (keywords) en el posicionamiento de búsqueda ha disminuido, este descriptor solía ser utilizado para incluir palabras clave relevantes para el contenido de la página. Sin embargo, en la actualidad, los buscadores dependen más del análisis semántico del contenido para determinar la relevancia.</li>
+				<li>&lt;title&gt;Título de la Página&lt;/title&gt;: El título de la página es crucial para los motores de búsqueda y la optimización SEO. No solo se muestra en la pestaña del navegador, sino que también es un factor importante para la clasificación en los resultados de búsqueda. El título debe ser descriptivo y relevante para el contenido de la página.</li>
+			</ol>
+			<p>Estos descriptores, junto con un contenido relevante y estructurado, ayudan a los buscadores a entender y clasificar el contenido de la página de manera más precisa. Recuerda que el contenido de alta calidad y la usabilidad también son fundamentales para mejorar la visibilidad en los resultados de búsqueda.</p>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
