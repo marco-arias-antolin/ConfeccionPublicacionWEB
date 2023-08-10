@@ -30,6 +30,76 @@
 	<meta name="author" content="Marco Antonio Arias Antolín">
 	<meta name="description" content="Archivos a Base64.">
 	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		const fileInput = document.getElementById('fileInput');
+		const outputDiv = document.getElementById('output');
+
+		const createResultElement = ({ name, size, type }, base64Data) => {
+			const resultDiv = document.createElement('div');
+			let content = '';
+
+			if (type.includes('image')) {
+				content = `<img src="${base64Data}" style="max-width: 200px;">`;
+			} else if (type.includes('text')) {
+				fetch(base64Data)
+					.then(response => response.arrayBuffer())
+					.then(arrayBuffer => {
+						const textContent = new TextDecoder().decode(arrayBuffer);
+						content = `<textarea rows="6" cols="66" readonly>${textContent}</textarea>`;
+						const divPreview = resultDiv.querySelector('.preview');
+						divPreview.innerHTML = content;
+					})
+			} else {
+				content = `<p>Contenido no previsualizable</p>`;
+			}
+
+			resultDiv.innerHTML = `
+<h5>${name}</h5>
+<p>Tamaño: ${size} bytes<br>
+Tipo MIME: ${type}</p>
+<p>Previsualización:</p>
+<div class='preview'>${content}</div>
+<p>base64:</p>
+<textarea rows="6" cols="66" readonly>${base64Data}</textarea><br>
+<button class="copyButton">Copiar</button>
+`;
+			return resultDiv;
+		};
+
+		const copyToClipboard = async (text) => {
+			try {
+				await navigator.clipboard.writeText(text);
+				console.log('Texto copiado al portapapeles');
+			} catch (error) {
+				console.error('Error al copiar al portapapeles:', error);
+			}
+		};
+
+		fileInput.onchange = async (event) => {
+			outputDiv.innerHTML = ''; // Limpiar contenido anterior
+
+			const files = event.target.files;
+
+			for (const file of files) {
+				const reader = new FileReader();
+				reader.onload = ({ target: { result } }) => {
+					const base64Data = result;
+
+					const resultDiv = createResultElement(file, base64Data);
+					const copyButton = resultDiv.querySelector('.copyButton');
+					const textArea = resultDiv.querySelector('textarea:last-of-type');
+
+					copyButton.onclick = () => {
+						copyToClipboard(textArea.value);
+					};
+
+					outputDiv.appendChild(resultDiv);
+				};
+
+				reader.readAsDataURL(file);
+			}
+		};
+	</script>
 </head>
 
 <body>
@@ -41,60 +111,6 @@
 			<h4>Selecciona archivos</h4>
 			<input type="file" id="fileInput" multiple>
 			<div id="output"></div>
-
-			<script>
-				const fileInput = document.getElementById("fileInput");
-				const outputDiv = document.getElementById("output");
-
-				const createResultElement = (file, base64Data, mimeType) => {
-					const resultDiv = document.createElement("div");
-					resultDiv.innerHTML = `
-        <p>Nombre del archivo: ${file.name}</p>
-        <p>Tipo MIME: ${mimeType}</p>
-        <p>Tamaño: ${file.size} bytes</p>
-        <p>Representación Base64:</p>
-        <textarea rows="5" cols="50" readonly>${"data:" + mimeType + ";base64," + base64Data}</textarea>
-        <button class="copyButton">Copiar</button>
-      `;
-
-					return resultDiv;
-				};
-
-				const copyToClipboard = async (text) => {
-					try {
-						await navigator.clipboard.writeText(text);
-						console.log("Texto copiado al portapapeles");
-					} catch (error) {
-						console.error("Error al copiar al portapapeles:", error);
-					}
-				};
-
-				fileInput.addEventListener("change", function (event) {
-					outputDiv.innerHTML = ""; // Limpiar contenido anterior
-
-					const files = event.target.files;
-
-					for (let i = 0; i < files.length; i++) {
-						const file = files[i];
-						const reader = new FileReader();
-
-						reader.onload = function (e) {
-							const base64Data = e.target.result.split(",")[1];
-							const mimeType = file.type;
-
-							const resultDiv = createResultElement(file, base64Data, mimeType);
-							const copyButton = resultDiv.querySelector(".copyButton");
-							const base64TextArea = resultDiv.querySelector("textarea");
-
-							copyButton.addEventListener("click", () => copyToClipboard(base64TextArea.value));
-
-							outputDiv.appendChild(resultDiv);
-						};
-
-						reader.readAsDataURL(file);
-					}
-				});
-			</script>
 		</section>
 	</main>
 	<footer>
