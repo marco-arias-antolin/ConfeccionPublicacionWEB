@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Conversor de entidades HTML
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<title>Texto a HTML</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Conversor de entidades HTML.">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		class HTMLEntity {
+			static #tA = document.createElement("textarea");
+			static encode(t) { return this.#tA.innerText = t, this.#tA.innerHTML.replaceAll('<br>', '\n') }
+			static decode(t) { return this.#tA.innerHTML = t, this.#tA.value }
+		}
+
+		f1.encode.onclick = () => {
+			f1.taDecode.value = HTMLEntity.encode(f1.taEncode.value);
+		}
+		f1.decode.onclick = () => {
+			f1.taEncode.value = HTMLEntity.decode(f1.taDecode.value);
+		}
+
+		f1.taEncode.onfocus = seleccionar;
+		f1.taDecode.onfocus = seleccionar;
+		function seleccionar(event) { event.target.select(); }
+
+		f1.taEncode.value = `<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+</body>
+</html>`;
+		f1.taDecode.value = `&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;`;
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Conversor de Texto a HTML</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Conversión</h2>
+			<form action="javascript:void(0);" name="f1" id="f1">
+				<p>
+					<textarea name="taEncode" id="taEncode" cols="66" rows="16"></textarea><br>
+					<button name="encode" id="encode">Encode</button>
+				</p>
+				<p>
+					<textarea name="taDecode" id="taDecode" cols="66" rows="16"></textarea><br>
+					<button name="decode" id="decode">Decode</button>
+				</p>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+</body>
+
+</html>
