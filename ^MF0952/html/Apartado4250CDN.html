@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<!--
+	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Autor:			Marco Antonio Arias Antolín.
+	Año:			2023
+	Descripción:	Tema 4. Apartado 4.2.5.
+					"Clasificación de las características a verificar en los navegadores actuales"
+	Uso:			Didáctico.
+	-->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGhlaWdodD0nMjAwJyB3aWR0aD0nMjAwJyB2aWV3Qm94PScwIDAgMjAwIDIwMCc+DQoJPHRleHQgeD0nNTAlJyB5PScxMTBweCcgc3R5bGU9J2ZpbGw6I2FkYjViZDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsO2ZvbnQtc2l6ZTozMzNweDtmb250LWZhbWlseTpDb3VyaWVyO2ZvbnQtd2VpZ2h0OmJvbGQ7dGV4dC1hbmNob3I6bWlkZGxlJz5NPC90ZXh0Pg0KPC9zdmc+">
+	<title>Clasificación de las características a verificar en los navegadores actuales</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marco Antonio Arias Antolín">
+	<meta name="description" content="Clasificación de las características a verificar en los navegadores actuales.">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<style>
+		footer {
+			transform-origin: bottom;
+			transition: .6s;
+		}
+
+		footer>span {
+			display: inline-block;
+			margin: 0 auto;
+			width: 66%;
+		}
+
+		footer>span>span {
+			display: inline-block;
+			transform: scale(-1.6, 1.6);
+		}
+
+		footer:hover {
+			transform: scale(1.16);
+		}
+	</style>
+</head>
+
+<body class="m-5 pb-5" data-bs-theme="dark">
+	<header>
+		<h1>Clasificación de las características a verificar en los navegadores actuales</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Enunciado</h2>
+			<ol>
+				<li>Haga una búsqueda en internet de las distintas especificaciones que piden los navegadores más usados para un correcto funcionamiento de cualquier página web.</li>
+				<li>Compruebe y verifique la compatibilidad de su web con los distintos navegadores que hay en el mercado del software.</li>
+			</ol>
+
+			<h3>Actividad asociada al CE3.3</h3>
+			<p>Clasificar las características a verificar en los navegadores que se utilizan en el mercado, para asegurar la compatibilidad de las páginas con los mismos, según especificaciones establecidas.</p>
+		</section>
+		<section>
+			<h2>Solución</h2>
+			<ol>
+				<li>
+					<h5>Especificaciones Comunes para la Compatibilidad de Navegadores</h5>
+					<ol>
+						<li><strong>HTML y CSS válidos:</strong> Cumplir con los estándares establecidos por el W3C.</li>
+						<li><strong>Diseño adaptable (Responsive Design):</strong> Asegurar que el diseño se adapte a diferentes dispositivos.</li>
+						<li><strong>Compatibilidad con JavaScript:</strong> Verificar que las funciones JS funcionen en varios navegadores.</li>
+						<li><strong>Imágenes y medios:</strong> Cargar imágenes y medios correctamente en todos los navegadores.</li>
+						<li><strong>Accesibilidad:</strong> Cumplir con las pautas WCAG para usuarios con discapacidades.</li>
+						<li><strong>Seguridad:</strong> Utilizar HTTPS para proteger datos de usuarios.</li>
+						<li><strong>Pruebas en múltiples navegadores:</strong> Verificar en Chrome, Firefox, Edge, Safari, etc.</li>
+					</ol>
+				</li>
+				<li>
+					<h5>Cómo Verificar la Compatibilidad</h5>
+					<ol>
+						<li><strong>Pruebas manuales:</strong> Navegar y detectar problemas en distintos navegadores.</li>
+						<li><strong>Herramientas de desarrollador:</strong> Inspeccionar elementos y depurar con las herramientas integradas.</li>
+						<li><strong>Servicios de pruebas en navegadores:</strong> Utilizar BrowserStack o CrossBrowserTesting.</li>
+						<li><strong>Validadores web:</strong> Verificar validez de HTML, CSS y otros estándares.</li>
+						<li><strong>Compatibilidad JavaScript:</strong> Utilizar Babel u otras soluciones para JS.</li>
+						<li><strong>Pruebas de rendimiento:</strong> Utilizar Google PageSpeed Insights.</li>
+						<li><strong>Pruebas de accesibilidad:</strong> Usar herramientas como axe o WAVE.</li>
+					</ol>
+				</li>
+			</ol>
+
+			<h3>Actividad asociada al CE3.3</h3>
+			<h4>Clasificación de Características para Verificar la Compatibilidad en Navegadores</h4>
+
+			<h5>1. Compatibilidad con Estándares Web</h5>
+			<ul>
+				<li>Validación de HTML y CSS según estándares del W3C.</li>
+				<li>Compatibilidad con formatos de archivos web estándar.</li>
+			</ul>
+
+			<h5>2. Diseño y Layout</h5>
+			<ul>
+				<li>Diseño adaptable (Responsive Design) para diferentes tamaños de pantalla.</li>
+				<li>Posicionamiento y alineación de elementos.</li>
+			</ul>
+
+			<h5>3. Funcionalidad y Comportamiento</h5>
+			<ul>
+				<li>Compatibilidad con JavaScript y manejo de eventos.</li>
+				<li>Funcionamiento de botones, formularios y elementos interactivos.</li>
+			</ul>
+
+			<h5>4. Medios y Gráficos</h5>
+			<ul>
+				<li>Carga y visualización de imágenes, videos y otros medios.</li>
+				<li>Compatibilidad con formatos de medios comunes.</li>
+			</ul>
+
+			<h5>5. Accesibilidad</h5>
+			<ul>
+				<li>Cumplimiento de pautas WCAG para usuarios con discapacidades.</li>
+				<li>Uso adecuado de etiquetas semánticas para una experiencia accesible.</li>
+			</ul>
+
+			<h5>6. Seguridad y Privacidad</h5>
+			<ul>
+				<li>Soporte para conexiones seguras HTTPS.</li>
+				<li>Manejo adecuado de cookies y datos de usuario.</li>
+			</ul>
+
+			<h5>7. Rendimiento y Velocidad de Carga</h5>
+			<ul>
+				<li>Tiempo de carga y rendimiento en diferentes conexiones.</li>
+				<li>Optimización de recursos para acelerar la velocidad de carga.</li>
+			</ul>
+
+			<h5>8. Compatibilidad con Navegadores</h5>
+			<ul>
+				<li>Pruebas en navegadores populares como Chrome, Firefox, Edge, Safari, etc.</li>
+				<li>Verificación en versiones recientes y anteriores de navegadores.</li>
+			</ul>
+		</section>
+	</main>
+	<footer class="fixed-bottom p-3 text-center bg-dark">
+		<span class="border-top border-light rounded"><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/071a33fca8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
