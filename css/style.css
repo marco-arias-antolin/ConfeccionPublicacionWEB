@@ -20,7 +20,7 @@ body {
 	font-family: var(--fontFamily);
 	margin: 0;
 	min-height: 100vh;
-	padding: 3rem;
+	padding: 0 3rem 3rem;
 }
 
 main {
@@ -30,6 +30,13 @@ main {
 	align-items: center;
 	flex: 1;
 	margin-bottom: 1rem;
+}
+
+main section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 a {
@@ -57,7 +64,7 @@ h6 {
 	font-weight: 500;
 	line-height: 1.2;
 	margin: 0;
-	margin-bottom: .6rem;
+	margin-top: .6rem;
 	text-align: center;
 }
 
@@ -88,7 +95,7 @@ h6 {
 p {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: 0 0 1rem;
+	/* margin: 0 0 1rem; */
 }
 
 pre {
