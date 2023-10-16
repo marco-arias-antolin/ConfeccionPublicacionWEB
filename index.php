@@ -117,7 +117,7 @@ function listarDirectorio($directorio, $nivel = 0) {
                     $carpetas[] = $archivo;
                 } elseif (pathinfo($rutaCompleta, PATHINFO_EXTENSION) == "html") {
                     $archivoHTML = htmlspecialchars($archivo);
-                    echo $espacios . "├─ 📄 <a href=\"$rutaCompleta\">$archivoHTML</a><br>\n";
+                    echo $espacios . "├─ 📄 <a href=\"$rutaCompleta\" target=\"iframe1\">$archivoHTML</a>\n";
                     $archivosHTML = true;
                 }
             }
@@ -125,7 +125,7 @@ function listarDirectorio($directorio, $nivel = 0) {
 
         // Mostrar carpetas después de archivos HTML
         foreach ($carpetas as $carpeta) {
-            echo $espacios . "├─ 📁 " . $carpeta . "<br>\n";
+            echo $espacios . "├─ 📁 " . $carpeta . "\n";
             if (listarDirectorio($directorio . '/' . $carpeta, $nivel + 1)) {
                 $archivosHTML = true;
             }
