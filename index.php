@@ -30,7 +30,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Marco Antonio Arias Antolín">
 	<meta name="description" content="Índice de las entregas.">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/ConfeccionPublicacionWEB/css/style.css">
 	<style>
 		body {
 			margin: 0;
