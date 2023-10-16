@@ -2,8 +2,8 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8">
-	<!--
+  <meta charset="UTF-8">
+  <!--
 	Copyright (C) 2023	Marco Arias - mail://marcoariasantolin@gmail.com
 
 	This program is free software: you can redistribute it and/or modify
@@ -25,70 +25,70 @@
 					"Interpretación de script que resuelva un problema especificado"
 	Uso:			Didáctico.
 	-->
-	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-	<title>Corrección de script</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Marco Antonio Arias Antolín">
-	<meta name="description" content="Interpretación de script que resuelva un problema especificado.">
-	<link rel="stylesheet" href="css/style.css">
-	<style>
-		pre {
-			height: 166px;
-			overflow: auto;
-		}
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <title>Corrección de script</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marco Antonio Arias Antolín">
+  <meta name="description" content="Interpretación de script que resuelva un problema especificado.">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    pre {
+      height: 166px;
+      overflow: auto;
+    }
 
-		pre:hover {
-			background: #222;
-		}
+    pre:hover {
+      background: #222;
+    }
 
-		iframe {
-			height: 166px;
-			width: 100%;
-		}
-	</style>
-	<script type="module">
-		const btnOriginal = document.getElementById('btnOriginal');
-		const btnCorregido = document.getElementById('btnCorregido');
-		const btnDiferencias = document.getElementById('btnDiferencias');
-		const btnsPre = [btnOriginal, btnCorregido];
-		for (let item of btnsPre) {
-			item.onclick = () => {
-				let el = item.parentNode.nextElementSibling;
-				if (item.innerText.indexOf('Expandir') > -1) {
-					el.style.height = el.firstChild.offsetHeight + 'px';
-					item.innerText = "Contraer";
-				} else {
-					el.style.height = '166px';
-					item.innerText = "Expandir";
-				}
-			}
-		}
-		btnDiferencias.onclick = (event) => {
-			let btn = event.srcElement
-			let iframe = event.srcElement.parentNode.nextElementSibling
-			if (btn.innerText.indexOf('Expandir') > -1) {
-				iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-				btn.innerText = "Contraer";
-			} else {
-				iframe.style.height = '166px';
-				btn.innerText = "Expandir";
-			}
-		}
-	</script>
+    iframe {
+      height: 166px;
+      width: 100%;
+    }
+  </style>
+  <script type="module">
+    const btnOriginal = document.getElementById('btnOriginal');
+    const btnCorregido = document.getElementById('btnCorregido');
+    const btnDiferencias = document.getElementById('btnDiferencias');
+    const btnsPre = [btnOriginal, btnCorregido];
+    for (let item of btnsPre) {
+      item.onclick = () => {
+        let el = item.parentNode.nextElementSibling;
+        if (item.innerText.indexOf('Expandir') > -1) {
+          el.style.height = el.firstChild.offsetHeight + 'px';
+          item.innerText = "Contraer";
+        } else {
+          el.style.height = '166px';
+          item.innerText = "Expandir";
+        }
+      }
+    }
+    btnDiferencias.onclick = (event) => {
+      let btn = event.srcElement
+      let iframe = event.srcElement.parentNode.nextElementSibling
+      if (btn.innerText.indexOf('Expandir') > -1) {
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        btn.innerText = "Contraer";
+      } else {
+        iframe.style.height = '166px';
+        btn.innerText = "Expandir";
+      }
+    }
+  </script>
 </head>
 
 <body>
-	<header>
-		<h1>Interpretación de script que resuelva un problema especificado</h1>
-	</header>
-	<main>
-		<section>
-			<h2>Enunciado</h2>
-			<p>En esta última actividad le facilitamos, en primer lugar, el siguiente código:</p>
-			<p><a href="Apartado752original.html" target="_blank">Apartado752original.html</a>
-				<button id="btnOriginal">Expandir</button>
-			</p>
-			<pre><code id="original">&#x3C;!DOCTYPE html&#x3E;
+  <header>
+    <h1>Interpretación de script que resuelva un problema especificado</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Enunciado</h2>
+      <p>En esta última actividad le facilitamos, en primer lugar, el siguiente código:</p>
+      <p><a href="Apartado752original.html" target="_blank">Apartado752original.html</a>
+        <button id="btnOriginal">Expandir</button>
+      </p>
+      <pre><code id="original">&#x3C;!DOCTYPE html&#x3E;
 &#x3C;html&#x3E;
 
 &#x3C;head&#x3E;
@@ -208,33 +208,33 @@
 &#x3C;/body&#x3E;
 
 &#x3C;/html&#x3E;</code></pre>
-			<p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
-			<ul>
-				<li>Compruebe el código en el navegador.</li>
-				<li>Detecte todos los errores que pudiera tener.</li>
-				<li>Solucione los errores para que funcione correctamente.</li>
-				<li>Explique qué datos pide el formulario y cuáles restringe.</li>
-				<li>Documente todos los cambios realizados en el script.</li>
-			</ul>
+      <p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
+      <ul>
+        <li>Compruebe el código en el navegador.</li>
+        <li>Detecte todos los errores que pudiera tener.</li>
+        <li>Solucione los errores para que funcione correctamente.</li>
+        <li>Explique qué datos pide el formulario y cuáles restringe.</li>
+        <li>Documente todos los cambios realizados en el script.</li>
+      </ul>
 
-			<h3>Actividad asociada al CE1.7</h3>
-			<p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
-			<ul>
-				<li>Identificar el tipo y el uso de los datos declarados dentro del script.</li>
-				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa.</li>
-				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos.</li>
-				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas.</li>
-				<li>Probar la funcionalidad del script utilizando un navegador.</li>
-				<li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
-				<li>Documentar los cambios realizados en el script.</li>
-			</ul>
-		</section>
-		<section>
-			<h2>Solución</h2>
-			<p><a href="Apartado752corregido.html" target="_blank">Apartado752corregido.html</a>
-				<button id="btnCorregido">Expandir</button>
-			</p>
-			<pre><code id="corregido">&#x3C;!DOCTYPE html&#x3E;
+      <h3>Actividad asociada al CE1.7</h3>
+      <p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
+      <ul>
+        <li>Identificar el tipo y el uso de los datos declarados dentro del script.</li>
+        <li>Describir las estructuras de programación utilizadas para organizar las acciones del programa.</li>
+        <li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos.</li>
+        <li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas.</li>
+        <li>Probar la funcionalidad del script utilizando un navegador.</li>
+        <li>Detectar y corregir los errores de sintaxis y de ejecución.</li>
+        <li>Documentar los cambios realizados en el script.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Solución</h2>
+      <p><a href="Apartado752corregido.html" target="_blank">Apartado752corregido.html</a>
+        <button id="btnCorregido">Expandir</button>
+      </p>
+      <pre><code id="corregido">&#x3C;!DOCTYPE html&#x3E;
 &#x3C;html lang=&#x22;es&#x22;&#x3E;
 
 &#x3C;head&#x3E;
@@ -370,81 +370,81 @@
 &#x3C;/body&#x3E;
 
 &#x3C;/html&#x3E;</code></pre>
-			<p><a href="Apartado752vimdiff.html" target="_blank">Archivo de Diferencias</a>
-				<button id="btnDiferencias">Expandir</button>
-			</p>
-			<iframe id="diferencias" src="Apartado752vimdiff.html"></iframe>
+      <p><a href="Apartado752vimdiff.html" target="_blank">Archivo de Diferencias</a>
+        <button id="btnDiferencias">Expandir</button>
+      </p>
+      <iframe id="diferencias" src="Apartado752vimdiff.html"></iframe>
 
-			<p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
-			<ul>
-				<li>Compruebe el código en el navegador. ✔</li>
-				<li>Detecte todos los errores que pudiera tener. ✔</li>
-				<li>Solucione los errores para que funcione correctamente. ✔</li>
-				<li>Explique qué datos pide el formulario y cuáles restringe. ✔
-					<p>Pide obligatoriamente los datos:</p>
-					<ul>
-						<li>Usuario</li>
-						<li>Nombre</li>
-						<li>Apellido</li>
-						<li>Password</li>
-						<li>Hobbies</li>
-						<li>Pais</li>
-					</ul>
-					<p>Los opcionales son:</p>
-					<ul>
-						<li>E-mail</li>
-						<li>Sexo</li>
-					</ul>
-				</li>
-				<li>Documente todos los cambios realizados en el script. ✔
-					<p>Lo voy a documentar en la "Actividad asociada al CE1.7"</p>
-				</li>
-			</ul>
+      <p>Tras evaluarlo y estudiarlo atentamente, le solicitamos que:</p>
+      <ul>
+        <li>Compruebe el código en el navegador. ✔</li>
+        <li>Detecte todos los errores que pudiera tener. ✔</li>
+        <li>Solucione los errores para que funcione correctamente. ✔</li>
+        <li>Explique qué datos pide el formulario y cuáles restringe. ✔
+          <p>Pide obligatoriamente los datos:</p>
+          <ul>
+            <li>Usuario</li>
+            <li>Nombre</li>
+            <li>Apellido</li>
+            <li>Password</li>
+            <li>Hobbies</li>
+            <li>Pais</li>
+          </ul>
+          <p>Los opcionales son:</p>
+          <ul>
+            <li>E-mail</li>
+            <li>Sexo</li>
+          </ul>
+        </li>
+        <li>Documente todos los cambios realizados en el script. ✔
+          <p>Lo voy a documentar en la "Actividad asociada al CE1.7"</p>
+        </li>
+      </ul>
 
-			<h3>Actividad asociada al CE1.7</h3>
-			<p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
-			<ul>
-				<li>Identificar el tipo y el uso de los datos declarados dentro del script. ✔</li>
-				<li>Describir las estructuras de programación utilizadas para organizar las acciones del programa. ✔</li>
-				<li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos. ✔</li>
-				<li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas. ✔</li>
-				<li>Probar la funcionalidad del script utilizando un navegador. ✔</li>
-				<li>Detectar y corregir los errores de sintaxis y de ejecución. ✔</li>
-				<li>Documentar los cambios realizados en el script. ✔</li>
-			</ul>
-			<p>El script contiene variables, estructuras de control y funciones para realizar operaciones de manipulación, entrada y salida de datos en el formulario. A continuación se describen los diferentes aspectos del código:</p>
-			<p>Variables:</p>
-			<ul>
-				<li>formulario: Almacena el contenido del formulario que se mostrará en el mensaje de alerta.</li>
-				<li>usuario, nombre, apellido, email, clave1, clave2: Variables que almacenan los valores ingresados en los campos de texto del formulario.</li>
-				<li>hobbies: Un array que almacena los valores de los hobbies seleccionados en el formulario.</li>
-				<li>b: Variable no definida en el código original.</li>
-				<li>a: Variable utilizada en el bucle for para recorrer los elementos del formulario.</li>
-			</ul>
-			<p>Estructuras de programación:</p>
-			<ul>
-				<li>Función Subir(): Es la función principal del script y se ejecuta cuando se hace clic en el botón "Crear usuario". Realiza las siguientes acciones:</li>
-				<li>Obtiene los valores ingresados en los campos del formulario utilizando los métodos getElementById y querySelectorAll.</li>
-				<li>Realiza diversas comprobaciones para validar los datos ingresados en el formulario, como verificar que los campos obligatorios no estén vacíos, que se haya seleccionado al menos un hobby y que las claves coincidan.</li>
-				<li>Construye la cadena formulario con los valores ingresados en el formulario.</li>
-				<li>Muestra el contenido del formulario en un mensaje de alerta.</li>
-				<li>Devuelve true si todas las validaciones son exitosas y el formulario se puede enviar.</li>
-			</ul>
-			<p>Instrucciones de manipulación, entrada y salida de datos:</p>
-			<ul>
-				<li>document.getElementById('id'): Obtiene el elemento del DOM con el ID especificado.</li>
-				<li>document.querySelectorAll('selector'): Obtiene una lista de elementos del DOM que coinciden con el selector especificado.</li>
-				<li>document.form1.hobby[a].checked: Verifica si un checkbox de hobby está seleccionado.</li>
-				<li>element.value: Obtiene el valor de un elemento del formulario.</li>
-				<li>element.values(): Devuelve un objeto iterable de los valores de los elementos seleccionados.</li>
-				<li>element.join(', '): Combina los elementos de un array en una cadena separada por comas y espacios.</li>
-				<li>element.replace(/\t/g, ''): Elimina las tabulaciones de la cadena formulario.</li>
-			</ul>
-		</section>
-	</main>
-	<footer>
-		<span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
-	</footer>
+      <h3>Actividad asociada al CE1.7</h3>
+      <p>Interpretar scripts que resuelvan un problema previamente especificado:</p>
+      <ul>
+        <li>Identificar el tipo y el uso de los datos declarados dentro del script. ✔</li>
+        <li>Describir las estructuras de programación utilizadas para organizar las acciones del programa. ✔</li>
+        <li>Reconocer las instrucciones proporcionadas por el lenguaje de script utilizadas en las operaciones de manipulación, entrada y salida de datos. ✔</li>
+        <li>Insertar el script dentro de la página web utilizando las etiquetas apropiadas. ✔</li>
+        <li>Probar la funcionalidad del script utilizando un navegador. ✔</li>
+        <li>Detectar y corregir los errores de sintaxis y de ejecución. ✔</li>
+        <li>Documentar los cambios realizados en el script. ✔</li>
+      </ul>
+      <p>El script contiene variables, estructuras de control y funciones para realizar operaciones de manipulación, entrada y salida de datos en el formulario. A continuación se describen los diferentes aspectos del código:</p>
+      <p>Variables:</p>
+      <ul>
+        <li>formulario: Almacena el contenido del formulario que se mostrará en el mensaje de alerta.</li>
+        <li>usuario, nombre, apellido, email, clave1, clave2: Variables que almacenan los valores ingresados en los campos de texto del formulario.</li>
+        <li>hobbies: Un array que almacena los valores de los hobbies seleccionados en el formulario.</li>
+        <li>b: Variable no definida en el código original.</li>
+        <li>a: Variable utilizada en el bucle for para recorrer los elementos del formulario.</li>
+      </ul>
+      <p>Estructuras de programación:</p>
+      <ul>
+        <li>Función Subir(): Es la función principal del script y se ejecuta cuando se hace clic en el botón "Crear usuario". Realiza las siguientes acciones:</li>
+        <li>Obtiene los valores ingresados en los campos del formulario utilizando los métodos getElementById y querySelectorAll.</li>
+        <li>Realiza diversas comprobaciones para validar los datos ingresados en el formulario, como verificar que los campos obligatorios no estén vacíos, que se haya seleccionado al menos un hobby y que las claves coincidan.</li>
+        <li>Construye la cadena formulario con los valores ingresados en el formulario.</li>
+        <li>Muestra el contenido del formulario en un mensaje de alerta.</li>
+        <li>Devuelve true si todas las validaciones son exitosas y el formulario se puede enviar.</li>
+      </ul>
+      <p>Instrucciones de manipulación, entrada y salida de datos:</p>
+      <ul>
+        <li>document.getElementById('id'): Obtiene el elemento del DOM con el ID especificado.</li>
+        <li>document.querySelectorAll('selector'): Obtiene una lista de elementos del DOM que coinciden con el selector especificado.</li>
+        <li>document.form1.hobby[a].checked: Verifica si un checkbox de hobby está seleccionado.</li>
+        <li>element.value: Obtiene el valor de un elemento del formulario.</li>
+        <li>element.values(): Devuelve un objeto iterable de los valores de los elementos seleccionados.</li>
+        <li>element.join(', '): Combina los elementos de un array en una cadena separada por comas y espacios.</li>
+        <li>element.replace(/\t/g, ''): Elimina las tabulaciones de la cadena formulario.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <span><span>&copy;</span> Marco Antonio Arias Antolín. 2023</span>
+  </footer>
 </body>
 
 </html>
