@@ -67,7 +67,7 @@ address a+a::after {
 	inset: auto 0 -6px;
 	margin: 0 auto;
 	width: 66%;
-	background: blue;
+	background: var(--link);
 	transition: .6s;
 }
 

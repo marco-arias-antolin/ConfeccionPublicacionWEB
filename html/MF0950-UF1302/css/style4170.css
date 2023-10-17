@@ -19,7 +19,7 @@ label[for=contenido] {
 		No funciona el fallback con un nombre de variable erroneo
 		Si funciona el fallback si está mal el texto en base64 */
 	cursor: var(--svgCrossCircleB64), zoom-out;
-	/* cursor: url(../img/Apartado417/crossCircle.svg), zoom-out; */
+	/* cursor: url(../img/Apartado4170/crossCircle.svg), zoom-out; */
 }
 
 #imagenesCompletas {

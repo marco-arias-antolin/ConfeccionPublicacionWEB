@@ -4,7 +4,7 @@ document.documentElement.style.transition = "1.6s";
 onmessage = (event) => {
 	if (event.data == "CLARO") {
 		document.documentElement.style.color = "black";
-	} else {
+	} else if (event.data == "OSCURO") {
 		document.documentElement.style.color = "lightgreen";
 	}
 }

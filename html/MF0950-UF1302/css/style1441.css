@@ -1,4 +1,5 @@
 main {
+	align-items: start;
 	display: grid;
 	grid-template-columns: 66% 34%;
 }

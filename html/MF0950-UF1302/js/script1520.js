@@ -20,14 +20,20 @@ boton.onclick = () => {
 // Pone la altura de los dos iframes.
 var iframe;
 onmessage = (event) => {
-	iframe = setIframe(event.data.origin);
-	iframe.style.height = event.data.height + 'px';
+	try {
+		iframe = setIframe(event.data.origin);
+		if (iframe) {
+			iframe.style.height = event.data.height + 'px';
+		}
+	} catch (e) {
+		console.log(e);
+	}
 }
 // Pone el iframe correspondiente a la página que envía el mensaje.
 function setIframe(origin) {
-	if (origin == 'Apartado152main') {
+	if (origin == 'Apartado1520main') {
 		iframe = document.getElementById('iframe_1');
-	} else if (origin == 'Apartado152videos') {
+	} else if (origin == 'Apartado1520videos') {
 		iframe = document.getElementById('iframe_2');
 	}
 	return iframe;

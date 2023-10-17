@@ -21,24 +21,33 @@
 
 	Autor:			Marco Antonio Arias Antolín.
 	Año:			2023
-	Descripción:	Tema 1. Apartado 1.6.
-					"Creación de marcos en páginas web".
+	Descripción:	Tema 1. Apartado 1.5.2.
+					"Interpretación de script que añada efectos estéticos"
 	Uso:			Didáctico.
 	-->
 	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-	<title>Iframes</title>
+	<title>Apartado 1.5.2. Videos</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Marco Antonio Arias Antolín">
-	<meta name="description" content="Creación de marcos en páginas web.">
-	<link rel="stylesheet" href="css/style16grid2.css">
+	<meta name="description" content="Tema 1. Apartado 1.5.2. Videos.">
+	<script src="js/script1520iframes.js" defer></script>
 </head>
 
 <body>
-	<iframe src="https://www.wikipedia.org/"></iframe>
-	<iframe src="https://www.w3.org/"></iframe>
-	<iframe src="https://archive.org/"></iframe>
-	<iframe src="https://www.tawdis.net/?lang=es"></iframe>
-	<iframe src="http://www.sidar.org/"></iframe>
+	<header>
+		<h1>Vídeos</h1>
+	</header>
+	<main>
+		<section>
+			<h2 style="display: none; margin: 0;"> </h2>
+			<video controls>
+				<!-- Se recomienda webm ya que es el que menos ocupa. -->
+				<source src="media/Cat.webm" type="video/webm">
+				<source src="media/Cat.mp4" type="video/mp4">
+				<source src="media/Cat.avi" type="video/avi">
+			</video>
+		</section>
+	</main>
 </body>
 
 </html>

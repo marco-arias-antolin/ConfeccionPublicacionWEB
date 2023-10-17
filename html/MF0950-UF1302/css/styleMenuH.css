@@ -1,6 +1,6 @@
 :root {
-	--color: lightgreen;
-	--bg: black;
+	--bg: #212529;
+	--color: #adb5bd;
 }
 
 #btn {

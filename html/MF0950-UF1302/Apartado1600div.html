@@ -21,33 +21,40 @@
 
 	Autor:			Marco Antonio Arias Antolín.
 	Año:			2023
-	Descripción:	Tema 1. Apartado 1.5.2.
-					"Interpretación de script que añada efectos estéticos"
+	Descripción:	Tema 1. Apartado 1.6.
+					"Creación de marcos en páginas web".
 	Uso:			Didáctico.
 	-->
 	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-	<title>Apartado 1.5.2. Videos</title>
+	<title>Div con iframes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Marco Antonio Arias Antolín">
-	<meta name="description" content="Tema 1. Apartado 1.5.2. Videos.">
-	<script src="js/script152iframes.js" defer></script>
+	<meta name="description" content="Creación de marcos en páginas web.">
+	<link rel="stylesheet" href="css/style1600div.css">
 </head>
 
 <body>
-	<header>
-		<h1>Vídeos</h1>
-	</header>
-	<main>
-		<section>
-			<h2 style="display: none; margin: 0;"> </h2>
-			<video controls>
-				<!-- Se recomienda webm ya que es el que menos ocupa. -->
-				<source src="media/Cat.webm" type="video/webm">
-				<source src="media/Cat.mp4" type="video/mp4">
-				<source src="media/Cat.avi" type="video/avi">
-			</video>
-		</section>
-	</main>
+	<div id="contenedor1">
+		<iframe src="https://www.wikipedia.org/"></iframe>
+	</div>
+	<div id="contenedor2">
+		<div id="contenedor3">
+			<iframe src="https://www.w3.org/"></iframe>
+		</div>
+		<div id="contenedor4">
+			<div id="contenedor5">
+				<iframe src="https://archive.org/"></iframe>
+			</div>
+			<div id="contenedor6">
+				<div id="contenedor7">
+					<iframe src="https://www.tawdis.net/?lang=es"></iframe>
+				</div>
+				<div id="contenedor8">
+					<iframe src="http://www.sidar.org/"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

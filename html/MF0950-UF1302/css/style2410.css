@@ -1,7 +1,7 @@
 :root {
-	--color: lightgreen;
-	--bg: black;
-	--bg-t: rgba(0, 255, 0, .06);
+	--bg: #212529;
+	--color: #adb5bd;
+	--bg-t: rgba(255, 255, 255, .06);
 }
 
 table {
