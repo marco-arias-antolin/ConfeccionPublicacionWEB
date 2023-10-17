@@ -17,9 +17,9 @@ Contenido del curso:
 - Bootstrap 5.3.2
 - WordPress 6.3.1
 
-## [Ir a la WEB](https://marco-arias-antolin.github.io/ConfeccionPublicacionWEB/)
+## <a href="https://marco-arias-antolin.github.io/ConfeccionPublicacionWEB/" target="_blank">Ir a la WEB</a>
 
-## [BOE-A-2011-19503](https://www.boe.es/buscar/doc.php?id=BOE-A-2011-19503)
+## <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2011-19503" target="_blank">BOE-A-2011-19503</a>
 
 <br>
 
