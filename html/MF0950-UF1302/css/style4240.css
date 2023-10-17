@@ -2,6 +2,10 @@ input[name=seccion] {
 	display: none;
 }
 
+nav>ul {
+	text-align: center;
+}
+
 nav li {
 	display: inline;
 }
